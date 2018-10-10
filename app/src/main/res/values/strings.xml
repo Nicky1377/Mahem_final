@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Mahem</string>
+    <string name="title_categories">Categories</string>
+    <string name="title_search">Search</string>
+    <string name="title_add">Add</string>
+    <string name="title_home">Home</string>
+    <string name="title_menu">Menu</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="register">ثبت نام</string>
+    <string name="register_page_header">برای ثبت نام کافیست شماره همراه یا ایمیل معتبر وارد نمایید تا کد فعالسازی برایتان ارسال شود</string>
+    <string name="code_verification_header">لطفا برای تکمیل ثبت نام در ماهم کد 4 رقمی فعال سازی را وارد کنید</string>
+    <string name="final_register">تایید نهایی</string>
+    <string name="verify_code">کد تایید 4 رقمی</string>
+    <string name="userName">نام کاربری</string>
+    <string name="phoneOrEmail">شماره همراه یا ایمیل معتبر</string>
+    <string name="farsi">فارسی</string>
+    <string name="english">انگلیسی</string>
+    <string name="chooseLanguage">انتخاب زبان</string>
+    <string name="chooseCity">انتخاب شهر</string>
+    <string name="chooseBackGround">انتخاب پس زمینه</string>
+    <string name="camera">دوربین</string>
+    <string name="gallery">گالری</string>
+    <string name="title">عنوان</string>
+    <string name="time">زمان انتشار</string>
+
+</resources>
