@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:orientation="horizontal"
+        android:gravity="right"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="@android:color/white"
+            android:id="@+id/title"
+            android:textSize="23dp"
+            android:text="استخدامی"
+            android:gravity="center|bottom"
+            android:paddingBottom="8dp"
+            android:paddingRight="3dp"/>
+        <ImageView
+            android:id="@+id/ic_logo"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/ic_launcher_llogo" />
+
+
+    </LinearLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="3dp">
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="فنی / مهندسی"
+                android:drawableLeft="@mipmap/ic_launcher_flsh"
+                android:drawableRight="@mipmap/ic_phone"
+                android:gravity="right|center"
+                android:textSize="18dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:id="@+id/btn1"
+                />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="منشی"
+                android:drawableLeft="@mipmap/ic_launcher_flsh"
+                android:drawableRight="@mipmap/ic_phone"
+                android:gravity="right|center"
+                android:textSize="18dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:id="@+id/btn2"                />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="پزشک / پرستار"
+                android:drawableLeft="@mipmap/ic_launcher_flsh"
+                android:drawableRight="@mipmap/ic_phone"
+                android:gravity="right|center"
+                android:textSize="18dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:id="@+id/btn3"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="اداری / مدیریت"
+                android:drawableLeft="@mipmap/ic_launcher_flsh"
+                android:drawableRight="@mipmap/ic_phone"
+                android:gravity="right|center"
+                android:textSize="18dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:id="@+id/btn4"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="آمورش (مدرس)"
+                android:drawableLeft="@mipmap/ic_launcher_flsh"
+                android:drawableRight="@mipmap/ic_phone"
+                android:gravity="right|center"
+                android:textSize="18dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:id="@+id/btn5"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="مالی و حسابداری /حقوقی"
+                android:drawableLeft="@mipmap/ic_launcher_flsh"
+                android:drawableRight="@mipmap/ic_phone"
+                android:gravity="right|center"
+                android:textSize="18dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:id="@+id/btn6"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="فروشنده / بازاریاب"
+                android:drawableLeft="@mipmap/ic_launcher_flsh"
+                android:drawableRight="@mipmap/ic_phone"
+                android:gravity="right|center"
+                android:textSize="18dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:id="@+id/btn7"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="سرایدار / نظافت / نگهبانی"
+                android:drawableLeft="@mipmap/ic_launcher_flsh"
+                android:drawableRight="@mipmap/ic_phone"
+                android:gravity="right|center"
+                android:textSize="18dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:id="@+id/btn8"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="رستوران / صندوقدار"
+                android:drawableLeft="@mipmap/ic_launcher_flsh"
+                android:drawableRight="@mipmap/ic_phone"
+                android:gravity="right|center"
+                android:textSize="18dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:id="@+id/btn9"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="کارهای ساختمانی"
+                android:drawableLeft="@mipmap/ic_launcher_flsh"
+                android:drawableRight="@mipmap/ic_phone"
+                android:gravity="right|center"
+                android:textSize="18dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:id="@+id/btn10"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="هنری / رسانه / تبلیغات"
+                android:drawableLeft="@mipmap/ic_launcher_flsh"
+                android:drawableRight="@mipmap/ic_phone"
+                android:gravity="right|center"
+                android:textSize="18dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:id="@+id/btn11"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="زیبایی / بهداشتی / درمانی"
+                android:drawableLeft="@mipmap/ic_launcher_flsh"
+                android:drawableRight="@mipmap/ic_phone"
+                android:gravity="right|center"
+                android:textSize="18dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:id="@+id/btn12"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="رایانه / فناوری اطلاعات"
+                android:drawableLeft="@mipmap/ic_launcher_flsh"
+                android:drawableRight="@mipmap/ic_phone"
+                android:gravity="right|center"
+                android:textSize="18dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:id="@+id/btn13"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="حمل و نقل / باربری"
+                android:drawableLeft="@mipmap/ic_launcher_flsh"
+                android:drawableRight="@mipmap/ic_phone"
+                android:gravity="right|center"
+                android:textSize="18dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:id="@+id/btn14"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="سایر استخدامی"
+                android:drawableLeft="@mipmap/ic_launcher_flsh"
+                android:drawableRight="@mipmap/ic_phone"
+                android:gravity="right|center"
+                android:textSize="18dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:id="@+id/btn15"/>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

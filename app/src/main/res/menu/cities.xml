@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/gonbad"
+        android:orderInCategory="1"
+        android:title="گنبد کاووس"
+        android:showAsAction="never"
+        tools:ignore="AppCompatResource"/>
+    <item
+        android:id="@+id/gorgan"
+        android:orderInCategory="1"
+        android:title="گرگان"
+        android:showAsAction="never"
+        tools:ignore="AppCompatResource"/>
+    <item
+        android:id="@+id/aliabad"
+        android:orderInCategory="1"
+        android:title="علی آباد"
+        android:showAsAction="never"
+        tools:ignore="AppCompatResource"/>
+    <item
+        android:id="@+id/kalale"
+        android:orderInCategory="1"
+        android:title="کلاله"
+        android:showAsAction="never"
+        tools:ignore="AppCompatResource"/>
+    <item
+        android:id="@+id/azadshahr"
+        android:orderInCategory="1"
+        android:title="آزادشهر"
+        android:showAsAction="never"
+        tools:ignore="AppCompatResource"/>
+    <item
+        android:id="@+id/kordkoy"
+        android:orderInCategory="1"
+        android:title="کردکوی"
+        android:showAsAction="never"
+        tools:ignore="AppCompatResource"/>
+    <item
+        android:id="@+id/agh_ghola"
+        android:orderInCategory="1"
+        android:title="آق قلا"
+        android:showAsAction="never"
+        tools:ignore="AppCompatResource"/>
+    <item
+        android:id="@+id/mino"
+        android:orderInCategory="1"
+        android:title="مینو دشت"
+        android:showAsAction="never"
+        tools:ignore="AppCompatResource"/>
+    <item
+        android:id="@+id/torkaman"
+        android:orderInCategory="1"
+        android:title="بندرترکمن"
+        android:showAsAction="never"
+        tools:ignore="AppCompatResource"/>
+    <item
+        android:id="@+id/ramian"
+        android:orderInCategory="1"
+        android:title="رامیان"
+        android:showAsAction="never"
+        tools:ignore="AppCompatResource"/>
+    <item
+        android:id="@+id/marave"
+        android:orderInCategory="1"
+        android:title="مراوه تپه"
+        android:showAsAction="never"
+        tools:ignore="AppCompatResource"/>
+    <item
+        android:id="@+id/galikesh"
+        android:orderInCategory="1"
+        android:title="گالیکش"
+        android:showAsAction="never"
+        tools:ignore="AppCompatResource"/>
+    <item
+        android:id="@+id/gaz"
+        android:orderInCategory="1"
+        android:title="بندرگز"
+        android:showAsAction="never"
+        tools:ignore="AppCompatResource"/>
+    <item
+        android:id="@+id/gomishan"
+        android:orderInCategory="1"
+        android:title="گمیشان"
+        android:showAsAction="never"
+        tools:ignore="AppCompatResource"/>
+
+</menu>
