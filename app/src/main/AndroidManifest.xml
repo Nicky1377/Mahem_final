@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="android.niky.mahem_final">
+
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -20,6 +21,32 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Page1"></activity>
+        <activity android:name=".Group" />
+        <activity android:name=".Estekhdami" />
+        <activity android:name=".Amlak" />
+        <activity android:name=".Amlak_HomeSell" />
+        <activity android:name=".Amlak_HomeRent" />
+        <activity android:name=".Amlak_OfficeSell" />
+        <activity android:name=".Amlak_OfficeRent" />
+        <activity android:name=".Naghlieh" />
+        <activity android:name=".Electric" />
+        <activity android:name=".Electric_Tablet" />
+        <activity android:name=".Electric_Net" />
+        <activity android:name=".Electric_soti" />
+        <activity android:name=".Home_EQ" />
+        <activity android:name=".Home_Kitchen" />
+        <activity android:name=".Home_Design" />
+        <activity android:name=".Khadamat" />
+        <activity android:name=".Khadamat_teach" />
+        <activity android:name=".Khadamat_computer" />
+        <activity android:name=".Tajhizat" />
+        <activity android:name=".Tajhizat_tajhizat" />
+        <activity android:name=".Sargarmi" />
+        <activity android:name=".Sargarmi_music" />
+        <activity android:name=".Sargarmi_book" />
+        <activity android:name=".Personal" />
+
     </application>
 
 </manifest>

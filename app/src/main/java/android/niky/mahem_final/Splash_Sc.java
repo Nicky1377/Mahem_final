@@ -22,7 +22,7 @@ public class Splash_Sc extends AppCompatActivity {
             tt("دستگاه به اینترنت متصل نیست");
 //            img.setBackground(R.drawable.splash_dis);
         } else {
-           tran(Splash_Sc.class);
+           tran(Page1.class);
         }
     }
 
