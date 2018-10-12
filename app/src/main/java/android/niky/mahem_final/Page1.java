@@ -89,8 +89,8 @@ public class Page1 extends AppCompatActivity {
         MenuLine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getBaseContext(), Group.class);
-                startActivity(i);
+                //Intent i = new Intent(getBaseContext(), Group.class);
+              //  startActivity(i);
 
             }
         });
