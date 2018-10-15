@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class Khadamat_teach extends AppCompatActivity {
 Button Language,school,software,art,sport,moshaver;
@@ -21,6 +22,6 @@ Button Language,school,software,art,sport,moshaver;
         art=(Button)findViewById(R.id.btn4);
         sport=(Button)findViewById(R.id.btn5);
         moshaver=(Button)findViewById(R.id.btn6);
-
+        Toast.makeText(this, getLocalClassName().toString() + "\nNiky", Toast.LENGTH_LONG).show();
     }
 }

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class Estekhdami extends AppCompatActivity {
 Button fani,monshi,nurse,edari,teach,mali,seller,seraydar,resturan,kar_sakhteman,art,beauty,computer,haml,other;
@@ -30,6 +31,6 @@ Button fani,monshi,nurse,edari,teach,mali,seller,seraydar,resturan,kar_sakhteman
         computer=(Button)findViewById(R.id.btn13);
         haml=(Button)findViewById(R.id.btn14);
         other=(Button)findViewById(R.id.btn15);
-
+        Toast.makeText(this, getLocalClassName().toString() + "\nNiky", Toast.LENGTH_LONG).show();
     }
 }

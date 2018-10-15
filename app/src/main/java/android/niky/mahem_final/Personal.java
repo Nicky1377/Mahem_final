@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class Personal extends AppCompatActivity {
 Button clothes,watch,health,child_clothes,other;
@@ -21,8 +22,8 @@ Button clothes,watch,health,child_clothes,other;
         health=(Button)findViewById(R.id.btn3);
         child_clothes=(Button)findViewById(R.id.btn4);
         other=(Button)findViewById(R.id.btn5);
-       
 
+        Toast.makeText(this, getLocalClassName().toString() + "\nNiky", Toast.LENGTH_LONG).show();
 
     }
 }

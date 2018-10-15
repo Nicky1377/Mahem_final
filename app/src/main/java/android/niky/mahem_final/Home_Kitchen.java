@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class Home_Kitchen extends AppCompatActivity {
 Button freezer,gas,wash_cloth,food,wash_dish,other;
@@ -22,5 +23,7 @@ Button freezer,gas,wash_cloth,food,wash_dish,other;
         food=(Button)findViewById(R.id.btn4);
         wash_dish=(Button)findViewById(R.id.btn5);
         other=(Button)findViewById(R.id.btn6);
+
+        Toast.makeText(this, getLocalClassName().toString() + "\nNiky", Toast.LENGTH_LONG).show();
     }
 }

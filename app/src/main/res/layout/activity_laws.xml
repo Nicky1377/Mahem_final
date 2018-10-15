@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:orientation="horizontal"
+        android:gravity="right"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="@android:color/white"
+            android:id="@+id/title"
+            android:textSize="23dp"
+            android:text="قوانین و شرایط"
+            android:gravity="center|bottom"
+            android:paddingBottom="8dp"
+            android:paddingRight="3dp"/>
+        <ImageView
+            android:id="@+id/ic_logo"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/ic_launcher_llogo" />
+    </LinearLayout>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorDefaultBackground"
+        >
+
+        <ImageView
+            android:id="@+id/img_header"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_header" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@android:color/white"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/img_header"
+            android:layout_margin="16dp"
+            android:gravity="right"
+            android:textSize="17dp"
+            android:textColor="@android:color/black"
+            android:text="قوانین ثبت آگهی
+
+آگهی دادن و ثبت آگهی در اپلیکیشن ماهم، تابع قوانین و
+مقرراتی است و متن کلیه آگهی ها باید از این قوانین پیروی
+کنند .اگر آن ها را رعایت کنید مطمئنا باعث سرعت گرفتن
+ثبت آگهیتان خواهد شد.این قوانین را برایتان آورده ایم
+تا هنگام تنظیم آگهی خود، آن ها را مد نظر داشته باشید
+و مسایل قانئنی ناشی از انتشار هرگونه آگهی موجب خسارت معنوی و یا مادی برای شخص و یا اشخاص گردد،
+مستقیما متوجه سفارش دهنده ی آگهی خواهد بود.
+ثبت آگهی در ماهم به معنای به رسمیت شناختن فعالیت،
+خدمات و یا موضوعات درج شده در آگهی از طرف ماهم نمی باشد."/>
+
+        <include
+            layout="@layout/bottom_navigation"
+            android:id="@+id/rr"
+            ></include>
+
+    </RelativeLayout>
+</LinearLayout>

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class Electric_Net extends AppCompatActivity {
 Button laptop,Janebi,printer,modem;
@@ -21,6 +22,6 @@ Button laptop,Janebi,printer,modem;
         Janebi=(Button)findViewById(R.id.btn2);
         printer=(Button)findViewById(R.id.btn3);
         modem=(Button)findViewById(R.id.btn4);
-
+        Toast.makeText(this, getLocalClassName().toString() + "\nNiky", Toast.LENGTH_LONG).show();
     }
 }

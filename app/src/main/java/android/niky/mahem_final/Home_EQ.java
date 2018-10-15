@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class Home_EQ extends AppCompatActivity {
 Button kitchen,design;
@@ -35,5 +36,7 @@ Button kitchen,design;
                 startActivity(i);
             }
         });
+
+        Toast.makeText(this, getLocalClassName().toString() + "\nNiky", Toast.LENGTH_LONG).show();
     }
 }

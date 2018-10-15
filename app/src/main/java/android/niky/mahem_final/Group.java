@@ -7,6 +7,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Group extends AppCompatActivity {
 Button estekhdam,amlak,naghlie,electric,home,khadamat,tajhizat,sargarmi,personal;
@@ -98,6 +99,6 @@ Button estekhdam,amlak,naghlie,electric,home,khadamat,tajhizat,sargarmi,personal
                 startActivity(i);
             }
         });
-
+        Toast.makeText(this, getLocalClassName().toString() + "\nNiky", Toast.LENGTH_LONG).show();
     }
 }

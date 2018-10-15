@@ -19,6 +19,7 @@ public class Page1 extends AppCompatActivity {
     ImageView Image;
     ListView Estekhdami, Agahi;
 
+    PopupMenu popup;
     View navigationBar;
     ImageView Home, Add, Menu, MenuLine, Search;
 
@@ -59,24 +60,24 @@ public class Page1 extends AppCompatActivity {
         MenuLine = (ImageView) navigationBar.findViewById(R.id.menuLine_f);
         Search =(ImageView)navigationBar.findViewById(R.id.search_f);
 
-        Search.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(getBaseContext(), Splash_Sc.class);
-                startActivity(i);
-
-            }
-        });
-//
-//        Menu.setOnClickListener(new View.OnClickListener() {
+//        Search.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
-//                Intent i = new Intent(getBaseContext(), Menu2.class);
+//                Intent i = new Intent(getBaseContext(), Splash_Sc.class);
 //                startActivity(i);
 //
 //            }
 //        });
-//
+
+        Menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getBaseContext(), Menu1.class);
+                startActivity(i);
+
+            }
+        });
+
 //        Add.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
@@ -89,8 +90,8 @@ public class Page1 extends AppCompatActivity {
         MenuLine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Intent i = new Intent(getBaseContext(), Group.class);
-              //  startActivity(i);
+                Intent i = new Intent(getBaseContext(), Group.class);
+                startActivity(i);
 
             }
         });
@@ -105,7 +106,7 @@ public class Page1 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //Creating the instance of PopupMenu
-                PopupMenu popup = new PopupMenu(Page1.this, city_selection);
+                 popup = new PopupMenu(Page1.this, city_selection);
                 //Inflating the Popup using xml file
                 popup.getMenuInflater()
                         .inflate(R.menu.cities, popup.getMenu());
@@ -121,6 +122,7 @@ public class Page1 extends AppCompatActivity {
                         ).show();
 
                         city_selection.setText(item.getTitle());
+                        popup.dismiss();
                         return true;
                     }
                 });

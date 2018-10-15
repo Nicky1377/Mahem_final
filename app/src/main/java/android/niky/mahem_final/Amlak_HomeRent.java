@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class Amlak_HomeRent extends AppCompatActivity {
     Button aparteman,home;
@@ -21,7 +22,7 @@ public class Amlak_HomeRent extends AppCompatActivity {
         aparteman=(Button)findViewById(R.id.btn1);
         home=(Button)findViewById(R.id.btn2);
 
-
+        Toast.makeText(this, getLocalClassName().toString() + "\nNiky", Toast.LENGTH_LONG).show();
 
     }
 }

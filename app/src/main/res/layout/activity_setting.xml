@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Setting">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/colorDefaultBackground">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:orientation="horizontal"
+            android:gravity="right"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textColor="@android:color/white"
+                android:id="@+id/title"
+                android:textSize="20dp"
+                android:text="تنظیمات"
+                android:gravity="center|bottom"
+                android:paddingBottom="8dp"
+                android:paddingRight="3dp"/>
+            <ImageView
+                android:id="@+id/ic_logo"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:src="@mipmap/ic_launcher_llogo" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:background="@drawable/img_header"
+            />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" انتخاب زبان :"
+                android:textSize="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="10dp"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="    English  "
+                android:textSize="16dp"
+                android:checked="false"
+                android:id="@+id/eng"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:paddingRight="20dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="50dp"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="    فارسی  "
+                android:textSize="16dp"
+                android:checked="true"
+                android:id="@+id/per"
+                android:layout_alignParentRight="true"
+                android:paddingRight="20dp"
+                android:gravity="right"
+                android:layout_marginRight="50dp"/>
+        </RelativeLayout>  <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="انتخاب شهر :"
+            android:textSize="17dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="10dp"/>
+    </RelativeLayout>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="شهر مورد نظر خود را انتخاب کنید."
+            android:backgroundTint="@color/backColor"
+            android:gravity="right"
+            android:paddingRight="15dp"
+            android:id="@+id/T"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textSize="15dp"
+
+            />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="انتخاب پس زمینه :"
+                android:textSize="17dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="10dp"/>
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/setting_button"
+                android:id="@+id/gallery"
+                android:text="گالری"
+                android:textSize="15dp"
+                android:layout_marginLeft="40dp"
+                android:layout_weight="1"
+                android:layout_marginRight="20dp"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/setting_button"
+                android:id="@+id/cam"
+                android:text="دوربین"
+                android:textSize="15dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="40dp"
+                android:layout_weight="1"
+                android:layout_marginLeft="20dp" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/backColor"
+            android:text="اعمال"
+            android:textColor="@android:color/white"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:id="@+id/send"/>
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

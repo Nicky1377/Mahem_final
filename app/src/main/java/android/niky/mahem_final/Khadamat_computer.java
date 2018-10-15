@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class Khadamat_computer extends AppCompatActivity {
 Button web,net,pc,mobile;
@@ -19,6 +20,6 @@ Button web,net,pc,mobile;
         net=(Button)findViewById(R.id.btn2);
         pc=(Button)findViewById(R.id.btn3);
         mobile=(Button)findViewById(R.id.btn4);
-
+        Toast.makeText(this, getLocalClassName().toString() + "\nNiky", Toast.LENGTH_LONG).show();
     }
 }

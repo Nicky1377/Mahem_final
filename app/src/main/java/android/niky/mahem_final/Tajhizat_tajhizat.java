@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class Tajhizat_tajhizat extends AppCompatActivity {
 Button shop,burbershop,office,industry,cofe,other;
@@ -22,5 +23,7 @@ Button shop,burbershop,office,industry,cofe,other;
         industry=(Button)findViewById(R.id.btn4);
         cofe=(Button)findViewById(R.id.btn5);
         other=(Button)findViewById(R.id.btn6);
+
+        Toast.makeText(this, getLocalClassName().toString() + "\nNiky", Toast.LENGTH_LONG).show();
     }
 }

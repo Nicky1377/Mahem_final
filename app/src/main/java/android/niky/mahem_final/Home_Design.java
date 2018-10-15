@@ -3,6 +3,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class Home_Design extends AppCompatActivity {
 Button carpet,chair,lostr,commode,parde,bed,decor,TV_desk,fan,other;
@@ -25,5 +26,7 @@ Button carpet,chair,lostr,commode,parde,bed,decor,TV_desk,fan,other;
         TV_desk=(Button)findViewById(R.id.btn8);
         fan=(Button)findViewById(R.id.btn9);
         other=(Button)findViewById(R.id.btn10);
+
+        Toast.makeText(this, getLocalClassName().toString() + "\nNiky", Toast.LENGTH_LONG).show();
     }
 }

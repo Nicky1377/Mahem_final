@@ -21,7 +21,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Page1"></activity>
+        <activity android:name=".Page1" />
         <activity android:name=".Group" />
         <activity android:name=".Estekhdami" />
         <activity android:name=".Amlak" />
@@ -46,7 +46,15 @@
         <activity android:name=".Sargarmi_music" />
         <activity android:name=".Sargarmi_book" />
         <activity android:name=".Personal" />
-
+        <activity android:name=".Menu1" />
+        <activity android:name=".AboutUs"></activity>
+        <activity android:name=".ContactUs" />
+        <activity android:name=".Laws" />
+        <activity android:name=".Register" />
+        <activity android:name=".JobBankMenu" />
+        <activity android:name=".Off_Finder" />
+        <activity android:name=".CodeVerification" />
+        <activity android:name=".Setting" />
     </application>
 
 </manifest>

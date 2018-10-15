@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".JobBankMenu">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        >
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:orientation="horizontal"
+            android:gravity="end"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textColor="@android:color/white"
+                android:id="@+id/title"
+                android:textSize="24dp"
+                android:text="بانک مشاغل"
+                android:gravity="center"
+                android:padding="2dp"/>
+            <ImageView
+                android:id="@+id/ic_logo"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:src="@mipmap/ic_launcher_llogo" />
+        </LinearLayout>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="1" >
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/menu_button"
+                android:text="پزشکی "
+                android:textSize="15dp"
+                android:drawableTop="@mipmap/ic_launcher_medicine"
+                android:layout_margin="5dp"
+                android:paddingTop="10dp"
+                android:id="@+id/medicine"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/menu_button"
+                android:text="بازرگانی و تجارت "
+                android:textSize="12dp"
+                android:drawableTop="@mipmap/ic_launcher_meeting"
+                android:layout_margin="5dp"
+                android:paddingTop="10dp"
+                android:id="@+id/meeting"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/menu_button"
+                android:text="اتومبیل"
+                android:textSize="15dp"
+                android:drawableTop="@mipmap/ic_launcher_car"
+                android:layout_margin="5dp"
+                android:paddingTop="10dp"
+                android:id="@+id/car"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/menu_button"
+                android:text="آرایش و پیرایش"
+                android:textSize="12dp"
+                android:drawableTop="@mipmap/ic_launcher_arayesh"
+                android:layout_margin="5dp"
+                android:paddingTop="10dp"
+                android:id="@+id/arayesh"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="1" >
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/menu_button"
+                android:text="مراکز تحصیلی"
+                android:textSize="13dp"
+                android:drawableTop="@mipmap/ic_launcher_uni"
+                android:layout_margin="5dp"
+                android:paddingTop="10dp"
+                android:id="@+id/uni"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/menu_button"
+                android:text="آموزشگاه هنری"
+                android:textSize="13dp"
+                android:drawableTop="@mipmap/ic_launcher_music1"
+                android:layout_margin="5dp"
+                android:paddingTop="10dp"
+                android:id="@+id/music"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/menu_button"
+                android:text="آموزشگاه ورزشی"
+                android:textSize="12dp"
+                android:drawableTop="@mipmap/ic_launcher_sport"
+                android:layout_margin="5dp"
+                android:paddingTop="10dp"
+                android:id="@+id/sport"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/menu_button"
+                android:text="آموزش و پژوهش"
+                android:textSize="12dp"
+                android:drawableTop="@mipmap/ic_launcher_teach"
+                android:layout_margin="5dp"
+                android:paddingTop="10dp"
+                android:id="@+id/teach"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="1" >
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/menu_button"
+                android:text="خدمات مجلسی"
+                android:textSize="13dp"
+                android:drawableTop="@mipmap/ic_launcher_majlesi"
+                android:layout_margin="5dp"
+                android:paddingTop="10dp"
+                android:id="@+id/majles"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/menu_button"
+                android:text="کامپیوتر و موبایل"
+                android:textSize="12dp"
+                android:drawableTop="@mipmap/ic_launcher_computer"
+                android:layout_margin="5dp"
+                android:paddingTop="10dp"
+                android:id="@+id/computer"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/menu_button"
+                android:text="جواهرات و بدلیجات"
+                android:textSize="11dp"
+                android:drawableTop="@mipmap/ic_launcher_jewels"
+                android:layout_margin="5dp"
+                android:paddingTop="10dp"
+                android:id="@+id/jewels"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/menu_button"
+                android:text="پوشاک"
+                android:textSize="15dp"
+                android:drawableTop="@mipmap/ic_launcher_dress"
+                android:layout_margin="5dp"
+                android:paddingTop="10dp"
+                android:id="@+id/dress"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="1" >
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/menu_button"
+                android:text="ساختمان"
+                android:textSize="15dp"
+                android:drawableTop="@mipmap/ic_launcher_office"
+                android:layout_margin="5dp"
+                android:paddingTop="10dp"
+                android:id="@+id/office"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/menu_button"
+                android:text="کشاورزی و دامپروری"
+                android:textSize="10dp"
+                android:drawableTop="@mipmap/ic_launcher_dam"
+                android:layout_margin="5dp"
+                android:paddingTop="10dp"
+                android:id="@+id/damdari"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/menu_button"
+                android:text="خدمات اجتماعی"
+                android:textSize="13dp"
+                android:drawableTop="@mipmap/ic_launcher_khadamat"
+                android:layout_margin="5dp"
+                android:paddingTop="10dp"
+                android:id="@+id/khadamat"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/menu_button"
+                android:text="چاپ و تبلیغات"
+                android:textSize="15dp"
+                android:drawableTop="@mipmap/ic_launcher_copy"
+                android:layout_margin="5dp"
+                android:paddingTop="10dp"
+                android:id="@+id/copy"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="1" >
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/menu_button"
+                android:text="سایر خدمات"
+                android:textSize="15dp"
+                android:drawableTop="@mipmap/ic_launcher_other"
+                android:layout_margin="5dp"
+                android:paddingTop="10dp"
+                android:id="@+id/other"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/menu_button"
+                android:text="صنعت"
+                android:textSize="15dp"
+                android:drawableTop="@mipmap/ic_launcher_industry"
+                android:layout_margin="5dp"
+                android:paddingTop="10dp"
+                android:id="@+id/industry"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/menu_button"
+                android:text="صنایع غذایی"
+                android:textSize="15dp"
+                android:drawableTop="@mipmap/ic_launcher_food"
+                android:layout_margin="5dp"
+                android:paddingTop="10dp"
+                android:id="@+id/food"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/menu_button"
+                android:text="دکوراسیون داخلی"
+                android:textSize="12dp"
+                android:drawableTop="@mipmap/ic_launcher_design"
+                android:layout_margin="5dp"
+                android:paddingTop="10dp"
+                android:id="@+id/design"/>
+
+        </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+    <include
+        layout="@layout/bottom_navigation"
+        android:id="@+id/rr"
+        ></include>
+
+</android.support.constraint.ConstraintLayout>

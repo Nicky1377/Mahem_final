@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class Electric_soti extends AppCompatActivity {
 Button camera,System_soti,TV,DVD,other;
@@ -21,5 +22,7 @@ Button camera,System_soti,TV,DVD,other;
         TV=(Button)findViewById(R.id.btn3);
         DVD=(Button)findViewById(R.id.btn4);
         other=(Button)findViewById(R.id.btn5);
+
+        Toast.makeText(this, getLocalClassName().toString() + "\nNiky", Toast.LENGTH_LONG).show();
     }
 }
