@@ -26,6 +26,7 @@ public class Search extends AppCompatActivity {
     AdvAdapter adapter;
 
 
+
     //fill this variables with information
     private String title, describtion, time;
     private int image;
