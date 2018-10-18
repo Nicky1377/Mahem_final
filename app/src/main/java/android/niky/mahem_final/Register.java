@@ -12,8 +12,8 @@ import android.widget.ImageView;
 
 
 public class Register extends AppCompatActivity {
-//    View navigationBar;
-//    ImageView Home,Add,Menu,MenuLine,Search;
+    View navigationBar;
+    ImageView Home,Add,Menu,MenuLine,Search;
 //
 //    EditText etUserName, etPhone;
 //    Button btnRegister;
@@ -47,58 +47,57 @@ public class Register extends AppCompatActivity {
 //
 //            }
 //        });
-//        map();
+        map();
     }
 
 
-//    public void map() {
-//
-//        navigationBar=findViewById(R.id.rr);
-//        Home = (ImageView) navigationBar.findViewById(R.id.home);
-//        Add = (ImageView) navigationBar.findViewById(R.id.add);
-//        Menu = (ImageView) navigationBar.findViewById(R.id.menu_f);
-//        MenuLine = (ImageView) navigationBar.findViewById(R.id.menuLine_f);
-//        Search =(ImageView)navigationBar.findViewById(R.id.search_f);
-//
-////        Search.setOnClickListener(new View.OnClickListener() {
-////            @Override
-////            public void onClick(View view) {
-////                Intent i = new Intent(getBaseContext(), Splash_Sc.class);
-////                startActivity(i);
-////
-////            }
-////        });
-//
-//        Menu.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent i = new Intent(getBaseContext(), Menu1.class);
-//                startActivity(i);
-//
-//            }
-//        });
-//
-////        Add.setOnClickListener(new View.OnClickListener() {
-////            @Override
-////            public void onClick(View view) {
-////                Intent i = new Intent(getBaseContext(), SabtAgahi_other.class);
-////                startActivity(i);
-////
-////            }
-////        });
-////
-//        MenuLine.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent i = new Intent(getBaseContext(), Group.class);
-//                startActivity(i);
-//
-//            }
-//        });
-//
-//
-//    }
-//
+    public void map() {
+
+        navigationBar=findViewById(R.id.rr);
+        Home = (ImageView) navigationBar.findViewById(R.id.home);
+        Add = (ImageView) navigationBar.findViewById(R.id.add);
+        Menu = (ImageView) navigationBar.findViewById(R.id.menu_f);
+        MenuLine = (ImageView) navigationBar.findViewById(R.id.menuLine_f);
+        Search =(ImageView)navigationBar.findViewById(R.id.search_f);
+
+        Search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getBaseContext(), Search.class);
+                startActivity(i);
+
+            }
+        });
+
+        Menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getBaseContext(), Menu1.class);
+                startActivity(i);
+
+            }
+        });
+
+        Add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getBaseContext(), SabtAgahi.class);
+                startActivity(i);
+
+            }
+        });
+
+        MenuLine.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getBaseContext(), Group.class);
+                startActivity(i);
+
+            }
+        });
+
+
+    }
 //    private void init() {
 //        etUserName = (EditText) findViewById(R.id.et_name);
 //        etPhone = (EditText) findViewById(R.id.et_phone);

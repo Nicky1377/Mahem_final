@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Filter_Khodro">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_alignParentTop="true"
+            >
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                android:orientation="horizontal"
+                android:gravity="right"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textColor="@android:color/white"
+                    android:id="@+id/title"
+                    android:textSize="23dp"
+                    android:text="فیلتر"
+                    android:gravity="center|bottom"
+                    android:paddingBottom="8dp"
+                    android:paddingRight="3dp"/>
+                <ImageView
+                    android:id="@+id/ic_logo"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:src="@mipmap/ic_launcher_llogo" />
+            </LinearLayout>
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="10dp">
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="گران ترین"
+                            android:textSize="25dp"
+                            android:background="@drawable/button2_left"
+                            android:textColor="@color/backColor"
+                            android:id="@+id/c1"
+                            android:layout_weight="1"
+                            android:layout_margin="3dp"/>
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="جدید ترین"
+                            android:textSize="25dp"
+                            android:background="@drawable/button2"
+                            android:textColor="@color/backColor"
+                            android:id="@+id/c2"
+                            android:layout_weight="1"
+                            android:layout_margin="3dp"/>
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="ارزان ترین"
+                            android:textSize="25dp"
+                            android:background="@drawable/button2_right"
+                            android:textColor="@color/backColor"
+                            android:id="@+id/c3"
+                            android:layout_weight="1"
+                            android:layout_margin="3dp"/>
+                    </LinearLayout>
+
+                    <EditText
+            android:id="@+id/T1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:backgroundTint="@color/backColor"
+            android:gravity="right"
+            android:text="وسایل نقلیه"
+            android:paddingRight="15dp"
+            android:inputType="none"
+             android:focusable="false"/>
+
+        <EditText
+            android:id="@+id/T2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:backgroundTint="@color/backColor"
+            android:gravity="right"
+            android:hint="برند"
+            android:paddingRight="15dp"
+            android:inputType="none"
+            android:focusable="false"/>
+
+        <EditText
+            android:id="@+id/T3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:backgroundTint="@color/backColor"
+            android:gravity="right"
+            android:hint="تعیین قیمت"
+            android:paddingRight="15dp"
+            android:inputType="none"
+            android:focusable="false"/>
+
+        <EditText
+            android:id="@+id/T4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:backgroundTint="@color/backColor"
+            android:gravity="right"
+            android:hint="تعیین سال ساخت"
+            android:paddingRight="15dp" />
+
+        <EditText
+            android:id="@+id/T5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:backgroundTint="@color/backColor"
+            android:gravity="right"
+            android:hint="نوع آگهی"
+            android:paddingRight="15dp"
+            android:inputType="none"
+            android:focusable="false"/>
+
+        <EditText
+            android:id="@+id/T6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:backgroundTint="@color/backColor"
+            android:gravity="right"
+            android:hint="تعیین کارکرد"
+            android:paddingRight="15dp" />
+
+        <EditText
+            android:id="@+id/T7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:backgroundTint="@color/backColor"
+            android:gravity="right"
+            android:hint="تعیین موقعیت"
+            android:paddingRight="15dp"
+            android:inputType="none"
+            android:focusable="false"/>
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/backColor"
+            android:text="اعمال"
+            android:textColor="@android:color/white"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:id="@+id/send"/>
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

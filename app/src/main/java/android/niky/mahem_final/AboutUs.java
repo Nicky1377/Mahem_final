@@ -29,14 +29,14 @@ public class AboutUs extends AppCompatActivity {
         MenuLine = (ImageView) navigationBar.findViewById(R.id.menuLine_f);
         Search =(ImageView)navigationBar.findViewById(R.id.search_f);
 
-//        Search.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent i = new Intent(getBaseContext(), Splash_Sc.class);
-//                startActivity(i);
-//
-//            }
-//        });
+        Search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getBaseContext(), Search.class);
+                startActivity(i);
+
+            }
+        });
 
         Menu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,15 +47,15 @@ public class AboutUs extends AppCompatActivity {
             }
         });
 
-//        Add.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent i = new Intent(getBaseContext(), SabtAgahi_other.class);
-//                startActivity(i);
-//
-//            }
-//        });
-//
+        Add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getBaseContext(), SabtAgahi.class);
+                startActivity(i);
+
+            }
+        });
+
         MenuLine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

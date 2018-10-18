@@ -3,20 +3,18 @@ package android.niky.mahem_final;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class Estekhdami extends AppCompatActivity {
-Button fani,monshi,nurse,edari,teach,mali,seller,seraydar,resturan,kar_sakhteman,art,beauty,computer,haml,other;
+public class Filter_Estekhdami extends AppCompatActivity {
+    Button fani,monshi,nurse,edari,teach,mali,seller,seraydar,resturan,kar_sakhteman,art,beauty,computer,haml,other;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_estekhdami);
-        getWindow().getDecorView().setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
+        setContentView(R.layout.activity_filter__estekhdami);
 
-      
+
         fani=(Button)findViewById(R.id.btn1);
         monshi=(Button)findViewById(R.id.btn2);
         nurse=(Button)findViewById(R.id.btn3);
@@ -33,6 +31,29 @@ Button fani,monshi,nurse,edari,teach,mali,seller,seraydar,resturan,kar_sakhteman
         haml=(Button)findViewById(R.id.btn14);
         other=(Button)findViewById(R.id.btn15);
 
+        fani.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i=new Intent(Filter_Estekhdami.this,Filter_Estekhdami_monshi_fani.class);
+                startActivity(i);
+            }
+        });
+
+        monshi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i=new Intent(Filter_Estekhdami.this,Filter_Estekhdami_monshi_fani.class);
+                startActivity(i);
+            }
+        });
+
+        other.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i=new Intent(Filter_Estekhdami.this,Filter_Estekhdami_monshi_fani.class);
+                startActivity(i);
+            }
+        });
 
         Toast.makeText(this,getLocalClassName().toString()+"\nNiky",Toast.LENGTH_LONG).show();
 

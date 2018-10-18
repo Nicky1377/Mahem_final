@@ -19,15 +19,12 @@ import android.widget.Toast;
 public class SabtAgahi_Car extends AppCompatActivity {
     EditText Group,Title,brand,shasy_typpe,naghd,year,K_meter,Gheimat,AgahiDahande_type,Type,call,Tozihat,location
             ,PhoneNum,Email;
-    View CallLayout,TypeLayout,AgahiDahandeLayout,GheimatLayout,NaghdLayout,BrandLayout,ShasyTypeLayout;
+    View CallLayout,TypeLayout,AgahiDahandeLayout,GheimatLayout,NaghdLayout,ShasyTypeLayout;
     TextView Type_1,Type_2,Type_3,agahiD_1,agahiD_2,Gh_1,Gh_2,Gh_3,Gh_4,Sh_1,Sh_2,Sh_3,Sh_4,Sh_5,Sh_6,Sh_7
-            ,naghd_1,naghd_2,Br_1,Br_2,Br_3,Br_4,Br_5,Br_6,Br_7,Br_8,Br_9,Br_10,Br_11,Br_12,Br_13,Br_14
-            ,Br_15,Br_16,Br_17,Br_18,Br_19,Br_20,Br_21,Br_22,Br_23,Br_24,Br_25,Br_26,Br_27,Br_28,Br_29
-            ,Br_30,Br_31,Br_32,Br_33,Br_34,Br_35,Br_36,Br_37,Br_38,Br_39,Br_40,Br_41,Br_42,Br_43,Br_44,Br_45,
-    Br_46,Br_47,Br_48,Br_49,Br_50,Br_51,Br_52,Br_53,Br_54,Br_55,Br_56,Br_57,Br_58,Br_59;
+            ,naghd_1,naghd_2;
     CheckBox rules,chat,email_check;
     Button send,cam1,cam2,cam3,cam4,cam5;
-    PopupWindow Type_Layout,Call_Layout,Gheimat_Layout,agahiD_Layout,Shasy_type_Layout,Naghd_Layout,Brand_Layout;
+    PopupWindow Type_Layout,Call_Layout,Gheimat_Layout,agahiD_Layout,Shasy_type_Layout,Naghd_Layout;
 
     PopupMenu popup;
     @Override
@@ -59,18 +56,6 @@ public class SabtAgahi_Car extends AppCompatActivity {
         cam5=(Button)findViewById(R.id.c5);
         rules=(CheckBox)findViewById(R.id.rule);
 
-//        brand.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                LayoutInflater inflater=(LayoutInflater)getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-//                BrandLayout=inflater.inflate(R.layout.brand_layout,null);
-//                Brand_Layout= new PopupWindow(BrandLayout, LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
-//                Brand_Layout.showAsDropDown(view);
-//
-//                Brand_map();
-//
-//            }
-//        });
 
         Type.setOnClickListener(new View.OnClickListener() {
             @Override
