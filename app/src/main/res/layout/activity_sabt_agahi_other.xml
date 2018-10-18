@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SabtAgahi_other">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_norm"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="android.niky.sabtagahi.Norm"
+        android:orientation="vertical">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+        <RelativeLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="ارسال"
+                android:textColor="@android:color/white"
+                android:background="@color/colorPrimary"
+                android:textSize="20dp"
+                android:drawableLeft="@mipmap/ic_check"
+                android:layout_alignParentLeft="true"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/send"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textColor="@android:color/white"
+                android:id="@+id/title"
+                android:textSize="24dp"
+                android:text="ثبت رایگان آگهی"
+                android:gravity="center"
+                android:padding="2dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="5dp"/>
+        </RelativeLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="انتخاب تصویر مناسب برای آگهی"
+            android:gravity="center"
+            android:textSize="23dp"
+            android:textStyle="bold"
+            android:padding="5dp"
+            android:background="@color/colorPrimary"
+            android:textColor="@android:color/black"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="آگهی های شامل تصویر،بیش از 5 برابر دیده می شوند."
+            android:gravity="center"
+            android:textSize="17dp"
+            android:padding="5dp"
+            android:background="@color/colorPrimary"
+            android:textColor="@android:color/black"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@color/colorPrimary"
+            android:padding="5dp"
+            android:orientation="horizontal">
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/button"
+                android:layout_margin="3dp"
+                android:layout_weight="1"
+                android:drawableBottom="@drawable/icons88"
+                android:clickable="true"
+                android:padding="2dp"
+                android:id="@+id/c1"
+                />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/button"
+                android:layout_margin="3dp"
+                android:layout_weight="1"
+                android:drawableBottom="@drawable/icons88"
+                android:clickable="true"
+                android:padding="2dp"
+                android:id="@+id/c2"
+                />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/button"
+                android:layout_margin="3dp"
+                android:layout_weight="1"
+                android:drawableBottom="@drawable/icons88"
+                android:clickable="true"
+                android:padding="2dp"
+                android:id="@+id/c3"
+                />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/button"
+                android:layout_margin="3dp"
+                android:layout_weight="1"
+                android:drawableBottom="@drawable/icons88"
+                android:clickable="true"
+                android:padding="2dp"
+                android:id="@+id/c4"
+                />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/button"
+                android:layout_margin="3dp"
+                android:layout_weight="1"
+                android:drawableBottom="@drawable/icons88"
+                android:clickable="true"
+                android:padding="2dp"
+                android:id="@+id/c5"
+                />
+
+        </LinearLayout>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="انتخاب گروه"
+                    android:backgroundTint="@color/backColor"
+                    android:layout_margin="3dp"
+                    android:gravity="right"
+                    android:paddingRight="15dp"
+                    android:id="@+id/T1"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="عنوان آگهی (حداقل 10  حرف)"
+                    android:backgroundTint="@color/backColor"
+                    android:layout_margin="3dp"
+                    android:gravity="right"
+                    android:paddingRight="15dp"
+                    android:id="@+id/T2"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="نوع آگهی"
+                    android:backgroundTint="@color/backColor"
+                    android:layout_margin="3dp"
+                    android:gravity="right"
+                    android:paddingRight="15dp"
+                    android:id="@+id/T3"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="قیمت"
+                    android:backgroundTint="@color/backColor"
+                    android:layout_margin="3dp"
+                    android:gravity="right"
+                    android:paddingRight="15dp"
+                    android:id="@+id/T4"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="توضیحات"
+                    android:backgroundTint="@color/backColor"
+                    android:layout_margin="3dp"
+                    android:gravity="right"
+                    android:paddingRight="15dp"
+                    android:id="@+id/T5"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="تعیین موقعیت"
+                    android:backgroundTint="@color/backColor"
+                    android:layout_margin="3dp"
+                    android:gravity="right"
+                    android:paddingRight="15dp"
+                    android:id="@+id/T6"/>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="با قوانین و شرایط موافقم"
+                        android:layout_centerInParent="true"
+                        android:id="@+id/rule"/>
+                </RelativeLayout>
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

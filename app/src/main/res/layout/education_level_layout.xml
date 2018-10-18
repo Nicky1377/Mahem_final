@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        >
+
+
+        <TextView
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/popup_background"
+            android:text="زیر دیپلم"
+            android:gravity="center"
+            android:textSize="15dp"
+            android:padding="10dp"
+            android:id="@+id/Tt1"
+            />
+
+        <TextView
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/popup_background"
+            android:text="دیپلم"
+            android:gravity="center"
+            android:textSize="15dp"
+            android:padding="10dp"
+            android:id="@+id/Tt2"
+            />
+
+        <TextView
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/popup_background"
+            android:text="کاردانی"
+            android:gravity="center"
+            android:textSize="15dp"
+            android:padding="10dp"
+            android:id="@+id/Tt3"
+            />
+
+        <TextView
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/popup_background"
+            android:text="کارشناسی"
+            android:gravity="center"
+            android:textSize="15dp"
+            android:padding="10dp"
+            android:id="@+id/Tt4"
+            />
+        <TextView
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/popup_background"
+            android:text="کارشناسی ارشد"
+            android:gravity="center"
+            android:textSize="15dp"
+            android:padding="10dp"
+            android:id="@+id/Tt5"
+            />
+        <TextView
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/popup_background"
+            android:text="دکتری و بالاتر"
+            android:gravity="center"
+            android:textSize="15dp"
+            android:padding="10dp"
+            android:id="@+id/Tt6"
+            />
+    </LinearLayout>
+</ScrollView>

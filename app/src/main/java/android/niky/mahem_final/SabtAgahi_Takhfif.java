@@ -1,56 +1,78 @@
 package android.niky.mahem_final;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.EditText;
 import android.widget.Button;
-import android.widget.ImageView;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
-import android.widget.RadioButton;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+public class SabtAgahi_Takhfif extends AppCompatActivity {
 
-public class Setting extends AppCompatActivity {
-
-    Button cam,gallery,send;
-    EditText city;
-    View CityLayout;
-    TextView city_1,city_2,city_3,city_4,city_5,city_6,city_7,city_8,city_9
-            ,city_10,city_11,city_12,city_13,city_14;
-    PopupWindow City_Layout;
-    RadioButton per,eng;
+    EditText Group,Title,off_percent,Real_price,Off_price,city,call,attributes,Tozihat,location
+            ,PhoneNum,Email;
+    View CallLayout,CityLayout;
+    TextView city_1,city_2,city_3,city_4,city_5,city_6,city_7,city_8,city_9,city_10,city_11,city_12,city_13,city_14;
+    CheckBox rules,chat,email_check;
+    Button send,cam1,cam2,cam3,cam4,cam5;
+    PopupWindow City_Layout,Call_Layout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_setting);
+        setContentView(R.layout.activity_sabt_agahi__takhfif);
 
-        cam=(Button)findViewById(R.id.cam);
-        gallery=(Button)findViewById(R.id.gallery);
+
+        Group=(EditText)findViewById(R.id.T1);
+        Title=(EditText)findViewById(R.id.T2);
+        off_percent=(EditText)findViewById(R.id.T3);
+        Real_price=(EditText)findViewById(R.id.T4);
+        Off_price=(EditText)findViewById(R.id.T5);
+        city=(EditText)findViewById(R.id.T6);
+        call=(EditText)findViewById(R.id.T7);
+        attributes=(EditText)findViewById(R.id.T8);
+        Tozihat=(EditText)findViewById(R.id.T9);
+        location=(EditText)findViewById(R.id.T10);
+
         send=(Button)findViewById(R.id.send);
+        cam1=(Button)findViewById(R.id.c1);
+        cam2=(Button)findViewById(R.id.c2);
+        cam3=(Button)findViewById(R.id.c3);
+        cam4=(Button)findViewById(R.id.c4);
+        cam5=(Button)findViewById(R.id.c5);
+        rules=(CheckBox)findViewById(R.id.rule);
 
-        city=(EditText)findViewById(R.id.T);
-
-        eng=(RadioButton) findViewById(R.id.eng);
-        per=(RadioButton) findViewById(R.id.per);
 
         city.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                LayoutInflater inflater=(LayoutInflater)getBaseContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                LayoutInflater inflater=(LayoutInflater)getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 CityLayout=inflater.inflate(R.layout.city_layout,null);
+                City_Layout= new PopupWindow(CityLayout, LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
+                City_Layout.showAsDropDown(view);
 
-                City_Layout =new PopupWindow(CityLayout, LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
-                 City_Layout.showAsDropDown(city);
                 City_map();
+
+            }
+        });
+
+
+        call.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LayoutInflater inflater=(LayoutInflater)getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                CallLayout=inflater.inflate(R.layout.call_layout,null);
+                Call_Layout= new PopupWindow(CallLayout, LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
+                Call_Layout.showAsDropDown(view);
+
+                Call_map();
 
             }
         });
@@ -59,7 +81,7 @@ public class Setting extends AppCompatActivity {
         send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tt("اعمال شد.");
+                tt("ارسال شد.");
             }
         });
 
@@ -70,6 +92,7 @@ public class Setting extends AppCompatActivity {
     {
         Toast.makeText(getBaseContext(),s,Toast.LENGTH_SHORT).show();
     }
+
 
 
     public void City_map()
@@ -230,6 +253,17 @@ public class Setting extends AppCompatActivity {
         });
 
     }
+
+    public  void Call_map()
+    {
+        PhoneNum=(EditText)CallLayout.findViewById(R.id.call1);
+        Email=(EditText)CallLayout.findViewById(R.id.Call2);
+
+
+
+        chat=(CheckBox)CallLayout.findViewById(R.id.chat);
+        email_check=(CheckBox)CallLayout.findViewById(R.id.Email_check);
+
+
+    }
 }
-
-

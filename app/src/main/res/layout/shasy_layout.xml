@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingRight="10dp"
+    android:paddingLeft="10dp"
+    >
+
+
+    <TextView
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/popup_background"
+        android:text=")سواری(سدان "
+        android:gravity="center"
+        android:textSize="15dp"
+        android:padding="10dp"
+        android:id="@+id/Tt1"
+        />
+    <TextView
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/popup_background"
+        android:text="هاچ بک"
+        android:gravity="center"
+        android:textSize="15dp"
+        android:padding="10dp"
+        android:id="@+id/Tt2"
+        />
+    <TextView
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/popup_background"
+        android:text="شاسی بلند"
+        android:gravity="center"
+        android:textSize="15dp"
+        android:padding="10dp"
+        android:id="@+id/Tt3"
+        />
+    <TextView
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/popup_background"
+        android:text="وانت"
+        android:gravity="center"
+        android:textSize="15dp"
+        android:padding="10dp"
+        android:id="@+id/Tt4"
+        />
+    <TextView
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/popup_background"
+        android:text="ون"
+        android:gravity="center"
+        android:textSize="15dp"
+        android:padding="10dp"
+        android:id="@+id/Tt5"
+        />
+    <TextView
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/popup_background"
+        android:text="کروک/کوپه"
+        android:gravity="center"
+        android:textSize="15dp"
+        android:padding="10dp"
+        android:id="@+id/Tt6"
+        />
+    <TextView
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/popup_background"
+        android:text="دیگر"
+        android:gravity="center"
+        android:textSize="15dp"
+        android:padding="10dp"
+        android:id="@+id/Tt7"
+        />
+
+</LinearLayout>

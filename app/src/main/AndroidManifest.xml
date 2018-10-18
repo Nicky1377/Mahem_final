@@ -47,7 +47,7 @@
         <activity android:name=".Sargarmi_book" />
         <activity android:name=".Personal" />
         <activity android:name=".Menu1" />
-        <activity android:name=".AboutUs"></activity>
+        <activity android:name=".AboutUs" />
         <activity android:name=".ContactUs" />
         <activity android:name=".Laws" />
         <activity android:name=".Register" />
@@ -55,6 +55,15 @@
         <activity android:name=".Off_Finder" />
         <activity android:name=".CodeVerification" />
         <activity android:name=".Setting" />
+        <activity android:name=".SabtAgahi" />
+        <activity android:name=".SabtAgahi_other" />
+        <activity android:name=".SabtAgahi_Takhfif" />
+        <activity android:name=".SabtAgahi_Estekhdam" />
+        <activity android:name=".SabtAgahi_Car" />
+        <activity android:name=".SabtAgahi_Amlak_Home" />
+        <activity android:name=".SabtAgahi_Amlak_Office" />
+        <activity android:name=".Search" />
+        <activity android:name=".SabtAgahi_Home_Office"></activity>
     </application>
 
 </manifest>

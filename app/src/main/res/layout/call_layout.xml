@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingRight="10dp"
+    android:paddingLeft="10dp"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#d5d6d6">
+<LinearLayout
+    android:layout_width="380dp"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="#d5d6d6">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="*******شماره موبایل شما : 0911 "
+        android:backgroundTint="@color/backColor"
+        android:layout_margin="3dp"
+        android:gravity="center"
+        android:paddingRight="15dp"
+        android:id="@+id/call1"
+        android:textSize="15dp"
+       />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="کد تایید به شماره موبایل شما ارسال خواهد شد
+تماس و چت نیز با این شماره انجام می شود."
+        android:gravity="center"
+        android:paddingBottom="5dp"/>
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="شماره موبایل"
+        android:layout_weight="3"
+        android:textSize="17dp"
+        android:paddingRight="10dp"/>
+</LinearLayout>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="فعال کردن چت"
+        android:gravity="right|center"
+        android:layout_gravity="right"
+        android:foregroundGravity="right"
+        android:id="@+id/chat"
+        />
+        <LinearLayout
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#d5d6d6">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="ایمیل شما : gmail.com@***"
+                    android:backgroundTint="@color/backColor"
+                    android:layout_margin="3dp"
+                    android:gravity="center"
+                    android:paddingRight="15dp"
+                    android:id="@+id/Call2"
+                    android:textSize="15dp"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="آدرس ایمیل خود را به درستی وارد کنید لینک
+مدیریت آگهی ، به ایمیل شما ارسال خواهد شد."
+                    android:gravity="center"
+                    android:paddingBottom="5dp"/>
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ایمیل"
+                android:layout_weight="3"
+                android:textSize="17dp"
+                android:paddingRight="10dp"/>
+        </LinearLayout>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="عدم نمایش ایمیل در آگهی"
+            android:gravity="right|center"
+            android:layout_gravity="right"
+            android:foregroundGravity="right"
+            android:id="@+id/Email_check"
+            />
+
+</LinearLayout>
+</LinearLayout>

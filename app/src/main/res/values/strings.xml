@@ -24,5 +24,6 @@
     <string name="gallery">گالری</string>
     <string name="title">عنوان</string>
     <string name="time">زمان انتشار</string>
+    <string name="title_activity_job_bank_medicine">JobBank_medicine</string>
 
 </resources>

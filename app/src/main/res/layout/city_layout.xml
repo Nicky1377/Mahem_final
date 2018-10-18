@@ -14,7 +14,7 @@
     <TextView
         android:layout_width="380dp"
         android:layout_height="wrap_content"
-        android:background="#d5d6d6"
+        android:background="@drawable/popup_background"
         android:text="گنبد کاووس"
         android:gravity="center"
         android:textSize="15dp"
@@ -25,7 +25,7 @@
     <TextView
         android:layout_width="380dp"
         android:layout_height="wrap_content"
-        android:background="#d5d6d6"
+        android:background="@drawable/popup_background"
         android:text="گرگان"
         android:gravity="center"
         android:textSize="15dp"
@@ -35,7 +35,7 @@
     <TextView
         android:layout_width="380dp"
         android:layout_height="wrap_content"
-        android:background="#d5d6d6"
+        android:background="@drawable/popup_background"
         android:text="علی آباد"
         android:gravity="center"
         android:textSize="15dp"
@@ -45,7 +45,7 @@
     <TextView
         android:layout_width="380dp"
         android:layout_height="wrap_content"
-        android:background="#d5d6d6"
+        android:background="@drawable/popup_background"
         android:text="کلاله"
         android:gravity="center"
         android:textSize="15dp"
@@ -55,7 +55,7 @@
     <TextView
         android:layout_width="380dp"
         android:layout_height="wrap_content"
-        android:background="#d5d6d6"
+        android:background="@drawable/popup_background"
         android:text="آزادشهر"
         android:gravity="center"
         android:textSize="15dp"
@@ -65,7 +65,7 @@
     <TextView
         android:layout_width="380dp"
         android:layout_height="wrap_content"
-        android:background="#d5d6d6"
+        android:background="@drawable/popup_background"
         android:text="کردکوی"
         android:gravity="center"
         android:textSize="15dp"
@@ -75,7 +75,7 @@
     <TextView
         android:layout_width="380dp"
         android:layout_height="wrap_content"
-        android:background="#d5d6d6"
+        android:background="@drawable/popup_background"
         android:text="آق قلا"
         android:gravity="center"
         android:textSize="15dp"
@@ -85,7 +85,7 @@
     <TextView
         android:layout_width="380dp"
         android:layout_height="wrap_content"
-        android:background="#d5d6d6"
+        android:background="@drawable/popup_background"
         android:text="مینودشت"
         android:gravity="center"
         android:textSize="15dp"
@@ -95,7 +95,7 @@
     <TextView
         android:layout_width="380dp"
         android:layout_height="wrap_content"
-        android:background="#d5d6d6"
+        android:background="@drawable/popup_background"
         android:text="بندر ترکمن"
         android:gravity="center"
         android:textSize="15dp"
@@ -105,7 +105,7 @@
     <TextView
         android:layout_width="380dp"
         android:layout_height="wrap_content"
-        android:background="#d5d6d6"
+        android:background="@drawable/popup_background"
         android:text="رامیان"
         android:gravity="center"
         android:textSize="15dp"
@@ -115,7 +115,7 @@
     <TextView
         android:layout_width="380dp"
         android:layout_height="wrap_content"
-        android:background="#d5d6d6"
+        android:background="@drawable/popup_background"
         android:text="مراوه تپه"
         android:gravity="center"
         android:textSize="15dp"
@@ -125,7 +125,7 @@
     <TextView
         android:layout_width="380dp"
         android:layout_height="wrap_content"
-        android:background="#d5d6d6"
+        android:background="@drawable/popup_background"
         android:text="گالیکش"
         android:gravity="center"
         android:textSize="15dp"
@@ -135,7 +135,7 @@
     <TextView
         android:layout_width="380dp"
         android:layout_height="wrap_content"
-        android:background="#d5d6d6"
+        android:background="@drawable/popup_background"
         android:text="بندر گز"
         android:gravity="center"
         android:textSize="15dp"
@@ -145,7 +145,7 @@
     <TextView
         android:layout_width="380dp"
         android:layout_height="wrap_content"
-        android:background="#d5d6d6"
+        android:background="@drawable/popup_background"
         android:text="گمیشان"
         android:gravity="center"
         android:textSize="15dp"
