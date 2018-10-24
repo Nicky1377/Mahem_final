@@ -1,4 +1,4 @@
-package com.example.mohsal.bottomsheetmahem;
+package android.niky.mahem_final;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -7,9 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * Created by mohsal on 10/19/2018.
- */
 
 public class Bottom_Sheet extends BottomSheetDialogFragment {
     @Nullable
