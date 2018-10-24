@@ -19,7 +19,7 @@ public class Filter_Home extends AppCompatActivity {
     View HoomeLayout,TypeLayout,GheimatLayout,GheimatMoredNazarLayout;
     TextView Type_1,Type_2,Type_3,Gh_1,Gh_2,Gh_3,Gh_4,yes,no;
     CheckBox rahn_To_ejareh;
-    Button send,newest,expensive,cheap;
+    Button send,newest,expensive,cheap,ok;
     PopupWindow Type_Layout,Hoome_Layout,Gheimat_Layout,Gheimat_Mored_Nazar_Layout;
 
 
@@ -86,7 +86,13 @@ public class Filter_Home extends AppCompatActivity {
         send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Send_Filter_Home(rooms.getText().toString(),
+                        meter.getText().toString()
+                ,Gheimat.getText().toString()
+                ,hoome.getText().toString());
+
                 tt("اعمال شد.");
+
             }
         });
 
@@ -152,6 +158,13 @@ public class Filter_Home extends AppCompatActivity {
         rahn=(EditText)GheimatMoredNazarLayout.findViewById(R.id.call1);
         ejareh=(EditText)GheimatMoredNazarLayout.findViewById(R.id.Call2);
         rahn_To_ejareh=(CheckBox)GheimatMoredNazarLayout.findViewById(R.id.RTE);
+        ok=(Button)GheimatMoredNazarLayout.findViewById(R.id.ok);
+        ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Gheimat_Mored_Nazar_Layout.dismiss();
+            }
+        });
 
     }
 
@@ -213,4 +226,8 @@ public class Filter_Home extends AppCompatActivity {
 
     }
 
+    public void Send_Filter_Home(String room,String meter,String Gheimat,String hoome)
+    {
+
+    }
 }

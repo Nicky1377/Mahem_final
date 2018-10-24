@@ -70,7 +70,8 @@
         <activity android:name=".Filter_Home" />
         <activity android:name=".Filter_Estekhdami_monshi_fani" />
         <activity android:name=".Filter_other" />
-        <activity android:name=".Estekhdami" />
+        <activity android:name=".Bottomsheet_All_takhfif"/>
+        <activity android:name=".BottomSheetMahem"/>
     </application>
 
 </manifest>

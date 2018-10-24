@@ -19,7 +19,7 @@ public class SabtAgahi_Amlak_Office extends AppCompatActivity {
     View CallLayout,TypeLayout,AgahiDahandeLayout,GheimatLayout,MelkTypeLayout,GheimatMoredNazarLayout;
     TextView Type_1,Type_2,agahiD_1,agahiD_2,Gh_1,Gh_2,Gh_3,Gh_4,M_T_1,M_T_2,M_T_3,M_T_4;
     CheckBox rules,chat,email_check,rahn_To_ejareh;
-    Button send,cam1,cam2,cam3,cam4,cam5;
+    Button send,cam1,cam2,cam3,cam4,cam5,ok,ok_call;
     PopupWindow Type_Layout,Call_Layout,Gheimat_Layout,agahiD_Layout,Melk_type_Layout,Gheimat_Mored_Nazar_Layout;
 
     @Override
@@ -216,6 +216,13 @@ public class SabtAgahi_Amlak_Office extends AppCompatActivity {
         rahn=(EditText)GheimatMoredNazarLayout.findViewById(R.id.call1);
         ejareh=(EditText)GheimatMoredNazarLayout.findViewById(R.id.Call2);
         rahn_To_ejareh=(CheckBox)GheimatMoredNazarLayout.findViewById(R.id.RTE);
+        ok=(Button)GheimatMoredNazarLayout.findViewById(R.id.ok);
+        ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Gheimat_Mored_Nazar_Layout.dismiss();
+            }
+        });
 
     }
 
@@ -224,7 +231,13 @@ public class SabtAgahi_Amlak_Office extends AppCompatActivity {
         PhoneNum=(EditText)CallLayout.findViewById(R.id.call1);
         Email=(EditText)CallLayout.findViewById(R.id.Call2);
 
-
+        ok_call=(Button)CallLayout.findViewById(R.id.ok);
+        ok_call.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Call_Layout.dismiss();
+            }
+        });
 
         chat=(CheckBox)CallLayout.findViewById(R.id.chat);
         email_check=(CheckBox)CallLayout.findViewById(R.id.Email_check);

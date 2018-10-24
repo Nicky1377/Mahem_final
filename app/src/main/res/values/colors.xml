@@ -6,6 +6,7 @@
 
     <color name="colorDefaultBackground">#EEEEEE</color>
     <color name="colorBorders">#95989A</color>
+    <color name="colorTransparent">#00000000</color>
 
     <color name="backColor">#E40000</color>
 

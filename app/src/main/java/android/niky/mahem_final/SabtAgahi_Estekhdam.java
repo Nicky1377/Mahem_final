@@ -21,7 +21,7 @@ public class SabtAgahi_Estekhdam extends AppCompatActivity {
     View CallLayout,EducationLayout,GharardadLayout;
     TextView Ed_1,Ed_2,Ed_3,Ed_4,Ed_5,Ed_6,Gh_1,Gh_2,Gh_3,Gh_4;
     CheckBox rules,chat,email_check;
-    Button send,cam1,cam2,cam3,cam4,cam5;
+    Button send,cam1,cam2,cam3,cam4,cam5,ok_call;
     PopupWindow Ed_Layout,Call_Layout,Gh_Layout;
 
 
@@ -106,10 +106,17 @@ public class SabtAgahi_Estekhdam extends AppCompatActivity {
         PhoneNum=(EditText)CallLayout.findViewById(R.id.call1);
         Email=(EditText)CallLayout.findViewById(R.id.Call2);
 
-
+        ok_call=(Button)CallLayout.findViewById(R.id.ok);
+        ok_call.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Call_Layout.dismiss();
+            }
+        });
 
         chat=(CheckBox)CallLayout.findViewById(R.id.chat);
         email_check=(CheckBox)CallLayout.findViewById(R.id.Email_check);
+
 
 
     }

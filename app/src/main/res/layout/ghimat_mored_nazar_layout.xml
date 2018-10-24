@@ -97,5 +97,12 @@
                 android:text="قابلیت تبدیل رهن به اجاره"
                 android:id="@+id/RTE"/>
         </RelativeLayout>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OK"
+            android:textSize="20dp"
+            android:id="@+id/ok"/>
+
     </LinearLayout>
 </LinearLayout>

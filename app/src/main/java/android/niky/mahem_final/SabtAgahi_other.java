@@ -10,6 +10,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -44,15 +45,13 @@ EditText Group,Title,Type,Gheimat,Tozihat,location;
 
         rules=(CheckBox)findViewById(R.id.rule);
 
-        LayoutInflater inflater=(LayoutInflater)getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        TypeLayout=inflater.inflate(R.layout.type_layout,null);
-        GheimatLayout=inflater.inflate(R.layout.gheimat_layout,null);
 
         Gheimat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                Gheimat_Layout=popupDisplay(GheimatLayout);
+                LayoutInflater inflater=(LayoutInflater)getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                GheimatLayout=inflater.inflate(R.layout.gheimat_layout,null);
+                Gheimat_Layout= new PopupWindow(GheimatLayout, LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
                 Gheimat_Layout.showAsDropDown(view);
 
                 Gheimat_map();
@@ -63,8 +62,9 @@ EditText Group,Title,Type,Gheimat,Tozihat,location;
         Type.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                Type_Layout=popupDisplay(TypeLayout);
+                LayoutInflater inflater=(LayoutInflater)getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                TypeLayout=inflater.inflate(R.layout.type_layout,null);
+                Type_Layout= new PopupWindow(TypeLayout, LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
                 Type_Layout.showAsDropDown(view);
 
                 Type_map();
@@ -98,16 +98,6 @@ EditText Group,Title,Type,Gheimat,Tozihat,location;
     }
 
 
-    public PopupWindow popupDisplay(View view)
-    {
-        final PopupWindow popupWindow=new PopupWindow(this);
-        LayoutInflater inflater=(LayoutInflater)getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        popupWindow.setFocusable(true);
-        popupWindow.setWidth(WindowManager.LayoutParams.WRAP_CONTENT);
-        popupWindow.setHeight(WindowManager.LayoutParams.WRAP_CONTENT);
-        popupWindow.setContentView(view);
-        return popupWindow;
-    }
 
     public void Type_map()
     {

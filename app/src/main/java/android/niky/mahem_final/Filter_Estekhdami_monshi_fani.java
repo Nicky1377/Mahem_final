@@ -3,6 +3,7 @@ package android.niky.mahem_final;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
@@ -100,6 +101,9 @@ public class Filter_Estekhdami_monshi_fani extends AppCompatActivity {
         send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                Send_Filter_Estekhdami(EducationLevel.getText().toString(),Gharardad.getText().toString()
+                        ,city.getText().toString(),pic.getText().toString());
                 tt("اعمال شد.");
             }
         });
@@ -398,4 +402,8 @@ public class Filter_Estekhdami_monshi_fani extends AppCompatActivity {
 
     }
 
+    public void Send_Filter_Estekhdami(String Ed, String Gh, String city, String pic)
+    {
+
+    }
 }

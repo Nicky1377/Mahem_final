@@ -23,7 +23,7 @@ public class SabtAgahi_Car extends AppCompatActivity {
     TextView Type_1,Type_2,Type_3,agahiD_1,agahiD_2,Gh_1,Gh_2,Gh_3,Gh_4,Sh_1,Sh_2,Sh_3,Sh_4,Sh_5,Sh_6,Sh_7
             ,naghd_1,naghd_2;
     CheckBox rules,chat,email_check;
-    Button send,cam1,cam2,cam3,cam4,cam5;
+    Button send,cam1,cam2,cam3,cam4,cam5,ok_call;
     PopupWindow Type_Layout,Call_Layout,Gheimat_Layout,agahiD_Layout,Shasy_type_Layout,Naghd_Layout;
 
     PopupMenu popup;
@@ -192,10 +192,17 @@ public class SabtAgahi_Car extends AppCompatActivity {
         PhoneNum=(EditText)CallLayout.findViewById(R.id.call1);
         Email=(EditText)CallLayout.findViewById(R.id.Call2);
 
-
+        ok_call=(Button)CallLayout.findViewById(R.id.ok);
+        ok_call.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Call_Layout.dismiss();
+            }
+        });
 
         chat=(CheckBox)CallLayout.findViewById(R.id.chat);
         email_check=(CheckBox)CallLayout.findViewById(R.id.Email_check);
+
 
 
     }
