@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/colorTransparent"
+    android:background="#00ffffff"
     >
 
 <ImageView
@@ -11,6 +12,7 @@
     android:layout_height="100dp"
     android:src="@drawable/circle_imageview"
     android:layout_centerHorizontal="true"
+    style="@style/Base.Widget.AppCompat.AutoCompleteTextView"
     />
 
     <LinearLayout

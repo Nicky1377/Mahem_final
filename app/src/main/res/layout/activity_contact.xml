@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:orientation="horizontal"
+        android:gravity="right"
+        >
+
+        <ImageView
+            android:id="@+id/ic_logo"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/ic_launcher_llogo" />
+    </LinearLayout>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_contact"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    tools:context=".contact"
+    >
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:text="اطلاعات تماس"
+        android:textSize="25sp"
+        android:layout_margin="10dp"
+        android:textColor="@color/colorPrimaryDark"
+        />
+    <RelativeLayout
+        android:id="@+id/call"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/tv">
+
+        <ImageView
+
+            android:id="@+id/clogo"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:src="@drawable/phone"
+            android:layout_margin="10dp"
+            android:layout_alignParentRight="true"
+            />
+        <TextView
+
+            android:id="@+id/call_txt"
+            android:layout_toLeftOf="@id/clogo"
+
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:textSize="20sp"
+
+            />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/Message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/call">
+        <ImageView
+            android:id="@+id/mlogo"
+
+
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:src="@drawable/msg"
+            android:layout_margin="10dp"
+            android:layout_alignParentRight="true"
+            />
+        <TextView
+            android:id="@+id/sms_txt"
+            android:layout_margin="10dp"
+            android:layout_toLeftOf="@id/mlogo"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textSize="20sp"
+
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/Email"
+        android:layout_below="@id/Message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/elogo"
+            android:layout_margin="10dp"
+
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:src="@drawable/email"
+            android:layout_alignParentRight="true"
+            />
+        <TextView
+
+
+            android:id="@+id/mail_txt"
+            android:layout_toLeftOf="@id/elogo"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+
+            android:textSize="18sp"
+            /></RelativeLayout>
+    <TextView
+        android:layout_below="@id/Email"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:textSize="15sp"
+        android:text="هشدارپلیس : لطفا پیش از انجام معامله و هرنوع پرداخت وجه ، از صحت کالا یا خدمات ارائه شده ، به صورت حضوری اطمینان حاصل نمایید. "
+android:id="@+id/tt"        />
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#f9f9f9"
+    android:textColor="#e30001"
+    android:text="بیخیال"
+    android:textSize="20dp"
+    android:layout_below="@+id/tt"/>
+</RelativeLayout>
+    <include
+        layout="@layout/bottom_navigation"
+       android:id="@+id/rr" ></include>
+
+</LinearLayout>

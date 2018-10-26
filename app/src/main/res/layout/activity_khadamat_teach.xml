@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Khadamat_teach">
+    tools:context=".Groups.Khadamat_teach">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
