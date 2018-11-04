@@ -10,10 +10,13 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class SabtAgahi_Estekhdam extends AppCompatActivity {
 
@@ -24,6 +27,10 @@ public class SabtAgahi_Estekhdam extends AppCompatActivity {
     CheckBox rules,chat,email_check;
     Button send,cam1,cam2,cam3,cam4,cam5,ok_call;
     PopupWindow Ed_Layout,Call_Layout,Gh_Layout;
+    ArrayList<Button> btns;
+    ImageView map_img;
+
+    int pic=0;
 
 
     @Override
@@ -40,6 +47,8 @@ public class SabtAgahi_Estekhdam extends AppCompatActivity {
         call=(EditText)findViewById(R.id.T6);
         location=(EditText)findViewById(R.id.T7);
 
+        map_img=(ImageView)findViewById(R.id.map_img);
+
         send=(Button)findViewById(R.id.send);
         cam1=(Button)findViewById(R.id.c1);
         cam2=(Button)findViewById(R.id.c2);
@@ -47,6 +56,26 @@ public class SabtAgahi_Estekhdam extends AppCompatActivity {
         cam4=(Button)findViewById(R.id.c4);
         cam5=(Button)findViewById(R.id.c5);
         rules=(CheckBox)findViewById(R.id.rule);
+
+        btns=new ArrayList<Button>(5);
+        btns.add(cam1);
+        btns.add(cam2);
+        btns.add(cam3);
+        btns.add(cam4);
+        btns.add(cam5);
+
+        for(Button item:btns)
+        {
+            item.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    pic++;
+                    //  pick();
+
+
+                }
+            });
+        }
 
 
         call.setOnClickListener(new View.OnClickListener() {
@@ -86,6 +115,13 @@ public class SabtAgahi_Estekhdam extends AppCompatActivity {
             }
         });
 
+        map_img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //intent to google map
+            }
+        });
+
         send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -111,7 +147,15 @@ public class SabtAgahi_Estekhdam extends AppCompatActivity {
         ok_call.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Call_Layout.dismiss();
+
+                if(PhoneNum.getText().toString().equals(""))
+                {
+                    PhoneNum.setError("لطفا شماره تماس را وارد کنید.");
+                }
+                else{
+                    call.setText(PhoneNum.getText().toString());
+                    Call_Layout.dismiss();
+                }
             }
         });
 

@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
@@ -25,6 +26,8 @@ EditText Group,Title,Type,Gheimat,Tozihat,location;
     Button send,cam1,cam2,cam3,cam4,cam5;
     PopupWindow Type_Layout,Gheimat_Layout;
     ArrayList<Button> btns;
+    ImageView map_img;
+
     int pic=0;
 
     @Override
@@ -39,6 +42,8 @@ EditText Group,Title,Type,Gheimat,Tozihat,location;
         Gheimat=(EditText)findViewById(R.id.T4);
         Tozihat=(EditText)findViewById(R.id.T5);
         location=(EditText)findViewById(R.id.T6);
+
+        map_img=(ImageView)findViewById(R.id.map_img);
 
         send=(Button)findViewById(R.id.send);
         cam1=(Button)findViewById(R.id.c1);
@@ -96,6 +101,12 @@ EditText Group,Title,Type,Gheimat,Tozihat,location;
         });
 
 
+        map_img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //intent to google map
+            }
+        });
 
         send.setOnClickListener(new View.OnClickListener() {
             @Override

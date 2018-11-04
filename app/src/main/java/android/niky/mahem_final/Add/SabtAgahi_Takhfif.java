@@ -10,6 +10,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
@@ -24,9 +25,11 @@ public class SabtAgahi_Takhfif extends AppCompatActivity {
     View CallLayout,CityLayout;
     TextView city_1,city_2,city_3,city_4,city_5,city_6,city_7,city_8,city_9,city_10,city_11,city_12,city_13,city_14;
     CheckBox rules,chat,email_check;
-    Button send,cam1,cam2,cam3,cam4,cam5;
+    Button send,cam1,cam2,cam3,cam4,cam5,ok_call;
     PopupWindow City_Layout,Call_Layout;
     ArrayList<Button> btns;
+    ImageView map_img;
+
     int pic=0;
 
     @Override
@@ -285,10 +288,25 @@ public class SabtAgahi_Takhfif extends AppCompatActivity {
         PhoneNum=(EditText)CallLayout.findViewById(R.id.call1);
         Email=(EditText)CallLayout.findViewById(R.id.Call2);
 
+        ok_call=(Button)CallLayout.findViewById(R.id.ok);
+        ok_call.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+                if(PhoneNum.getText().toString().equals(""))
+                {
+                    PhoneNum.setError("لطفا شماره تماس را وارد کنید.");
+                }
+                else{
+                    call.setText(PhoneNum.getText().toString());
+                    Call_Layout.dismiss();
+                }
+            }
+        });
 
         chat=(CheckBox)CallLayout.findViewById(R.id.chat);
         email_check=(CheckBox)CallLayout.findViewById(R.id.Email_check);
+
 
 
     }

@@ -280,6 +280,13 @@
                         android:layout_centerInParent="true"
                         android:id="@+id/rule"/>
                 </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/map_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:src="@drawable/google_maps"
+                    android:scaleType="fitXY" />
             </LinearLayout>
         </ScrollView>
 

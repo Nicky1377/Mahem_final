@@ -18,6 +18,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
@@ -37,6 +38,8 @@ public class SabtAgahi_Amlak_Home extends AppCompatActivity {
     Button send,cam1,cam2,cam3,cam4,cam5,ok,ok_call;
     PopupWindow Type_Layout,Call_Layout,Gheimat_Layout,agahiD_Layout,Melk_type_Layout,Gheimat_Mored_Nazar_Layout;
     ArrayList<Button> btns;
+    ImageView map_img;
+
     int pic=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +57,8 @@ public class SabtAgahi_Amlak_Home extends AppCompatActivity {
         call=(EditText)findViewById(R.id.T8);
         Tozihat=(EditText)findViewById(R.id.T9);
         location=(EditText)findViewById(R.id.T10);
+
+        map_img=(ImageView)findViewById(R.id.map_img);
 
         send=(Button)findViewById(R.id.send);
         cam1=(Button)findViewById(R.id.c1);
@@ -146,7 +151,12 @@ for(Button item:btns)
             }
         });
 
-
+    map_img.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            //intent to google map
+        }
+    });
 
         Toast.makeText(this,getLocalClassName().toString()+"\nNiky",Toast.LENGTH_LONG).show();
 
@@ -262,7 +272,15 @@ for(Button item:btns)
         ok_call.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-        Call_Layout.dismiss();
+
+            if(PhoneNum.getText().toString().equals(""))
+            {
+                PhoneNum.setError("لطفا شماره تماس را وارد کنید.");
+            }
+            else{
+                call.setText(PhoneNum.getText().toString());
+            Call_Layout.dismiss();
+            }
         }
         });
 

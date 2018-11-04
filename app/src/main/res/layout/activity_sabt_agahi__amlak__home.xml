@@ -5,205 +5,211 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Add.SabtAgahi_Amlak_Office">
+
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/activity_norm"
-        android:layout_width="match_parent"
+        android:layout_width="385dp"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         tools:context="android.niky.sabtagahi.Norm"
-        android:orientation="vertical">
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp"
+        tools:ignore="MissingConstraints">
+
         <View
             android:layout_width="match_parent"
-            android:layout_height="1dp"/>
-        <RelativeLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_height="1dp" />
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary">
+
             <Button
+                android:id="@+id/send"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="ارسال"
-                android:textColor="@android:color/white"
-                android:background="@color/colorPrimary"
-                android:textSize="20dp"
-                android:drawableLeft="@mipmap/ic_check"
                 android:layout_alignParentLeft="true"
                 android:layout_centerHorizontal="true"
-                android:id="@+id/send"
-                android:paddingRight="10dp"/>
+                android:background="@color/colorPrimary"
+                android:drawableLeft="@mipmap/ic_check"
+                android:paddingRight="10dp"
+                android:text="ارسال"
+                android:textColor="@android:color/white"
+                android:textSize="20dp" />
 
             <TextView
+                android:id="@+id/title"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:textColor="@android:color/white"
-                android:id="@+id/title"
-                android:textSize="24dp"
-                android:text="ثبت رایگان آگهی"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="5dp"
                 android:gravity="center"
                 android:padding="2dp"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="5dp"/>
+                android:text="ثبت رایگان آگهی"
+                android:textColor="@android:color/white"
+                android:textSize="24dp" />
         </RelativeLayout>
 
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="1dp"/>
+            android:layout_height="1dp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:padding="5dp"
             android:text="انتخاب تصویر مناسب برای آگهی"
-            android:gravity="center"
+            android:textColor="@android:color/black"
             android:textSize="23dp"
-            android:textStyle="bold"
-            android:padding="5dp"
-            android:background="@color/colorPrimary"
-            android:textColor="@android:color/black"/>
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="آگهی های شامل تصویر،بیش از 5 برابر دیده می شوند."
-            android:gravity="center"
-            android:textSize="17dp"
-            android:padding="5dp"
             android:background="@color/colorPrimary"
-            android:textColor="@android:color/black"/>
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="آگهی های شامل تصویر،بیش از 5 برابر دیده می شوند."
+            android:textColor="@android:color/black"
+            android:textSize="17dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:background="@color/colorPrimary"
-            android:padding="5dp"
-            android:orientation="horizontal">
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/button"
-                android:layout_margin="3dp"
-                android:layout_weight="1"
-                android:drawableBottom="@drawable/icons88"
-                android:clickable="true"
-                android:padding="2dp"
-                android:id="@+id/c1"
-                />
+            android:orientation="horizontal"
+            android:padding="5dp">
 
             <Button
+                android:id="@+id/c1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/button"
                 android:layout_margin="3dp"
                 android:layout_weight="1"
-                android:drawableBottom="@drawable/icons88"
+                android:background="@drawable/button"
                 android:clickable="true"
-                android:padding="2dp"
+                android:drawableBottom="@drawable/icons88"
+                android:padding="2dp" />
+
+            <Button
                 android:id="@+id/c2"
-                />
-            <Button
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/button"
                 android:layout_margin="3dp"
                 android:layout_weight="1"
-                android:drawableBottom="@drawable/icons88"
+                android:background="@drawable/button"
                 android:clickable="true"
-                android:padding="2dp"
+                android:drawableBottom="@drawable/icons88"
+                android:padding="2dp" />
+
+            <Button
                 android:id="@+id/c3"
-                />
-            <Button
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/button"
                 android:layout_margin="3dp"
                 android:layout_weight="1"
-                android:drawableBottom="@drawable/icons88"
+                android:background="@drawable/button"
                 android:clickable="true"
-                android:padding="2dp"
+                android:drawableBottom="@drawable/icons88"
+                android:padding="2dp" />
+
+            <Button
                 android:id="@+id/c4"
-                />
-            <Button
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/button"
                 android:layout_margin="3dp"
                 android:layout_weight="1"
-                android:drawableBottom="@drawable/icons88"
+                android:background="@drawable/button"
                 android:clickable="true"
-                android:padding="2dp"
+                android:drawableBottom="@drawable/icons88"
+                android:padding="2dp" />
+
+            <Button
                 android:id="@+id/c5"
-                />
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="3dp"
+                android:layout_weight="1"
+                android:background="@drawable/button"
+                android:clickable="true"
+                android:drawableBottom="@drawable/icons88"
+                android:padding="2dp" />
 
         </LinearLayout>
+
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+
                 <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="مسکونی/املاک"
-                    android:backgroundTint="@color/backColor"
-                    android:layout_margin="3dp"
-                    android:gravity="right"
-                    android:paddingRight="15dp"
                     android:id="@+id/T1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:backgroundTint="@color/backColor"
+                    android:focusable="false"
+                    android:gravity="right"
                     android:inputType="none"
-                    android:focusable="false"/>
+                    android:paddingRight="15dp"
+                    android:text="مسکونی/املاک" />
 
 
                 <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="عنوان آگهی« حداقل 10  حرف»"
-                    android:backgroundTint="@color/backColor"
-                    android:layout_margin="3dp"
-                    android:gravity="right"
-                    android:paddingRight="15dp"
                     android:id="@+id/T2"
-                    />
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:backgroundTint="@color/backColor"
+                    android:gravity="right"
+                    android:hint="عنوان آگهی« حداقل 10  حرف»"
+                    android:paddingRight="15dp" />
 
 
                 <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="نوع ملک"
-                    android:backgroundTint="@color/backColor"
-                    android:layout_margin="3dp"
-                    android:gravity="right"
-                    android:paddingRight="15dp"
                     android:id="@+id/T3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:backgroundTint="@color/backColor"
+                    android:focusable="false"
+                    android:gravity="right"
+                    android:hint="نوع ملک"
                     android:inputType="none"
-                    android:focusable="false"/>
+                    android:paddingRight="15dp" />
 
 
                 <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint=" )متر مربع(متراژ"
-                    android:backgroundTint="@color/backColor"
-                    android:layout_margin="3dp"
-                    android:gravity="right"
-                    android:paddingRight="15dp"
                     android:id="@+id/T4"
-                    />
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:backgroundTint="@color/backColor"
+                    android:gravity="right"
+                    android:hint=" )متر مربع(متراژ"
+                    android:paddingRight="15dp" />
 
 
                 <EditText
+                    android:id="@+id/T5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="نوع آگهی"
-                    android:backgroundTint="@color/backColor"
                     android:layout_margin="3dp"
+                    android:backgroundTint="@color/backColor"
+                    android:focusable="false"
                     android:gravity="right"
-                    android:paddingRight="15dp"
-                    android:id="@+id/T5"
+                    android:hint="نوع آگهی"
                     android:inputType="none"
-                    android:focusable="false"/>
+                    android:paddingRight="15dp" />
 
 
                 <EditText
@@ -212,74 +218,78 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
                     android:backgroundTint="@color/backColor"
+                    android:focusable="false"
                     android:gravity="right"
                     android:hint="نوع آگهی دهنده"
-                    android:paddingRight="15dp"
                     android:inputType="none"
-                    android:focusable="false"/>
+                    android:paddingRight="15dp" />
 
                 <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="قیمت"
-                    android:backgroundTint="@color/backColor"
-                    android:layout_margin="3dp"
-                    android:gravity="right"
-                    android:paddingRight="15dp"
                     android:id="@+id/T7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:backgroundTint="@color/backColor"
+                    android:focusable="false"
+                    android:gravity="right"
+                    android:hint="قیمت"
                     android:inputType="none"
-                    android:focusable="false"/>
+                    android:paddingRight="15dp" />
 
 
                 <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="اطلاعات تماس"
-                    android:backgroundTint="@color/backColor"
-                    android:layout_margin="3dp"
-                    android:gravity="right"
-                    android:paddingRight="15dp"
-                    android:id="@+id/T8"
-                    android:inputType="none"
-                    android:focusable="false"/>
-
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="توضیحات"
-                    android:backgroundTint="@color/backColor"
-                    android:layout_margin="3dp"
-                    android:gravity="right"
-                    android:paddingRight="15dp"
                     android:id="@+id/T9"
-                    />
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:backgroundTint="@color/backColor"
+                    android:gravity="right"
+                    android:hint="توضیحات"
+                    android:paddingRight="15dp" />
+
+                <EditText
+                    android:id="@+id/T8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:backgroundTint="@color/backColor"
+                    android:focusable="false"
+                    android:gravity="right"
+                    android:hint="اطلاعات تماس"
+                    android:inputType="none"
+                    android:paddingRight="15dp" />
 
 
                 <EditText
+                    android:id="@+id/T10"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="تعیین موقعیت"
-                    android:backgroundTint="@color/backColor"
                     android:layout_margin="3dp"
+                    android:backgroundTint="@color/backColor"
                     android:gravity="right"
-                    android:paddingRight="15dp"
-                    android:id="@+id/T10"
-                    />
-
+                    android:hint="تعیین موقعیت"
+                    android:paddingRight="15dp" />
 
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp">
+
                     <CheckBox
+                        android:id="@+id/rule"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="با قوانین و شرایط موافقم"
                         android:layout_centerInParent="true"
-                        android:id="@+id/rule"/>
+                        android:text="با قوانین و شرایط موافقم" />
                 </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/map_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:src="@drawable/google_maps"
+                    android:scaleType="fitXY" />
             </LinearLayout>
         </ScrollView>
 

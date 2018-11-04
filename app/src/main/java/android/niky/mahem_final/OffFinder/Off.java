@@ -36,7 +36,7 @@ public class Off extends AppCompatActivity {
 
     List<Takhfif> TList;
     TAdapter adapter;
-    SeekBar seek_bar;
+
     TextView distance;
 
     private ArrayList<String> last_c=new ArrayList<String>() {
@@ -109,11 +109,7 @@ public class Off extends AppCompatActivity {
 
         }
 
-
-
-
-
-//      map();
+        map();
         cities();
         Toast.makeText(this, getLocalClassName().toString() + "\nMohadese Salem", Toast.LENGTH_LONG).show();
 
@@ -153,9 +149,6 @@ public class Off extends AppCompatActivity {
 
     }
 
-    public void nav_map()
-    {
-    }
 
     public void Bottom_click()
     {
@@ -166,7 +159,6 @@ public class Off extends AppCompatActivity {
         RelativeLayout.LayoutParams params=new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         params.addRule(RelativeLayout.ALIGN_TOP,R.layout.near_me_bottom_sheet);
         imageView.setLayoutParams(params);
-              //  nav_map();
     }
 
 
