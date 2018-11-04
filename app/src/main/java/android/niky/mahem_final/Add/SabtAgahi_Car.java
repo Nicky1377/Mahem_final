@@ -16,6 +16,8 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class SabtAgahi_Car extends AppCompatActivity {
     EditText Group,Title,brand,shasy_typpe,naghd,year,K_meter,Gheimat,AgahiDahande_type,Type,call,Tozihat,location
             ,PhoneNum,Email;
@@ -25,6 +27,8 @@ public class SabtAgahi_Car extends AppCompatActivity {
     CheckBox rules,chat,email_check;
     Button send,cam1,cam2,cam3,cam4,cam5,ok_call;
     PopupWindow Type_Layout,Call_Layout,Gheimat_Layout,agahiD_Layout,Shasy_type_Layout,Naghd_Layout;
+    ArrayList<Button> btns;
+    int pic=0;
 
     PopupMenu popup;
     @Override
@@ -56,6 +60,27 @@ public class SabtAgahi_Car extends AppCompatActivity {
         cam5=(Button)findViewById(R.id.c5);
         rules=(CheckBox)findViewById(R.id.rule);
 
+        btns=new ArrayList<Button>(5);
+        btns.add(cam1);
+        btns.add(cam2);
+        btns.add(cam3);
+        btns.add(cam4);
+        btns.add(cam5);
+
+        for(Button item:btns)
+        {
+            item.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    pic++;
+                    //  pick();
+
+
+                }
+            });
+        }
+
+
 
         Type.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,7 +100,7 @@ public class SabtAgahi_Car extends AppCompatActivity {
                 LayoutInflater inflater=(LayoutInflater)getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 CallLayout=inflater.inflate(R.layout.call_layout,null);
 
-                Call_Layout= new PopupWindow(CallLayout, LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
+                Call_Layout= new PopupWindow(CallLayout, LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT,true);
                 Call_Layout.showAsDropDown(view);
                 Call_map();
 
@@ -391,6 +416,13 @@ public class SabtAgahi_Car extends AppCompatActivity {
 
 
         });
+
+    }
+
+
+    //pick picture...
+    public void pick()
+    {
 
     }
 }

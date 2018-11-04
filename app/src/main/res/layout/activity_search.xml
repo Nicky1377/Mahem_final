@@ -67,7 +67,8 @@
             android:layout_toLeftOf="@id/search_icon"
             android:layout_alignParentTop="true"
             android:hint="جستجو برای..."
-            android:textSize="15sp"/>
+            android:textSize="15sp"
+            android:gravity="right"/>
 
     </RelativeLayout>
 

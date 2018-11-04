@@ -1,4 +1,4 @@
-package android.niky.mahem_final.OffFinder;
+package android.niky.mahem_final.MenuItems;
 
 import android.niky.mahem_final.R;
 import android.support.v7.app.AppCompatActivity;

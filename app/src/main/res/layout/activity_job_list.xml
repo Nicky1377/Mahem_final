@@ -51,7 +51,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_toLeftOf="@id/s_l"
-                android:hint="جستجوبرای..."/>
+                android:hint="جستجوبرای..."
+                android:gravity="right"/>
         </RelativeLayout>
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/job_pic"

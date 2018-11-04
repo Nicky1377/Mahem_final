@@ -15,6 +15,8 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class SabtAgahi_Takhfif extends AppCompatActivity {
 
     EditText Group,Title,off_percent,Real_price,Off_price,city,call,attributes,Tozihat,location
@@ -24,6 +26,8 @@ public class SabtAgahi_Takhfif extends AppCompatActivity {
     CheckBox rules,chat,email_check;
     Button send,cam1,cam2,cam3,cam4,cam5;
     PopupWindow City_Layout,Call_Layout;
+    ArrayList<Button> btns;
+    int pic=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +55,27 @@ public class SabtAgahi_Takhfif extends AppCompatActivity {
         rules=(CheckBox)findViewById(R.id.rule);
 
 
+        btns=new ArrayList<Button>(5);
+        btns.add(cam1);
+        btns.add(cam2);
+        btns.add(cam3);
+        btns.add(cam4);
+        btns.add(cam5);
+
+        for(Button item:btns)
+        {
+            item.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    pic++;
+                    //  pick();
+
+
+                }
+            });
+        }
+
+
         city.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -70,7 +95,7 @@ public class SabtAgahi_Takhfif extends AppCompatActivity {
             public void onClick(View view) {
                 LayoutInflater inflater=(LayoutInflater)getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 CallLayout=inflater.inflate(R.layout.call_layout,null);
-                Call_Layout= new PopupWindow(CallLayout, LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
+                Call_Layout= new PopupWindow(CallLayout, LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT,true);
                 Call_Layout.showAsDropDown(view);
 
                 Call_map();
@@ -265,6 +290,13 @@ public class SabtAgahi_Takhfif extends AppCompatActivity {
         chat=(CheckBox)CallLayout.findViewById(R.id.chat);
         email_check=(CheckBox)CallLayout.findViewById(R.id.Email_check);
 
+
+    }
+
+
+    //pick picture...
+    public void pick()
+    {
 
     }
 }

@@ -15,6 +15,8 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class SabtAgahi_other extends AppCompatActivity {
 EditText Group,Title,Type,Gheimat,Tozihat,location;
     View TypeLayout,GheimatLayout;
@@ -22,6 +24,8 @@ EditText Group,Title,Type,Gheimat,Tozihat,location;
     CheckBox rules;
     Button send,cam1,cam2,cam3,cam4,cam5;
     PopupWindow Type_Layout,Gheimat_Layout;
+    ArrayList<Button> btns;
+    int pic=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +49,25 @@ EditText Group,Title,Type,Gheimat,Tozihat,location;
 
         rules=(CheckBox)findViewById(R.id.rule);
 
+        btns=new ArrayList<Button>(5);
+        btns.add(cam1);
+        btns.add(cam2);
+        btns.add(cam3);
+        btns.add(cam4);
+        btns.add(cam5);
+
+        for(Button item:btns)
+        {
+            item.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    pic++;
+                    //  pick();
+
+
+                }
+            });
+        }
 
         Gheimat.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -166,6 +189,13 @@ EditText Group,Title,Type,Gheimat,Tozihat,location;
                 Gheimat_Layout.dismiss();
             }
         });
+
+    }
+
+
+    //pick picture...
+    public void pick()
+    {
 
     }
 }

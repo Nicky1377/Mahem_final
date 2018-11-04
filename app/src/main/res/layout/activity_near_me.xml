@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_near_me"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/t_list_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/colorPrimaryDark">
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/ic_launcher_llogo"
+            />
+        <TextView
+            android:id="@+id/select_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="انتخاب شهر"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:layout_alignParentBottom="true"
+            android:padding="5dp"
+            android:drawableLeft="@android:drawable/arrow_down_float"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/seekbar_la"
+        android:layout_below="@id/t_list_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/rounderd_tlist">
+        <TextView
+            android:id="@+id/dis"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:textSize="20sp"
+
+            android:paddingTop="6dp"
+            android:textColor="@android:color/black"
+
+
+            />
+        <SeekBar
+
+            android:layout_toRightOf="@id/dis"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/seekBar"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+
+            />
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/n_recycler_view"
+        android:layout_below="@id/seekbar_la"
+        android:layout_width="match_parent"
+        android:paddingBottom="80dp"
+        android:layout_height="match_parent">
+    </android.support.v7.widget.RecyclerView>
+
+
+    <include
+        layout="@layout/bottom_navigation"
+        android:id="@+id/rr">
+    </include>
+</RelativeLayout>

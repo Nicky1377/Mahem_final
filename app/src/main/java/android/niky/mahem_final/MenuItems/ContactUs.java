@@ -3,6 +3,7 @@ package android.niky.mahem_final.MenuItems;
 import android.content.Intent;
 import android.niky.mahem_final.Add.SabtAgahi;
 import android.niky.mahem_final.Groups.Group;
+import android.niky.mahem_final.OffFinder.Off;
 import android.niky.mahem_final.R;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -67,6 +68,14 @@ public class ContactUs extends AppCompatActivity {
             }
         });
 
+        Home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getBaseContext(), Off.class);
+                startActivity(i);
+                finish();
+            }
+        });
 
     }
 

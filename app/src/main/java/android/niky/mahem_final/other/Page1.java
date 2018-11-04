@@ -4,6 +4,8 @@ import android.content.Context;
 import android.niky.mahem_final.Add.SabtAgahi;
 import android.niky.mahem_final.Groups.Group;
 import android.niky.mahem_final.MenuItems.Menu1;
+import android.niky.mahem_final.OffFinder.BottomSheetMahem;
+import android.niky.mahem_final.OffFinder.Off;
 import android.niky.mahem_final.R;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -64,6 +66,8 @@ public class Page1 extends AppCompatActivity {
         MenuLine = (ImageView) navigationBar.findViewById(R.id.menuLine_f);
         Search =(ImageView)navigationBar.findViewById(R.id.search_f);
 
+
+
         Search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -76,9 +80,9 @@ public class Page1 extends AppCompatActivity {
         Menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getBaseContext(), Menu1.class);
-                startActivity(i);
 
+                Intent i = new Intent(getBaseContext(), Menu1.class);
+               startActivity(i);
             }
         });
 
@@ -95,6 +99,15 @@ public class Page1 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getBaseContext(), Group.class);
+                startActivity(i);
+
+            }
+        });
+
+        Home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getBaseContext(), Off.class);
                 startActivity(i);
 
             }

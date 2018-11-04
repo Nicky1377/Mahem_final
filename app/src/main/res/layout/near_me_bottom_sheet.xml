@@ -23,6 +23,7 @@
         android:background="@drawable/bottom_sheet_background"
         android:layout_marginTop="70dp">
     <TextView
+        android:id="@+id/near"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="تخفیف های نزدیک به من"
@@ -32,6 +33,7 @@
         android:background="@drawable/near_me_bottom_sheet_row"
         android:padding="8dp"/>
     <TextView
+        android:id="@+id/group"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="دسته بندی"
@@ -42,6 +44,7 @@
         android:padding="8dp"
         />
     <TextView
+        android:id="@+id/off"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="اطلاع از تخفیف ها"
@@ -52,6 +55,7 @@
         android:padding="8dp"
         />
     <TextView
+        android:id="@+id/map"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="تخفیف هاروی نقشه"

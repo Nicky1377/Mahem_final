@@ -50,7 +50,7 @@ public class Ads_show extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ads_show);
-        job_name=(TextView)findViewById(R.id.jobname);
+        job_name=findViewById(R.id.jobname);
         agahi_time=(TextView)findViewById(R.id.time) ;
         option_title=(TextView)findViewById(R.id.option_title) ;
         option_detail=(TextView)findViewById(R.id.option_detail) ;

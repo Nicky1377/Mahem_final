@@ -1,16 +1,20 @@
 package android.niky.mahem_final.MenuItems;
 import android.niky.mahem_final.Add.SabtAgahi;
 import android.niky.mahem_final.Groups.Group;
+import android.niky.mahem_final.OffFinder.Off;
 import android.niky.mahem_final.R;
+import android.niky.mahem_final.other.Page1;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.content.Intent;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 
 public class CodeVerification extends AppCompatActivity {
-//    EditText etCode;
-//    Button btnVerify;
+    EditText etCode;
+    Button btnVerify;
     View navigationBar;
     ImageView Home,Add,Menu,MenuLine,Search;
 
@@ -19,21 +23,21 @@ public class CodeVerification extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_code_verification);
 
-//        init();
-//
-//        btnVerify.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if (etCode.getText().toString().equals("")) {
-//                    etCode.setError("کد را وارد کنید");
-//                    return;
-//                }
-//                save(etCode.getText().toString());
-//            Intent i=new Intent(CodeVerification.this,Ads.class);
-//            startActivity(i);
-//            CodeVerification.this.finish();
-//            }
-//        });
+        init();
+
+        btnVerify.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (etCode.getText().toString().equals("")) {
+                    etCode.setError("کد را وارد کنید");
+                    return;
+                }
+                save(etCode.getText().toString());
+            Intent i=new Intent(CodeVerification.this,Page1.class);
+            startActivity(i);
+            CodeVerification.this.finish();
+            }
+        });
         map();
 //
 
@@ -84,15 +88,23 @@ public class CodeVerification extends AppCompatActivity {
             }
         });
 
+        Home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getBaseContext(), Off.class);
+                startActivity(i);
+                finish();
+            }
+        });
 
     }
-//    private void init() {
-//
-//        etCode = (EditText) findViewById(R.id.et_code);
-//        btnVerify = (Button) findViewById(R.id.btn_verify);
-//    }
-//
-//    private void save(String code) {
-//        //
-//    }
+    private void init() {
+
+        etCode = (EditText) findViewById(R.id.et_code);
+        btnVerify = (Button) findViewById(R.id.btn_verify);
+    }
+
+    private void save(String code) {
+        //
+    }
 }

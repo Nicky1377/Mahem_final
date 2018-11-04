@@ -2,7 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="android.niky.mahem_final">
 
-    <uses-feature android:name="android.hardware.telephony" android:required="false"/>
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -53,7 +56,7 @@
         <activity android:name=".MenuItems.Laws" />
         <activity android:name=".MenuItems.Register" />
         <activity android:name=".JobBank.JobBankMenu" />
-        <activity android:name=".OffFinder.Off_Finder" />
+        <activity android:name=".MenuItems.Off_Finder" />
         <activity android:name=".MenuItems.CodeVerification" />
         <activity android:name=".MenuItems.Setting" />
         <activity android:name=".Add.SabtAgahi" />
@@ -78,7 +81,10 @@
         <activity android:name=".Search_Filter.Ads" />
         <activity android:name=".Search_Filter.Estekhdami_menu" />
         <activity android:name=".JobBank.JobList" />
-        <activity android:name=".JobBank.JobBank_Sabt"/>
+        <activity android:name=".JobBank.JobBank_Sabt" />
+        <activity android:name=".OffFinder.Off"></activity>
+        <activity android:name=".OffFinder.Near_me"/>
+
     </application>
 
 </manifest>

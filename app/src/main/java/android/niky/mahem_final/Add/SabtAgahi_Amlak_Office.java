@@ -10,9 +10,12 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class SabtAgahi_Amlak_Office extends AppCompatActivity {
     EditText Group,Title,Amlak_type,meter,Type,AgahiDahande_type,Gheimat,call,Tozihat,location
@@ -22,6 +25,8 @@ public class SabtAgahi_Amlak_Office extends AppCompatActivity {
     CheckBox rules,chat,email_check,rahn_To_ejareh;
     Button send,cam1,cam2,cam3,cam4,cam5,ok,ok_call;
     PopupWindow Type_Layout,Call_Layout,Gheimat_Layout,agahiD_Layout,Melk_type_Layout,Gheimat_Mored_Nazar_Layout;
+    ArrayList<Button> btns;
+    int pic=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,19 +54,34 @@ public class SabtAgahi_Amlak_Office extends AppCompatActivity {
         cam5=(Button)findViewById(R.id.c5);
         rules=(CheckBox)findViewById(R.id.rule);
 
-        LayoutInflater inflater=(LayoutInflater)getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        CallLayout=inflater.inflate(R.layout.call_layout,null);
-        TypeLayout=inflater.inflate(R.layout.type_layout,null);
-        GheimatLayout=inflater.inflate(R.layout.gheimat_layout,null);
-        AgahiDahandeLayout=inflater.inflate(R.layout.agahi_dahande_amlak_layout,null);
-        MelkTypeLayout=inflater.inflate(R.layout.melk_type_layout_office,null);
-        GheimatMoredNazarLayout=inflater.inflate(R.layout.ghimat_mored_nazar_layout,null);
+        btns=new ArrayList<Button>(5);
+        btns.add(cam1);
+        btns.add(cam2);
+        btns.add(cam3);
+        btns.add(cam4);
+        btns.add(cam5);
+
+        for(Button item:btns)
+        {
+            item.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    pic++;
+                    //  pick();
+
+
+                }
+            });
+        }
+
 
         Gheimat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Gheimat_Layout=popupDisplay(GheimatLayout);
+                LayoutInflater inflater=(LayoutInflater)getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                GheimatLayout=inflater.inflate(R.layout.gheimat_layout,null);
+                Gheimat_Layout= new PopupWindow(GheimatLayout, LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
                 Gheimat_Layout.showAsDropDown(view);
                 Gheimat_map();
 
@@ -72,7 +92,9 @@ public class SabtAgahi_Amlak_Office extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                agahiD_Layout=popupDisplay(AgahiDahandeLayout);
+                LayoutInflater inflater=(LayoutInflater)getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                AgahiDahandeLayout=inflater.inflate(R.layout.agahi_dahande_amlak_layout,null);
+                agahiD_Layout= new PopupWindow(AgahiDahandeLayout, LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
                 agahiD_Layout.showAsDropDown(view);
                 Agahi_D_map();
 
@@ -82,8 +104,10 @@ public class SabtAgahi_Amlak_Office extends AppCompatActivity {
         call.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                LayoutInflater inflater=(LayoutInflater)getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                CallLayout=inflater.inflate(R.layout.call_layout,null);
 
-                Call_Layout=popupDisplay(CallLayout);
+                Call_Layout= new PopupWindow(CallLayout, LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT,true);
                 Call_Layout.showAsDropDown(view);
                 Call_map();
 
@@ -93,8 +117,9 @@ public class SabtAgahi_Amlak_Office extends AppCompatActivity {
         Type.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                Type_Layout=popupDisplay(TypeLayout);
+                LayoutInflater inflater=(LayoutInflater)getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                TypeLayout=inflater.inflate(R.layout.type_layout,null);
+                Type_Layout= new PopupWindow(TypeLayout, LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
                 Type_Layout.showAsDropDown(view);
                 Type_map();
 
@@ -104,8 +129,9 @@ public class SabtAgahi_Amlak_Office extends AppCompatActivity {
         Amlak_type.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                Melk_type_Layout=popupDisplay(MelkTypeLayout);
+                LayoutInflater inflater=(LayoutInflater)getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                MelkTypeLayout=inflater.inflate(R.layout.melk_type_layout_office,null);
+                Melk_type_Layout= new PopupWindow(MelkTypeLayout, LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
                 Melk_type_Layout.showAsDropDown(view);
                 AmlakType_map();
 
@@ -128,16 +154,6 @@ public class SabtAgahi_Amlak_Office extends AppCompatActivity {
     {
         Toast.makeText(getBaseContext(),s,Toast.LENGTH_SHORT).show();
     }
-    public PopupWindow popupDisplay(View view)
-    {
-        final PopupWindow popupWindow=new PopupWindow(this);
-        LayoutInflater inflater=(LayoutInflater)getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        popupWindow.setFocusable(true);
-        popupWindow.setWidth(WindowManager.LayoutParams.WRAP_CONTENT);
-        popupWindow.setHeight(WindowManager.LayoutParams.WRAP_CONTENT);
-        popupWindow.setContentView(view);
-        return popupWindow;
-    }
 
     public  void Gheimat_map()
     {
@@ -152,7 +168,9 @@ public class SabtAgahi_Amlak_Office extends AppCompatActivity {
             public void onClick(View view) {
                 Gheimat.setText(Gh_1.getText().toString());
                 Gheimat_Layout.dismiss();
-                Gheimat_Mored_Nazar_Layout =popupDisplay(GheimatMoredNazarLayout);
+                LayoutInflater inflater=(LayoutInflater)getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                GheimatMoredNazarLayout=inflater.inflate(R.layout.ghimat_mored_nazar_layout,null);
+                Gheimat_Mored_Nazar_Layout = new PopupWindow(GheimatMoredNazarLayout, LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT,true);
                 Gheimat_Mored_Nazar_Layout.showAsDropDown(Gheimat);
                 Rahn_To_Ejareh_map();
 
@@ -273,7 +291,6 @@ public class SabtAgahi_Amlak_Office extends AppCompatActivity {
 
     }
 
-
    public void AmlakType_map()
     {
         M_T_1=(TextView)MelkTypeLayout.findViewById(R.id.Tt1);
@@ -282,16 +299,6 @@ public class SabtAgahi_Amlak_Office extends AppCompatActivity {
         M_T_4=(TextView)MelkTypeLayout.findViewById(R.id.Tt4);
 
 
-
-
-        Amlak_type.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Melk_type_Layout=popupDisplay(MelkTypeLayout);
-                Melk_type_Layout.showAsDropDown(view);
-            }
-        });
         M_T_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -323,4 +330,10 @@ public class SabtAgahi_Amlak_Office extends AppCompatActivity {
 
     }
 
+
+    //pick picture...
+    public void pick()
+    {
+
+    }
 }

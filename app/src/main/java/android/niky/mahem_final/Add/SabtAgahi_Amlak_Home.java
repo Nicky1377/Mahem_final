@@ -76,7 +76,7 @@ for(Button item:btns)
         @Override
         public void onClick(View view) {
             pic++;
-            pick();
+          //  pick();
 
 
         }
@@ -115,7 +115,7 @@ for(Button item:btns)
                 LayoutInflater inflater=(LayoutInflater)getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 CallLayout=inflater.inflate(R.layout.call_layout,null);
 
-                Call_Layout= new PopupWindow(CallLayout, LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
+                Call_Layout= new PopupWindow(CallLayout, LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT,true);
                 Call_Layout.showAsDropDown(view);
                 Call_map();
 
@@ -178,7 +178,7 @@ for(Button item:btns)
                 Gheimat_Layout.dismiss();
                 LayoutInflater inflater=(LayoutInflater)getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 GheimatMoredNazarLayout=inflater.inflate(R.layout.ghimat_mored_nazar_layout,null);
-                Gheimat_Mored_Nazar_Layout = new PopupWindow(GheimatMoredNazarLayout, LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
+                Gheimat_Mored_Nazar_Layout = new PopupWindow(GheimatMoredNazarLayout, LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT,true);
                 Gheimat_Mored_Nazar_Layout.showAsDropDown(Gheimat);
                 Rahn_To_Ejareh_map();
 
@@ -256,7 +256,6 @@ for(Button item:btns)
     public  void Call_map()
     {
         PhoneNum=(EditText)CallLayout.findViewById(R.id.call1);
-        PhoneNum.setText("Hello");
         Email=(EditText)CallLayout.findViewById(R.id.Call2);
 
         ok_call=(Button)CallLayout.findViewById(R.id.ok);
@@ -332,6 +331,7 @@ for(Button item:btns)
     }
 
 
+    //pick picture...
     void pick() {
 
         final CharSequence[] options = {"دوربین", "گالری"};

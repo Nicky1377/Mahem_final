@@ -6,6 +6,7 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.niky.mahem_final.Add.SabtAgahi;
 import android.niky.mahem_final.Groups.Group;
+import android.niky.mahem_final.OffFinder.Off;
 import android.niky.mahem_final.R;
 import android.os.Build;
 import android.os.Bundle;
@@ -174,6 +175,14 @@ public class Contact extends AppCompatActivity {
             }
         });
 
+        Home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getBaseContext(), Off.class);
+                startActivity(i);
+                finish();
+            }
+        });
 
     }
 

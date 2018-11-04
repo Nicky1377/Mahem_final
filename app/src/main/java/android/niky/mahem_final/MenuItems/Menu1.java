@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.niky.mahem_final.Add.SabtAgahi;
 import android.niky.mahem_final.Groups.Group;
 import android.niky.mahem_final.JobBank.JobBankMenu;
-import android.niky.mahem_final.OffFinder.Off_Finder;
+import android.niky.mahem_final.OffFinder.Off;
 import android.niky.mahem_final.R;
 import android.niky.mahem_final.Search_Filter.Ads;
 import android.niky.mahem_final.Search_Filter.Estekhdami_menu;
@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class Menu1 extends AppCompatActivity {
@@ -22,13 +23,14 @@ public class Menu1 extends AppCompatActivity {
 
     View navigationBar;
     ImageView Home, Add, Menu, MenuLine, Search;
-
+    ImageView imgR;
+    TextView tv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu1);
 
-       JobBank=(RelativeLayout)findViewById(R.id.btn_bank);
+        JobBank=(RelativeLayout)findViewById(R.id.btn_bank);
         OffFinder=(RelativeLayout)findViewById(R.id.btn_off);
         Register=(RelativeLayout)findViewById(R.id.btn_register);
         Laws=(RelativeLayout)findViewById(R.id.btn_law);
@@ -40,6 +42,10 @@ public class Menu1 extends AppCompatActivity {
         aboutUs=(RelativeLayout)findViewById(R.id.btn_about_us);
         Setting=(RelativeLayout)findViewById(R.id.btn_setting);
         ContactUs=(RelativeLayout)findViewById(R.id.btn_contact_us);
+
+         imgR=(ImageView)findViewById(R.id.img_register);
+         tv=(TextView)findViewById(R.id.TV1);
+
 
         JobBank.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,8 +67,10 @@ public class Menu1 extends AppCompatActivity {
         Register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Intent i=new Intent(Menu1.this,Register.class);
                 startActivity(i);
+
             }
         });
 
@@ -180,6 +188,14 @@ public class Menu1 extends AppCompatActivity {
             }
         });
 
+        Home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getBaseContext(), Off.class);
+                startActivity(i);
+                finish();
+            }
+        });
 
     }
 

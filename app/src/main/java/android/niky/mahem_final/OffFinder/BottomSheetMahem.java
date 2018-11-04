@@ -21,7 +21,7 @@ public class BottomSheetMahem extends AppCompatActivity {
         Open.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Bottom_Sheet bottom_sheet=new Bottom_Sheet();
+                Bottom_Sheet bottom_sheet=new Bottom_Sheet(getBaseContext());
                 bottom_sheet.show(getSupportFragmentManager(),"");
                 ImageView imageView=new ImageView(BottomSheetMahem.this);
                 imageView.setImageResource(R.drawable.logo);
