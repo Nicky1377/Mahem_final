@@ -13,10 +13,10 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher_llogo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
+        android:roundIcon="@mipmap/ic_launcher_llogo"
+        android:supportsRtl="false"
         android:theme="@style/AppTheme">
         <activity android:name=".other.Splash_Sc">
             <intent-filter>
@@ -82,9 +82,9 @@
         <activity android:name=".Search_Filter.Estekhdami_menu" />
         <activity android:name=".JobBank.JobList" />
         <activity android:name=".JobBank.JobBank_Sabt" />
-        <activity android:name=".OffFinder.Off"></activity>
-        <activity android:name=".OffFinder.Near_me"/>
-
+        <activity android:name=".OffFinder.Off" />
+        <activity android:name=".OffFinder.Near_me" />
+        <activity android:name=".AdsList"></activity>
     </application>
 
 </manifest>

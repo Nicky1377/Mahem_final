@@ -15,7 +15,7 @@ Button fani,monshi,nurse,edari,teach,mali,seller,seraydar,resturan,kar_sakhteman
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_estekhdami);
-        getWindow().getDecorView().setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
+
 
       
         fani=(Button)findViewById(R.id.btn1);

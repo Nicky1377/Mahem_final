@@ -4,7 +4,6 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
     android:orientation="vertical">
 
      <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -48,13 +47,13 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="'گوشی موبایل "
+                android:text="گوشی موبایل "
                 android:drawableLeft="@mipmap/ic_launcher_flsh"
                 android:drawableRight="@mipmap/ic_phone"
                 android:gravity="right|center"
-                android:textSize="18dp"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp"
+                android:textSize="15dp"
+                android:paddingTop="1dp"
+                android:paddingBottom="1dp"
                 android:id="@+id/btn1"
                 />
             <Button
@@ -64,9 +63,9 @@
                 android:drawableLeft="@mipmap/ic_launcher_flsh"
                 android:drawableRight="@mipmap/ic_phone"
                 android:gravity="right|center"
-                android:textSize="18dp"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp"
+                android:textSize="15dp"
+                android:paddingTop="1dp"
+                android:paddingBottom="1dp"
                 android:id="@+id/btn2"/>
             <Button
                 android:layout_width="match_parent"
@@ -75,9 +74,9 @@
                 android:drawableLeft="@mipmap/ic_launcher_flsh"
                 android:drawableRight="@mipmap/ic_phone"
                 android:gravity="right|center"
-                android:textSize="18dp"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp"
+                android:textSize="15dp"
+                android:paddingTop="1dp"
+                android:paddingBottom="1dp"
                 android:id="@+id/btn3"/>
             <Button
                 android:layout_width="match_parent"
@@ -86,9 +85,9 @@
                 android:drawableLeft="@mipmap/ic_launcher_flsh"
                 android:drawableRight="@mipmap/ic_phone"
                 android:gravity="right|center"
-                android:textSize="18dp"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp"
+                android:textSize="15dp"
+                android:paddingTop="1dp"
+                android:paddingBottom="1dp"
                 android:id="@+id/btn4"/>
 
         </LinearLayout>

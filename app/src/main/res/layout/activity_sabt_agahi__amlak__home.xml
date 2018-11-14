@@ -15,7 +15,8 @@
         tools:context="android.niky.sabtagahi.Norm"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp"
-        tools:ignore="MissingConstraints">
+        tools:ignore="MissingConstraints"
+        >
 
         <View
             android:layout_width="match_parent"
