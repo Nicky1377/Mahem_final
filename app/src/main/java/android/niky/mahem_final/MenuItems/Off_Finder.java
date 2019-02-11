@@ -1,12 +1,14 @@
 package android.niky.mahem_final.MenuItems;
 
 import android.niky.mahem_final.R;
-import android.support.v7.app.AppCompatActivity;
+
+
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.Toast;
+
+
 
 public class Off_Finder extends AppCompatActivity {
     Button weekend,cafe,arayesh,health,tafrih,LavazemJanebi,M_Arayesh,khodro,zivar,kitchen,teach,art,khadamat,hotel,lavazem_safar,

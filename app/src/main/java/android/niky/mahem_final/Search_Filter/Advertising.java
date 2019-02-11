@@ -1,5 +1,8 @@
 package android.niky.mahem_final.Search_Filter;
 
+import android.niky.mahem_final.R;
+
+
 public class Advertising {
     private String title,details,time,family_name,chat_time;
     private int image,userImage;

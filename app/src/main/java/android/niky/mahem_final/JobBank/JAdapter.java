@@ -1,6 +1,8 @@
 package android.niky.mahem_final.JobBank;
-import android.content.Context;
+
 import android.niky.mahem_final.R;
+
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;

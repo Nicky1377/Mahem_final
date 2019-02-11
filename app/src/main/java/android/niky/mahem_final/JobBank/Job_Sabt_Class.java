@@ -1,5 +1,6 @@
 package android.niky.mahem_final.JobBank;
 
+
 public class Job_Sabt_Class {
 
     private String modiriat,senf_type,sabt_num,phone_office,mobile,fax,address,telegram,insta,email,tozihat;

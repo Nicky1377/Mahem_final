@@ -1,16 +1,20 @@
 package android.niky.mahem_final.MenuItems;
 
-import android.content.Intent;
-import android.niky.mahem_final.Add.SabtAgahi;
-import android.niky.mahem_final.Groups.Group;
-import android.niky.mahem_final.OffFinder.Off;
 import android.niky.mahem_final.R;
+
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+
+import android.niky.mahem_final.Add.SabtAgahi;
+import android.niky.mahem_final.Groups.Group;
+import android.niky.mahem_final.OffFinder.Off;
+
 
 
 public class Register extends AppCompatActivity {
@@ -37,7 +41,7 @@ public class Register extends AppCompatActivity {
                     return;
                 }
                 if (etUserName.getText().toString().equals("")) {
-                    etUserName.setError("لطفا ام کاربری خود را وارد کنید");
+                    etUserName.setError("لطفا نام کاربری خود را وارد کنید");
                     return;
                 } else if (etUserName.getText().toString().length() > 12 || etUserName.getText().toString().length() < 3) {
                     etUserName.setError("لطفا نام کاربری معتبر وارد کنید");
@@ -67,6 +71,7 @@ public class Register extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getBaseContext(), android.niky.mahem_final.Search_Filter.Search.class);
+                i.putExtra("title","جستجو");
                 startActivity(i);
                 finish();
             }

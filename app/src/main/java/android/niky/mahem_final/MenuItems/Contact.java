@@ -1,34 +1,41 @@
 package android.niky.mahem_final.MenuItems;
 
+import android.niky.mahem_final.R;
+
+
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
-import android.niky.mahem_final.Add.SabtAgahi;
-import android.niky.mahem_final.Groups.Group;
-import android.niky.mahem_final.OffFinder.Off;
-import android.niky.mahem_final.R;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.telephony.PhoneNumberUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import android.niky.mahem_final.Add.SabtAgahi;
+import android.niky.mahem_final.Groups.Group;
+import android.niky.mahem_final.OffFinder.Off;
+
 import java.util.Locale;
 
 
 
+@RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
 public class Contact extends AppCompatActivity {
     View navigationBar;
     ImageView Home,Add,Menu,MenuLine,Search;
     private RelativeLayout Call_us,Message_us,Email_us;
     private TextView call_tv,sms_tv,mail_tv;
 
+    Button ExitBtn;
     //should fill with network data
     String ph_number="";
     String formattedNumber = PhoneNumberUtils.formatNumber(ph_number,
@@ -49,7 +56,14 @@ public class Contact extends AppCompatActivity {
         mail_tv=(TextView)findViewById(R.id.mail_txt);
         mail_tv.setText("ایمیل به"+email_address);
 
+        ExitBtn=(Button)findViewById(R.id.exitBtn);
 
+        ExitBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
 
         Call_us=(RelativeLayout)findViewById(R.id.call);
@@ -72,6 +86,7 @@ public class Contact extends AppCompatActivity {
         });
         Message_us=(RelativeLayout)findViewById(R.id.Message);
         Message_us.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onClick(View view) {
                 final int Id_this_activity=20;

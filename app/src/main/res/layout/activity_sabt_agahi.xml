@@ -21,22 +21,22 @@
             android:gravity="right"
             >
 
-             <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:textColor="@android:color/white"
-            android:id="@+id/title"
-            android:textSize="22dp"
-            android:text="ثبت آگهی"
-            android:gravity="center|bottom"
-            android:paddingBottom="8dp"
-            android:paddingRight="3dp"/>
-        <ImageView
-            android:id="@+id/ic_logo"
-            android:layout_width="60dp"
-            android:layout_height="match_parent"
-            android:layout_alignParentRight="true"
-            android:src="@mipmap/ic_launcher_llogo" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textColor="@android:color/white"
+                android:id="@+id/title"
+                android:textSize="22dp"
+                android:text="ثبت آگهی"
+                android:gravity="center|bottom"
+                android:paddingBottom="8dp"
+                android:paddingRight="3dp"/>
+            <ImageView
+                android:id="@+id/ic_logo"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:src="@mipmap/ic_launcher_llogo" />
 
         </LinearLayout>
 
@@ -55,9 +55,11 @@
                     android:drawableLeft="@mipmap/ic_launcher_flsh"
                     android:drawableRight="@mipmap/ic_phone"
                     android:gravity="right|center"
-                    android:textSize="18dp"
-                    android:paddingTop="5dp"
-                    android:paddingBottom="5dp"
+                    android:textSize="15dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:paddingLeft="1dp"
+                    android:paddingRight="5dp"
                     android:id="@+id/btn1"
                     />
                 <Button
@@ -67,9 +69,11 @@
                     android:drawableLeft="@mipmap/ic_launcher_flsh"
                     android:drawableRight="@mipmap/ic_phone"
                     android:gravity="right|center"
-                    android:textSize="18dp"
-                    android:paddingTop="5dp"
-                    android:paddingBottom="5dp"
+                    android:textSize="15dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:paddingLeft="1dp"
+                    android:paddingRight="5dp"
                     android:id="@+id/btn2"/>
                 <Button
                     android:layout_width="match_parent"
@@ -78,9 +82,11 @@
                     android:drawableLeft="@mipmap/ic_launcher_flsh"
                     android:drawableRight="@mipmap/ic_phone"
                     android:gravity="right|center"
-                    android:textSize="18dp"
-                    android:paddingTop="5dp"
-                    android:paddingBottom="5dp"
+                    android:textSize="15dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:paddingLeft="1dp"
+                    android:paddingRight="5dp"
                     android:id="@+id/btn3"/>
                 <Button
                     android:layout_width="match_parent"
@@ -89,9 +95,11 @@
                     android:drawableLeft="@mipmap/ic_launcher_flsh"
                     android:drawableRight="@mipmap/ic_phone"
                     android:gravity="right|center"
-                    android:textSize="18dp"
-                    android:paddingTop="5dp"
-                    android:paddingBottom="5dp"
+                    android:textSize="15dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:paddingLeft="1dp"
+                    android:paddingRight="5dp"
                     android:id="@+id/btn4"/>
                 <Button
                     android:layout_width="match_parent"
@@ -100,9 +108,11 @@
                     android:drawableLeft="@mipmap/ic_launcher_flsh"
                     android:drawableRight="@mipmap/ic_phone"
                     android:gravity="right|center"
-                    android:textSize="18dp"
-                    android:paddingTop="5dp"
-                    android:paddingBottom="5dp"
+                    android:textSize="15dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:paddingLeft="1dp"
+                    android:paddingRight="5dp"
                     android:id="@+id/btn5"/>
                 <Button
                     android:layout_width="match_parent"
@@ -111,9 +121,11 @@
                     android:drawableLeft="@mipmap/ic_launcher_flsh"
                     android:drawableRight="@mipmap/ic_phone"
                     android:gravity="right|center"
-                    android:textSize="18dp"
-                    android:paddingTop="5dp"
-                    android:paddingBottom="5dp"
+                    android:textSize="15dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:paddingLeft="1dp"
+                    android:paddingRight="5dp"
                     android:id="@+id/btn6"/>
                 <Button
                     android:layout_width="match_parent"
@@ -122,9 +134,11 @@
                     android:drawableLeft="@mipmap/ic_launcher_flsh"
                     android:drawableRight="@mipmap/ic_phone"
                     android:gravity="right|center"
-                    android:textSize="18dp"
-                    android:paddingTop="5dp"
-                    android:paddingBottom="5dp"
+                    android:textSize="15dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:paddingLeft="1dp"
+                    android:paddingRight="5dp"
                     android:id="@+id/btn7"/>
                 <Button
                     android:layout_width="match_parent"
@@ -133,9 +147,11 @@
                     android:drawableLeft="@mipmap/ic_launcher_flsh"
                     android:drawableRight="@mipmap/ic_phone"
                     android:gravity="right|center"
-                    android:textSize="18dp"
-                    android:paddingTop="5dp"
-                    android:paddingBottom="5dp"
+                    android:textSize="15dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:paddingLeft="1dp"
+                    android:paddingRight="5dp"
                     android:id="@+id/btn8"/>
                 <Button
                     android:layout_width="match_parent"
@@ -144,9 +160,11 @@
                     android:drawableLeft="@mipmap/ic_launcher_flsh"
                     android:drawableRight="@mipmap/ic_phone"
                     android:gravity="right|center"
-                    android:textSize="18dp"
-                    android:paddingTop="5dp"
-                    android:paddingBottom="5dp"
+                    android:textSize="15dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:paddingLeft="1dp"
+                    android:paddingRight="5dp"
                     android:id="@+id/btn9"/>
                 <Button
                     android:layout_width="match_parent"
@@ -155,9 +173,11 @@
                     android:drawableLeft="@mipmap/ic_launcher_flsh"
                     android:drawableRight="@mipmap/ic_phone"
                     android:gravity="right|center"
-                    android:textSize="18dp"
-                    android:paddingTop="5dp"
-                    android:paddingBottom="5dp"
+                    android:textSize="15dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:paddingLeft="1dp"
+                    android:paddingRight="5dp"
                     android:id="@+id/btn10"/>
 
             </LinearLayout>

@@ -1,10 +1,15 @@
 package android.niky.mahem_final.Add;
 
+import android.niky.mahem_final.R;
+
 import android.content.Context;
 import android.content.Intent;
-import android.niky.mahem_final.R;
-import android.support.v7.app.AppCompatActivity;
+import android.graphics.Bitmap;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -16,6 +21,7 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 import java.util.ArrayList;
 
 public class SabtAgahi_other extends AppCompatActivity {
@@ -23,11 +29,14 @@ EditText Group,Title,Type,Gheimat,Tozihat,location;
     View TypeLayout,GheimatLayout;
     TextView Type_1,Type_2,Gh_1,Gh_2,Gh_3,Gh_4;
     CheckBox rules;
-    Button send,cam1,cam2,cam3,cam4,cam5;
+    ImageView cam1,cam2,cam3,cam4,cam5;
+    Button send;
+    Bitmap yourSelectedImage;
     PopupWindow Type_Layout,Gheimat_Layout;
-    ArrayList<Button> btns;
+    ArrayList<ImageView> Cameras;
     ImageView map_img;
 
+    private String searchingLocation;
     int pic=0;
 
     @Override
@@ -46,33 +55,39 @@ EditText Group,Title,Type,Gheimat,Tozihat,location;
         map_img=(ImageView)findViewById(R.id.map_img);
 
         send=(Button)findViewById(R.id.send);
-        cam1=(Button)findViewById(R.id.c1);
-        cam2=(Button)findViewById(R.id.c2);
-        cam3=(Button)findViewById(R.id.c3);
-        cam4=(Button)findViewById(R.id.c4);
-        cam5=(Button)findViewById(R.id.c5);
-
+        cam1=findViewById(R.id.c1);
+        cam2=findViewById(R.id.c2);
+        cam3=findViewById(R.id.c3);
+        cam4=findViewById(R.id.c4);
+        cam5=findViewById(R.id.c5);
         rules=(CheckBox)findViewById(R.id.rule);
 
-        btns=new ArrayList<Button>(5);
-        btns.add(cam1);
-        btns.add(cam2);
-        btns.add(cam3);
-        btns.add(cam4);
-        btns.add(cam5);
 
-        for(Button item:btns)
-        {
+        Cameras=new ArrayList<ImageView>(5);
+        Cameras.add(cam1);
+        Cameras.add(cam2);
+        Cameras.add(cam3);
+        Cameras.add(cam4);
+        Cameras.add(cam5);
+
+        for(final ImageView item:Cameras)
+        {item.setImageResource(R.drawable.icons88);
             item.setOnClickListener(new View.OnClickListener() {
+                @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
                 @Override
                 public void onClick(View view) {
-                    pic++;
-                    //  pick();
+                    pic=Cameras.indexOf(item);
+                    pick();
+
+
 
 
                 }
             });
         }
+
+        Intent ii=getIntent();
+       Group.setText(ii.getStringExtra("group"));
 
         Gheimat.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,6 +101,8 @@ EditText Group,Title,Type,Gheimat,Tozihat,location;
 
             }
         });
+
+
 
         Type.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,7 +121,10 @@ EditText Group,Title,Type,Gheimat,Tozihat,location;
         map_img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //intent to google map
+                Intent mapIntent=new Intent(Intent.ACTION_VIEW);
+                searchingLocation="";
+                mapIntent.setData(Uri.parse("geo:0,0?q="+searchingLocation));
+                startActivity(mapIntent);
             }
         });
 
@@ -117,13 +137,7 @@ EditText Group,Title,Type,Gheimat,Tozihat,location;
 
         Toast.makeText(this,getLocalClassName().toString()+"\nNiky",Toast.LENGTH_LONG).show();
 
-        Group.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i=new Intent(SabtAgahi_other.this,SabtAgahi.class);
-                startActivity(i);
-            }
-        });
+
     }
 
     public void tt(String s)

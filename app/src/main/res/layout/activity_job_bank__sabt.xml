@@ -78,12 +78,12 @@
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_alignParentTop="true"
-                android:layout_alignParentStart="true"
+                android:layout_marginLeft="20dp"
                 android:src="@drawable/cameraa"
                 app:civ_border_overlay="true"
                 app:civ_border_color="@android:color/black"
                 app:civ_border_width="2dp"
-                android:layout_marginStart="30dp"
+
                 android:layout_marginTop="130dp"
                 />
         <RelativeLayout
@@ -121,7 +121,8 @@
             android:layout_marginLeft="10dp"
             android:id="@+id/E1"
             android:layout_marginBottom="5dp"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:lines="1"/>
 
         <RelativeLayout
             android:layout_width="70dp"
@@ -143,7 +144,7 @@
             <ImageView
                 android:layout_width="18dp"
                 android:layout_height="20dp"
-                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
                 android:background="@mipmap/ic_launcher_foreground_star" />
         </RelativeLayout>
@@ -193,7 +194,9 @@
             android:layout_marginLeft="10dp"
             android:id="@+id/E3"
             android:layout_marginBottom="5dp"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:inputType="number"
+            android:lines="1"/>
 
 
         <RelativeLayout
@@ -232,7 +235,9 @@
             android:layout_marginLeft="10dp"
             android:id="@+id/E4"
             android:layout_marginBottom="5dp"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:inputType="number"
+            android:lines="1"/>
 
 
         <RelativeLayout
@@ -265,7 +270,9 @@
             android:layout_marginLeft="10dp"
             android:id="@+id/E5"
             android:layout_marginBottom="5dp"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:inputType="number"
+            android:lines="1"/>
 
 
         <RelativeLayout
@@ -298,7 +305,9 @@
             android:layout_marginLeft="10dp"
             android:id="@+id/E6"
             android:layout_marginBottom="5dp"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:inputType="number"
+            android:lines="1"/>
 
 
         <RelativeLayout
@@ -337,7 +346,8 @@
             android:layout_marginLeft="10dp"
             android:id="@+id/E7"
             android:layout_marginBottom="5dp"
-            android:gravity="center"/>
+            android:gravity="center"
+            />
 
 
         <RelativeLayout
@@ -370,7 +380,8 @@
             android:layout_marginLeft="10dp"
             android:id="@+id/E8"
             android:layout_marginBottom="5dp"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:lines="1"/>
 
 
         <RelativeLayout
@@ -403,7 +414,8 @@
             android:layout_marginLeft="10dp"
             android:id="@+id/E9"
             android:layout_marginBottom="5dp"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:lines="1"/>
 
         <RelativeLayout
             android:layout_width="70dp"
@@ -435,7 +447,9 @@
             android:layout_marginLeft="10dp"
             android:id="@+id/E10"
             android:layout_marginBottom="5dp"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:inputType="textEmailAddress"
+            android:lines="1"/>
 
 
             <RelativeLayout
@@ -468,7 +482,8 @@
                 android:layout_marginLeft="10dp"
                 android:id="@+id/E11"
                 android:layout_marginBottom="5dp"
-                android:gravity="center"/>
+                android:gravity="center"
+                />
 
         </RelativeLayout>
     </ScrollView>

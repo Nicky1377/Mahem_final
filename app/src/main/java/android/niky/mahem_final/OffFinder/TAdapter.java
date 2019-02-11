@@ -1,42 +1,48 @@
 package android.niky.mahem_final.OffFinder;
 
+import android.niky.mahem_final.R;
+
+
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
-import android.niky.mahem_final.R;
 
 
 public class TAdapter extends RecyclerView.Adapter<TAdapter.TViewHolder> {
 
     private Context context;
     private List<Takhfif> AdvList;
-    private final View.OnClickListener listener;
+
     private ArrayList<Integer> ratingg;
+    private View view;
 
     private ImageView moon_1,moon_2,moon_3,moon_4,moon_5;
     private ImageView[] moons;
 
-    public TAdapter(Context context, List<Takhfif> TakhfifList, View.OnClickListener listener, ArrayList<Integer> ratingg) {
+    public TAdapter(Context context, List<Takhfif> TakhfifList, ArrayList<Integer> ratingg) {
 
         this.context = context;
         this.AdvList = TakhfifList;
-        this.listener = listener;
+
         this.ratingg=ratingg;
     }
     @Override
     public TViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         LayoutInflater inflater=LayoutInflater.from(context);
-        View view=inflater.inflate(R.layout.off_item,null);
-        TViewHolder TViewHolder=new TViewHolder(view,listener,ratingg);
+        view=inflater.inflate(R.layout.activity_t_list,null);
+        TViewHolder TViewHolder=new TViewHolder(view,ratingg);
 
         return TViewHolder;
     }
@@ -51,6 +57,13 @@ public class TAdapter extends RecyclerView.Adapter<TAdapter.TViewHolder> {
         holder.t_city.setText(Takhfif.getT_city());
         holder.t_percent.setText((CharSequence) Takhfif.gett_percent());
         holder.t_image.setImageResource(Takhfif.getT_image());
+        holder.T_list_item.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(context,Takhfif_Show.class);
+                context.startActivity(intent);
+            }
+        });
 
 
     }
@@ -67,22 +80,24 @@ public class TAdapter extends RecyclerView.Adapter<TAdapter.TViewHolder> {
 
         TextView new_cost, pre_cost, t_describtion, t_percent, t_city;
         ImageView t_image;
+        RelativeLayout T_list_item;
 
-        public TViewHolder(View itemView, View.OnClickListener listener, ArrayList<Integer> rating) {
+        public TViewHolder(View itemView, ArrayList<Integer> rating) {
             super(itemView);
 
-            listenerRef = new WeakReference<>(listener);
-            new_cost = (TextView) itemView.findViewById(R.id.cost);
-            pre_cost = (TextView) itemView.findViewById(R.id.L_cost);
-            t_describtion = (TextView) itemView.findViewById(R.id.d);
-            t_percent = (TextView) itemView.findViewById(R.id.percent);
-            t_city = (TextView) itemView.findViewById(R.id.cityName);
-            moon_1 = (ImageView) itemView.findViewById(R.id.moon1);
-            moon_2 = (ImageView) itemView.findViewById(R.id.moon2);
-            moon_3 = (ImageView) itemView.findViewById(R.id.moon3);
-            moon_4 = (ImageView) itemView.findViewById(R.id.moon4);
-            moon_5 = (ImageView) itemView.findViewById(R.id.moon5);
-            t_image=(ImageView)itemView.findViewById(R.id.img);
+
+            new_cost = itemView.findViewById(R.id.new_cost);
+            pre_cost = itemView.findViewById(R.id.last_cost);
+            t_describtion =  itemView.findViewById(R.id.t_des);
+            t_percent =  itemView.findViewById(R.id.t_percent);
+            t_city = itemView.findViewById(R.id.t_city);
+            moon_1 = itemView.findViewById(R.id.moon_one);
+            moon_2 = itemView.findViewById(R.id.moon_two);
+            moon_3 = itemView.findViewById(R.id.moon_three);
+            moon_4 = itemView.findViewById(R.id.moon_four);
+            moon_5 = itemView.findViewById(R.id.moon_five);
+            t_image= itemView.findViewById(R.id.t_image);
+            T_list_item=itemView.findViewById(R.id.t_list_item);
 
             moons = new ImageView[]{moon_1, moon_2, moon_3, moon_4, moon_5};
 

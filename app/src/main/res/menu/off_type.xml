@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/other"
+        android:title="دیگر"/>
+    <item android:id="@+id/pen"
+        android:title="لوازم تحریر"/>
+    <item android:id="@+id/cloth"
+        android:title="پوشاک"/>
+    <item android:id="@+id/trip"
+        android:title="لوازم سفر"/>
+    <item android:id="@+id/hotel"
+        android:title="هتل و سفر"/>
+    <item android:id="@+id/service"
+        android:title="خدمات"/>
+    <item android:id="@+id/teather"
+        android:title="هنر و تئاتر"/>
+    <item android:id="@+id/edu"
+        android:title="آموزش"/>
+    <item android:id="@+id/kitchen"
+        android:title="ظروف و ابزار آشپزخانه"/>
+    <item android:id="@+id/jewerly"
+        android:title="زیورآلات"/>
+    <item android:id="@+id/car"
+        android:title="لوازم خودرو و ابزار"/>
+    <item android:id="@+id/pretty"
+        android:title="آرایشی و بهداشتی"/>
+    <item android:id="@+id/things"
+        android:title="لوازم جانبی"/>
+    <item android:id="@+id/sport"
+        android:title="تفریحی و ورزشی"/>
+    <item android:id="@+id/medicine"
+        android:title="سلامت و پزشکی"/>
+    <item android:id="@+id/cafe"
+        android:title="رستوران و کافی شاپ"/>
+    <item android:id="@+id/weekend"
+        android:title="تخفیف آخر هفته"/>
+</menu>

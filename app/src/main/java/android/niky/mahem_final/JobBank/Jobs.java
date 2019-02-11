@@ -1,4 +1,5 @@
 package android.niky.mahem_final.JobBank;
+
 public class Jobs {
     private String row,name,managment,phone;
 

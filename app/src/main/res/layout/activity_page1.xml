@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".other.Page1">
-    <LinearLayout
+    tools:context=".other.Page1"
+    >
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        >
         <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
             android:gravity="right"
+            android:layout_alignParentTop="true"
+            android:id="@+id/toolbar"
             >
 
             <TextView
@@ -33,6 +36,11 @@
                 android:layout_height="match_parent"
                 android:layout_alignParentRight="true"
                 android:src="@mipmap/ic_launcher_llogo" />
+            <ImageView
+                android:id="@+id/msg_notify"
+                android:layout_toLeftOf="@id/ic_logo"
+                android:layout_width="60dp"
+                android:layout_height="match_parent" />
 
             <ImageView
                 android:id="@+id/location"
@@ -42,27 +50,33 @@
                 android:src="@mipmap/ic_launcher_foreground_location" />
 
         </RelativeLayout>
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <RelativeLayout
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <ImageView
+                android:layout_height="match_parent"
+                android:paddingBottom="50dp"
+                android:layout_below="@+id/toolbar"
+                android:orientation="vertical"
+                >
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/image"
                     android:layout_width="match_parent"
-                    android:layout_height="210dp"
-                    android:id="@+id/image"/>
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@android:color/black"
-                    android:layout_below="@+id/image"
-                    android:id="@+id/v1"/>
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_weight="67"/>
+
+
                 <RelativeLayout
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/v1"
-                    android:id="@+id/l1">
+                    android:layout_below="@id/image"
+                    android:id="@+id/l1"
+                    android:background="@drawable/background_borders"
+                    >
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -70,6 +84,7 @@
                         android:text="  استخدامی"
                         android:textSize="17dp"/>
                     <TextView
+                        android:id="@+id/es_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentLeft="true"
@@ -78,36 +93,26 @@
 
                 </RelativeLayout>
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@android:color/black"
-                    android:layout_below="@+id/l1"
-                    android:id="@+id/v2"/>
-                <HorizontalScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:layout_below="@+id/v2"
-                    android:id="@+id/R1">
-                    <ListView
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:id="@+id/listv1">
 
-                    </ListView>
-                </HorizontalScrollView>
 
-                <View
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/List1"
+                    android:layout_below="@id/l1"
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@android:color/black"
-                    android:layout_below="@+id/R1"
-                    android:id="@+id/v3"/>
+                    android:layout_height="match_parent"
+                    android:background="@drawable/background_borders"
+                    tools:ignore="NotSibling"
+                    android:orientation="horizontal"
+                    android:scrollbars="horizontal"
+                    android:layout_weight="100"></android.support.v7.widget.RecyclerView>
+
+
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/v3"
-                    android:id="@+id/l2">
+                    android:layout_below="@id/List1"
+                    android:id="@+id/l2"
+                    android:background="@drawable/background_borders">
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -115,36 +120,30 @@
                         android:text="  آگهی "
                         android:textSize="17dp"/>
                     <TextView
+                        android:id="@+id/ag_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentLeft="true"
                         android:text="  ادامه ی لیست   "
-                        android:textSize="17dp"/>
+                        android:textSize="17dp"
+                        />
 
                 </RelativeLayout>
-
-                <View
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/List2"
+                    android:layout_below="@id/l2"
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@android:color/black"
-                    android:layout_below="@+id/l2"
-                    android:id="@+id/v4"/>
-                <HorizontalScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:layout_below="@+id/v4">
-                    <ListView
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:id="@+id/listv2"></ListView>
-                </HorizontalScrollView>
+                    android:layout_height="match_parent"
+                    android:background="@drawable/background_borders"
+                    tools:ignore="NotSibling"
+                    android:orientation="vertical"
+                    android:layout_weight="100"
+                    ></android.support.v7.widget.RecyclerView>
+            </LinearLayout>
 
-            </RelativeLayout>
-        </ScrollView>
-
-    </LinearLayout>
+    </RelativeLayout>
     <include
         layout="@layout/bottom_navigation"
         android:id="@+id/rr"
         ></include>
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>

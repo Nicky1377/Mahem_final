@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#00ffffff"
+    android:background="@color/colorTransparent"
 
     >
 
@@ -12,180 +12,198 @@
         android:layout_height="100dp"
         android:src="@drawable/circle_imageview"
         android:layout_centerHorizontal="true"/>
+
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingRight="20dp"
-            android:paddingLeft="20dp"
-            android:paddingTop="20dp"
-            android:paddingBottom="80dp"
+            android:layout_marginTop="70dp"
             android:background="@drawable/bottom_sheet_background"
-            android:layout_marginTop="70dp">
+            android:orientation="vertical"
+            android:paddingBottom="80dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="20dp">
+
             <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/near_me_bottom_sheet_row"
+                android:gravity="right"
+                android:layoutDirection="rtl"
+                android:padding="8dp"
                 android:text="همه تخفیف ها"
-                android:textSize="20sp"
                 android:textColor="@android:color/black"
-                android:gravity="right"
-                android:background="@drawable/near_me_bottom_sheet_row"
-                android:padding="8dp"
-                android:layoutDirection="rtl"/>
+                android:textSize="20sp" />
+
             <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/near_me_bottom_sheet_row"
+                android:gravity="right"
+                android:layoutDirection="rtl"
+                android:padding="8dp"
                 android:text="تخفیف آخر هفته"
-                android:textSize="20sp"
                 android:textColor="@android:color/black"
-                android:gravity="right"
-                android:background="@drawable/near_me_bottom_sheet_row"
-                android:padding="8dp"
-                android:layoutDirection="rtl"
-                />
+                android:textSize="20sp" />
+
             <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/near_me_bottom_sheet_row"
+                android:gravity="right"
+                android:layoutDirection="rtl"
+                android:padding="8dp"
                 android:text="رستوران و کافی شاپ"
-                android:textSize="20sp"
                 android:textColor="@android:color/black"
-                android:gravity="right"
+                android:textSize="20sp" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:background="@drawable/near_me_bottom_sheet_row"
-                android:padding="8dp"
+                android:gravity="right"
                 android:layoutDirection="rtl"
-                />
-            <CheckBox
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:padding="8dp"
                 android:text="آرایشی و بهداشتی"
-                android:textSize="20sp"
                 android:textColor="@android:color/black"
-                android:gravity="right"
-                android:background="@drawable/near_me_bottom_sheet_row"
-                android:padding="8dp"
-                android:layoutDirection="rtl"/>
+                android:textSize="20sp" />
+
             <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/near_me_bottom_sheet_row"
+                android:gravity="right"
+                android:layoutDirection="rtl"
+                android:padding="8dp"
                 android:text="سلامتی و پزشکی"
-                android:textSize="20sp"
                 android:textColor="@android:color/black"
-                android:gravity="right"
-                android:background="@drawable/near_me_bottom_sheet_row"
-                android:padding="8dp"
-                android:layoutDirection="rtl"/>
+                android:textSize="20sp" />
+
             <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/near_me_bottom_sheet_row"
+                android:gravity="right"
+                android:layoutDirection="rtl"
+                android:padding="8dp"
                 android:text="تفریحی و ورزشی"
-                android:textSize="20sp"
                 android:textColor="@android:color/black"
-                android:gravity="right"
-                android:background="@drawable/near_me_bottom_sheet_row"
-                android:padding="8dp"
-                android:layoutDirection="rtl"/>
+                android:textSize="20sp" />
+
             <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/near_me_bottom_sheet_row"
+                android:gravity="right"
+                android:layoutDirection="rtl"
+                android:padding="8dp"
                 android:text="لوازم جانبی"
-                android:textSize="20sp"
                 android:textColor="@android:color/black"
-                android:gravity="right"
-                android:background="@drawable/near_me_bottom_sheet_row"
-                android:padding="8dp"
-                android:layoutDirection="rtl"/>
+                android:textSize="20sp" />
+
             <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/near_me_bottom_sheet_row"
+                android:gravity="right"
+                android:layoutDirection="rtl"
+                android:padding="8dp"
                 android:text="لوازم خودرو و ابزار"
-                android:textSize="20sp"
                 android:textColor="@android:color/black"
-                android:gravity="right"
-                android:background="@drawable/near_me_bottom_sheet_row"
-                android:padding="8dp"
-                android:layoutDirection="rtl"/>
+                android:textSize="20sp" />
+
             <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/near_me_bottom_sheet_row"
+                android:gravity="right"
+                android:layoutDirection="rtl"
+                android:padding="8dp"
                 android:text="زیورآلات"
-                android:textSize="20sp"
                 android:textColor="@android:color/black"
-                android:gravity="right"
-                android:background="@drawable/near_me_bottom_sheet_row"
-                android:padding="8dp"
-                android:layoutDirection="rtl"/>
+                android:textSize="20sp" />
+
             <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/near_me_bottom_sheet_row"
+                android:gravity="right"
+                android:layoutDirection="rtl"
+                android:padding="8dp"
                 android:text="ظروف و ابزار آشپزخانه و خانه"
-                android:textSize="20sp"
                 android:textColor="@android:color/black"
-                android:gravity="right"
-                android:background="@drawable/near_me_bottom_sheet_row"
-                android:padding="8dp"
-                android:layoutDirection="rtl"/>
+                android:textSize="20sp" />
+
             <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/near_me_bottom_sheet_row"
+                android:gravity="right"
+                android:layoutDirection="rtl"
+                android:padding="8dp"
                 android:text="آموزش"
-                android:textSize="20sp"
                 android:textColor="@android:color/black"
-                android:gravity="right"
-                android:background="@drawable/near_me_bottom_sheet_row"
-                android:padding="8dp"
-                android:layoutDirection="rtl"/>
+                android:textSize="20sp" />
+
             <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/near_me_bottom_sheet_row"
+                android:gravity="right"
+                android:layoutDirection="rtl"
+                android:padding="8dp"
                 android:text="هنر و تئاتر"
-                android:textSize="20sp"
                 android:textColor="@android:color/black"
-                android:gravity="right"
-                android:background="@drawable/near_me_bottom_sheet_row"
-                android:padding="8dp"
-                android:layoutDirection="rtl"/>
+                android:textSize="20sp" />
+
             <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/near_me_bottom_sheet_row"
+                android:gravity="right"
+                android:layoutDirection="rtl"
+                android:padding="8dp"
                 android:text="خدمات"
-                android:textSize="20sp"
                 android:textColor="@android:color/black"
-                android:gravity="right"
-                android:background="@drawable/near_me_bottom_sheet_row"
-                android:padding="8dp"
-                android:layoutDirection="rtl"/>
+                android:textSize="20sp" />
+
             <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/near_me_bottom_sheet_row"
+                android:gravity="right"
+                android:layoutDirection="rtl"
+                android:padding="8dp"
                 android:text="هتل و سفر"
-                android:textSize="20sp"
                 android:textColor="@android:color/black"
-                android:gravity="right"
-                android:background="@drawable/near_me_bottom_sheet_row"
-                android:padding="8dp"
-                android:layoutDirection="rtl"/>
+                android:textSize="20sp" />
+
             <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/near_me_bottom_sheet_row"
+                android:gravity="right"
+                android:layoutDirection="rtl"
+                android:padding="8dp"
                 android:text="لوازم سفر"
-                android:textSize="20sp"
                 android:textColor="@android:color/black"
-                android:gravity="right"
-                android:background="@drawable/near_me_bottom_sheet_row"
-                android:padding="8dp"
-                android:layoutDirection="rtl"/>
+                android:textSize="20sp" />
+
             <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="پوشاک"
-                android:textSize="20sp"
-                android:textColor="@android:color/black"
                 android:gravity="right"
+                android:layoutDirection="rtl"
                 android:padding="8dp"
-                android:layoutDirection="rtl"/>
+                android:text="پوشاک"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>

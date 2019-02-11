@@ -2,7 +2,6 @@ package android.niky.mahem_final.OffFinder;
 
 
 
-
 public class Takhfif {
     private String last_c,new_c,t_percent,t_describe,t_city;
     private int t_image;

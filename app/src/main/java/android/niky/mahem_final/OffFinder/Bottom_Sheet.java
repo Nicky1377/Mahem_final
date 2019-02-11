@@ -1,19 +1,24 @@
 package android.niky.mahem_final.OffFinder;
 
+import android.niky.mahem_final.R;
+
+
 import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.app.FragmentManager;
 import android.content.Context;
 import android.content.Intent;
-import android.niky.mahem_final.R;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomSheetDialogFragment;
+import android.support.design.widget.CoordinatorLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
 
 
 @SuppressLint("ValidFragment")
@@ -31,10 +36,17 @@ public class Bottom_Sheet extends BottomSheetDialogFragment {
         this.context=c;
     }
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setStyle(BottomSheetDialogFragment.STYLE_NORMAL,R.style.CustomBottomSheetTheme);
+    }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.near_me_bottom_sheet,container,false);
+
 
         near=view.findViewById(R.id.near);
         group=view.findViewById(R.id.group);
@@ -63,7 +75,7 @@ public class Bottom_Sheet extends BottomSheetDialogFragment {
             }
         });
 
-        map.setOnClickListener(new View.OnClickListener() {
+        off.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Bottom_Sheet_map bottom_sheet=new Bottom_Sheet_map();
@@ -75,6 +87,29 @@ public class Bottom_Sheet extends BottomSheetDialogFragment {
                 imageView.setLayoutParams(params);
             }
         });
+
+        map.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent=new Intent(getContext(),android.niky.mahem_final.OffFinder.map.class);
+                startActivity(intent);
+            }
+        });
         return view;
     }
+
+//    @SuppressLint("RestrictedApi")
+//    @Override
+//    public void setupDialog(Dialog dialog, int style) {
+//        super.setupDialog(dialog, style);
+//        View contentView=View.inflate(getContext(),R.layout.near_me_bottom_sheet,null);
+//        dialog.setContentView(contentView);
+//
+//        CoordinatorLayout.LayoutParams params=(CoordinatorLayout.LayoutParams) ((View)contentView.getParent()
+//        ).getLayoutParams();
+//
+//        CoordinatorLayout.Behavior behavior=params.getBehavior();
+//        ((View) contentView.getParent()).setBackgroundColor(getResources().getColor(android.R.color.transparent));
+//    }
 }

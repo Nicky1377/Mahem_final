@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-android:paddingRight="10dp"
-    android:paddingLeft="10dp"
-    >
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        >
 
 
     <TextView
@@ -18,9 +18,8 @@ android:paddingRight="10dp"
         android:padding="10dp"
         android:id="@+id/Tt1"
         />
-
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="380dp"
         android:layout_height="wrap_content"
         android:background="@drawable/popup_background"
         android:text="درخواستی"
@@ -29,5 +28,4 @@ android:paddingRight="10dp"
         android:padding="10dp"
         android:id="@+id/Tt2"
         />
-
-</LinearLayout>
+    </LinearLayout>

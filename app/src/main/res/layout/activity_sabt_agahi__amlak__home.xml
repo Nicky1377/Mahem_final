@@ -5,19 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Add.SabtAgahi_Amlak_Office">
-
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/activity_norm"
-        android:layout_width="385dp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         tools:context="android.niky.sabtagahi.Norm"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp"
-        tools:ignore="MissingConstraints"
-        >
-
+        android:orientation="vertical">
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp" />
@@ -50,7 +44,7 @@
                 android:padding="2dp"
                 android:text="ثبت رایگان آگهی"
                 android:textColor="@android:color/white"
-                android:textSize="24dp" />
+                android:textSize="20dp" />
         </RelativeLayout>
 
 
@@ -66,7 +60,7 @@
             android:padding="5dp"
             android:text="انتخاب تصویر مناسب برای آگهی"
             android:textColor="@android:color/black"
-            android:textSize="23dp"
+            android:textSize="20dp"
             android:textStyle="bold" />
 
         <TextView
@@ -77,7 +71,7 @@
             android:padding="5dp"
             android:text="آگهی های شامل تصویر،بیش از 5 برابر دیده می شوند."
             android:textColor="@android:color/black"
-            android:textSize="17dp" />
+            android:textSize="15dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -162,6 +156,7 @@
                     android:gravity="right"
                     android:inputType="none"
                     android:paddingRight="15dp"
+                    android:textSize="15dp"
                     android:text="مسکونی/املاک" />
 
 
@@ -172,8 +167,10 @@
                     android:layout_margin="3dp"
                     android:backgroundTint="@color/backColor"
                     android:gravity="right"
+                    android:textSize="15dp"
                     android:hint="عنوان آگهی« حداقل 10  حرف»"
-                    android:paddingRight="15dp" />
+                    android:paddingRight="15dp"
+                    android:lines="1"/>
 
 
                 <EditText
@@ -186,6 +183,7 @@
                     android:gravity="right"
                     android:hint="نوع ملک"
                     android:inputType="none"
+                    android:textSize="15dp"
                     android:paddingRight="15dp" />
 
 
@@ -196,8 +194,11 @@
                     android:layout_margin="3dp"
                     android:backgroundTint="@color/backColor"
                     android:gravity="right"
-                    android:hint=" )متر مربع(متراژ"
-                    android:paddingRight="15dp" />
+                    android:textSize="15dp"
+                    android:hint=" متراژ (متر مربع)"
+                    android:paddingRight="15dp"
+                    android:inputType="number"
+                    android:lines="1"/>
 
 
                 <EditText
@@ -208,10 +209,10 @@
                     android:backgroundTint="@color/backColor"
                     android:focusable="false"
                     android:gravity="right"
+                    android:textSize="15dp"
                     android:hint="نوع آگهی"
                     android:inputType="none"
                     android:paddingRight="15dp" />
-
 
                 <EditText
                     android:id="@+id/T6"
@@ -221,6 +222,7 @@
                     android:backgroundTint="@color/backColor"
                     android:focusable="false"
                     android:gravity="right"
+                    android:textSize="15dp"
                     android:hint="نوع آگهی دهنده"
                     android:inputType="none"
                     android:paddingRight="15dp" />
@@ -233,6 +235,7 @@
                     android:backgroundTint="@color/backColor"
                     android:focusable="false"
                     android:gravity="right"
+                    android:textSize="15dp"
                     android:hint="قیمت"
                     android:inputType="none"
                     android:paddingRight="15dp" />
@@ -246,6 +249,7 @@
                     android:backgroundTint="@color/backColor"
                     android:gravity="right"
                     android:hint="توضیحات"
+                    android:textSize="15dp"
                     android:paddingRight="15dp" />
 
                 <EditText
@@ -256,6 +260,7 @@
                     android:backgroundTint="@color/backColor"
                     android:focusable="false"
                     android:gravity="right"
+                    android:textSize="15dp"
                     android:hint="اطلاعات تماس"
                     android:inputType="none"
                     android:paddingRight="15dp" />
@@ -269,7 +274,9 @@
                     android:backgroundTint="@color/backColor"
                     android:gravity="right"
                     android:hint="تعیین موقعیت"
-                    android:paddingRight="15dp" />
+                    android:paddingRight="15dp"
+                    android:textSize="15dp"
+                    android:lines="1"/>
 
 
                 <RelativeLayout

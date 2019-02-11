@@ -52,7 +52,8 @@
                 android:layout_alignParentBottom="true"
                 android:layout_toLeftOf="@id/s_l"
                 android:hint="جستجوبرای..."
-                android:gravity="right"/>
+                android:gravity="right"
+                android:lines="1"/>
         </RelativeLayout>
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/job_pic"
@@ -64,7 +65,7 @@
             app:civ_border_color="@android:color/black"
             app:civ_border_width="2dp"
             app:civ_circle_background_color="#f6e18e"
-            android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp"
             /></RelativeLayout>
     <RelativeLayout
         android:layout_below="@id/top_pnl"
@@ -131,7 +132,7 @@
     <android.support.design.widget.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
+
         android:layout_alignParentBottom="true"
         android:layout_margin="20dp"
         android:src="@drawable/add"

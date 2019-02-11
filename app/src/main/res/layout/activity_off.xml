@@ -38,7 +38,7 @@
             android:layout_height="match_parent"
             android:textColor="@android:color/white"
             android:id="@+id/t"
-            android:textSize="23dp"
+            android:textSize="20dp"
             android:text="تخفیف یاب"
             android:gravity="center|bottom"
             android:paddingBottom="8dp"
@@ -59,7 +59,7 @@
             android:id="@+id/n_recycler_view"
             android:layout_below="@id/toolbar"
             android:layout_width="match_parent"
-            android:paddingBottom="80dp"
+            android:paddingBottom="53dp"
             android:layout_height="match_parent">
         </android.support.v7.widget.RecyclerView>
 

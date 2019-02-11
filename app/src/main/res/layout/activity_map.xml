@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OffFinder.map">
+
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/MapFragment"
+        android:name="com.google.android.gms.maps.MapFragment"
+        />
+    <TextView
+        android:id="@+id/t_types"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="همه تخفیف ها"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/light_dark_tv"
+        android:padding="7dp"
+        android:textSize="20sp"
+        android:textColor="@android:color/black"
+        android:drawableLeft="@android:drawable/arrow_up_float"/>
+</RelativeLayout>

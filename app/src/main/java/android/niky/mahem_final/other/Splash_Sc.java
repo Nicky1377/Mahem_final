@@ -1,14 +1,17 @@
 package android.niky.mahem_final.other;
 
+import android.niky.mahem_final.R;
+
+
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
-import android.niky.mahem_final.R;
+import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.Toast;
+
 
 public class Splash_Sc extends AppCompatActivity {
     ImageView img;
@@ -25,6 +28,7 @@ public class Splash_Sc extends AppCompatActivity {
         } else {
            tran(Page1.class);
         }
+
     }
 
     void tran(final Class c) {

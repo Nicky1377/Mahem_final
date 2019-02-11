@@ -10,6 +10,10 @@
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -26,6 +30,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".other.Page1" />
+        <activity android:name=".OffFinder.Takhfif_Show" />
         <activity android:name=".Groups.Group" />
         <activity android:name=".Groups.Estekhdami" />
         <activity android:name=".Groups.Amlak" />
@@ -66,25 +71,41 @@
         <activity android:name=".Add.SabtAgahi_Car" />
         <activity android:name=".Add.SabtAgahi_Amlak_Home" />
         <activity android:name=".Add.SabtAgahi_Amlak_Office" />
-        <activity android:name=".Search_Filter.Search" />
+        <activity
+            android:name=".Search_Filter.Search"
+            android:windowSoftInputMode="adjustPan" />
         <activity android:name=".Add.SabtAgahi_Home_Office" />
         <activity android:name=".Search_Filter.Filter_group" />
         <activity android:name=".Search_Filter.Filter_Estekhdami" />
         <activity android:name=".Search_Filter.Filter_Khodro" />
         <activity android:name=".Search_Filter.Filter_Home" />
+        <activity android:name=".Search_Filter.Collections" />
         <activity android:name=".Search_Filter.Filter_Estekhdami_monshi_fani" />
         <activity android:name=".Search_Filter.Filter_other" />
         <activity android:name=".OffFinder.Bottomsheet_All_takhfif" />
-        <activity android:name=".OffFinder.BottomSheetMahem" />
         <activity android:name=".MenuItems.Contact" />
         <activity android:name=".MenuItems.Ads_show" />
-        <activity android:name=".Search_Filter.Ads" />
+        <activity
+            android:name=".Search_Filter.Ads"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Search_Filter.Management_Panel"
+            android:windowSoftInputMode="adjustPan" />
         <activity android:name=".Search_Filter.Estekhdami_menu" />
         <activity android:name=".JobBank.JobList" />
         <activity android:name=".JobBank.JobBank_Sabt" />
         <activity android:name=".OffFinder.Off" />
         <activity android:name=".OffFinder.Near_me" />
-        <activity android:name=".AdsList"></activity>
+        <activity android:name=".OffFinder.map"></activity>
+        <activity android:name=".Chat.MessageList"></activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAD24rq8ZnCUsqeYtZD4ICNoSgx0Z0RTRA" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
     </application>
 
 </manifest>

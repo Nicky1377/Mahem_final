@@ -1,4 +1,5 @@
 <resources>
+
     <string name="app_name">Mahem</string>
     <string name="title_categories">Categories</string>
     <string name="title_search">Search</string>
@@ -26,5 +27,4 @@
     <string name="time">زمان انتشار</string>
     <string name="title_activity_job_bank_medicine">JobBank_medicine</string>
     <string name="title_activity_main_activitynnnn">MainActivitynnnn</string>
-
 </resources>

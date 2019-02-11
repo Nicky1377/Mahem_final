@@ -1,15 +1,18 @@
 package android.niky.mahem_final.MenuItems;
 
-import android.content.Intent;
-import android.niky.mahem_final.Add.SabtAgahi;
-import android.niky.mahem_final.Groups.Group;
-import android.niky.mahem_final.OffFinder.Off;
 import android.niky.mahem_final.R;
-import android.support.v7.app.AppCompatActivity;
+
+
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import android.niky.mahem_final.Add.SabtAgahi;
+import android.niky.mahem_final.Groups.Group;
+import android.niky.mahem_final.OffFinder.Off;
 
 public class ContactUs extends AppCompatActivity {
     View navigationBar;
@@ -36,6 +39,7 @@ public class ContactUs extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getBaseContext(), android.niky.mahem_final.Search_Filter.Search.class);
+                i.putExtra("title","جستجو");
                 startActivity(i);
                 finish();
             }

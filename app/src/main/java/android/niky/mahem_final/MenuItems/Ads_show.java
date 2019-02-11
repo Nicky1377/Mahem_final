@@ -1,7 +1,9 @@
 package android.niky.mahem_final.MenuItems;
 
-import android.content.Intent;
 import android.niky.mahem_final.R;
+
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
@@ -15,10 +17,12 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import android.niky.mahem_final.Chat.MessageList;
+
 
 public class Ads_show extends AppCompatActivity {
     private ViewPager viewPager;
-    //private ViewPagerAdapter adapter;
+    private ViewPagerAdapter adapter;
     private LinearLayout sliderDotspanel;
     private ImageView collection;
     private ImageView back;
@@ -37,7 +41,7 @@ public class Ads_show extends AppCompatActivity {
     private LayoutInflater inflater;
 
     private boolean selected=true;
-    private int dotscount;
+    private int dotscount=5;
     private ImageView[] dots;
     private String JobName;
     private String TimeOfAgahi;
@@ -51,11 +55,11 @@ public class Ads_show extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ads_show);
         job_name=findViewById(R.id.jobname);
-        agahi_time=(TextView)findViewById(R.id.time) ;
-        option_title=(TextView)findViewById(R.id.option_title) ;
-        option_detail=(TextView)findViewById(R.id.option_detail) ;
-        description=(TextView)findViewById(R.id.details);
-        agahi_title=(TextView)findViewById(R.id.jobtitle) ;
+        agahi_time=findViewById(R.id.time) ;
+        option_title=findViewById(R.id.option_title) ;
+        option_detail=findViewById(R.id.option_detail) ;
+        description=findViewById(R.id.details);
+        agahi_title=findViewById(R.id.jobtitle) ;
         /////////////fill this variables from network data
         ///under image textview
         JobName="";
@@ -75,14 +79,14 @@ public class Ads_show extends AppCompatActivity {
         description.setText(Description);
         agahi_title.setText(AgahiName);
 
-        viewPager=(ViewPager)findViewById(R.id.view_pager);
-//        adapter=new ViewPagerAdapter(this);
-//        viewPager.setAdapter(adapter);
+        viewPager=findViewById(R.id.view_pager);
+        adapter=new ViewPagerAdapter(this);
+        viewPager.setAdapter(adapter);
 
 
 
         sliderDotspanel=(LinearLayout)findViewById(R.id.SlideDots) ;
-        //dotscount=adapter.getCount();
+        dotscount=adapter.getCount();
 
 
         dots=new ImageView[dotscount];
@@ -100,6 +104,7 @@ public class Ads_show extends AppCompatActivity {
 
 
         dots[0].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.active_dot));
+
 
 
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -124,7 +129,7 @@ public class Ads_show extends AppCompatActivity {
             }
         });
 
-        collection=(ImageView)findViewById(R.id.collections);
+        collection=findViewById(R.id.collections);
         collection.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -140,17 +145,19 @@ public class Ads_show extends AppCompatActivity {
             }
         });
 
-        back=(ImageView)findViewById(R.id.back);
+        back=findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 //should fill with network data
 
-                Toast.makeText(getBaseContext(),"NETWORK",Toast.LENGTH_SHORT).show();
+                Intent i=new Intent(Ads_show.this, android.niky.mahem_final.Search_Filter.Search.class);
+                i.putExtra("title","استخدامی");
+                startActivity(i);
             }
         });
-        share=(ImageView)findViewById(R.id.share);
+        share=findViewById(R.id.share);
         share.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -167,7 +174,7 @@ public class Ads_show extends AppCompatActivity {
 
 
 
-        report_problem=(RelativeLayout)findViewById(R.id.report);
+        report_problem=findViewById(R.id.report);
         report_problem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -180,7 +187,7 @@ public class Ads_show extends AppCompatActivity {
 
 
 
-        call_Information=(Button)findViewById(R.id.call_inf);
+        call_Information=findViewById(R.id.call_inf);
         call_Information.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -192,13 +199,14 @@ public class Ads_show extends AppCompatActivity {
             }
         });
 
-        chat=(Button)findViewById(R.id.chat);
+        chat=findViewById(R.id.chat);
         chat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //should fill with network data
 
-                Toast.makeText(getBaseContext(),"NETWORK",Toast.LENGTH_SHORT).show();
+
+                Intent intent=new Intent(Ads_show.this, MessageList.class);
+                startActivity(intent);
             }
         });
         Toast.makeText(this, getLocalClassName().toString() + "\nMohadese Salem", Toast.LENGTH_LONG).show();

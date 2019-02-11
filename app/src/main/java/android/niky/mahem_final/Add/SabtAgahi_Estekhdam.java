@@ -1,12 +1,22 @@
 package android.niky.mahem_final.Add;
 
-import android.content.Context;
 import android.niky.mahem_final.R;
-import android.support.v7.app.AppCompatActivity;
+
+import android.Manifest;
+import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.support.annotation.RequiresApi;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -15,6 +25,8 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
+
+
 
 import java.util.ArrayList;
 
@@ -25,10 +37,13 @@ public class SabtAgahi_Estekhdam extends AppCompatActivity {
     View CallLayout,EducationLayout,GharardadLayout;
     TextView Ed_1,Ed_2,Ed_3,Ed_4,Ed_5,Ed_6,Gh_1,Gh_2,Gh_3,Gh_4;
     CheckBox rules,chat,email_check;
-    Button send,cam1,cam2,cam3,cam4,cam5,ok_call;
+    ImageView cam1,cam2,cam3,cam4,cam5;
+    Button send,ok_call;
+    Bitmap yourSelectedImage;
     PopupWindow Ed_Layout,Call_Layout,Gh_Layout;
-    ArrayList<Button> btns;
+    ArrayList<ImageView> Cameras;
     ImageView map_img;
+    private String searchingLocation;
 
     int pic=0;
 
@@ -50,32 +65,37 @@ public class SabtAgahi_Estekhdam extends AppCompatActivity {
         map_img=(ImageView)findViewById(R.id.map_img);
 
         send=(Button)findViewById(R.id.send);
-        cam1=(Button)findViewById(R.id.c1);
-        cam2=(Button)findViewById(R.id.c2);
-        cam3=(Button)findViewById(R.id.c3);
-        cam4=(Button)findViewById(R.id.c4);
-        cam5=(Button)findViewById(R.id.c5);
+        cam1=findViewById(R.id.c1);
+        cam2=findViewById(R.id.c2);
+        cam3=findViewById(R.id.c3);
+        cam4=findViewById(R.id.c4);
+        cam5=findViewById(R.id.c5);
         rules=(CheckBox)findViewById(R.id.rule);
 
-        btns=new ArrayList<Button>(5);
-        btns.add(cam1);
-        btns.add(cam2);
-        btns.add(cam3);
-        btns.add(cam4);
-        btns.add(cam5);
 
-        for(Button item:btns)
-        {
+        Cameras=new ArrayList<ImageView>(5);
+        Cameras.add(cam1);
+        Cameras.add(cam2);
+        Cameras.add(cam3);
+        Cameras.add(cam4);
+        Cameras.add(cam5);
+
+        for(final ImageView item:Cameras)
+        {item.setImageResource(R.drawable.icons88);
             item.setOnClickListener(new View.OnClickListener() {
+                @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
                 @Override
                 public void onClick(View view) {
-                    pic++;
-                    //  pick();
+                    pic=Cameras.indexOf(item);
+                    pick();
+
+
 
 
                 }
             });
         }
+
 
 
         call.setOnClickListener(new View.OnClickListener() {
@@ -118,7 +138,10 @@ public class SabtAgahi_Estekhdam extends AppCompatActivity {
         map_img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //intent to google map
+                Intent mapIntent=new Intent(Intent.ACTION_VIEW);
+                searchingLocation="";
+                mapIntent.setData(Uri.parse("geo:0,0?q="+searchingLocation));
+                startActivity(mapIntent);
             }
         });
 
@@ -265,5 +288,59 @@ public class SabtAgahi_Estekhdam extends AppCompatActivity {
             }
         });
 
+    }
+    //pick picture...
+    public void pick()
+    {
+
+        final int ID_THIS_ACTIVITY=30;
+        Intent i = new Intent(Intent.ACTION_PICK,
+                android.provider.MediaStore.Images.Media.INTERNAL_CONTENT_URI);
+        i.setType("image/*");
+        final int ACTIVITY_SELECT_IMAGE = 1234;
+        try {
+            if (Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
+                if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED) {
+                    String[] permission = {Manifest.permission.READ_EXTERNAL_STORAGE};
+                    requestPermissions(permission, ID_THIS_ACTIVITY);
+                } else {
+
+                    startActivityForResult(i, ACTIVITY_SELECT_IMAGE);
+                }
+            }
+        }catch (Exception e){
+            Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+
+
+
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch(requestCode) {
+            case 1234:
+                if (resultCode == RESULT_OK) {
+                    Uri selectedImage = data.getData();
+                    String[] filePathColumn = {MediaStore.Images.Media.DATA};
+
+                    Cursor cursor = getContentResolver().query(selectedImage, filePathColumn, null, null, null);
+                    cursor.moveToFirst();
+
+                    int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+                    String filePath = cursor.getString(columnIndex);
+
+                    BitmapFactory.Options options = new BitmapFactory.Options();
+                    options.inPreferredConfig = Bitmap.Config.ARGB_8888;
+
+                    cursor.close();
+                    yourSelectedImage = BitmapFactory.decodeFile(filePath, options);
+                    Cameras.get(pic).setImageBitmap(yourSelectedImage);
+
+
+
+                }
+        }
     }
 }

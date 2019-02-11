@@ -25,7 +25,7 @@
     android:id="@+id/activity_contact"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingBottom="16dp"
+
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:paddingTop="16dp"
@@ -63,6 +63,9 @@
             android:id="@+id/call_txt"
             android:layout_toLeftOf="@id/clogo"
 
+            android:paddingTop="10dp"
+
+            android:textColor="@android:color/black"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_margin="10dp"
@@ -93,6 +96,9 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:textSize="20sp"
+            android:paddingTop="10dp"
+
+            android:textColor="@android:color/black"
 
             />
     </RelativeLayout>
@@ -113,24 +119,27 @@
         <TextView
 
 
+            android:paddingTop="10dp"
+
+            android:textColor="@android:color/black"
             android:id="@+id/mail_txt"
             android:layout_toLeftOf="@id/elogo"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_margin="10dp"
 
-            android:textSize="18sp"
+            android:textSize="20dp"
             /></RelativeLayout>
-    <TextView
+   <TextView
         android:layout_below="@id/Email"
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
         android:textSize="15sp"
         android:text="هشدارپلیس : لطفا پیش از انجام معامله و هرنوع پرداخت وجه ، از صحت کالا یا خدمات ارائه شده ، به صورت حضوری اطمینان حاصل نمایید. "
-android:id="@+id/tt"        />
+        android:id="@+id/tt" />
 <Button
+    android:id="@+id/exitBtn"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:background="#f9f9f9"

@@ -1,9 +1,9 @@
 package android.niky.mahem_final.OffFinder;
 
+import android.niky.mahem_final.R;
+
+
 import android.content.Intent;
-import android.niky.mahem_final.Add.SabtAgahi;
-import android.niky.mahem_final.Groups.Group;
-import android.niky.mahem_final.MenuItems.Menu1;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -15,7 +15,11 @@ import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.niky.mahem_final.R;
+
+import android.niky.mahem_final.Add.SabtAgahi;
+import android.niky.mahem_final.Groups.Group;
+import android.niky.mahem_final.MenuItems.Menu1;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -88,13 +92,7 @@ public class Near_me extends AppCompatActivity {
 
             TList.add(new Takhfif(last_c.get(i), new_c.get(i), t_percent.get(i), t_describe.get(i), t_city.get(i), t_imagess.get(i)));
 
-            adapter = new TAdapter(this, TList, new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-
-                }
-
-            }, t_rate);
+            adapter = new TAdapter(this, TList, t_rate);
             recyclerView.setAdapter(adapter);
 
 
@@ -176,7 +174,7 @@ public class Near_me extends AppCompatActivity {
         Search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getBaseContext(), android.niky.mahem_final.Search_Filter.Search.class);
+                Intent i = new Intent(getBaseContext(),android.niky.mahem_final.Search_Filter.Search.class);
                 startActivity(i);
                 finish();
             }

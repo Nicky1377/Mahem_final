@@ -24,7 +24,7 @@
             android:layout_width="380dp"
             android:layout_height="wrap_content"
             android:background="@drawable/popup_background"
-            android:text="اقصاطی"
+            android:text="اقساطی"
             android:gravity="center"
             android:textSize="15dp"
             android:padding="10dp"

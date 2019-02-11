@@ -1,16 +1,19 @@
 package android.niky.mahem_final.MenuItems;
-import android.niky.mahem_final.Add.SabtAgahi;
-import android.niky.mahem_final.Groups.Group;
-import android.niky.mahem_final.OffFinder.Off;
+
 import android.niky.mahem_final.R;
-import android.niky.mahem_final.other.Page1;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.content.Intent;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+
+import android.niky.mahem_final.Add.SabtAgahi;
+import android.niky.mahem_final.Groups.Group;
+import android.niky.mahem_final.OffFinder.Off;
+import android.niky.mahem_final.other.Page1;
 
 public class CodeVerification extends AppCompatActivity {
     EditText etCode;
@@ -56,6 +59,7 @@ public class CodeVerification extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getBaseContext(), android.niky.mahem_final.Search_Filter.Search.class);
+                i.putExtra("title","جستجو");
                 startActivity(i);
                 finish();
             }

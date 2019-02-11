@@ -1,17 +1,21 @@
 package android.niky.mahem_final.Search_Filter;
 
-import android.content.Intent;
-import android.niky.mahem_final.Groups.Group;
-import android.niky.mahem_final.MenuItems.Menu1;
 import android.niky.mahem_final.R;
-import android.niky.mahem_final.Add.SabtAgahi;
-import android.support.v7.app.AppCompatActivity;
+
+
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ImageView;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
+
+import android.niky.mahem_final.Add.SabtAgahi;
+import android.niky.mahem_final.Groups.Group;
+import android.niky.mahem_final.MenuItems.Menu1;
+import android.niky.mahem_final.OffFinder.Off;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -100,6 +104,14 @@ public class Estekhdami_menu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getBaseContext(), Group.class);
+                startActivity(i);
+                finish();
+            }
+        });
+        Home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getBaseContext(), Off.class);
                 startActivity(i);
                 finish();
             }

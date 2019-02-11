@@ -1,6 +1,9 @@
 package android.niky.mahem_final.Search_Filter;
 
 import android.niky.mahem_final.R;
+
+
+import android.niky.mahem_final.Add.SabtAgahi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -34,7 +37,7 @@ public class Filter_group extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i=new Intent(Filter_group.this,Filter_Estekhdami.class);
-                startActivity(i);
+                startActivityForResult(i,2);
             }
         });
 
@@ -42,7 +45,7 @@ public class Filter_group extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i=new Intent(Filter_group.this,Filter_Home.class);
-                startActivity(i);
+                startActivityForResult(i,3);
             }
         });
 
@@ -50,11 +53,100 @@ public class Filter_group extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i=new Intent(Filter_group.this,Filter_Khodro.class);
-                startActivity(i);
+                startActivityForResult(i,4);
             }
         });
 
+        electric.setOnClickListener(new IntentClick(electric.getText().toString()));
+        home.setOnClickListener(new IntentClick(home.getText().toString()));
+        khadamat.setOnClickListener(new IntentClick(khadamat.getText().toString()));
+        tajhizat.setOnClickListener(new IntentClick(tajhizat.getText().toString()));
+        sargarmi.setOnClickListener(new IntentClick(sargarmi.getText().toString()));
+        personal.setOnClickListener(new IntentClick(personal.getText().toString()));
+
+
+
         Toast.makeText(this,getLocalClassName().toString()+"\nNiky",Toast.LENGTH_LONG).show();
+
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        if (requestCode == 1) {
+            if (resultCode == RESULT_FIRST_USER) {
+
+            }
+        }
+            else if(requestCode == 2)
+            {
+                Intent i = new Intent();
+                i.putExtra("AcName", "Estekhdami");
+                i.putExtra("group",data.getStringExtra("group"));
+                i.putExtra("Gharardad", data.getStringExtra("Gharardad"));
+                i.putExtra("EducationLevel", data.getStringExtra("EducationLevel"));
+                i.putExtra("city", data.getStringExtra("city"));
+                i.putExtra("newest",data.getStringExtra("newest"));
+                i.putExtra("cheap",data.getStringExtra("cheap"));
+                i.putExtra("expensive",data.getStringExtra("expensive"));
+                setResult(RESULT_OK,i);
+                finish();
+
+        }else if(requestCode == 3)
+        {
+
+            Intent i = new Intent();
+            i.putExtra("AcName", "Home");
+            i.putExtra("group",data.getStringExtra("group"));
+            i.putExtra("rooms",data.getStringExtra("rooms"));
+            i.putExtra("meter", data.getStringExtra("meter"));
+            i.putExtra("Type", data.getStringExtra("Type"));
+            i.putExtra("gheimat", data.getStringExtra("gheimat"));
+            i.putExtra("hoome", data.getStringExtra("hoome"));
+            i.putExtra("newest",data.getStringExtra("newest"));
+            i.putExtra("cheap",data.getStringExtra("cheap"));
+            i.putExtra("expensive",data.getStringExtra("expensive"));
+           // estekhdam.setText(data.getStringExtra("group"));
+            setResult(RESULT_OK,i);
+            finish();
+
+        }
+        else if(requestCode==4)
+        {
+            Intent i = new Intent();
+            i.putExtra("AcName", "Car");
+            i.putExtra("group", data.getStringExtra("group"));
+            i.putExtra("brand", data.getStringExtra("brand"));
+            i.putExtra("year", data.getStringExtra("year"));
+            i.putExtra("Type", data.getStringExtra("Type"));
+            i.putExtra("gheimat", data.getStringExtra("gheimat"));
+            i.putExtra("K_meter", data.getStringExtra("K_meter"));
+            i.putExtra("city", data.getStringExtra("city"));
+            i.putExtra("newest", data.getStringExtra("newest"));
+            i.putExtra("cheap", data.getStringExtra("cheap"));
+            i.putExtra("expensive", data.getStringExtra("expensive"));
+            // estekhdam.setText(data.getStringExtra("group"));
+            setResult(RESULT_OK,i);
+            finish();
+        }
+    }
+
+        class IntentClick implements View.OnClickListener {
+            private String Name;
+
+            public IntentClick(String name) {
+                Name = name;
+            }
+
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent();
+                i.putExtra("name", Name);
+                setResult(RESULT_FIRST_USER, i);
+                finish();
+            }
+
 
 
     }

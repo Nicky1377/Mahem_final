@@ -1,15 +1,18 @@
 package android.niky.mahem_final.JobBank;
-import android.content.Intent;
-import android.niky.mahem_final.Add.SabtAgahi;
-import android.niky.mahem_final.Groups.Group;
-import android.niky.mahem_final.MenuItems.Menu1;
+
 import android.niky.mahem_final.R;
-import android.support.v7.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import android.niky.mahem_final.Add.SabtAgahi;
+import android.niky.mahem_final.Groups.Group;
+import android.niky.mahem_final.MenuItems.Menu1;
 
 public class JobBankMenu extends AppCompatActivity {
     Button medical,meeting,car,arayesh,uni,art,sport,teach,majles,computer,jewels,
@@ -64,6 +67,7 @@ public class JobBankMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getBaseContext(), android.niky.mahem_final.Search_Filter.Search.class);
+                i.putExtra("title","جستجو");
                 startActivity(i);
                 finish();
             }

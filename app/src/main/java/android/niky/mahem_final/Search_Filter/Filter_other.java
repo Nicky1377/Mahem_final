@@ -1,9 +1,12 @@
 package android.niky.mahem_final.Search_Filter;
 
-import android.content.Context;
 import android.niky.mahem_final.R;
-import android.support.v7.app.AppCompatActivity;
+
+
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -12,7 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.content.Intent;
+
 public class Filter_other extends AppCompatActivity {
     EditText Group,city,Gheimat,pic;
     View CityLayout,GheimatLayout,YesNoLayout;
@@ -21,6 +24,10 @@ public class Filter_other extends AppCompatActivity {
             ,yes,no;
     Button send,newest,expensive,cheap;
     PopupWindow City_Layout,Gheimat_Layout,YesNo_Layout;
+
+    int Src;
+
+    boolean Newest=false,Expensive=false,Cheap=false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +49,7 @@ public class Filter_other extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i=new Intent(Filter_other.this,Filter_group.class);
-                startActivity(i);
+                startActivityForResult(i,1);
             }
         });
 
@@ -92,11 +99,76 @@ public class Filter_other extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 tt("اعمال شد.");
+                Src_check();
             }
         });
 
         Toast.makeText(this,getLocalClassName().toString()+"\nNiky",Toast.LENGTH_LONG).show();
 
+        Filter_Buttons();
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+            if(requestCode==1)
+            {
+                if(resultCode==RESULT_FIRST_USER)
+                {
+                    Group.setText(data.getStringExtra("name"));
+                   Src=1;
+                }
+               else if(resultCode==RESULT_OK)
+                {
+                     if(data.getStringExtra("AcName").equals("Home")) {
+                         Intent i = new Intent();
+                         i.putExtra("AcName", "Home");
+                         i.putExtra("group", data.getStringExtra("group"));
+                         i.putExtra("rooms", data.getStringExtra("rooms"));
+                         i.putExtra("meter", data.getStringExtra("meter"));
+                         i.putExtra("Type", data.getStringExtra("Type"));
+                         i.putExtra("gheimat", data.getStringExtra("gheimat"));
+                         i.putExtra("hoome", data.getStringExtra("hoome"));
+                         i.putExtra("newest", data.getStringExtra("newest"));
+                         i.putExtra("cheap", data.getStringExtra("cheap"));
+                         i.putExtra("expensive", data.getStringExtra("expensive"));
+                         setResult(RESULT_FIRST_USER, i);
+                         finish();
+                     }else if(data.getStringExtra("AcName").equals("Car"))
+                     {
+                         Intent i = new Intent();
+                         i.putExtra("AcName", "Car");
+                         i.putExtra("group", data.getStringExtra("group"));
+                         i.putExtra("brand", data.getStringExtra("brand"));
+                         i.putExtra("year", data.getStringExtra("year"));
+                         i.putExtra("Type", data.getStringExtra("Type"));
+                         i.putExtra("gheimat", data.getStringExtra("gheimat"));
+                         i.putExtra("K_meter", data.getStringExtra("K_meter"));
+                         i.putExtra("city", data.getStringExtra("city"));
+                         i.putExtra("newest", data.getStringExtra("newest"));
+                         i.putExtra("cheap", data.getStringExtra("cheap"));
+                         i.putExtra("expensive", data.getStringExtra("expensive"));
+                         // estekhdam.setText(data.getStringExtra("group"));
+                         setResult(RESULT_FIRST_USER,i);
+                         finish();
+                     }
+                     else if(data.getStringExtra("AcName").equals("Estekhdami"))
+                     {
+                         Intent i = new Intent();
+                         i.putExtra("AcName", "Estekhdami");
+                         i.putExtra("group",data.getStringExtra("group"));
+                         i.putExtra("Gharardad", data.getStringExtra("Gharardad"));
+                         i.putExtra("EducationLevel", data.getStringExtra("EducationLevel"));
+                         i.putExtra("city", data.getStringExtra("city"));
+                         i.putExtra("newest",data.getStringExtra("newest"));
+                         i.putExtra("cheap",data.getStringExtra("cheap"));
+                         i.putExtra("expensive",data.getStringExtra("expensive"));
+                         setResult(RESULT_FIRST_USER,i);
+                         finish();
+                     }
+                }
+            }
 
     }
 
@@ -308,7 +380,6 @@ public class Filter_other extends AppCompatActivity {
 
     }
 
-
     public void Pic_map()
     {
         yes=(TextView)YesNoLayout.findViewById(R.id.Tt1);
@@ -333,6 +404,91 @@ public class Filter_other extends AppCompatActivity {
         });
 
     }
+
+    public void Filter_Buttons()
+    {
+        newest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(Newest==false)
+                {
+                    newest.setBackgroundResource(R.drawable.button2_red);
+                    newest.setTextColor(getResources().getColor(R.color.colorDefaultBackground));
+                    Newest=true;
+                }
+                else {
+                    newest.setBackgroundResource(R.drawable.button2);
+                    newest.setTextColor(getResources().getColor(R.color.backColor));
+                    Newest=false;
+                }
+            }
+        });
+
+        cheap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(Cheap==false)
+                {
+                    cheap.setBackgroundResource(R.drawable.button2_right_red);
+                    cheap.setTextColor(getResources().getColor(R.color.colorDefaultBackground));
+                    Cheap=true;
+
+                    if(Expensive==true)
+                    {
+                        expensive.setBackgroundResource(R.drawable.button2_left);
+                        expensive.setTextColor(getResources().getColor(R.color.backColor));
+                        Expensive=false;
+                    }
+                }
+                else {
+                    cheap.setBackgroundResource(R.drawable.button2_right);
+                    cheap.setTextColor(getResources().getColor(R.color.backColor));
+                    Cheap=false;
+                }
+            }
+        });
+
+        expensive.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(Expensive==false)
+                {
+                    expensive.setBackgroundResource(R.drawable.button2_left_red);
+                    expensive.setTextColor(getResources().getColor(R.color.colorDefaultBackground));
+                    Expensive=true;
+
+                    if(Cheap==true)
+                    {
+                        cheap.setBackgroundResource(R.drawable.button2_right);
+                        cheap.setTextColor(getResources().getColor(R.color.backColor));
+                        Cheap=false;
+                    }
+                }
+                else {
+                    expensive.setBackgroundResource(R.drawable.button2_left);
+                    expensive.setTextColor(getResources().getColor(R.color.backColor));
+                    Expensive=false;
+                }
+            }
+        });
+    }
+
+   public void Src_check()
+   {
+       if(Src==1)
+       {
+           Intent ii=new Intent();
+           ii.putExtra("group",Group.getText().toString());
+           ii.putExtra("city",city.getText().toString());
+           ii.putExtra("gheimat",Gheimat.getText().toString());
+           ii.putExtra("pic",pic.getText().toString());
+           ii.putExtra("newest",newest.toString());
+           ii.putExtra("cheap",cheap.toString());
+           ii.putExtra("expensive",expensive.toString());
+           setResult(RESULT_FIRST_USER,ii);
+           finish();
+       }
+   }
 
 }
 

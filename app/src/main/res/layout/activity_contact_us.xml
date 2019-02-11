@@ -18,11 +18,12 @@
             android:layout_height="match_parent"
             android:textColor="@android:color/white"
             android:id="@+id/title"
-            android:textSize="23dp"
+            android:textSize="20dp"
             android:text="تماس با ما"
             android:gravity="center|bottom"
             android:paddingBottom="8dp"
             android:paddingRight="3dp"/>
+
         <ImageView
             android:id="@+id/ic_logo"
             android:layout_width="60dp"
@@ -50,20 +51,58 @@
             android:layout_height="2dp"
             android:background="@android:color/white"/>
         <TextView
+            android:id="@+id/p1"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/img_header"
-            android:layout_margin="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
             android:gravity="right"
             android:textSize="15dp"
             android:textColor="@android:color/black"
- android:text="جهت پیشنهاد و یا انتقاد و یا از وجود مشکلی در اپلیکیشن ماهم
- می توانید به روش هلی زیر مارا یاری کنید
+ android:text="جهت پیشنهاد یا انتقاد و یا گزارش وجود مشکل در اپلیکیشن ماهم
+ می توانید به روش های زیر مارا یاری کنید:"></TextView>
+        <TextView
+            android:id="@+id/p2"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/p1"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:gravity="right"
+            android:textSize="15dp"
+            android:textColor="@android:color/black"
+            android:text="
 آی دی تلگرام :Mahem_App
-آدرس ایمیل :Mahem_App@Gmail.Com
+آدرس ایمیل :Mahem_App@Gmail.Com"/>
+        <TextView
+
+            android:id="@+id/p3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/p2"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:gravity="right"
+            android:textSize="15dp"
+            android:textColor="@android:color/black"
+            android:text="
 تیم مدیریت و پشتیبانی ماهم در حال حاضر در تهران اقامت دارند
-و اقدامات لازمه جهت انتقال دفتر به گنبد کاووس در دست اقدام
+اما اقدامات لازم جهت انتقال دفتر به گنبد کاووس در دست اقدام
 بوده و آدرس دقیق دفتر در گنبد کاووس اعلام خواهد شد.
+"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/p3"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:gravity="right"
+            android:textSize="15dp"
+            android:textColor="@android:color/black"
+            android:text="
 
 در صورت ایجاد مزاحمت برای شما ، می توانید با مراجعه به سایت
 پلیس فتا به آدرس www.cyberpolice.ir از اطلاعات تماس

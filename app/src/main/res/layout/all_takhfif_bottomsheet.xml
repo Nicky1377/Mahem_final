@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#00ffffff"
+    android:background="@android:color/transparent"
 
     >
 
@@ -12,170 +12,182 @@
         android:layout_height="100dp"
         android:src="@drawable/circle_imageview"
         android:layout_centerHorizontal="true"/>
+
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    <LinearLayout
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingRight="20dp"
-        android:paddingLeft="20dp"
-        android:paddingTop="20dp"
-        android:paddingBottom="80dp"
-        android:background="@drawable/bottom_sheet_background"
-        android:layout_marginTop="70dp">
-        <TextView
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true">
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="همه تخفیف ها"
-            android:textSize="20sp"
-            android:textColor="@android:color/black"
-            android:gravity="center"
-            android:background="@drawable/near_me_bottom_sheet_row"
-            android:padding="8dp"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="تخفیف آخر هفته"
-            android:textSize="20sp"
-            android:textColor="@android:color/black"
-            android:gravity="center"
-            android:background="@drawable/near_me_bottom_sheet_row"
-            android:padding="8dp"
-            />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="رستوران و کافی شاپ"
-            android:textSize="20sp"
-            android:textColor="@android:color/black"
-            android:gravity="center"
-            android:background="@drawable/near_me_bottom_sheet_row"
-            android:padding="8dp"
-            />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="آرایشی و بهداشتی"
-            android:textSize="20sp"
-            android:textColor="@android:color/black"
-            android:gravity="center"
-            android:background="@drawable/near_me_bottom_sheet_row"
-            android:padding="8dp"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="سلامتی و پزشکی"
-            android:textSize="20sp"
-            android:textColor="@android:color/black"
-            android:gravity="center"
-            android:background="@drawable/near_me_bottom_sheet_row"
-            android:padding="8dp"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="تفریحی و ورزشی"
-            android:textSize="20sp"
-            android:textColor="@android:color/black"
-            android:gravity="center"
-            android:background="@drawable/near_me_bottom_sheet_row"
-            android:padding="8dp"
-            />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="لوازم جانبی"
-            android:textSize="20sp"
-            android:textColor="@android:color/black"
-            android:gravity="center"
-            android:background="@drawable/near_me_bottom_sheet_row"
-            android:padding="8dp"
-            />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="لوازم خودرو و ابزار"
-            android:textSize="20sp"
-            android:textColor="@android:color/black"
-            android:gravity="center"
-            android:background="@drawable/near_me_bottom_sheet_row"
-            android:padding="8dp"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="زیورآلات"
-            android:textSize="20sp"
-            android:textColor="@android:color/black"
-            android:gravity="center"
-            android:background="@drawable/near_me_bottom_sheet_row"
-            android:padding="8dp"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="ظروف و ابزار آشپزخانه و خانه"
-            android:textSize="20sp"
-            android:textColor="@android:color/black"
-            android:gravity="center"
-            android:background="@drawable/near_me_bottom_sheet_row"
-            android:padding="8dp"
-            />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="آموزش"
-            android:textSize="20sp"
-            android:textColor="@android:color/black"
-            android:gravity="center"
-            android:background="@drawable/near_me_bottom_sheet_row"
-            android:padding="8dp"
-            />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="هنر و تئاتر"
-            android:textSize="20sp"
-            android:textColor="@android:color/black"
-            android:gravity="center"
-            android:background="@drawable/near_me_bottom_sheet_row"
-            android:padding="8dp"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="خدمات"
-            android:textSize="20sp"
-            android:textColor="@android:color/black"
-            android:gravity="center"
-            android:background="@drawable/near_me_bottom_sheet_row"
-            android:padding="8dp"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="هتل و سفر"
-            android:textSize="20sp"
-            android:textColor="@android:color/black"
-            android:gravity="center"
-            android:background="@drawable/near_me_bottom_sheet_row"
-            android:padding="8dp"
-            />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="لوازم سفر"
-            android:textSize="20sp"
-            android:textColor="@android:color/black"
-            android:gravity="center"
-            android:background="@drawable/near_me_bottom_sheet_row"
-            android:padding="8dp"
-            />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="پوشاک"
-            android:textSize="20sp"
-            android:textColor="@android:color/black"
-            android:gravity="center"
-            android:padding="8dp"/>
-    </LinearLayout>
+            android:layout_marginTop="70dp"
+            android:background="@drawable/bottom_sheet_background"
+            android:orientation="vertical"
+            android:paddingBottom="80dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/near_me_bottom_sheet_row"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="همه تخفیف ها"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/near_me_bottom_sheet_row"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="تخفیف آخر هفته"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/near_me_bottom_sheet_row"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="رستوران و کافی شاپ"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/near_me_bottom_sheet_row"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="آرایشی و بهداشتی"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/near_me_bottom_sheet_row"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="سلامتی و پزشکی"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/near_me_bottom_sheet_row"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="تفریحی و ورزشی"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/near_me_bottom_sheet_row"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="لوازم جانبی"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/near_me_bottom_sheet_row"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="لوازم خودرو و ابزار"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/near_me_bottom_sheet_row"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="زیورآلات"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/near_me_bottom_sheet_row"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="ظروف و ابزار آشپزخانه و خانه"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/near_me_bottom_sheet_row"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="آموزش"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/near_me_bottom_sheet_row"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="هنر و تئاتر"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/near_me_bottom_sheet_row"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="خدمات"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/near_me_bottom_sheet_row"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="هتل و سفر"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/near_me_bottom_sheet_row"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="لوازم سفر"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="پوشاک"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+        </LinearLayout>
     </ScrollView>
 </RelativeLayout>

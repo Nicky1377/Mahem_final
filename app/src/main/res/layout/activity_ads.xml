@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#eeeeee">
+
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
@@ -34,7 +35,6 @@
 
 
     </LinearLayout>
-
     <RelativeLayout
         android:id="@+id/search_box"
         android:layout_width="match_parent"
@@ -65,15 +65,20 @@
             android:layout_alignParentTop="true"
             android:hint="جستجو برای..."
             android:textSize="15sp"
-            android:gravity="right"/>
+            android:gravity="right"
+            android:lines="1"/>
 
     </RelativeLayout>
+
+
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/RecyclerView"
         android:layout_below="@id/search_box"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+        android:layout_height="match_parent"
+        android:layout_marginBottom="50dp"
+        ></android.support.v7.widget.RecyclerView>
 
     <include
         layout="@layout/bottom_navigation"

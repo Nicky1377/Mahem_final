@@ -1,20 +1,21 @@
 package android.niky.mahem_final.Search_Filter;
 
-import android.content.Context;
 import android.niky.mahem_final.R;
-import android.support.v7.app.AppCompatActivity;
+
+
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
+
 
 public class Filter_Estekhdami_monshi_fani extends AppCompatActivity {
 
@@ -26,6 +27,7 @@ public class Filter_Estekhdami_monshi_fani extends AppCompatActivity {
     Button send,newest,expensive,cheap;
     PopupWindow City_Layout,Ed_Layout,Gh_Layout,YesNo_Layout;
 
+    boolean Newest=false,Expensive=false,Cheap=false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +49,9 @@ public class Filter_Estekhdami_monshi_fani extends AppCompatActivity {
         GharardadLayout=inflater.inflate(R.layout.gharardad_layout,null);
         EducationLayout=inflater.inflate(R.layout.education_level_layout,null);
         YesNoLayout=inflater.inflate(R.layout.yes_no_layout,null);
+
+        Intent i=getIntent();
+       Group.setText(i.getStringExtra("name"));
 
         EducationLevel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,12 +108,12 @@ public class Filter_Estekhdami_monshi_fani extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Send_Filter_Estekhdami(EducationLevel.getText().toString(),Gharardad.getText().toString()
-                        ,city.getText().toString(),pic.getText().toString());
+                Send_Filter_Estekhdami();
                 tt("اعمال شد.");
             }
         });
         Toast.makeText(this,getLocalClassName().toString()+"\nNiky",Toast.LENGTH_LONG).show();
+        Filter_Buttons();
 
     }
 
@@ -403,8 +408,86 @@ public class Filter_Estekhdami_monshi_fani extends AppCompatActivity {
 
     }
 
-    public void Send_Filter_Estekhdami(String Ed, String Gh, String city, String pic)
+    public void Filter_Buttons()
     {
+        newest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(Newest==false)
+                {
+                    newest.setBackgroundResource(R.drawable.button2_red);
+                    newest.setTextColor(getResources().getColor(R.color.colorDefaultBackground));
+                    Newest=true;
+                }
+                else {
+                    newest.setBackgroundResource(R.drawable.button2);
+                    newest.setTextColor(getResources().getColor(R.color.backColor));
+                    Newest=false;
+                }
+            }
+        });
 
+        cheap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(Cheap==false)
+                {
+                    cheap.setBackgroundResource(R.drawable.button2_right_red);
+                    cheap.setTextColor(getResources().getColor(R.color.colorDefaultBackground));
+                    Cheap=true;
+
+                    if(Expensive==true)
+                    {
+                        expensive.setBackgroundResource(R.drawable.button2_left);
+                        expensive.setTextColor(getResources().getColor(R.color.backColor));
+                        Expensive=false;
+                    }
+                }
+                else {
+                    cheap.setBackgroundResource(R.drawable.button2_right);
+                    cheap.setTextColor(getResources().getColor(R.color.backColor));
+                    Cheap=false;
+                }
+            }
+        });
+
+        expensive.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(Expensive==false)
+                {
+                    expensive.setBackgroundResource(R.drawable.button2_left_red);
+                    expensive.setTextColor(getResources().getColor(R.color.colorDefaultBackground));
+                    Expensive=true;
+
+                    if(Cheap==true)
+                    {
+                        cheap.setBackgroundResource(R.drawable.button2_right);
+                        cheap.setTextColor(getResources().getColor(R.color.backColor));
+                        Cheap=false;
+                    }
+                }
+                else {
+                    expensive.setBackgroundResource(R.drawable.button2_left);
+                    expensive.setTextColor(getResources().getColor(R.color.backColor));
+                    Expensive=false;
+                }
+            }
+        });
+    }
+
+    public void Send_Filter_Estekhdami()
+    {
+        Intent i = new Intent();
+        i.putExtra("AcName", "Estekhdami");
+        i.putExtra("group","استخدامی/"+ Group.getText().toString());
+        i.putExtra("Gharardad", Gharardad.getText().toString());
+        i.putExtra("EducationLevel", EducationLevel.getText().toString());
+        i.putExtra("city", city.getText().toString());
+        i.putExtra("newest",newest.toString());
+        i.putExtra("cheap",cheap.toString());
+        i.putExtra("expensive",expensive.toString());
+        setResult(RESULT_FIRST_USER,i);
+        finish();
     }
 }

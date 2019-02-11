@@ -1,22 +1,21 @@
 package android.niky.mahem_final.Groups;
 
-import android.content.Intent;
-import android.niky.mahem_final.AdsList;
 import android.niky.mahem_final.R;
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import android.niky.mahem_final.Search_Filter.Ads;
+
 public class Amlak extends AppCompatActivity {
 Button home_sell,home_rent,office_sell,office_rent,aghd,other;
-View.OnClickListener click;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_amlak);
-
 
 
 
@@ -27,6 +26,7 @@ View.OnClickListener click;
         office_rent=(Button)findViewById(R.id.btn4);
         aghd=(Button)findViewById(R.id.btn5);
         other=(Button)findViewById(R.id.btn6);
+
 
 
         home_sell.setOnClickListener(new View.OnClickListener() {
@@ -58,22 +58,26 @@ View.OnClickListener click;
                 startActivity(i);
             }
         });
+
+        aghd.setOnClickListener(new IntentClick("1"));
+
+        other.setOnClickListener(new IntentClick("2"));
+
         Toast.makeText(this, getLocalClassName().toString() + "\nNiky", Toast.LENGTH_LONG).show();
-
-        aghd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                click(1);
-            }
-        });
-
     }
 
 
-    public void click(int id)
-    {
-        Intent i=new Intent(getBaseContext(), AdsList.class);
-        i.putExtra("id",id);
-        startActivity(i);
+    class IntentClick implements View.OnClickListener{
+        private String Id;
+      public IntentClick(String id)
+        {
+            Id=id;
+        }
+        @Override
+        public void onClick(View view) {
+            Intent i=new Intent(getBaseContext(),Ads.class);
+            i.putExtra("id",Id);
+            startActivity(i);
+        }
     }
 }

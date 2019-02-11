@@ -38,7 +38,7 @@
                 android:layout_height="match_parent"
                 android:textColor="@android:color/white"
                 android:id="@+id/title"
-                android:textSize="24dp"
+                android:textSize="20dp"
                 android:text="ثبت رایگان آگهی"
                 android:gravity="center"
                 android:padding="2dp"
@@ -56,7 +56,7 @@
             android:layout_height="wrap_content"
             android:text="انتخاب تصویر مناسب برای آگهی"
             android:gravity="center"
-            android:textSize="23dp"
+            android:textSize="20dp"
             android:textStyle="bold"
             android:padding="5dp"
             android:background="@color/colorPrimary"
@@ -67,7 +67,7 @@
             android:layout_height="wrap_content"
             android:text="آگهی های شامل تصویر،بیش از 5 برابر دیده می شوند."
             android:gravity="center"
-            android:textSize="17dp"
+            android:textSize="15dp"
             android:padding="5dp"
             android:background="@color/colorPrimary"
             android:textColor="@android:color/black"/>
@@ -153,6 +153,7 @@
                     android:paddingRight="15dp"
                     android:id="@+id/T1"
                     android:inputType="none"
+                    android:textSize="15dp"
                     android:focusable="false"/>
 
                 <EditText
@@ -163,7 +164,9 @@
                     android:layout_margin="3dp"
                     android:gravity="right"
                     android:paddingRight="15dp"
-                    android:id="@+id/T2"/>
+                    android:id="@+id/T2"
+                    android:textSize="15dp"
+                    android:lines="1"/>
 
                 <EditText
                     android:layout_width="match_parent"
@@ -175,6 +178,7 @@
                     android:paddingRight="15dp"
                     android:id="@+id/T3"
                     android:inputType="none"
+                    android:textSize="15dp"
                     android:focusable="false"/>
 
                 <EditText
@@ -186,6 +190,7 @@
                     android:gravity="right"
                     android:paddingRight="15dp"
                     android:id="@+id/T4"
+                    android:textSize="15dp"
                     android:inputType="none"
                     android:focusable="false"/>
 
@@ -198,6 +203,7 @@
                     android:gravity="right"
                     android:paddingRight="15dp"
                     android:id="@+id/T5"
+                    android:textSize="15dp"
                     android:inputType="none"
                     android:focusable="false"/>
 
@@ -208,18 +214,24 @@
                     android:layout_margin="3dp"
                     android:backgroundTint="@color/backColor"
                     android:gravity="right"
+                    android:textSize="15dp"
                     android:hint="سال تولید"
-                    android:paddingRight="15dp" />
+                    android:paddingRight="15dp"
+                    android:inputType="number"
+                    android:lines="1"/>
 
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint=") کیلومتر (کارکرد "
+                    android:hint="کارکرد (کیلومتر)"
                     android:backgroundTint="@color/backColor"
                     android:layout_margin="3dp"
                     android:gravity="right"
+                    android:textSize="15dp"
                     android:paddingRight="15dp"
-                    android:id="@+id/T7"/>
+                    android:id="@+id/T7"
+                    android:inputType="number"
+                    android:lines="1"/>
 
                 <EditText
                     android:layout_width="match_parent"
@@ -230,6 +242,7 @@
                     android:gravity="right"
                     android:paddingRight="15dp"
                     android:id="@+id/T8"
+                    android:textSize="15dp"
                     android:inputType="none"
                     android:focusable="false"/>
 
@@ -240,6 +253,7 @@
                     android:backgroundTint="@color/backColor"
                     android:layout_margin="3dp"
                     android:gravity="right"
+                    android:textSize="15dp"
                     android:paddingRight="15dp"
                     android:id="@+id/T9"
                     android:inputType="none"
@@ -252,6 +266,7 @@
                     android:backgroundTint="@color/backColor"
                     android:layout_margin="3dp"
                     android:gravity="right"
+                    android:textSize="15dp"
                     android:paddingRight="15dp"
                     android:id="@+id/T10"
                     android:inputType="none"
@@ -264,6 +279,7 @@
                     android:backgroundTint="@color/backColor"
                     android:layout_margin="3dp"
                     android:gravity="right"
+                    android:textSize="15dp"
                     android:paddingRight="15dp"
                     android:id="@+id/T11"
                     android:inputType="none"
@@ -276,8 +292,10 @@
                     android:backgroundTint="@color/backColor"
                     android:layout_margin="3dp"
                     android:gravity="right"
+                    android:textSize="15dp"
                     android:paddingRight="15dp"
-                    android:id="@+id/T12"/>
+                    android:id="@+id/T12"
+                    />
 
                 <EditText
                     android:layout_width="match_parent"
@@ -286,8 +304,10 @@
                     android:backgroundTint="@color/backColor"
                     android:layout_margin="3dp"
                     android:gravity="right"
+                    android:textSize="15dp"
                     android:paddingRight="15dp"
-                    android:id="@+id/T13"/>
+                    android:id="@+id/T13"
+                    android:lines="1"/>
 
                 <RelativeLayout
                     android:layout_width="match_parent"
