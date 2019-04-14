@@ -1,5 +1,6 @@
 package android.niky.mahem_final.Groups;
 
+import android.niky.mahem_final.Add.SabtAgahi_other;
 import android.niky.mahem_final.R;
 
 import android.content.Intent;
@@ -13,11 +14,20 @@ import android.niky.mahem_final.Search_Filter.Ads;
 
 public class Sargarmi extends AppCompatActivity {
 Button cycle,sport,travel,asbab_bazi,music,book,pet,other;
+    Class intent;
+    Intent ii;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sargarmi);
 
+
+        ii=getIntent();
+        if(ii.getStringExtra("type").equals("sabt"))
+        {
+            intent= SabtAgahi_other.class;
+        }else
+            intent=Ads.class;
 
 
 
@@ -35,6 +45,8 @@ Button cycle,sport,travel,asbab_bazi,music,book,pet,other;
             @Override
             public void onClick(View view) {
                 Intent i=new Intent(Sargarmi.this,Sargarmi_music.class);
+                i.putExtra("type",ii.getStringExtra("type"));
+                i.putExtra("group",ii.getStringExtra("group")+"/"+music.getText().toString());
                 startActivity(i);
             }
         });
@@ -42,16 +54,18 @@ Button cycle,sport,travel,asbab_bazi,music,book,pet,other;
             @Override
             public void onClick(View view) {
                 Intent i=new Intent(Sargarmi.this,Sargarmi_book.class);
+                i.putExtra("type",ii.getStringExtra("type"));
+                i.putExtra("group",ii.getStringExtra("group")+"/"+book.getText().toString());
                 startActivity(i);
             }
         });
 
-        cycle.setOnClickListener(new IntentClick("92"));
-        sport.setOnClickListener(new IntentClick("93"));
-        travel.setOnClickListener(new IntentClick("94"));
-        asbab_bazi.setOnClickListener(new IntentClick("95"));
-        pet.setOnClickListener(new IntentClick("96"));
-        other.setOnClickListener(new IntentClick("97"));
+        cycle.setOnClickListener(new IntentClick("92",intent));
+        sport.setOnClickListener(new IntentClick("93",intent));
+        travel.setOnClickListener(new IntentClick("94",intent));
+        asbab_bazi.setOnClickListener(new IntentClick("95",intent));
+        pet.setOnClickListener(new IntentClick("96",intent));
+        other.setOnClickListener(new IntentClick("97",intent));
 
 
         Toast.makeText(this, getLocalClassName().toString() + "\nNiky", Toast.LENGTH_LONG).show();
@@ -59,15 +73,20 @@ Button cycle,sport,travel,asbab_bazi,music,book,pet,other;
 
     class IntentClick implements View.OnClickListener {
         private String Id;
-
-        public IntentClick(String id) {
+        private Class context;
+        public IntentClick(String id,final Class c) {
             Id = id;
+            context=c;
         }
 
         @Override
         public void onClick(View view) {
-            Intent i = new Intent(getBaseContext(), Ads.class);
+            Button b=(Button)view;
+            Intent ii=getIntent();
+            Intent i = new Intent(getBaseContext(), context);
             i.putExtra("id", Id);
+            i.putExtra("type",ii.getStringExtra("type"));
+            i.putExtra("group",ii.getStringExtra("group")+"/"+b.getText().toString());
             startActivity(i);
         }
     }

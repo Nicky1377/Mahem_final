@@ -23,7 +23,7 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="ارسال"
+                android:text="@string/send"
                 android:textColor="@android:color/white"
                 android:background="@color/colorPrimary"
                 android:textSize="20dp"
@@ -31,6 +31,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_centerHorizontal="true"
                 android:id="@+id/send"
+                android:textAllCaps="false"
                 android:paddingRight="10dp"/>
 
             <TextView
@@ -39,7 +40,7 @@
                 android:textColor="@android:color/white"
                 android:id="@+id/title"
                 android:textSize="20dp"
-                android:text="ثبت رایگان آگهی"
+                android:text="@string/sabt_title__"
                 android:gravity="center"
                 android:padding="2dp"
                 android:layout_alignParentRight="true"
@@ -54,7 +55,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="انتخاب تصویر مناسب برای آگهی"
+            android:text="@string/choose_pic1"
             android:gravity="center"
             android:textSize="20dp"
             android:textStyle="bold"
@@ -65,7 +66,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="آگهی های شامل تصویر،بیش از 5 برابر دیده می شوند."
+            android:text="@string/choose_pic2"
             android:gravity="center"
             android:textSize="15dp"
             android:padding="5dp"
@@ -78,58 +79,58 @@
             android:background="@color/colorPrimary"
             android:padding="5dp"
             android:orientation="horizontal">
-            <Button
+            <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/button"
                 android:layout_margin="3dp"
                 android:layout_weight="1"
-                android:drawableBottom="@drawable/icons88"
+                android:src="@drawable/icons88"
                 android:clickable="true"
                 android:padding="2dp"
                 android:id="@+id/c1"
                 />
 
-            <Button
+            <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/button"
                 android:layout_margin="3dp"
                 android:layout_weight="1"
-                android:drawableBottom="@drawable/icons88"
+                android:src="@drawable/icons88"
                 android:clickable="true"
                 android:padding="2dp"
                 android:id="@+id/c2"
                 />
-            <Button
+            <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/button"
                 android:layout_margin="3dp"
                 android:layout_weight="1"
-                android:drawableBottom="@drawable/icons88"
+                android:src="@drawable/icons88"
                 android:clickable="true"
                 android:padding="2dp"
                 android:id="@+id/c3"
                 />
-            <Button
+            <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/button"
                 android:layout_margin="3dp"
                 android:layout_weight="1"
-                android:drawableBottom="@drawable/icons88"
+                android:src="@drawable/icons88"
                 android:clickable="true"
                 android:padding="2dp"
                 android:id="@+id/c4"
                 />
-            <Button
+            <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/button"
                 android:layout_margin="3dp"
                 android:layout_weight="1"
-                android:drawableBottom="@drawable/icons88"
+                android:src="@drawable/icons88"
                 android:clickable="true"
                 android:padding="2dp"
                 android:id="@+id/c5"
@@ -146,7 +147,7 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                   android:text="وسایل نقلیه"
+                   android:text="@string/Group_car"
                     android:backgroundTint="@color/backColor"
                     android:layout_margin="3dp"
                     android:gravity="right"
@@ -159,7 +160,7 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="عنوان آگهی« حداقل 10  حرف»"
+                    android:hint="@string/Title"
                     android:backgroundTint="@color/backColor"
                     android:layout_margin="3dp"
                     android:gravity="right"
@@ -171,7 +172,34 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="برند"
+                    android:hint="@string/call_inf"
+                    android:backgroundTint="@color/backColor"
+                    android:layout_margin="3dp"
+                    android:gravity="right"
+                    android:textSize="15dp"
+                    android:paddingRight="15dp"
+                    android:id="@+id/T11"
+                    android:inputType="none"
+                    android:focusable="false"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/Gheimat"
+                    android:backgroundTint="@color/backColor"
+                    android:layout_margin="3dp"
+                    android:gravity="right"
+                    android:paddingRight="15dp"
+                    android:id="@+id/T8"
+                    android:textSize="15dp"
+                    android:inputType="none"
+                    android:focusable="false"/>
+
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/brand"
                     android:backgroundTint="@color/backColor"
                     android:layout_margin="3dp"
                     android:gravity="right"
@@ -184,7 +212,7 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint=" نوع شاسی"
+                    android:hint="@string/shasy_typpe"
                     android:backgroundTint="@color/backColor"
                     android:layout_margin="3dp"
                     android:gravity="right"
@@ -197,7 +225,7 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="اقساط/نقد"
+                    android:hint="@string/naghd"
                     android:backgroundTint="@color/backColor"
                     android:layout_margin="3dp"
                     android:gravity="right"
@@ -215,7 +243,7 @@
                     android:backgroundTint="@color/backColor"
                     android:gravity="right"
                     android:textSize="15dp"
-                    android:hint="سال تولید"
+                    android:hint="@string/years"
                     android:paddingRight="15dp"
                     android:inputType="number"
                     android:lines="1"/>
@@ -223,7 +251,7 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="کارکرد (کیلومتر)"
+                    android:hint="@string/K_meter"
                     android:backgroundTint="@color/backColor"
                     android:layout_margin="3dp"
                     android:gravity="right"
@@ -233,23 +261,12 @@
                     android:inputType="number"
                     android:lines="1"/>
 
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="قیمت"
-                    android:backgroundTint="@color/backColor"
-                    android:layout_margin="3dp"
-                    android:gravity="right"
-                    android:paddingRight="15dp"
-                    android:id="@+id/T8"
-                    android:textSize="15dp"
-                    android:inputType="none"
-                    android:focusable="false"/>
+
 
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="آگهی دهنده"
+                    android:hint="@string/AgahiDahande_type"
                     android:backgroundTint="@color/backColor"
                     android:layout_margin="3dp"
                     android:gravity="right"
@@ -262,7 +279,7 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="نوع"
+                    android:hint="@string/Type_Ads"
                     android:backgroundTint="@color/backColor"
                     android:layout_margin="3dp"
                     android:gravity="right"
@@ -272,23 +289,11 @@
                     android:inputType="none"
                     android:focusable="false"/>
 
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="اطلاعات تماس"
-                    android:backgroundTint="@color/backColor"
-                    android:layout_margin="3dp"
-                    android:gravity="right"
-                    android:textSize="15dp"
-                    android:paddingRight="15dp"
-                    android:id="@+id/T11"
-                    android:inputType="none"
-                    android:focusable="false"/>
 
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="توضیحات"
+                    android:hint="@string/tozihat"
                     android:backgroundTint="@color/backColor"
                     android:layout_margin="3dp"
                     android:gravity="right"
@@ -300,14 +305,16 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="تعیین موقعیت"
+                    android:hint="@string/situation"
                     android:backgroundTint="@color/backColor"
                     android:layout_margin="3dp"
                     android:gravity="right"
                     android:textSize="15dp"
                     android:paddingRight="15dp"
                     android:id="@+id/T13"
-                    android:lines="1"/>
+                    android:lines="1"
+                    android:focusable="false"
+                    android:inputType="none"/>
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -316,7 +323,7 @@
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="با قوانین و شرایط موافقم"
+                        android:text="@string/rules"
                         android:layout_centerInParent="true"
                         android:id="@+id/rule"/>
                 </RelativeLayout>

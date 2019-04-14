@@ -23,14 +23,16 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="ارسال"
+                android:text="@string/send"
                 android:textColor="@android:color/white"
                 android:background="@color/colorPrimary"
                 android:textSize="20dp"
                 android:drawableLeft="@mipmap/ic_check"
                 android:layout_alignParentLeft="true"
                 android:layout_centerHorizontal="true"
-                android:id="@+id/send"/>
+                android:id="@+id/send"
+                android:textAllCaps="false"
+                android:paddingRight="10dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -38,7 +40,7 @@
                 android:textColor="@android:color/white"
                 android:id="@+id/title"
                 android:textSize="20dp"
-                android:text="ثبت رایگان آگهی"
+                android:text="@string/sabt_title__"
                 android:gravity="center"
                 android:padding="2dp"
                 android:layout_alignParentRight="true"
@@ -53,7 +55,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="انتخاب تصویر مناسب برای آگهی"
+            android:text="@string/choose_pic1"
             android:gravity="center"
             android:textSize="20dp"
             android:textStyle="bold"
@@ -64,7 +66,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="آگهی های شامل تصویر،بیش از 5 برابر دیده می شوند."
+            android:text="@string/choose_pic2"
             android:gravity="center"
             android:textSize="15dp"
             android:padding="5dp"
@@ -77,62 +79,62 @@
             android:background="@color/colorPrimary"
             android:padding="5dp"
             android:orientation="horizontal">
-            <Button
+            <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/button"
                 android:layout_margin="3dp"
                 android:layout_weight="1"
-                android:drawableBottom="@drawable/icons88"
+                android:src="@drawable/icons88"
                 android:clickable="true"
                 android:padding="2dp"
                 android:id="@+id/c1"
-            />
+                />
 
-            <Button
+            <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/button"
                 android:layout_margin="3dp"
                 android:layout_weight="1"
-                android:drawableBottom="@drawable/icons88"
+                android:src="@drawable/icons88"
                 android:clickable="true"
                 android:padding="2dp"
                 android:id="@+id/c2"
-            />
-            <Button
+                />
+            <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/button"
                 android:layout_margin="3dp"
                 android:layout_weight="1"
-                android:drawableBottom="@drawable/icons88"
+                android:src="@drawable/icons88"
                 android:clickable="true"
                 android:padding="2dp"
                 android:id="@+id/c3"
-            />
-            <Button
+                />
+            <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/button"
                 android:layout_margin="3dp"
                 android:layout_weight="1"
-                android:drawableBottom="@drawable/icons88"
+                android:src="@drawable/icons88"
                 android:clickable="true"
                 android:padding="2dp"
                 android:id="@+id/c4"
-            />
-            <Button
+                />
+            <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/button"
                 android:layout_margin="3dp"
                 android:layout_weight="1"
-                android:drawableBottom="@drawable/icons88"
+                android:src="@drawable/icons88"
                 android:clickable="true"
                 android:padding="2dp"
                 android:id="@+id/c5"
-            />
+                />
 
         </LinearLayout>
         <ScrollView
@@ -145,7 +147,7 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="انتخاب گروه"
+                    android:hint="@string/choose_group"
                     android:backgroundTint="@color/backColor"
                     android:layout_margin="3dp"
                     android:gravity="right"
@@ -157,7 +159,7 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="عنوان آگهی (حداقل 10  حرف)"
+                    android:hint="@string/Title"
                     android:backgroundTint="@color/backColor"
                     android:layout_margin="3dp"
                     android:gravity="right"
@@ -169,7 +171,7 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="درصد تخفیف"
+                    android:hint="@string/off_percent"
                     android:backgroundTint="@color/backColor"
                     android:layout_margin="3dp"
                     android:gravity="right"
@@ -182,7 +184,7 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint=" قیمت اصلی"
+                    android:hint="@string/Real_price"
                     android:backgroundTint="@color/backColor"
                     android:layout_margin="3dp"
                     android:gravity="right"
@@ -194,7 +196,7 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="قیمت با تخفیف"
+                    android:hint="@string/Off_price"
                     android:backgroundTint="@color/backColor"
                     android:layout_margin="3dp"
                     android:gravity="right"
@@ -206,7 +208,7 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="تعیین موقعیت"
+                    android:hint="@string/situation"
                     android:backgroundTint="@color/backColor"
                     android:layout_margin="3dp"
                     android:gravity="right"
@@ -219,7 +221,7 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="اطلاعات تماس"
+                    android:hint="@string/call_inf"
                     android:backgroundTint="@color/backColor"
                     android:layout_margin="3dp"
                     android:gravity="right"
@@ -232,7 +234,7 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="ویژگی ها"
+                    android:hint="@string/attributes"
                     android:backgroundTint="@color/backColor"
                     android:layout_margin="3dp"
                     android:gravity="right"
@@ -243,7 +245,7 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="توضیحات"
+                    android:hint="@string/tozihat"
                     android:backgroundTint="@color/backColor"
                     android:layout_margin="3dp"
                     android:gravity="right"
@@ -254,7 +256,7 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="موقعیت روی نقشه"
+                    android:hint="@string/location"
                     android:backgroundTint="@color/backColor"
                     android:layout_margin="3dp"
                     android:gravity="right"
@@ -265,7 +267,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="برای نمایش در «تخفیف های روی نقشه» حتما این قسمت را فعال کنید."
+                    android:text="@string/must"
                     android:gravity="center"
                     android:paddingBottom="5dp"/>
 
@@ -276,7 +278,7 @@
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="با قوانین و شرایط موافقم"
+                        android:text="@string/rules"
                         android:layout_centerInParent="true"
                         android:id="@+id/rule"/>
                 </RelativeLayout>

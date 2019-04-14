@@ -60,8 +60,8 @@ public class CustomAdapter extends BaseAdapter{
 
             ed=(TextView)view1.findViewById(R.id.text_message_body);
             ed.setText(chatModels.get(i).getMessage());
-            time=(TextView)view1.findViewById(R.id.time);
-            time.setText(chatModels.get(i).getTime().toString().split(" ")[3]);
+          //  time=(TextView)view1.findViewById(R.id.time);
+           // time.setText(chatModels.get(i).getTime().toString().split(" ")[3]);
         }
 
         return view1;

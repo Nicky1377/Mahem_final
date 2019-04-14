@@ -26,7 +26,7 @@ public class Filter_other extends AppCompatActivity {
     PopupWindow City_Layout,Gheimat_Layout,YesNo_Layout;
 
     int Src;
-
+String Id__;
     boolean Newest=false,Expensive=false,Cheap=false;
 
     @Override
@@ -117,12 +117,14 @@ public class Filter_other extends AppCompatActivity {
                 if(resultCode==RESULT_FIRST_USER)
                 {
                     Group.setText(data.getStringExtra("name"));
+                    Id__=data.getStringExtra("id");
                    Src=1;
                 }
                else if(resultCode==RESULT_OK)
                 {
                      if(data.getStringExtra("AcName").equals("Home")) {
                          Intent i = new Intent();
+                         i.putExtra("id",data.getStringExtra("id"));
                          i.putExtra("AcName", "Home");
                          i.putExtra("group", data.getStringExtra("group"));
                          i.putExtra("rooms", data.getStringExtra("rooms"));
@@ -138,6 +140,7 @@ public class Filter_other extends AppCompatActivity {
                      }else if(data.getStringExtra("AcName").equals("Car"))
                      {
                          Intent i = new Intent();
+                         i.putExtra("id",data.getStringExtra("id"));
                          i.putExtra("AcName", "Car");
                          i.putExtra("group", data.getStringExtra("group"));
                          i.putExtra("brand", data.getStringExtra("brand"));
@@ -156,6 +159,7 @@ public class Filter_other extends AppCompatActivity {
                      else if(data.getStringExtra("AcName").equals("Estekhdami"))
                      {
                          Intent i = new Intent();
+                         i.putExtra("id",data.getStringExtra("id"));
                          i.putExtra("AcName", "Estekhdami");
                          i.putExtra("group",data.getStringExtra("group"));
                          i.putExtra("Gharardad", data.getStringExtra("Gharardad"));
@@ -478,6 +482,7 @@ public class Filter_other extends AppCompatActivity {
        if(Src==1)
        {
            Intent ii=new Intent();
+           ii.putExtra("id",Id__);
            ii.putExtra("group",Group.getText().toString());
            ii.putExtra("city",city.getText().toString());
            ii.putExtra("gheimat",Gheimat.getText().toString());

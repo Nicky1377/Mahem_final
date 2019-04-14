@@ -13,7 +13,8 @@
 <RelativeLayout
     android:id="@+id/views"
     android:layout_width="match_parent"
-    android:layout_height="200dp">
+    android:layout_height="200dp"
+    >
     <View
         android:id="@+id/red_view"
         android:layout_alignParentRight="true"
@@ -48,11 +49,26 @@
 
 
 </RelativeLayout>
-    <android.support.v7.widget.RecyclerView
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/views"
+        android:orientation="vertical">
+    <ListView
         android:id="@+id/RecyclerView"
         android:layout_below="@id/views"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:scrollbars="vertical"></ListView>
+    <ListView
+        android:id="@+id/RecyclerView1"
+        android:layout_below="@id/views"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:scrollbars="vertical"></ListView>
+    </LinearLayout>
 </RelativeLayout>
 
     <android.support.design.widget.FloatingActionButton

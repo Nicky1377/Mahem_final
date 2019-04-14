@@ -16,7 +16,7 @@
         android:id="@+id/t_types"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="همه تخفیف ها"
+        android:text="@string/all_off"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:background="@drawable/light_dark_tv"

@@ -23,7 +23,7 @@
             android:textColor="@android:color/white"
             android:id="@+id/title"
             android:textSize="20dp"
-            android:text="لوازم الکترونیکی"
+            android:text="@string/Electric_title"
             android:gravity="center|bottom"
             android:paddingBottom="8dp"
             android:paddingRight="3dp"/>
@@ -49,7 +49,7 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="دوربین عکاسی و فیلم برداری"
+                android:text="@string/camera_elec"
                 android:drawableLeft="@mipmap/ic_launcher_flsh"
                 android:drawableRight="@mipmap/ic_phone"
                 android:gravity="right|center"
@@ -58,12 +58,13 @@
                 android:paddingBottom="4dp"
                 android:paddingLeft="1dp"
                 android:paddingRight="5dp"
+                android:textAllCaps="false"
                 android:id="@+id/btn1"
                 />
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="سیستم صوتی"
+                android:text="@string/System_soti"
                 android:drawableLeft="@mipmap/ic_launcher_flsh"
                 android:drawableRight="@mipmap/ic_phone"
                 android:gravity="right|center"
@@ -72,11 +73,12 @@
                 android:paddingBottom="4dp"
                 android:paddingLeft="1dp"
                 android:paddingRight="5dp"
+                android:textAllCaps="false"
                 android:id="@+id/btn2"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="تلویزیون و پروژکتور"
+                android:text="@string/TV"
                 android:drawableLeft="@mipmap/ic_launcher_flsh"
                 android:drawableRight="@mipmap/ic_phone"
                 android:gravity="right|center"
@@ -84,12 +86,13 @@
                 android:paddingTop="4dp"
                 android:paddingBottom="4dp"
                 android:paddingLeft="1dp"
+                android:textAllCaps="false"
                 android:paddingRight="5dp"
                 android:id="@+id/btn3"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="ویدیو و پخش کننده DVD"
+                android:text="@string/DVD"
                 android:drawableLeft="@mipmap/ic_launcher_flsh"
                 android:drawableRight="@mipmap/ic_phone"
                 android:gravity="right|center"
@@ -98,11 +101,12 @@
                 android:paddingBottom="4dp"
                 android:paddingLeft="1dp"
                 android:paddingRight="5dp"
+                android:textAllCaps="false"
                 android:id="@+id/btn4"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="سایر صوتی و تصویری"
+                android:text="@string/other_soti"
                 android:drawableLeft="@mipmap/ic_launcher_flsh"
                 android:drawableRight="@mipmap/ic_phone"
                 android:gravity="right|center"
@@ -111,6 +115,7 @@
                 android:paddingBottom="4dp"
                 android:paddingLeft="1dp"
                 android:paddingRight="5dp"
+                android:textAllCaps="false"
                 android:id="@+id/btn5"/>
 
         </LinearLayout>

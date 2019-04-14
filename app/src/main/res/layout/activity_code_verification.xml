@@ -62,7 +62,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView">
 
 
-        <com.example.mohsal.final_mahem2.CustomComponents.PinEntryEditText
+        <android.niky.mahem_final.CustomComponents.PinEntryEditText
             android:layout_width="150dp"
             android:layout_height="50dp"
             android:id="@+id/et_code"
@@ -92,6 +92,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
+        android:textAllCaps="false"
         app:layout_constraintStart_toStartOf="parent" />
 
     <include

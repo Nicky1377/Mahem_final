@@ -24,7 +24,7 @@
             android:textColor="@android:color/white"
             android:id="@+id/title"
             android:textSize="20dp"
-            android:text="سرگرمی و فراغت"
+            android:text="@string/sargarmi_title"
             android:gravity="center|bottom"
             android:paddingBottom="8dp"
             android:paddingRight="3dp"/>
@@ -49,7 +49,7 @@
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="پیانو ، کیبورد و آکاردیون"
+                    android:text="@string/piano"
                     android:drawableLeft="@mipmap/ic_launcher_flsh"
                     android:drawableRight="@mipmap/ic_phone"
                     android:gravity="right|center"
@@ -58,12 +58,13 @@
                     android:paddingBottom="4dp"
                     android:paddingLeft="1dp"
                     android:paddingRight="5dp"
+                    android:textAllCaps="false"
                     android:id="@+id/btn1"
                     />
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="ساز های بادی"
+                    android:text="@string/saz_badi"
                     android:drawableLeft="@mipmap/ic_launcher_flsh"
                     android:drawableRight="@mipmap/ic_phone"
                     android:gravity="right|center"
@@ -72,11 +73,12 @@
                     android:paddingBottom="4dp"
                     android:paddingLeft="1dp"
                     android:paddingRight="5dp"
+                    android:textAllCaps="false"
                     android:id="@+id/btn2"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="گیتار ، بیس و آمپلی فایر"
+                    android:text="@string/guitar"
                     android:drawableLeft="@mipmap/ic_launcher_flsh"
                     android:drawableRight="@mipmap/ic_phone"
                     android:gravity="right|center"
@@ -85,11 +87,12 @@
                     android:paddingBottom="4dp"
                     android:paddingLeft="1dp"
                     android:paddingRight="5dp"
+                    android:textAllCaps="false"
                     android:id="@+id/btn3"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="درام و پرکاشن"
+                    android:text="@string/dram"
                     android:drawableLeft="@mipmap/ic_launcher_flsh"
                     android:drawableRight="@mipmap/ic_phone"
                     android:gravity="right|center"
@@ -98,11 +101,12 @@
                     android:paddingBottom="4dp"
                     android:paddingLeft="1dp"
                     android:paddingRight="5dp"
+                    android:textAllCaps="false"
                     android:id="@+id/btn4"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="ویولن"
+                    android:text="@string/violon"
                     android:drawableLeft="@mipmap/ic_launcher_flsh"
                     android:drawableRight="@mipmap/ic_phone"
                     android:gravity="right|center"
@@ -111,11 +115,12 @@
                     android:paddingBottom="4dp"
                     android:paddingLeft="1dp"
                     android:paddingRight="5dp"
+                    android:textAllCaps="false"
                     android:id="@+id/btn5"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="سنتی"
+                    android:text="@string/sonati"
                     android:drawableLeft="@mipmap/ic_launcher_flsh"
                     android:drawableRight="@mipmap/ic_phone"
                     android:gravity="right|center"
@@ -124,6 +129,7 @@
                     android:paddingBottom="4dp"
                     android:paddingLeft="1dp"
                     android:paddingRight="5dp"
+                    android:textAllCaps="false"
                     android:id="@+id/btn6"/>
 
             </LinearLayout>

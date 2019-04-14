@@ -34,21 +34,21 @@ public class Filter_Estekhdami extends AppCompatActivity {
         haml=(Button)findViewById(R.id.btn14);
         other=(Button)findViewById(R.id.btn15);
 
-        fani.setOnClickListener(new IntentClick(fani));
-        monshi.setOnClickListener(new IntentClick(monshi));
-        nurse.setOnClickListener(new IntentClick(nurse));
-        edari.setOnClickListener(new IntentClick(edari));
-        teach.setOnClickListener(new IntentClick(teach));
-        mali.setOnClickListener(new IntentClick(mali));
-        seller.setOnClickListener(new IntentClick(seller));
-        seraydar.setOnClickListener(new IntentClick(seraydar));
-        resturan.setOnClickListener(new IntentClick(resturan));
-        kar_sakhteman.setOnClickListener(new IntentClick(kar_sakhteman));
-        art.setOnClickListener(new IntentClick(art));
-        beauty.setOnClickListener(new IntentClick(beauty));
-        computer.setOnClickListener(new IntentClick(computer));
-        haml.setOnClickListener(new IntentClick(haml));
-        other.setOnClickListener(new IntentClick(other));
+        fani.setOnClickListener(new IntentClick(fani,"29"));
+        monshi.setOnClickListener(new IntentClick(monshi,"30"));
+        nurse.setOnClickListener(new IntentClick(nurse,"31"));
+        edari.setOnClickListener(new IntentClick(edari,"32"));
+        teach.setOnClickListener(new IntentClick(teach,"33"));
+        mali.setOnClickListener(new IntentClick(mali,"34"));
+        seller.setOnClickListener(new IntentClick(seller,"35"));
+        seraydar.setOnClickListener(new IntentClick(seraydar,"36"));
+        resturan.setOnClickListener(new IntentClick(resturan,"37"));
+        kar_sakhteman.setOnClickListener(new IntentClick(kar_sakhteman,"38"));
+        art.setOnClickListener(new IntentClick(art,"39"));
+        beauty.setOnClickListener(new IntentClick(beauty,"40"));
+        computer.setOnClickListener(new IntentClick(computer,"41"));
+        haml.setOnClickListener(new IntentClick(haml,"42"));
+        other.setOnClickListener(new IntentClick(other,"43"));
 
         Toast.makeText(this,getLocalClassName().toString()+"\nNiky",Toast.LENGTH_LONG).show();
 
@@ -56,14 +56,17 @@ public class Filter_Estekhdami extends AppCompatActivity {
 
     class IntentClick implements View.OnClickListener{
         private Button Name;
-        public IntentClick(Button name)
+        private String Id;
+        public IntentClick(Button name,String id)
         {
             Name=name;
+           Id=id;
         }
         @Override
         public void onClick(View view) {
             Intent i=new Intent(getBaseContext(),Filter_Estekhdami_monshi_fani.class);
             i.putExtra("name",Name.getText().toString());
+            i.putExtra("id",Id);
             startActivityForResult(i,1);
         }
     }
@@ -76,6 +79,7 @@ public class Filter_Estekhdami extends AppCompatActivity {
             if (resultCode == RESULT_FIRST_USER) {
 
                 Intent i = new Intent();
+                i.putExtra("id",data.getStringExtra("id"));
                 i.putExtra("AcName", "Estekhdami");
                 i.putExtra("group",data.getStringExtra("group"));
                 i.putExtra("Gharardad", data.getStringExtra("Gharardad"));

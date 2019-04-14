@@ -10,6 +10,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import android.niky.mahem_final.Add.SabtAgahi;
@@ -25,15 +26,16 @@ public class Estekhdami_menu extends AppCompatActivity {
     ImageView Home,Add,Menu,MenuLine,Search;
     ImageView Filter;
 
-    RecyclerView recyclerView;
+    ListView listView;
     List<Advertising> AdvList;
     AdvAdapter adapter;
+    String ThumbnailUrl;
 
 
 
     //fill this variables with information
     private String title, describtion, time;
-    private int image;
+    //private int image;
     ///////////
 
     @Override
@@ -41,13 +43,13 @@ public class Estekhdami_menu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
         AdvList=new ArrayList<>();
-        recyclerView=(RecyclerView)findViewById(R.id.RecyclerView);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        listView=(ListView) findViewById(R.id.RecyclerView);
+//        recyclerView.setHasFixedSize(true);
+//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
         ///this line add search views to the list:
-        AdvList.add(new Advertising(title,describtion,time,image));
+        AdvList.add(new Advertising(title,describtion,time,ThumbnailUrl));
         adapter=new AdvAdapter(this,AdvList);
-        recyclerView.setAdapter(adapter);
+        listView.setAdapter(adapter);
 
         Filter=(ImageView)findViewById(R.id.filter);
         Filter.setOnClickListener(new View.OnClickListener() {

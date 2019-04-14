@@ -24,7 +24,7 @@
             android:textColor="@android:color/white"
             android:id="@+id/title"
             android:textSize="20dp"
-            android:text="وسایل شخصی"
+            android:text="@string/personal_title"
             android:gravity="center|bottom"
             android:paddingBottom="8dp"
             android:paddingRight="3dp"/>
@@ -47,7 +47,7 @@
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="لباس، کیف و کفش"
+                    android:text="@string/clothes"
                     android:drawableLeft="@mipmap/ic_launcher_flsh"
                     android:drawableRight="@mipmap/ic_phone"
                     android:gravity="right|center"
@@ -56,12 +56,13 @@
                     android:paddingBottom="4dp"
                     android:paddingLeft="1dp"
                     android:paddingRight="5dp"
+                    android:textAllCaps="false"
                     android:id="@+id/btn1"
                     />
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="زیورآلات و بدلیجات و ساعت"
+                    android:text="@string/watch"
                     android:drawableLeft="@mipmap/ic_launcher_flsh"
                     android:drawableRight="@mipmap/ic_phone"
                     android:gravity="right|center"
@@ -70,11 +71,12 @@
                     android:paddingBottom="4dp"
                     android:paddingLeft="1dp"
                     android:paddingRight="5dp"
+                    android:textAllCaps="false"
                     android:id="@+id/btn2"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="آرایشی و بهداشتی و درمانی"
+                    android:text="@string/health_personal"
                     android:drawableLeft="@mipmap/ic_launcher_flsh"
                     android:drawableRight="@mipmap/ic_phone"
                     android:gravity="right|center"
@@ -83,11 +85,12 @@
                     android:paddingBottom="4dp"
                     android:paddingLeft="1dp"
                     android:paddingRight="5dp"
+                    android:textAllCaps="false"
                     android:id="@+id/btn3"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="لباس و لوازم بچه و اسباب بازی"
+                    android:text="@string/child_clothes"
                     android:drawableLeft="@mipmap/ic_launcher_flsh"
                     android:drawableRight="@mipmap/ic_phone"
                     android:gravity="right|center"
@@ -96,11 +99,12 @@
                     android:paddingBottom="4dp"
                     android:paddingLeft="1dp"
                     android:paddingRight="5dp"
+                    android:textAllCaps="false"
                     android:id="@+id/btn4"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="سایر لوازم شخصی"
+                    android:text="@string/other_personal"
                     android:drawableLeft="@mipmap/ic_launcher_flsh"
                     android:drawableRight="@mipmap/ic_phone"
                     android:gravity="right|center"
@@ -109,6 +113,7 @@
                     android:paddingBottom="4dp"
                     android:paddingLeft="1dp"
                     android:paddingRight="5dp"
+                    android:textAllCaps="false"
                     android:id="@+id/btn5"/>
 
             </LinearLayout>

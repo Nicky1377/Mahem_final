@@ -18,14 +18,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_pic">
-            <ImageView
-                android:id="@+id/t_image"
+            <com.android.volley.toolbox.NetworkImageView
+                android:id="@+id/takhfif_image"
                 android:layout_width="match_parent"
                 android:layout_height="120dp" />
             <LinearLayout
                 android:id="@+id/t_rating"
                 android:orientation="horizontal"
-                android:layout_below="@id/t_image"
+                android:layout_below="@id/takhfif_image"
                 android:layout_alignParentLeft="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -58,7 +58,7 @@
                 android:id="@+id/t_city"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/t_image"
+                android:layout_below="@id/takhfif_image"
                 android:layout_alignParentRight="true"
                 android:background="@drawable/light_tv"
                 android:textColor="@android:color/white"
@@ -112,7 +112,8 @@
                 android:textColor="@android:color/black"
                 android:text="kkkkk"
                 android:gravity="right"
-                android:textAlignment="gravity"/>
+                android:textAlignment="gravity"
+                />
         </RelativeLayout>
 
     </RelativeLayout>

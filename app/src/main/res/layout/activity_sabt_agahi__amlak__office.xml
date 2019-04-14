@@ -14,63 +14,65 @@
         android:orientation="vertical">
         <View
             android:layout_width="match_parent"
-            android:layout_height="1dp"/>
-        <RelativeLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_height="1dp" />
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary">
+
             <Button
+                android:id="@+id/send"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="ارسال"
-                android:textColor="@android:color/white"
-                android:background="@color/colorPrimary"
-                android:textSize="20dp"
-                android:drawableLeft="@mipmap/ic_check"
                 android:layout_alignParentLeft="true"
                 android:layout_centerHorizontal="true"
-                android:id="@+id/send"
-                android:paddingRight="10dp"/>
+                android:background="@color/colorPrimary"
+                android:drawableLeft="@mipmap/ic_check"
+                android:paddingRight="10dp"
+                android:text="@string/send"
+                android:textColor="@android:color/white"
+                android:textAllCaps="false"
+                android:textSize="20dp" />
 
             <TextView
+                android:id="@+id/title"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:textColor="@android:color/white"
-                android:id="@+id/title"
-                android:textSize="20dp"
-                android:text="ثبت رایگان آگهی"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="5dp"
                 android:gravity="center"
                 android:padding="2dp"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="5dp"/>
+                android:text="@string/sabt_title__"
+                android:textColor="@android:color/white"
+                android:textSize="20dp" />
         </RelativeLayout>
 
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="1dp"/>
+            android:layout_height="1dp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="انتخاب تصویر مناسب برای آگهی"
+            android:background="@color/colorPrimary"
             android:gravity="center"
+            android:padding="5dp"
+            android:text="@string/choose_pic1"
+            android:textColor="@android:color/black"
             android:textSize="20dp"
-            android:textStyle="bold"
-            android:padding="5dp"
-            android:background="@color/colorPrimary"
-            android:textColor="@android:color/black"/>
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="آگهی های شامل تصویر،بیش از 5 برابر دیده می شوند."
-            android:gravity="center"
-            android:textSize="15dp"
-            android:padding="5dp"
             android:background="@color/colorPrimary"
-            android:textColor="@android:color/black"/>
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="@string/choose_pic2"
+            android:textColor="@android:color/black"
+            android:textSize="15dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -78,58 +80,58 @@
             android:background="@color/colorPrimary"
             android:padding="5dp"
             android:orientation="horizontal">
-            <Button
+            <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/button"
                 android:layout_margin="3dp"
                 android:layout_weight="1"
-                android:drawableBottom="@drawable/icons88"
+                android:src="@drawable/icons88"
                 android:clickable="true"
                 android:padding="2dp"
                 android:id="@+id/c1"
                 />
 
-            <Button
+            <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/button"
                 android:layout_margin="3dp"
                 android:layout_weight="1"
-                android:drawableBottom="@drawable/icons88"
+                android:src="@drawable/icons88"
                 android:clickable="true"
                 android:padding="2dp"
                 android:id="@+id/c2"
                 />
-            <Button
+            <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/button"
                 android:layout_margin="3dp"
                 android:layout_weight="1"
-                android:drawableBottom="@drawable/icons88"
+                android:src="@drawable/icons88"
                 android:clickable="true"
                 android:padding="2dp"
                 android:id="@+id/c3"
                 />
-            <Button
+            <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/button"
                 android:layout_margin="3dp"
                 android:layout_weight="1"
-                android:drawableBottom="@drawable/icons88"
+                android:src="@drawable/icons88"
                 android:clickable="true"
                 android:padding="2dp"
                 android:id="@+id/c4"
                 />
-            <Button
+            <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/button"
                 android:layout_margin="3dp"
                 android:layout_weight="1"
-                android:drawableBottom="@drawable/icons88"
+                android:src="@drawable/icons88"
                 android:clickable="true"
                 android:padding="2dp"
                 android:id="@+id/c5"
@@ -139,80 +141,104 @@
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+
                 <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                   android:text="تجاری/املاک"
-                    android:backgroundTint="@color/backColor"
-                    android:layout_margin="3dp"
-                    android:gravity="right"
-                    android:paddingRight="15dp"
                     android:id="@+id/T1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:backgroundTint="@color/backColor"
+                    android:focusable="false"
+                    android:gravity="right"
                     android:inputType="none"
+                    android:paddingRight="15dp"
                     android:textSize="15dp"
-                    android:focusable="false"/>
+                    android:text="@string/office_gro" />
 
 
                 <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="عنوان آگهی« حداقل 10  حرف»"
-                    android:backgroundTint="@color/backColor"
-                    android:layout_margin="3dp"
-                    android:gravity="right"
-                    android:paddingRight="15dp"
                     android:id="@+id/T2"
-                    android:textSize="15dp"
-                    android:lines="1"
-                    />
-
-
-                <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="نوع ملک"
-                    android:backgroundTint="@color/backColor"
                     android:layout_margin="3dp"
+                    android:backgroundTint="@color/backColor"
                     android:gravity="right"
+                    android:textSize="15dp"
+                    android:hint="@string/Title"
                     android:paddingRight="15dp"
+                    android:lines="1"/>
+
+                <EditText
+                    android:id="@+id/T8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:backgroundTint="@color/backColor"
+                    android:focusable="false"
+                    android:gravity="right"
+                    android:textSize="15dp"
+                    android:hint="@string/call_inf"
+                    android:inputType="none"
+                    android:paddingRight="15dp" />
+
+                <EditText
+                    android:id="@+id/T7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:backgroundTint="@color/backColor"
+                    android:focusable="false"
+                    android:gravity="right"
+                    android:textSize="15dp"
+                    android:hint="@string/Gheimat"
+                    android:inputType="none"
+                    android:paddingRight="15dp" />
+
+                <EditText
                     android:id="@+id/T3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:backgroundTint="@color/backColor"
+                    android:focusable="false"
+                    android:gravity="right"
+                    android:hint="@string/Amlak_type"
                     android:inputType="none"
                     android:textSize="15dp"
-                    android:focusable="false"/>
+                    android:paddingRight="15dp" />
 
 
                 <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint=" متراژ (متر مربع)"
-                    android:backgroundTint="@color/backColor"
-                    android:layout_margin="3dp"
-                    android:gravity="right"
-                    android:textSize="15dp"
-                    android:paddingRight="15dp"
                     android:id="@+id/T4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:backgroundTint="@color/backColor"
+                    android:gravity="right"
+                    android:textSize="15dp"
+                    android:hint="@string/meter_sabt_home"
+                    android:paddingRight="15dp"
                     android:inputType="number"
-                    android:lines="1"
-                   />
+                    android:lines="1"/>
 
 
                 <EditText
+                    android:id="@+id/T5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="نوع آگهی"
-                    android:backgroundTint="@color/backColor"
                     android:layout_margin="3dp"
+                    android:backgroundTint="@color/backColor"
+                    android:focusable="false"
                     android:gravity="right"
                     android:textSize="15dp"
-                    android:paddingRight="15dp"
-                    android:id="@+id/T5"
+                    android:hint="@string/Type_Ads"
                     android:inputType="none"
-                    android:focusable="false"/>
-
+                    android:paddingRight="15dp" />
 
                 <EditText
                     android:id="@+id/T6"
@@ -220,79 +246,56 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
                     android:backgroundTint="@color/backColor"
+                    android:focusable="false"
                     android:gravity="right"
-                    android:hint="نوع آگهی دهنده"
-                    android:paddingRight="15dp"
-                    android:inputType="none"
                     android:textSize="15dp"
-                    android:focusable="false"/>
+                    android:hint="@string/AgahiDahande_type"
+                    android:inputType="none"
+                    android:paddingRight="15dp" />
 
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="قیمت"
-                    android:backgroundTint="@color/backColor"
-                    android:layout_margin="3dp"
-                    android:gravity="right"
-                    android:paddingRight="15dp"
-                    android:id="@+id/T7"
-                    android:inputType="none"
-                    android:textSize="15dp"
-                    android:focusable="false"/>
+
 
 
                 <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="اطلاعات تماس"
-                    android:backgroundTint="@color/backColor"
-                    android:layout_margin="3dp"
-                    android:gravity="right"
-                    android:paddingRight="15dp"
-                    android:id="@+id/T8"
-                    android:textSize="15dp"
-                    android:inputType="none"
-                    android:focusable="false"/>
-
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="توضیحات"
-                    android:backgroundTint="@color/backColor"
-                    android:layout_margin="3dp"
-                    android:gravity="right"
-                    android:textSize="15dp"
-                    android:paddingRight="15dp"
                     android:id="@+id/T9"
-                    />
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:backgroundTint="@color/backColor"
+                    android:gravity="right"
+                    android:hint="@string/tozihat"
+                    android:textSize="15dp"
+                    android:paddingRight="15dp" />
+
+
 
 
                 <EditText
+                    android:id="@+id/T10"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="تعیین موقعیت"
-                    android:backgroundTint="@color/backColor"
                     android:layout_margin="3dp"
+                    android:backgroundTint="@color/backColor"
                     android:gravity="right"
-                    android:textSize="15dp"
+                    android:hint="@string/situation"
                     android:paddingRight="15dp"
-                    android:id="@+id/T10"
+                    android:textSize="15dp"
                     android:lines="1"
-                  />
-
+                    android:focusable="false"
+                    android:inputType="none"/>
 
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp">
+
                     <CheckBox
+                        android:id="@+id/rule"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="با قوانین و شرایط موافقم"
                         android:layout_centerInParent="true"
-                        android:id="@+id/rule"/>
+                        android:text="@string/rules" />
                 </RelativeLayout>
 
                 <ImageView

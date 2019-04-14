@@ -20,7 +20,7 @@
             android:id="@+id/select_city"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="انتخاب شهر"
+            android:text="@string/chooseCity"
             android:textColor="@android:color/white"
             android:textSize="20sp"
             android:layout_alignParentBottom="true"

@@ -36,7 +36,7 @@
                 android:background="@drawable/near_me_bottom_sheet_row"
                 android:gravity="center"
                 android:padding="8dp"
-                android:text="همه تخفیف ها"
+                android:text="@string/all_off"
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
 
@@ -46,7 +46,7 @@
                 android:background="@drawable/near_me_bottom_sheet_row"
                 android:gravity="center"
                 android:padding="8dp"
-                android:text="تخفیف آخر هفته"
+                android:text="@string/weekend"
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
 
@@ -56,7 +56,7 @@
                 android:background="@drawable/near_me_bottom_sheet_row"
                 android:gravity="center"
                 android:padding="8dp"
-                android:text="رستوران و کافی شاپ"
+                android:text="@string/cafe"
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
 
@@ -66,7 +66,7 @@
                 android:background="@drawable/near_me_bottom_sheet_row"
                 android:gravity="center"
                 android:padding="8dp"
-                android:text="آرایشی و بهداشتی"
+                android:text="@string/arayesh_off"
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
 
@@ -76,7 +76,7 @@
                 android:background="@drawable/near_me_bottom_sheet_row"
                 android:gravity="center"
                 android:padding="8dp"
-                android:text="سلامتی و پزشکی"
+                android:text="@string/health"
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
 
@@ -86,7 +86,7 @@
                 android:background="@drawable/near_me_bottom_sheet_row"
                 android:gravity="center"
                 android:padding="8dp"
-                android:text="تفریحی و ورزشی"
+                android:text="@string/tafrih"
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
 
@@ -96,7 +96,7 @@
                 android:background="@drawable/near_me_bottom_sheet_row"
                 android:gravity="center"
                 android:padding="8dp"
-                android:text="لوازم جانبی"
+                android:text="@string/LavazemJanebi_off"
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
 
@@ -106,7 +106,7 @@
                 android:background="@drawable/near_me_bottom_sheet_row"
                 android:gravity="center"
                 android:padding="8dp"
-                android:text="لوازم خودرو و ابزار"
+                android:text="@string/khodro"
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
 
@@ -116,7 +116,7 @@
                 android:background="@drawable/near_me_bottom_sheet_row"
                 android:gravity="center"
                 android:padding="8dp"
-                android:text="زیورآلات"
+                android:text="@string/zivar"
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
 
@@ -126,7 +126,7 @@
                 android:background="@drawable/near_me_bottom_sheet_row"
                 android:gravity="center"
                 android:padding="8dp"
-                android:text="ظروف و ابزار آشپزخانه و خانه"
+                android:text="@string/kitchen_off"
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
 
@@ -136,7 +136,7 @@
                 android:background="@drawable/near_me_bottom_sheet_row"
                 android:gravity="center"
                 android:padding="8dp"
-                android:text="آموزش"
+                android:text="@string/teach_off"
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
 
@@ -146,7 +146,7 @@
                 android:background="@drawable/near_me_bottom_sheet_row"
                 android:gravity="center"
                 android:padding="8dp"
-                android:text="هنر و تئاتر"
+                android:text="@string/art_off"
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
 
@@ -156,7 +156,7 @@
                 android:background="@drawable/near_me_bottom_sheet_row"
                 android:gravity="center"
                 android:padding="8dp"
-                android:text="خدمات"
+                android:text="@string/khadamat_title"
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
 
@@ -166,7 +166,7 @@
                 android:background="@drawable/near_me_bottom_sheet_row"
                 android:gravity="center"
                 android:padding="8dp"
-                android:text="هتل و سفر"
+                android:text="@string/hotel"
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
 
@@ -176,7 +176,7 @@
                 android:background="@drawable/near_me_bottom_sheet_row"
                 android:gravity="center"
                 android:padding="8dp"
-                android:text="لوازم سفر"
+                android:text="@string/lavazem_safar"
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
 
@@ -185,7 +185,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:padding="8dp"
-                android:text="پوشاک"
+                android:text="@string/pooshak"
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
         </LinearLayout>

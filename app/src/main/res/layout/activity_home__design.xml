@@ -23,7 +23,7 @@
             android:textColor="@android:color/white"
             android:id="@+id/title"
             android:textSize="20dp"
-            android:text="لوازم خانگی"
+            android:text="@string/home_title"
             android:gravity="center|bottom"
             android:paddingBottom="8dp"
             android:paddingRight="3dp"/>
@@ -47,7 +47,7 @@
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="فرش / گلیم"
+                    android:text="@string/carpet"
                     android:drawableLeft="@mipmap/ic_launcher_flsh"
                     android:drawableRight="@mipmap/ic_phone"
                     android:gravity="right|center"
@@ -56,12 +56,13 @@
                     android:paddingBottom="4dp"
                     android:paddingLeft="1dp"
                     android:paddingRight="5dp"
+                    android:textAllCaps="false"
                     android:id="@+id/btn1"
                     />
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="مبلمان / میز / صندلی"
+                    android:text="@string/chair"
                     android:drawableLeft="@mipmap/ic_launcher_flsh"
                     android:drawableRight="@mipmap/ic_phone"
                     android:gravity="right|center"
@@ -70,11 +71,12 @@
                     android:paddingBottom="4dp"
                     android:paddingLeft="1dp"
                     android:paddingRight="5dp"
+                    android:textAllCaps="false"
                     android:id="@+id/btn2"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="لوستر / لوازم روشنایی"
+                    android:text="@string/lostr"
                     android:drawableLeft="@mipmap/ic_launcher_flsh"
                     android:drawableRight="@mipmap/ic_phone"
                     android:gravity="right|center"
@@ -83,11 +85,12 @@
                     android:paddingBottom="4dp"
                     android:paddingLeft="1dp"
                     android:paddingRight="5dp"
+                    android:textAllCaps="false"
                     android:id="@+id/btn3"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="کمد و بوفه / کابینت"
+                    android:text="@string/commode"
                     android:drawableLeft="@mipmap/ic_launcher_flsh"
                     android:drawableRight="@mipmap/ic_phone"
                     android:gravity="right|center"
@@ -96,11 +99,12 @@
                     android:paddingBottom="4dp"
                     android:paddingLeft="1dp"
                     android:paddingRight="5dp"
+                    android:textAllCaps="false"
                     android:id="@+id/btn4"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="پرده / رومیزی"
+                    android:text="@string/parde"
                     android:drawableLeft="@mipmap/ic_launcher_flsh"
                     android:drawableRight="@mipmap/ic_phone"
                     android:gravity="right|center"
@@ -109,11 +113,12 @@
                     android:paddingBottom="4dp"
                     android:paddingLeft="1dp"
                     android:paddingRight="5dp"
+                    android:textAllCaps="false"
                     android:id="@+id/btn5"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="تخت / سرویس خواب"
+                    android:text="@string/bed"
                     android:drawableLeft="@mipmap/ic_launcher_flsh"
                     android:drawableRight="@mipmap/ic_phone"
                     android:gravity="right|center"
@@ -122,11 +127,12 @@
                     android:paddingBottom="4dp"
                     android:paddingLeft="1dp"
                     android:paddingRight="5dp"
+                    android:textAllCaps="false"
                     android:id="@+id/btn6"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="دکوری /آثار هنری"
+                    android:text="@string/decor"
                     android:drawableLeft="@mipmap/ic_launcher_flsh"
                     android:drawableRight="@mipmap/ic_phone"
                     android:gravity="right|center"
@@ -135,11 +141,12 @@
                     android:paddingBottom="4dp"
                     android:paddingLeft="1dp"
                     android:paddingRight="5dp"
+                    android:textAllCaps="false"
                     android:id="@+id/btn7"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="میز تلویزیون"
+                    android:text="@string/TV_desk"
                     android:drawableLeft="@mipmap/ic_launcher_flsh"
                     android:drawableRight="@mipmap/ic_phone"
                     android:gravity="right|center"
@@ -148,11 +155,12 @@
                     android:paddingBottom="4dp"
                     android:paddingLeft="1dp"
                     android:paddingRight="5dp"
+                    android:textAllCaps="false"
                     android:id="@+id/btn8"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="سیستم گرمایشی و سرمایشی"
+                    android:text="@string/fan"
                     android:drawableLeft="@mipmap/ic_launcher_flsh"
                     android:drawableRight="@mipmap/ic_phone"
                     android:gravity="right|center"
@@ -161,12 +169,13 @@
                     android:paddingBottom="4dp"
                     android:paddingLeft="1dp"
                     android:paddingRight="5dp"
+                    android:textAllCaps="false"
                     android:id="@+id/btn9"/>
 
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="سایر وسایل و تزئینات خانه"
+                    android:text="@string/other_home_design"
                     android:drawableLeft="@mipmap/ic_launcher_flsh"
                     android:drawableRight="@mipmap/ic_phone"
                     android:gravity="right|center"
@@ -175,6 +184,7 @@
                     android:paddingBottom="4dp"
                     android:paddingLeft="1dp"
                     android:paddingRight="5dp"
+                    android:textAllCaps="false"
                     android:id="@+id/btn10"/>
 
             </LinearLayout>

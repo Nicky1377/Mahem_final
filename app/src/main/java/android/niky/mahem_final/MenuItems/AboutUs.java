@@ -40,7 +40,7 @@ public class AboutUs extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getBaseContext(), android.niky.mahem_final.Search_Filter.Search.class);
-                i.putExtra("title","جستجو");
+                i.putExtra("title",getResources().getString(R.string.title_search));
                 startActivity(i);
                 finish();
             }

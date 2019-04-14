@@ -7,18 +7,18 @@ import java.util.Date;
 
 public class ChatModel {
 
-    String message;
-    boolean isSend;
+   private String message;
+   private boolean isSend;
     Date time;
     Image ProfileImg;
     String profileUrl;
 
 
-    public ChatModel(String msg, boolean is,Date d)
+    public ChatModel(String msg, boolean is)
     {
         message=msg;
         isSend=is;
-        time=d;
+
     }
 
     public ChatModel()
@@ -60,5 +60,9 @@ public class ChatModel {
 
     public void setProfileUrl(String profileUrl) {
         this.profileUrl = profileUrl;
+    }
+
+    public void setTime(Date time) {
+        this.time = time;
     }
 }

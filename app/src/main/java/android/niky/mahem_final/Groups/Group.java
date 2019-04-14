@@ -1,5 +1,7 @@
 package android.niky.mahem_final.Groups;
 
+import android.niky.mahem_final.Add.SabtAgahi;
+import android.niky.mahem_final.Add.SabtAgahi_Estekhdam;
 import android.niky.mahem_final.R;
 
 
@@ -33,73 +35,33 @@ Button estekhdam,amlak,naghlie,electric,home,khadamat,tajhizat,sargarmi,personal
         personal=(Button)findViewById(R.id.btn9);
 
 
-        estekhdam.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i=new Intent(Group.this,Estekhdami.class);
-                startActivity(i);
-            }
-        });
-        amlak.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i=new Intent(Group.this,Amlak.class);
-                startActivity(i);
-            }
-        });
-        naghlie.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i=new Intent(Group.this,Naghlieh.class);
-                startActivity(i);
-            }
-        });
-
-        electric.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i=new Intent(Group.this,Electric.class);
-                startActivity(i);
-            }
-        });
-
-        home.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i=new Intent(Group.this,Home_EQ.class);
-                startActivity(i);
-            }
-        });
-        khadamat.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i=new Intent(Group.this,Khadamat.class);
-                startActivity(i);
-            }
-        });
-
-        tajhizat.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i=new Intent(Group.this,Tajhizat.class);
-                startActivity(i);
-            }
-        });
-        sargarmi.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i=new Intent(Group.this,Sargarmi.class);
-                startActivity(i);
-            }
-        });
-
-        personal.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i=new Intent(Group.this,Personal.class);
-                startActivity(i);
-            }
-        });
+        naghlie.setOnClickListener(new Group.IntentClick(naghlie.getText().toString(),Naghlieh.class));
+        amlak.setOnClickListener(new Group.IntentClick(amlak.getText().toString(),Amlak.class));
+        estekhdam.setOnClickListener(new Group.IntentClick(estekhdam.getText().toString(),Estekhdami.class));
+        electric.setOnClickListener(new Group.IntentClick(electric.getText().toString(),Electric.class));
+        home.setOnClickListener(new Group.IntentClick(home.getText().toString(), Home_EQ.class));
+        khadamat.setOnClickListener(new Group.IntentClick(khadamat.getText().toString(), Khadamat.class));
+        tajhizat.setOnClickListener(new Group.IntentClick(tajhizat.getText().toString(), Tajhizat.class));
+        sargarmi.setOnClickListener(new Group.IntentClick(sargarmi.getText().toString(), Sargarmi.class));
+        personal.setOnClickListener(new Group.IntentClick(personal.getText().toString(), Personal.class));
         Toast.makeText(this, getLocalClassName().toString() + "\nNiky", Toast.LENGTH_LONG).show();
+    }
+
+    class IntentClick implements View.OnClickListener {
+        private String group;
+        private  Class context;
+
+        public IntentClick(String Group,final Class c ) {
+            group = Group;
+            context=c;
+        }
+
+        @Override
+        public void onClick(View view) {
+            Intent i = new Intent(getBaseContext(), context);
+            i.putExtra("group", group);
+            i.putExtra("type", "getAds");
+            startActivity(i);
+        }
     }
 }

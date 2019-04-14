@@ -1,16 +1,21 @@
 package android.niky.mahem_final.Search_Filter;
 
+import android.app.ProgressDialog;
+import android.niky.mahem_final.MenuItems.Ads_show;
 import android.niky.mahem_final.R;
 
 
 import android.content.Intent;
+import android.niky.mahem_final.other.AppController;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,6 +23,14 @@ import android.niky.mahem_final.Add.SabtAgahi;
 import android.niky.mahem_final.Groups.Group;
 import android.niky.mahem_final.MenuItems.Menu1;
 import android.niky.mahem_final.OffFinder.Off;
+
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +42,7 @@ public class Search extends AppCompatActivity {
     ImageView Home,Add,Menu,MenuLine,Search;
     ImageView Filter;
 
-    RecyclerView recyclerView;
+    ListView listView;
     List<Advertising> AdvList;
     AdvAdapter adapter;
     private int counter=3;
@@ -44,11 +57,14 @@ public class Search extends AppCompatActivity {
     private ArrayList<String> time=new ArrayList<String>() {
 
     };
-    private ArrayList<Integer> image=new ArrayList<Integer>() {
+    private ArrayList<String> ThumbnailUrl=new ArrayList<String>() {
 
     };
 
     EditText search;
+    String url;
+    Intent ii;
+    private ProgressDialog pDialog;
 
 
     private String activity_title;
@@ -76,23 +92,77 @@ public class Search extends AppCompatActivity {
 
 
         AdvList=new ArrayList<>();
-        for(int i=0;i<counter;++i) {
+        listView =(ListView)findViewById(R.id.RecyclerView);
+        adapter = new AdvAdapter(this, AdvList);
+        listView.setAdapter(adapter);
 
-            ///////fill these strings with network information
-            title.add("استخدام");
-            description.add("منشی");
-            time.add("دیروز");
-            image.add(R.drawable.two);
+        ii=getIntent();
+        url = "http://mahem.ir/listbadaste/all/"+ii.getStringExtra("id");
 
-            ////////////////////////////////////////////
-            recyclerView =  findViewById(R.id.RecyclerView);
-            recyclerView.setHasFixedSize(true);
-            recyclerView.setLayoutManager(new LinearLayoutManager(this));
-            ///this line add search views to the list:
-            AdvList.add(new Advertising(title.get(i), description.get(i), time.get(i), image.get(i)));
-            adapter = new AdvAdapter(this, AdvList);
-            recyclerView.setAdapter(adapter);
-        }
+
+
+        pDialog = new ProgressDialog(this);
+        // Showing progress dialog before making http request
+        pDialog.setMessage("لطفا صبر کنید ..");
+        pDialog.show();
+
+        // Creating volley request obj
+        JsonArrayRequest productReq = new JsonArrayRequest(url,
+                new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        // Log.d(TAG, response.toString());
+                        hidePDialog();
+                        for (int i = 0; i < response.length(); i++) {
+                            try {
+                                JSONObject obj = response.getJSONObject(i);
+                                Advertising adv = new Advertising();
+                                adv.setId(obj.getString("_id"));
+                                adv.setTitle(obj.getString("title"));
+                                adv.setTime(obj.getString("date"));
+                                adv.setNoe(obj.getString("noe"));
+                                JSONArray pic = obj.getJSONArray("pic");
+                                adv.setThumbnailUrl("http://" +pic.getString(0));
+                                adv.setThumbnailUrl2("http://" +pic.getString(1));
+                                adv.setThumbnailUrl3("http://" +pic.getString(2));
+                                adv.setThumbnailUrl4("http://" +pic.getString(3));
+                                adv.setThumbnailUrl5("http://" +pic.getString(4));
+
+                                AdvList.add(adv);
+
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                        adapter.notifyDataSetChanged();
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                // VolleyLog.d(TAG, "Error: " + error.getMessage());
+                hidePDialog();
+            }
+        });
+
+        // Adding request to request queue
+        AppController.getInstance().addToRequestQueue(productReq);
+
+
+
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent=new Intent(getBaseContext(), Ads_show.class);
+                Advertising advertising= (Advertising) adapterView.getAdapter().getItem(i);
+                //intent.putExtra("title",advertising.getTitle());
+                intent.putExtra("id",advertising.getId());
+                intent.putExtra("noe",advertising.getNoe());
+//
+                startActivity(intent);
+            }
+        });
+
 
         Filter=(ImageView)findViewById(R.id.filter);
         Filter.setOnClickListener(new View.OnClickListener() {
@@ -122,7 +192,7 @@ public class Search extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getBaseContext(), Search.class);
-                i.putExtra("title","جستجو");
+                i.putExtra("title",getResources().getString(R.string.title_search));
                 startActivity(i);
                 finish();
             }
@@ -173,7 +243,7 @@ public class Search extends AppCompatActivity {
         {
             if(resultCode==RESULT_FIRST_USER)
             {
-                search.setText(data.getStringExtra("group"));
+                search.setText(data.getStringExtra("id"));
             }
             else
             {
@@ -181,5 +251,12 @@ public class Search extends AppCompatActivity {
             }
         }
 
+    }
+
+    private void hidePDialog() {
+        if (pDialog != null) {
+            pDialog.dismiss();
+            pDialog = null;
+        }
     }
 }

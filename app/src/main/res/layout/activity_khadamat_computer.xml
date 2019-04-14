@@ -23,7 +23,7 @@
             android:textColor="@android:color/white"
             android:id="@+id/title"
             android:textSize="20dp"
-            android:text="خدمات"
+            android:text="@string/khadamat_title"
             android:gravity="center|bottom"
             android:paddingBottom="8dp"
             android:paddingRight="3dp"/>
@@ -46,7 +46,7 @@
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="طراحی سایت و فروش دامنه"
+                    android:text="@string/web"
                     android:drawableLeft="@mipmap/ic_launcher_flsh"
                     android:drawableRight="@mipmap/ic_phone"
                     android:gravity="right|center"
@@ -55,12 +55,13 @@
                     android:paddingBottom="4dp"
                     android:paddingLeft="1dp"
                     android:paddingRight="5dp"
+                    android:textAllCaps="false"
                     android:id="@+id/btn1"
                     />
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="خدمات پهنای باند اینترنت"
+                    android:text="@string/net_kh"
                     android:drawableLeft="@mipmap/ic_launcher_flsh"
                     android:drawableRight="@mipmap/ic_phone"
                     android:gravity="right|center"
@@ -69,11 +70,12 @@
                     android:paddingBottom="4dp"
                     android:paddingLeft="1dp"
                     android:paddingRight="5dp"
+                    android:textAllCaps="false"
                     android:id="@+id/btn2"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="خدمات نرم افزار و سخت افزار کامپیوتر"
+                    android:text="@string/pc"
                     android:drawableLeft="@mipmap/ic_launcher_flsh"
                     android:drawableRight="@mipmap/ic_phone"
                     android:gravity="right|center"
@@ -82,11 +84,12 @@
                     android:paddingBottom="4dp"
                     android:paddingLeft="1dp"
                     android:paddingRight="5dp"
+                    android:textAllCaps="false"
                     android:id="@+id/btn3"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="تعمیرات نرم افزار و سخت افزار موبایل"
+                    android:text="@string/mobile_kh"
                     android:drawableLeft="@mipmap/ic_launcher_flsh"
                     android:drawableRight="@mipmap/ic_phone"
                     android:gravity="right|center"
@@ -95,6 +98,7 @@
                     android:paddingBottom="4dp"
                     android:paddingLeft="1dp"
                     android:paddingRight="5dp"
+                    android:textAllCaps="false"
                     android:id="@+id/btn4"/>
 
             </LinearLayout>

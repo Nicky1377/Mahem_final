@@ -25,7 +25,7 @@
                 android:textColor="@android:color/white"
                 android:id="@+id/title"
                 android:textSize="20dp"
-                android:text="انتخاب شهر"
+                android:text="@string/chooseCity"
                 android:gravity="center|bottom"
                 android:paddingBottom="8dp"
                 android:paddingRight="3dp"
@@ -81,21 +81,23 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
-                        android:text="  استخدامی"
-                        android:textSize="17dp"/>
+                        android:text="@string/Estekhdami_title"
+                        android:textSize="17dp"
+                        android:layout_marginRight="7dp"/>
                     <TextView
                         android:id="@+id/es_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentLeft="true"
-                        android:text="  ادامه ی لیست   "
-                        android:textSize="17dp"/>
+                        android:text="@string/list_continu"
+                        android:textSize="17dp"
+                        android:layout_marginLeft="7dp"/>
 
                 </RelativeLayout>
 
 
 
-                <android.support.v7.widget.RecyclerView
+                <ListView
                     android:id="@+id/List1"
                     android:layout_below="@id/l1"
                     android:layout_width="match_parent"
@@ -104,7 +106,7 @@
                     tools:ignore="NotSibling"
                     android:orientation="horizontal"
                     android:scrollbars="horizontal"
-                    android:layout_weight="100"></android.support.v7.widget.RecyclerView>
+                    android:layout_weight="100"></ListView>
 
 
                 <RelativeLayout
@@ -117,19 +119,21 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
-                        android:text="  آگهی "
-                        android:textSize="17dp"/>
+                        android:text="@string/ads"
+                        android:textSize="17dp"
+                        android:layout_marginRight="7dp"/>
                     <TextView
                         android:id="@+id/ag_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentLeft="true"
-                        android:text="  ادامه ی لیست   "
+                        android:text="@string/list_continu"
                         android:textSize="17dp"
+                        android:layout_marginLeft="7dp"
                         />
 
                 </RelativeLayout>
-                <android.support.v7.widget.RecyclerView
+                <ListView
                     android:id="@+id/List2"
                     android:layout_below="@id/l2"
                     android:layout_width="match_parent"
@@ -138,7 +142,7 @@
                     tools:ignore="NotSibling"
                     android:orientation="vertical"
                     android:layout_weight="100"
-                    ></android.support.v7.widget.RecyclerView>
+                    ></ListView>
             </LinearLayout>
 
     </RelativeLayout>

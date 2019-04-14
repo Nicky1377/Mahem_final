@@ -3,13 +3,13 @@ package android.niky.mahem_final.other;
 
 public class ImageItem {
 
-    private int image;
+    private String image;
 
-    public ImageItem(int image) {
+    public ImageItem(String image) {
         this.image = image;
     }
 
-    public int getImage() {
+    public String getImage() {
         return image;
     }
 }

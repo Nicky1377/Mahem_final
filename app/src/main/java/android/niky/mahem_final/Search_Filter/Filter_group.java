@@ -57,12 +57,12 @@ public class Filter_group extends AppCompatActivity {
             }
         });
 
-        electric.setOnClickListener(new IntentClick(electric.getText().toString()));
-        home.setOnClickListener(new IntentClick(home.getText().toString()));
-        khadamat.setOnClickListener(new IntentClick(khadamat.getText().toString()));
-        tajhizat.setOnClickListener(new IntentClick(tajhizat.getText().toString()));
-        sargarmi.setOnClickListener(new IntentClick(sargarmi.getText().toString()));
-        personal.setOnClickListener(new IntentClick(personal.getText().toString()));
+        electric.setOnClickListener(new IntentClick(electric.getText().toString(),"16"));
+        home.setOnClickListener(new IntentClick(home.getText().toString(),"44"));
+        khadamat.setOnClickListener(new IntentClick(khadamat.getText().toString(),"60"));
+        tajhizat.setOnClickListener(new IntentClick(tajhizat.getText().toString(),"110"));
+        sargarmi.setOnClickListener(new IntentClick(sargarmi.getText().toString(),"93"));
+        personal.setOnClickListener(new IntentClick(personal.getText().toString(),"87"));
 
 
 
@@ -82,6 +82,7 @@ public class Filter_group extends AppCompatActivity {
             else if(requestCode == 2)
             {
                 Intent i = new Intent();
+                i.putExtra("id",data.getStringExtra("id"));
                 i.putExtra("AcName", "Estekhdami");
                 i.putExtra("group",data.getStringExtra("group"));
                 i.putExtra("Gharardad", data.getStringExtra("Gharardad"));
@@ -97,6 +98,7 @@ public class Filter_group extends AppCompatActivity {
         {
 
             Intent i = new Intent();
+            i.putExtra("id","3");
             i.putExtra("AcName", "Home");
             i.putExtra("group",data.getStringExtra("group"));
             i.putExtra("rooms",data.getStringExtra("rooms"));
@@ -115,6 +117,7 @@ public class Filter_group extends AppCompatActivity {
         else if(requestCode==4)
         {
             Intent i = new Intent();
+            i.putExtra("id","81");
             i.putExtra("AcName", "Car");
             i.putExtra("group", data.getStringExtra("group"));
             i.putExtra("brand", data.getStringExtra("brand"));
@@ -134,15 +137,17 @@ public class Filter_group extends AppCompatActivity {
 
         class IntentClick implements View.OnClickListener {
             private String Name;
-
-            public IntentClick(String name) {
+            private String Id;
+            public IntentClick(String name,String id) {
                 Name = name;
+                Id=id;
             }
 
             @Override
             public void onClick(View view) {
                 Intent i = new Intent();
                 i.putExtra("name", Name);
+                i.putExtra("id",Id);
                 setResult(RESULT_FIRST_USER, i);
                 finish();
             }

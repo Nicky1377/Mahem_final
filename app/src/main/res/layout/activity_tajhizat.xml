@@ -23,7 +23,7 @@
             android:textColor="@android:color/white"
             android:id="@+id/title"
             android:textSize="20dp"
-            android:text="تجهیزات و عمده فروشی"
+            android:text="@string/tajhizat_title"
             android:gravity="center|bottom"
             android:paddingBottom="8dp"
             android:paddingRight="3dp"/>
@@ -47,7 +47,7 @@
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="ماشین آلات و تجهیزات"
+                    android:text="@string/tajhizat_"
                     android:drawableLeft="@mipmap/ic_launcher_flsh"
                     android:drawableRight="@mipmap/ic_phone"
                     android:gravity="right|center"
@@ -56,12 +56,13 @@
                     android:paddingBottom="4dp"
                     android:paddingLeft="1dp"
                     android:paddingRight="5dp"
+                    android:textAllCaps="false"
                     android:id="@+id/btn1"
                     />
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="عمده فروشی"
+                    android:text="@string/omde"
                     android:drawableLeft="@mipmap/ic_launcher_flsh"
                     android:drawableRight="@mipmap/ic_phone"
                     android:gravity="right|center"
@@ -70,6 +71,7 @@
                     android:paddingBottom="4dp"
                     android:paddingLeft="1dp"
                     android:paddingRight="5dp"
+                    android:textAllCaps="false"
                     android:id="@+id/btn2"/>
 
             </LinearLayout>

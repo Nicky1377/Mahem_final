@@ -16,6 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -36,7 +37,7 @@ public class Page1 extends AppCompatActivity {
 
     private TextView Estekhdami, Agahi;
 
-    RecyclerView image_recyclerView;
+    ListView image_listView;
     List<ImageItem> ImageList1;
     List<ImageItem> ImageList2;
 
@@ -54,11 +55,11 @@ public class Page1 extends AppCompatActivity {
     private View navigationBar;
     private ImageView Home, Add, Menu, MenuLine, Search;
 
-    private ArrayList<Integer> image=new ArrayList<Integer>() {
-
+    private ArrayList<String> image= new ArrayList<String>() {
     };
 
     private int counter=10;
+    Intent ii;
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -66,6 +67,7 @@ public class Page1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page1);
 
+        ii=getIntent();
 
         city_selection = (TextView) findViewById(R.id.title);
 //        Image = (ImageView) findViewById(R.id.image);
@@ -79,7 +81,12 @@ public class Page1 extends AppCompatActivity {
 //            }
 //        });
         viewPager=findViewById(R.id.image);
-        viewPagerAdapter=new ViewPagerAdapter(this);
+        viewPagerAdapter=new ViewPagerAdapter(this,new String[]
+        {ii.getStringExtra("img1"),
+                ii.getStringExtra("img2"),
+                ii.getStringExtra("img3"),
+                ii.getStringExtra("img4"),
+                ii.getStringExtra("img5")});
         viewPager.setAdapter(viewPagerAdapter);
 
 
@@ -114,7 +121,7 @@ public class Page1 extends AppCompatActivity {
 
             ///////fill these strings with network information
             
-            image.add(R.drawable.two);
+            //image.add(R.drawable.two);
 
             ////////////////////////////////////////////
 
@@ -122,20 +129,20 @@ public class Page1 extends AppCompatActivity {
 
 
 
-            image_recyclerView =  findViewById(R.id.List1);
-            image_recyclerView .setHasFixedSize(true);
-            image_recyclerView .setLayoutManager(layoutManager);
+            image_listView =  findViewById(R.id.List1);
+//            image_listView.setHasFixedSize(true);
+//            image_recyclerView .setLayoutManager(layoutManager);
             ///this line add search views to the list:
-            ImageList1.add(new ImageItem( image.get(i)));
+//            ImageList1.add(new ImageItem( image.get(i)));
             adapter = new ImageAdapter(this,ImageList1);
-            image_recyclerView .setAdapter(adapter);
+            image_listView.setAdapter(adapter);
         }
         ImageList2=new ArrayList<>();
         for(int i=0;i<counter;++i) {
 
             ///////fill these strings with network information
 
-            image.add(R.drawable.two);
+//            image.add(R.drawable.two);
 
             ////////////////////////////////////////////
 
@@ -143,20 +150,20 @@ public class Page1 extends AppCompatActivity {
 
 
 
-            image_recyclerView =  findViewById(R.id.List2);
-            image_recyclerView .setHasFixedSize(true);
-            image_recyclerView .setLayoutManager(layoutManager);
+            image_listView =  findViewById(R.id.List2);
+//            image_recyclerView .setHasFixedSize(true);
+//            image_recyclerView .setLayoutManager(layoutManager);
             ///this line add search views to the list:
-            ImageList2.add(new ImageItem( image.get(i)));
+//            ImageList2.add(new ImageItem( image.get(i)));
             adapter = new ImageAdapter(this,ImageList2);
-            image_recyclerView .setAdapter(adapter);
+            image_listView .setAdapter(adapter);
         }
         Estekhdami=(TextView)findViewById(R.id.es_tv);
         Estekhdami.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i=new Intent(Page1.this,android.niky.mahem_final.Search_Filter.Search.class);
-                i.putExtra("title","استخدامی");
+                i.putExtra("title",getResources().getString(R.string.Estekhdami_title));
                 startActivity(i);
             }
         });
@@ -189,7 +196,7 @@ public class Page1 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getBaseContext(), android.niky.mahem_final.Search_Filter.Search.class);
-                i.putExtra("title","جستجو");
+                i.putExtra("title",getResources().getString(R.string.title_search));
                 startActivity(i);
 
             }

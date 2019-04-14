@@ -66,19 +66,19 @@
             android:layout_toRightOf="@id/filter"
             android:layout_toLeftOf="@id/search_icon"
             android:layout_alignParentTop="true"
-            android:hint="جستجو برای..."
+            android:hint="@string/Ads_search"
             android:textSize="15sp"
             android:gravity="right"/>
 
     </RelativeLayout>
 
-    <android.support.v7.widget.RecyclerView
+    <ListView
         android:id="@+id/RecyclerView"
         android:layout_below="@id/search_box"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    </android.support.v7.widget.RecyclerView>
+    </ListView>
 
     </RelativeLayout>
     <include

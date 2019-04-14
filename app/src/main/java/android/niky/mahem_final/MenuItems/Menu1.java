@@ -1,5 +1,6 @@
 package android.niky.mahem_final.MenuItems;
 
+import android.content.Context;
 import android.niky.mahem_final.R;
 
 
@@ -24,7 +25,12 @@ import android.niky.mahem_final.JobBank.JobBankMenu;
 import android.niky.mahem_final.OffFinder.Off;
 import android.niky.mahem_final.Search_Filter.Ads;
 import android.niky.mahem_final.Search_Filter.Collections;
-import android.niky.mahem_final.Search_Filter.Management_Panel;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class Menu1 extends AppCompatActivity {
 
@@ -65,6 +71,29 @@ public class Menu1 extends AppCompatActivity {
 
 
 
+        String str = readFileAsString(getBaseContext(), getFilesDir().getAbsolutePath() + "/.MahemProg/phn.txt");
+        if (str.equals("")) {
+            imgR.setImageResource(R.drawable.ic_ic_register);
+            Register.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    Intent i=new Intent(Menu1.this,Register.class);
+                    startActivity(i);
+
+                }
+            });
+        } else {
+
+            imgR.setImageResource(R.drawable.ic_ic_welcom);
+            tv.setText("");
+
+
+
+
+        }
+
+
         Favorite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -102,15 +131,7 @@ public class Menu1 extends AppCompatActivity {
         });
 
 
-        Register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-                Intent i=new Intent(Menu1.this,Register.class);
-                startActivity(i);
-
-            }
-        });
 
 
         Laws.setOnClickListener(new View.OnClickListener() {
@@ -135,7 +156,7 @@ public class Menu1 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i=new Intent(Menu1.this,android.niky.mahem_final.Search_Filter.Search.class);
-                i.putExtra("title","استخدامی");
+                i.putExtra("title", getResources().getString(R.string.Estekhdami_title));
                 startActivity(i);
 
             }
@@ -224,7 +245,7 @@ public class Menu1 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getBaseContext(), android.niky.mahem_final.Search_Filter.Search.class);
-                i.putExtra("title","جستجو");
+                i.putExtra("title",getResources().getString(R.string.title_search));
                 startActivity(i);
                 finish();
             }
@@ -268,5 +289,22 @@ public class Menu1 extends AppCompatActivity {
 
     }
 
+
+    public String readFileAsString(Context context, String filePath) {
+        StringBuilder stringBuilder = new StringBuilder();
+        String line;
+        BufferedReader in = null;
+
+        try {
+            in = new BufferedReader(new FileReader(new File(filePath)));
+            while ((line = in.readLine()) != null) stringBuilder.append(line);
+        } catch (FileNotFoundException e) {
+            //
+        } catch (IOException e) {
+            //
+        }
+
+        return stringBuilder.toString();
+    }
 
 }

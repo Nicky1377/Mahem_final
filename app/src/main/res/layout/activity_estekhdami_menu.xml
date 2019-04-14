@@ -20,7 +20,7 @@
             android:textColor="@android:color/white"
             android:id="@+id/title"
             android:textSize="20dp"
-            android:text="استخدامی"
+            android:text="@string/Estekhdami_title"
             android:gravity="center|bottom"
             android:paddingBottom="8dp"
             android:paddingRight="3dp"/>
@@ -63,7 +63,7 @@
             android:layout_toRightOf="@id/filter"
             android:layout_toLeftOf="@id/search_icon"
             android:layout_alignParentTop="true"
-            android:hint="جستجو برای..."
+            android:hint="@string/Ads_search"
             android:textSize="15sp"
             android:lines="1"/>
 

@@ -41,11 +41,16 @@ public class Contact extends AppCompatActivity {
     String formattedNumber = PhoneNumberUtils.formatNumber(ph_number,
             Locale.getDefault().getCountry());
     String email_address="";
+    Intent ii;
     ////
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_contact);
+            ii=getIntent();
+            ph_number=ii.getStringExtra("phoneNum");
+            email_address=ii.getStringExtra("Email");
+
 
         call_tv=(TextView)findViewById(R.id.call_txt);
         call_tv.setText("تماس با"+ph_number);
@@ -158,6 +163,7 @@ public class Contact extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getBaseContext(), android.niky.mahem_final.Search_Filter.Search.class);
+                i.putExtra("title",getResources().getString(R.string.title_search));
                 startActivity(i);
                 finish();
             }

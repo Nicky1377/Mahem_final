@@ -478,7 +478,9 @@ public class Filter_Estekhdami_monshi_fani extends AppCompatActivity {
 
     public void Send_Filter_Estekhdami()
     {
+        Intent ii=getIntent();
         Intent i = new Intent();
+        i.putExtra("id",ii.getStringExtra("id"));
         i.putExtra("AcName", "Estekhdami");
         i.putExtra("group","استخدامی/"+ Group.getText().toString());
         i.putExtra("Gharardad", Gharardad.getText().toString());

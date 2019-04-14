@@ -20,7 +20,7 @@
             android:textColor="@android:color/white"
             android:id="@+id/title"
             android:textSize="20dp"
-            android:text="املاک"
+            android:text="@string/Amlak_title"
             android:gravity="center|bottom"
             android:paddingBottom="8dp"
             android:paddingRight="3dp"/>
@@ -44,7 +44,7 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="فروش مسکونی"
+                android:text="@string/home_sell"
                 android:drawableLeft="@mipmap/ic_launcher_flsh"
                 android:drawableRight="@mipmap/ic_phone"
                 android:gravity="right|center"
@@ -54,11 +54,12 @@
                 android:paddingLeft="1dp"
                 android:paddingRight="5dp"
                 android:id="@+id/btn1"
+                android:textAllCaps="false"
                 />
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="رهن و اجاره مسکونی"
+                android:text="@string/home_rent"
                 android:drawableLeft="@mipmap/ic_launcher_flsh"
                 android:drawableRight="@mipmap/ic_phone"
                 android:gravity="right|center"
@@ -67,11 +68,12 @@
                 android:paddingBottom="4dp"
                 android:paddingLeft="1dp"
                 android:paddingRight="5dp"
+                android:textAllCaps="false"
                 android:id="@+id/btn2"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="فروش اداری و تجاری"
+                android:text="@string/office_sell"
                 android:drawableLeft="@mipmap/ic_launcher_flsh"
                 android:drawableRight="@mipmap/ic_phone"
                 android:gravity="right|center"
@@ -80,11 +82,12 @@
                 android:paddingBottom="4dp"
                 android:paddingLeft="1dp"
                 android:paddingRight="5dp"
+                android:textAllCaps="false"
                 android:id="@+id/btn3"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="رهن و اجاره اداری و تجاری"
+                android:text="@string/office_rent"
                 android:drawableLeft="@mipmap/ic_launcher_flsh"
                 android:drawableRight="@mipmap/ic_phone"
                 android:gravity="right|center"
@@ -97,7 +100,7 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="عقد مشارکت / امورمالی و حقوقی"
+                android:text="@string/aghd"
                 android:drawableLeft="@mipmap/ic_launcher_flsh"
                 android:drawableRight="@mipmap/ic_phone"
                 android:gravity="right|center"
@@ -106,11 +109,12 @@
                 android:paddingBottom="4dp"
                 android:paddingLeft="1dp"
                 android:paddingRight="5dp"
+                android:textAllCaps="false"
                 android:id="@+id/btn5"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="خرید،فروش،اجاره زمین کشاورزی و باغ"
+                android:text="@string/other"
                 android:drawableLeft="@mipmap/ic_launcher_flsh"
                 android:drawableRight="@mipmap/ic_phone"
                 android:gravity="right|center"
@@ -119,6 +123,7 @@
                 android:paddingBottom="4dp"
                 android:paddingLeft="1dp"
                 android:paddingRight="5dp"
+                android:textAllCaps="false"
                 android:id="@+id/btn6"/>
 
         </LinearLayout>

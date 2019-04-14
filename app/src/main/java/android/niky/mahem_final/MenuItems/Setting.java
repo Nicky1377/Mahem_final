@@ -1,5 +1,7 @@
 package android.niky.mahem_final.MenuItems;
 
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.niky.mahem_final.R;
 
 
@@ -11,11 +13,13 @@ import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.niky.mahem_final.other.Save_File_Lang;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -24,11 +28,12 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
+import java.util.Locale;
 
 
 public class Setting extends AppCompatActivity {
@@ -39,11 +44,15 @@ public class Setting extends AppCompatActivity {
     TextView city_1,city_2,city_3,city_4,city_5,city_6,city_7,city_8,city_9
             ,city_10,city_11,city_12,city_13,city_14;
     PopupWindow City_Layout;
-    RadioButton per,eng;
+    RadioButton selected_lang;
+    RadioGroup lang;
     int image_select;
     final int CAMERA_PIC_REQUEST=234;
     private String selected_city;
+    String Lang;
+    Save_File_Lang s;
 
+    Locale myLocale;
     ImageView logo;
     RelativeLayout F;
     public static Bitmap yourSelectedImage,camera_image;
@@ -54,7 +63,6 @@ public class Setting extends AppCompatActivity {
         setContentView(R.layout.activity_setting);
 
 
-
         cam=(Button)findViewById(R.id.cam);
         gallery=(Button)findViewById(R.id.gallery);
         send=(Button)findViewById(R.id.send);
@@ -62,8 +70,6 @@ public class Setting extends AppCompatActivity {
         city=(EditText)findViewById(R.id.T);
         logo=(ImageView)findViewById(R.id.ic_logo);
 
-        eng=(RadioButton) findViewById(R.id.eng);
-        per=(RadioButton) findViewById(R.id.per);
         F=findViewById(R.id.fr);
 
         city.setOnClickListener(new View.OnClickListener() {
@@ -112,6 +118,10 @@ public class Setting extends AppCompatActivity {
         });
 
 
+        s=new Save_File_Lang(this,getFilesDir());
+        lang=(RadioGroup)findViewById(R.id.lang);
+        selected_lang=(RadioButton)findViewById(lang.getCheckedRadioButtonId());
+
         send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -121,13 +131,36 @@ public class Setting extends AppCompatActivity {
                     case 1:
                         break;
                 }
-                tt("اعمال شد.");
+
+
+                if(lang.getCheckedRadioButtonId()==R.id.eng)
+                {
+                    Lang="en";
+                }else if(lang.getCheckedRadioButtonId()==R.id.per)
+                {
+                    Lang="per";
+                }
+
+
+                if(!s.readFileAsString().contains(Lang))
+                {
+                    setLocale(Lang);
+                    s.saveStringToFile(Lang);
+
+                }else
+                {
+                    tt("زبان مورد نظر قبلا انتخاب شده بود...");
+                }
+
+                    tt("اعمال شد.");
+                finish();
             }
         });
 
         Toast.makeText(this,getLocalClassName().toString()+"\nNiky",Toast.LENGTH_LONG).show();
 
-        language_cntrl();
+
+
 
     }
     public void tt(String s)
@@ -135,19 +168,8 @@ public class Setting extends AppCompatActivity {
         Toast.makeText(getBaseContext(),s,Toast.LENGTH_SHORT).show();
     }
 
-    public void language_cntrl(){
-        if(per.isChecked()){
-            if(eng.isChecked()){
-                per.setChecked(false);
-                eng.setChecked(true);
-            }
-        }else if(eng.isChecked()) {
-            if (per.isChecked()) {
-                eng.setChecked(false);
-                per.setChecked(true);
-            }
-        }
-    }
+
+
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -189,7 +211,6 @@ public class Setting extends AppCompatActivity {
 
 
         }
-
 
     public void City_map()
     {
@@ -349,6 +370,18 @@ public class Setting extends AppCompatActivity {
         });
 
         selected_city=city.getText().toString();
+
+    }
+
+    public void setLocale(String locale)
+    {
+
+        myLocale =new Locale(locale);
+        Resources res=getResources();
+        DisplayMetrics dm=res.getDisplayMetrics();
+        Configuration conf=res.getConfiguration();
+        conf.setLocale(myLocale);
+        res.updateConfiguration(conf,dm);
 
     }
 }

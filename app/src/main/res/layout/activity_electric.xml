@@ -21,7 +21,7 @@
             android:textColor="@android:color/white"
             android:id="@+id/title"
             android:textSize="20dp"
-            android:text="لوازم الکترونیکی"
+            android:text="@string/Electric_title"
             android:gravity="center|bottom"
             android:paddingBottom="8dp"
             android:paddingRight="3dp"/>
@@ -46,7 +46,7 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="موبایل و تبلت"
+                android:text="@string/tablet"
                 android:drawableLeft="@mipmap/ic_launcher_flsh"
                 android:drawableRight="@mipmap/ic_phone"
                 android:gravity="right|center"
@@ -55,12 +55,13 @@
                 android:paddingBottom="4dp"
                 android:paddingLeft="1dp"
                 android:paddingRight="5dp"
+                android:textAllCaps="false"
                 android:id="@+id/btn1"
                 />
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="رایانه و اینترنت"
+                android:text="@string/net"
                 android:drawableLeft="@mipmap/ic_launcher_flsh"
                 android:drawableRight="@mipmap/ic_phone"
                 android:gravity="right|center"
@@ -69,11 +70,12 @@
                 android:paddingBottom="4dp"
                 android:paddingLeft="1dp"
                 android:paddingRight="5dp"
+                android:textAllCaps="false"
                 android:id="@+id/btn2"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="صوتی و تصویری"
+                android:text="@string/soti"
                 android:drawableLeft="@mipmap/ic_launcher_flsh"
                 android:drawableRight="@mipmap/ic_phone"
                 android:gravity="right|center"
@@ -82,11 +84,12 @@
                 android:paddingBottom="4dp"
                 android:paddingLeft="1dp"
                 android:paddingRight="5dp"
+                android:textAllCaps="false"
                 android:id="@+id/btn3"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="کنسول بازی و باری های آنلاین"
+                android:text="@string/console"
                 android:drawableLeft="@mipmap/ic_launcher_flsh"
                 android:drawableRight="@mipmap/ic_phone"
                 android:gravity="right|center"
@@ -95,11 +98,12 @@
                 android:paddingBottom="4dp"
                 android:paddingLeft="1dp"
                 android:paddingRight="5dp"
+                android:textAllCaps="false"
                 android:id="@+id/btn4"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="سایر لوازم الکترونیکی"
+                android:text="@string/other_elec"
                 android:drawableLeft="@mipmap/ic_launcher_flsh"
                 android:drawableRight="@mipmap/ic_phone"
                 android:gravity="right|center"
@@ -108,6 +112,7 @@
                 android:paddingBottom="4dp"
                 android:paddingLeft="1dp"
                 android:paddingRight="5dp"
+                android:textAllCaps="false"
                 android:id="@+id/btn5"/>
 
         </LinearLayout>

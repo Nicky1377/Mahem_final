@@ -4,11 +4,10 @@
     android:padding="1dp"
     android:background="@drawable/background_borders"
     android:layout_centerInParent="true">
-    <ImageView
+    <com.android.volley.toolbox.NetworkImageView
         android:id="@+id/img_list"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_centerInParent="true"
-        />
+        android:layout_centerInParent="true" />
 
 </RelativeLayout>

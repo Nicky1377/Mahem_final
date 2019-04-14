@@ -19,7 +19,7 @@
             android:textColor="@android:color/white"
             android:id="@+id/title"
             android:textSize="20dp"
-            android:text="تماس با ما"
+            android:text="@string/ContactUs_title"
             android:gravity="center|bottom"
             android:paddingBottom="8dp"
             android:paddingRight="3dp"/>
@@ -52,7 +52,7 @@
             android:background="@android:color/white"/>
         <TextView
             android:id="@+id/p1"
-
+            android:text="@string/Contact_exp1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/img_header"
@@ -61,11 +61,10 @@
             android:gravity="right"
             android:textSize="15dp"
             android:textColor="@android:color/black"
- android:text="جهت پیشنهاد یا انتقاد و یا گزارش وجود مشکل در اپلیکیشن ماهم
- می توانید به روش های زیر مارا یاری کنید:"></TextView>
+            ></TextView>
+
         <TextView
             android:id="@+id/p2"
-
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/p1"
@@ -73,12 +72,11 @@
             android:layout_marginLeft="16dp"
             android:gravity="right"
             android:textSize="15dp"
+            android:layout_marginTop="10dp"
             android:textColor="@android:color/black"
-            android:text="
-آی دی تلگرام :Mahem_App
-آدرس ایمیل :Mahem_App@Gmail.Com"/>
-        <TextView
+            android:text="@string/Contact_exp2"/>
 
+        <TextView
             android:id="@+id/p3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -88,25 +86,29 @@
             android:gravity="right"
             android:textSize="15dp"
             android:textColor="@android:color/black"
-            android:text="
-تیم مدیریت و پشتیبانی ماهم در حال حاضر در تهران اقامت دارند
-اما اقدامات لازم جهت انتقال دفتر به گنبد کاووس در دست اقدام
-بوده و آدرس دقیق دفتر در گنبد کاووس اعلام خواهد شد.
-"/>
+            android:text="@string/Contact_exp3"/>
         <TextView
+            android:id="@+id/p4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/p3"
             android:layout_marginRight="16dp"
             android:layout_marginLeft="16dp"
+            android:layout_marginTop="10dp"
             android:gravity="right"
             android:textSize="15dp"
             android:textColor="@android:color/black"
-            android:text="
-
-در صورت ایجاد مزاحمت برای شما ، می توانید با مراجعه به سایت
-پلیس فتا به آدرس www.cyberpolice.ir از اطلاعات تماس
-پلیس فتای محل سکونت خود آگاه شوید و موضوع را از آن طریق پیگیری کنید."/>
+            android:text="@string/Contact_exp4"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/p4"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:gravity="right"
+            android:textSize="15dp"
+            android:textColor="@android:color/black"
+            android:text="@string/Contact_exp5"/>
 
 
         <include

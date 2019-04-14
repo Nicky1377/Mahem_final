@@ -76,7 +76,7 @@
                     android:layout_alignParentLeft="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="زمان باقی مانده"
+                    android:text="@string/time_"
                     android:textColor="@android:color/black"
                     android:textSize="15sp"/>
                 <TextView
@@ -165,7 +165,7 @@
                     android:layout_marginRight="15dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="پرداختی شما"
+                    android:text="@string/your_pay"
                     android:textColor="@android:color/black"
                     android:textSize="15sp"
                     android:layout_alignBaseline="@+id/ttv"
@@ -227,7 +227,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_alignParentTop="true"
                     android:textColor="@android:color/white"
-                    android:text="ویژگی ها"
+                    android:text="@string/attributes"
                     android:padding="7dp"
                     />
             </RelativeLayout>
@@ -259,7 +259,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_alignParentTop="true"
                     android:textColor="@android:color/white"
-                    android:text="توضیحات"
+                    android:text="@string/tozihat"
                     android:padding="7dp"/>
             </RelativeLayout>
 
@@ -348,7 +348,8 @@
             android:drawableRight="@android:drawable/stat_notify_chat"
             android:paddingRight="10dp"
             android:paddingLeft="40dp"
-            android:text="چت"
+            android:text="@string/chat"
+            android:textAllCaps="false"
             android:textSize="20sp"/>
         <Button
             android:id="@+id/call_inform"
@@ -359,8 +360,9 @@
             android:background="@drawable/roundedbutton"
             android:layout_margin="5dp"
             android:paddingRight="5dp"
-            android:text="اطلاعات تماس"
+            android:text="@string/call_inf"
             android:drawableRight="@android:drawable/stat_sys_phone_call"
+            android:textAllCaps="false"
             android:textSize="20sp"
 
             />

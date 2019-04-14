@@ -37,7 +37,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:text="اطلاعات تماس"
+        android:text="@string/call_inf"
         android:textSize="25sp"
         android:layout_margin="10dp"
         android:textColor="@color/colorPrimaryDark"
@@ -136,7 +136,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="15sp"
-        android:text="هشدارپلیس : لطفا پیش از انجام معامله و هرنوع پرداخت وجه ، از صحت کالا یا خدمات ارائه شده ، به صورت حضوری اطمینان حاصل نمایید. "
+        android:text="@string/Contact_atten"
         android:id="@+id/tt" />
 <Button
     android:id="@+id/exitBtn"
@@ -144,8 +144,9 @@
     android:layout_height="wrap_content"
     android:background="#f9f9f9"
     android:textColor="#e30001"
-    android:text="بیخیال"
+    android:text="@string/Contact_exit"
     android:textSize="20dp"
+    android:textAllCaps="false"
     android:layout_below="@+id/tt"/>
 </RelativeLayout>
     <include

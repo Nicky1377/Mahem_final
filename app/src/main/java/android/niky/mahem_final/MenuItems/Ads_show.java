@@ -1,13 +1,18 @@
 package android.niky.mahem_final.MenuItems;
 
+import android.app.ProgressDialog;
+import android.niky.mahem_final.OffFinder.Takhfif_Show;
 import android.niky.mahem_final.R;
 
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -18,6 +23,37 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import android.niky.mahem_final.Chat.MessageList;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.params.BasicHttpParams;
+import org.apache.http.params.HttpConnectionParams;
+import org.apache.http.params.HttpParams;
+import org.apache.http.protocol.HTTP;
+import org.apache.http.util.EntityUtils;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class Ads_show extends AppCompatActivity {
@@ -34,8 +70,8 @@ public class Ads_show extends AppCompatActivity {
 
     private TextView job_name;
     private TextView agahi_time;
-    private TextView option_title;
-    private TextView option_detail;
+
+    private TextView option_detail1,option_detail2,option_detail3,option_detail4,option_detail5,option_detail6,option_detail7,option_detail8;
     private TextView description;
     private TextView agahi_title;
     private LayoutInflater inflater;
@@ -43,44 +79,158 @@ public class Ads_show extends AppCompatActivity {
     private boolean selected=true;
     private int dotscount=5;
     private ImageView[] dots;
-    private String JobName;
-    private String TimeOfAgahi;
-    private String TitleOfOption;
-    private String OptionDetails;
-    private String Description;
-    private String AgahiName;
+    Intent ii;
 
+    String googlePath;
+    String url;
+    String[] imgs;
+    String userId,phoneNum,Email,noe;
+    private ProgressDialog pDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ads_show);
-        job_name=findViewById(R.id.jobname);
-        agahi_time=findViewById(R.id.time) ;
-        option_title=findViewById(R.id.option_title) ;
-        option_detail=findViewById(R.id.option_detail) ;
-        description=findViewById(R.id.details);
-        agahi_title=findViewById(R.id.jobtitle) ;
+
+        init();
+
         /////////////fill this variables from network data
-        ///under image textview
-        JobName="";
-        TimeOfAgahi="";
-        ////second textview
-        TitleOfOption="";
-        OptionDetails="";
-        ///third text view
-        Description="";
-        ///toolbar
-        AgahiName="";
+
+        ii=getIntent();
+        noe=ii.getStringExtra("noe");
+        url="http://appmahem.eu-4.evennode.com/getadsinfo/"+ii.getStringExtra("id")+"/"+ii.getStringExtra("noe");
+
+
+        imgs=new String[5];
+
+        StringRequest stringRequest=new StringRequest(Request.Method.GET, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String s) {
+
+                        Log.d("result",s);
+
+                        try{
+                            JSONArray result=new JSONArray(s);
+                            hidePDialog();
+                            for (int j=0;j<result.length();j++) {
+                                JSONObject obj = result.getJSONObject(j);
+
+
+/////////////variables should fill with network datas
+                                job_name.setText(obj.getString("title"));
+                                agahi_time.setText("دیروز");
+                                description.setText(obj.getString("comment"));
+                                googlePath=obj.getString("googlepath");
+                             //   agahi_title.setText(AgahiName);
+
+                                /////////////////////////////////////////////////////////
+//                               switch (noe)
+//                               {
+//                                   case "1"://Estekhdam
+//                                   {
+
+//                                       option_detail1.setText("شهر:  "+obj.getString("city"));
+//                                       option_detail2.setText("میزان تحصیلات:  ");
+////                                        +obj.getString("tahsil"));
+//                                       option_detail3.setText("نوع قرارداد:  "
+//                                               +obj.getString("garardad"));
+
+//                                       break;
+//                                   }
+//                                   case "2"://home
+//                                   {
+
+                                option_detail1.setText("شهر:  "+obj.getString("city"));
+                                option_detail2.setText("نوع ملک:  "+obj.getString("noemelk"));
+                                option_detail3.setText("متراژ:  "
+                                        +obj.getString("metr"));
+                                option_detail4.setText("نوع آگهی:  "
+                                        +obj.getString("typeads"));
+                                option_detail5.setText("میزان رهن:  "
+                                        +obj.getString("pricerahn"));
+                                option_detail6.setText("میزان اجاره:  "
+                                        +obj.getString("priceegare"));
+//                                       break;
+//                                   }
+//                                   case "3"://car
+//                                   {
+//
+//
+//                                       option_detail1.setText("شهر:  "+obj.getString("city"));
+//                                       option_detail2.setText("برند:  ");
+////                                        +obj.getString("brand"));
+//                                       option_detail3.setText("نوع شاسی:  "
+//                                               +obj.getString("shasi"));
+//                                       option_detail4.setText("سال تولید:  ");
+////                                        +obj.getString("saltolid"));
+//                                       option_detail5.setText("کارکرد:  ");
+////                                        +obj.getString("karkard"));
+//                                       option_detail6.setText("قیمت:  ");
+////                                        +obj.getString("priceegare"));
+//                                       option_detail7.setText("نوع آگهی:  ");
+////                                        +obj.getString("typeads"));
+//
+//                                       if(obj.getBoolean("nagdornat")==true)
+//                                           option_detail8.setText("نقد یا اقساط: نقد");
+//                                       else option_detail8.setText("نقد یا اقساط: اقساط");
+//                                       break;
+//                                   }
+//                                   case "4"://other
+//                                   {
+////                                       OptionDetails=obj.getString("city")+"شهر:"+"\n"
+////                                               +obj.getString("setasdser")+"نوع آگهی دهنده:"+"\n"
+////                                               +obj.getString("price")+"قیمت:"+"\n"
+////                                               +obj.getString("typeads")+"نوع آگهی:"+"\n";
+//
+//                                       break;
+//                                   }
+//                               }
+//
+
+                                ///for find location in google map
+                                // searchingLocation="";
+                                /////////////////////////////////////
+                                JSONArray pic = obj.getJSONArray("pic");
+                                for (int i = 0; i < 5; i++) {
+                                    if (!pic.getString(i).equals("")) {
+                                        imgs[i] = "http://" + pic.getString(i);
+                                    }
+                                }
+
+                                if (obj.getBoolean("activechat")==false) {
+                                    chat.setClickable(false);
+                                } else
+                                    userId = obj.getString("userid");
+
+                                if (obj.getBoolean("activeemail")==false) {
+                                    Email = "";
+                                } else
+                                    Email = obj.getString("tamasemail");
+
+                                phoneNum = obj.getString("tamasphone");
+
+                            }
+                        }catch (Exception e)
+                        {
+
+                        }
+
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
+
+                    }
+                });
+        RequestQueue requestQueue= Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
+
+
         //////////////////////////
-        job_name.setText(JobName);
-        agahi_time.setText(TimeOfAgahi);
-        option_title.setText(TitleOfOption);
-        option_detail.setText(OptionDetails);
-        description.setText(Description);
-        agahi_title.setText(AgahiName);
 
         viewPager=findViewById(R.id.view_pager);
-        adapter=new ViewPagerAdapter(this);
+        adapter=new ViewPagerAdapter(this,imgs);
         viewPager.setAdapter(adapter);
 
 
@@ -135,12 +285,8 @@ public class Ads_show extends AppCompatActivity {
             public void onClick(View view) {
                 if(selected){
                     collection.setImageResource(R.drawable.two);
-                    Toast.makeText(getBaseContext(),"در آگهی های نشان شده ذخیره شد.",Toast.LENGTH_SHORT).show();
                     selected=false;
-                }else{
-                    collection.setImageResource(R.drawable.one);
-                    Toast.makeText(getBaseContext(),"از آگهی های نشان شده حذف شد.",Toast.LENGTH_SHORT).show();
-                    selected=true;
+                    Send_favorite("http://mahem.ir/addtofavorit",readFileAsString(),ii.getStringExtra("id"));
                 }
             }
         });
@@ -153,7 +299,7 @@ public class Ads_show extends AppCompatActivity {
                 //should fill with network data
 
                 Intent i=new Intent(Ads_show.this, android.niky.mahem_final.Search_Filter.Search.class);
-                i.putExtra("title","استخدامی");
+                i.putExtra("title",getResources().getString(R.string.Estekhdami_title));
                 startActivity(i);
             }
         });
@@ -180,10 +326,10 @@ public class Ads_show extends AppCompatActivity {
             public void onClick(View view) {
                 //should fill with network data
 
+
                 Toast.makeText(getBaseContext(),"NETWORK",Toast.LENGTH_SHORT).show();
             }
         });
-
 
 
 
@@ -191,9 +337,10 @@ public class Ads_show extends AppCompatActivity {
         call_Information.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(Ads_show.this,Contact.class);
-                startActivity(intent);
-
+                Intent call_intent=new Intent(getBaseContext(),Contact.class);
+                call_intent.putExtra("Email",Email);
+                call_intent.putExtra("phoneNum",phoneNum);
+                startActivity(call_intent);
 
 
             }
@@ -204,11 +351,189 @@ public class Ads_show extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-
-                Intent intent=new Intent(Ads_show.this, MessageList.class);
+                Intent intent=new Intent(getBaseContext(),MessageList.class);
+                intent.putExtra("creater_id",userId);
+                intent.putExtra("adsId",ii.getStringExtra("id"));
+                intent.putExtra("phoneNum",phoneNum);
                 startActivity(intent);
             }
         });
         Toast.makeText(this, getLocalClassName().toString() + "\nMohadese Salem", Toast.LENGTH_LONG).show();
+    }
+
+
+    void Send_favorite(final String URL, final String username, final String adsId) {
+        Log.d("req", "___send started");
+        pDialog = new ProgressDialog(this);
+        pDialog.setMessage("لطفا صبر کنید");
+        pDialog.show();
+
+        final Map<String, String> postParam = new HashMap<String, String>();
+
+        postParam.put("id", username);
+        postParam.put("adsid", adsId);
+
+
+        ////////////////////////////////////////////////////////
+
+        final Thread send = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                JSONObject obj = new JSONObject(postParam);
+                postData(URL, obj, true);
+            }
+        });
+
+        send.start();
+    }
+
+
+    public String readFileAsString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        String line;
+        BufferedReader in = null;
+
+        try {
+            in = new BufferedReader(new FileReader(new File( getFilesDir().getAbsolutePath() + "/.MahemProg/phn.txt")));
+            while ((line = in.readLine()) != null) stringBuilder.append(line);
+
+        } catch (FileNotFoundException e) {
+            tt(e.getMessage());
+        } catch (IOException e) {
+            tt(e.getMessage());
+        }
+
+        String[] a=stringBuilder.toString().split("\n");
+        String b=a[a.length-1];
+        return b;
+    }
+    String temp;
+
+    public void postData(final String url, final JSONObject obj, boolean reg) {
+        // Create a new HttpClient and Post Header
+        HttpParams myParams = new BasicHttpParams();
+        HttpConnectionParams.setConnectionTimeout(myParams, 10000);
+        HttpConnectionParams.setSoTimeout(myParams, 10000);
+        HttpClient httpclient = new DefaultHttpClient(myParams);
+
+        try {
+            HttpPost httppost = new HttpPost(url.toString());
+            httppost.setHeader("Content-type", "application/json");
+
+            StringEntity se = new StringEntity(obj.toString(), HTTP.UTF_8);
+//            se.setContentEncoding(new BasicHeader(HTTP.CONTENT_TYPE, "application/json; charset=utf-8"));
+//            se.setContentEncoding("UTF-8");
+            se.setContentType("application/json");
+            httppost.setEntity(se);
+
+            HttpResponse response = httpclient.execute(httppost);
+            temp = EntityUtils.toString(response.getEntity());
+
+
+            if (reg) {
+                if (temp.contains("ok")) {
+
+                    runOnUiThread(new Runnable() {
+                        @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+                        @Override
+                        public void run() {
+                            hidePDialog();
+                            tt("در علاقه مندی ها ثبت شد...");
+                            hidePDialog();
+                        }
+                    });
+                } else {
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            hidePDialog();
+                            tt("خطا در اطلاعات وارد شده");
+                        }
+                    });
+                }
+            } else {
+                //login
+                if (temp.contains("ok")) {
+
+                    JsonArrayRequest productReq = new JsonArrayRequest(url, new Response.Listener<JSONArray>() {
+                        @Override
+                        public void onResponse(JSONArray response) {
+                            try {
+                                JSONObject obj=response.getJSONObject(0);
+                                //   tran(id, etPhone.getText().toString(), obj.getString( "registertoken"));
+                            }catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    },new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            // VolleyLog.d(TAG, "Error: " + error.getMessage());
+                            hidePDialog();
+                        }
+                    });
+
+                } else {
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            hidePDialog();
+                            tt("شما تصدیق نشدید\nدوباره سعی کنید");
+                        }
+                    });
+
+                }
+
+            }
+        } catch (ClientProtocolException e) {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    tt("خطا در برقراری ارتباط");
+                    hidePDialog();
+                }
+            });
+
+        } catch (IOException e) {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    tt("خطا در ورودی خروجی");
+                    hidePDialog();
+                }
+            });
+        }
+
+
+    }
+
+
+    private void hidePDialog() {
+        if (pDialog != null) {
+            pDialog.dismiss();
+            pDialog = null;
+        }
+    }
+
+    void tt(String msg) {
+        Toast.makeText(this, msg, Toast.LENGTH_LONG).show();
+    }
+
+    void init()
+    {
+
+        job_name=findViewById(R.id.jobname);
+        agahi_time=findViewById(R.id.time) ;
+        option_detail1=findViewById(R.id.option_detail1) ;
+        option_detail2=findViewById(R.id.option_detail2) ;
+        option_detail3=findViewById(R.id.option_detail3) ;
+        option_detail4=findViewById(R.id.option_detail4) ;
+        option_detail5=findViewById(R.id.option_detail5) ;
+        option_detail6=findViewById(R.id.option_detail6) ;
+        option_detail7=findViewById(R.id.option_detail7) ;
+        option_detail8=findViewById(R.id.option_detail8) ;
+        description=findViewById(R.id.details);
+        agahi_title=findViewById(R.id.jobtitle) ;
+
     }
 }

@@ -1,10 +1,11 @@
-package android.niky.mahem_final.Search_Filter;
+package android.niky.mahem_final.MenuItems;
 
 import android.niky.mahem_final.R;
 
 
 import android.content.Context;
 import android.content.Intent;
+import android.niky.mahem_final.Search_Filter.Advertising;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -44,7 +45,7 @@ public class panelAdapter extends RecyclerView.Adapter<panelAdapter.AdvViewHolde
         holder.title.setText(advertising.getTitle());
         holder.description.setText(advertising.getDetails());
         holder.time.setText(advertising.getTime());
-        holder.imageView.setImageResource(advertising.getImage());
+        //holder.imageView.setImageResource(advertising.getImage());
 
         holder.FamilyName.setText(advertising.getFamily_name());
         holder.chatTime.setText(advertising.getChat_time());

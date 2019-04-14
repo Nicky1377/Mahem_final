@@ -24,7 +24,7 @@
                 android:textColor="@android:color/white"
                 android:id="@+id/title"
                 android:textSize="23dp"
-                android:text="منو"
+                android:text="@string/menu_title"
                 android:gravity="center|bottom"
                 android:paddingBottom="8dp"
                 android:paddingRight="3dp"/>
@@ -87,7 +87,7 @@
                             android:layout_below="@id/img_bank"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="10dp"
-                            android:text="بانک مشاغل"
+                            android:text="@string/jobBank"
                             android:textSize="16sp"
                             android:textStyle="bold"
                             android:layout_marginBottom="10dp"/>
@@ -116,7 +116,7 @@
                             android:layout_below="@id/img_off"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="10dp"
-                            android:text="تخفیف یاب"
+                            android:text="@string/OffFinder"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
@@ -135,7 +135,7 @@
                             android:layout_height="70dp"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="5dp"
-                            android:background="@drawable/ic_ic_register"/>
+                            />
 
                         <TextView
                             android:id="@+id/TV1"
@@ -145,7 +145,7 @@
                             android:layout_below="@id/img_register"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="10dp"
-                            android:text="ثبت نام"
+                            android:text="@string/register"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
@@ -184,7 +184,7 @@
                             android:layout_below="@id/img_law"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="10dp"
-                            android:text="قوانین"
+                            android:text="@string/Laws"
                             android:textSize="16sp"
                             android:textStyle="bold"
                             android:layout_marginBottom="10dp"/>
@@ -213,7 +213,7 @@
                             android:layout_below="@id/img_ads"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="10dp"
-                            android:text="آگهی"
+                            android:text="@string/ads"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
@@ -241,7 +241,7 @@
                             android:layout_below="@id/img_employment"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="10dp"
-                            android:text="استخدامی"
+                            android:text="@string/Estekhdami_title"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
@@ -278,7 +278,7 @@
                             android:layout_below="@id/img_my_ads"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="10dp"
-                            android:text="مدیریت آگهی های من"
+                            android:text="@string/MyAds"
                             android:textSize="14sp"
                             android:textStyle="bold"
                             android:layout_marginBottom="10dp"/>
@@ -308,7 +308,7 @@
                             android:layout_below="@id/img_share"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="10dp"
-                            android:text="اشتراک گذاری"
+                            android:text="@string/Share"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
@@ -338,7 +338,7 @@
                             android:layout_below="@id/img_favorite"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="10dp"
-                            android:text="آگهی نشان شده"
+                            android:text="@string/Favorite"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
@@ -376,7 +376,7 @@
                             android:layout_below="@id/img_about_us"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="10dp"
-                            android:text="درباره ما"
+                            android:text="@string/AboutUs_title"
                             android:textSize="16sp"
                             android:textStyle="bold"
                             android:layout_marginBottom="10dp"/>
@@ -404,7 +404,7 @@
                             android:layout_alignParentBottom="true"
                             android:layout_below="@id/img_setting"
                             android:layout_centerHorizontal="true"
-                            android:text="تنظیمات"
+                            android:text="@string/Setting"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
@@ -432,7 +432,7 @@
                             android:layout_below="@id/img_contact_us"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="10dp"
-                            android:text="تماس با ما"
+                            android:text="@string/ContactUs_title"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 

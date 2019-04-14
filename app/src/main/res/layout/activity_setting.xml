@@ -53,7 +53,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" انتخاب زبان :"
+                android:text="@string/chooseLanguage"
                 android:textSize="20dp"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="10dp"
@@ -69,7 +69,7 @@
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="English "
+                android:text="@string/english"
                 android:textSize="16dp"
                 android:checked="false"
                 android:id="@+id/eng"
@@ -82,7 +82,7 @@
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="    فارسی  "
+                android:text="@string/farsi"
                 android:textSize="16dp"
                 android:checked="true"
                 android:id="@+id/per"
@@ -101,7 +101,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="انتخاب شهر :"
+            android:text="@string/chooseCity"
             android:textSize="17dp"
             android:layout_alignParentRight="true"
             android:layout_marginRight="10dp"
@@ -111,7 +111,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="شهر مورد نظر خود را انتخاب کنید."
+            android:hint="@string/cityChoose1"
             android:backgroundTint="@color/backColor"
             android:gravity="right"
             android:paddingRight="15dp"
@@ -130,7 +130,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="انتخاب پس زمینه :"
+                android:text="@string/chooseBackGround"
                 android:textSize="17dp"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="10dp"
@@ -146,21 +146,23 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/setting_button"
                 android:id="@+id/gallery"
-                android:text="گالری"
+                android:text="@string/gallery"
                 android:textSize="15dp"
                 android:layout_marginLeft="40dp"
                 android:layout_weight="1"
+                android:textAllCaps="false"
                 android:layout_marginRight="20dp"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/setting_button"
                 android:id="@+id/cam"
-                android:text="دوربین"
+                android:text="@string/camera"
                 android:textSize="15dp"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="40dp"
                 android:layout_weight="1"
+                android:textAllCaps="false"
                 android:layout_marginLeft="20dp" />
 
 
@@ -171,10 +173,11 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:background="@color/backColor"
-            android:text="اعمال"
+            android:text="@string/done"
             android:textColor="@android:color/white"
             android:textSize="20dp"
             android:textStyle="bold"
+            android:textAllCaps="false"
             android:id="@+id/send"/>
     </RelativeLayout>
 

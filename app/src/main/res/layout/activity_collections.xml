@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    android:background="#eeeeee"
-    tools:context="com.example.mohsal.collections.Collections">
+    android:background="#eeeeee">
 
     <RelativeLayout
 
@@ -50,7 +49,7 @@
                 android:layout_centerHorizontal="true"
                 android:textSize="23sp"
 
-                android:text="پنل آگهی های نشان شده"
+                android:text="@string/Ads_panel"
                 android:textColor="@android:color/black"/>
 
 

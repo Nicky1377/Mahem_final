@@ -1,5 +1,7 @@
 package android.niky.mahem_final.Groups;
 
+import android.niky.mahem_final.Add.SabtAgahi_Amlak_Office;
+import android.niky.mahem_final.Add.SabtAgahi_other;
 import android.niky.mahem_final.R;
 
 
@@ -14,36 +16,48 @@ import android.niky.mahem_final.Search_Filter.Ads;
 
 public class Amlak_OfficeSell extends AppCompatActivity  {
 Button shop,office,tejari;
+    Class intent;
+    Intent ii;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_amlak__office_sell);
 
-
+        ii =getIntent();
+        if(ii.getStringExtra("type").equals("sabt"))
+        {
+            intent= SabtAgahi_Amlak_Office.class;
+        }else
+            intent=Ads.class;
 
 
         shop=(Button)findViewById(R.id.btn1);
-        shop.setOnClickListener(new IntentClick("11"));
+        shop.setOnClickListener(new IntentClick("11",intent));
         office=(Button)findViewById(R.id.btn2);
-        office.setOnClickListener(new IntentClick("12"));
+        office.setOnClickListener(new IntentClick("12",intent));
         tejari=(Button)findViewById(R.id.btn3);
-        tejari.setOnClickListener(new IntentClick("13"));
+        tejari.setOnClickListener(new IntentClick("13",intent));
 
         Toast.makeText(this, getLocalClassName().toString() + "\nNiky", Toast.LENGTH_LONG).show();
     }
+
     class IntentClick implements View.OnClickListener {
         private String Id;
-
-        public IntentClick(String id) {
+        private Class context;
+        public IntentClick(String id,final Class c) {
             Id = id;
+            context=c;
         }
 
         @Override
         public void onClick(View view) {
-            Intent i = new Intent(getBaseContext(), Ads.class);
+            Button b=(Button)view;
+           // Intent ii=getIntent();
+            Intent i = new Intent(getBaseContext(), context);
             i.putExtra("id", Id);
+            i.putExtra("type",ii.getStringExtra("type"));
+            i.putExtra("group",ii.getStringExtra("group"));
             startActivity(i);
         }
     }
-
 }

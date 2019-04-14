@@ -19,7 +19,7 @@
             android:textColor="@android:color/white"
             android:id="@+id/title"
             android:textSize="23dp"
-            android:text="قوانین و شرایط"
+            android:text="@string/Laws_title"
             android:gravity="center|bottom"
             android:paddingBottom="8dp"
             android:paddingRight="3dp"/>
@@ -57,17 +57,8 @@
             android:gravity="right"
             android:textSize="17dp"
             android:textColor="@android:color/black"
-            android:text="قوانین ثبت آگهی
-
-آگهی دادن و ثبت آگهی در اپلیکیشن ماهم، تابع قوانین و
-مقرراتی است و متن کلیه آگهی ها باید از این قوانین پیروی
-کنند .اگر آن ها را رعایت کنید مطمئنا باعث سرعت گرفتن
-ثبت آگهیتان خواهد شد.این قوانین را برایتان آورده ایم
-تا هنگام تنظیم آگهی خود، آن ها را مد نظر داشته باشید
-و مسایل قانئنی ناشی از انتشار هرگونه آگهی موجب خسارت معنوی و یا مادی برای شخص و یا اشخاص گردد،
-مستقیما متوجه سفارش دهنده ی آگهی خواهد بود.
-ثبت آگهی در ماهم به معنای به رسمیت شناختن فعالیت،
-خدمات و یا موضوعات درج شده در آگهی از طرف ماهم نمی باشد."/>
+            android:text="@string/laws"
+            />
 
         <include
             layout="@layout/bottom_navigation"

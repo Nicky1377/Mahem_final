@@ -19,7 +19,7 @@
             android:textColor="@android:color/white"
             android:id="@+id/title"
             android:textSize="20dp"
-            android:text="درباره ی ما"
+            android:text="@string/AboutUs_title"
             android:gravity="center|bottom"
             android:paddingBottom="8dp"
             android:paddingRight="3dp"/>
@@ -50,28 +50,38 @@
             android:layout_height="2dp"
             android:background="@android:color/white"/>
 
+
         <TextView
+            android:id="@+id/ex"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_below="@+id/img_header"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
             android:gravity="right"
-            android:text="ماهم، اولین اپلیکیشن در سطح استان گلستان فعالیت خود را از
-سال 1397 با موضوع کاریابی و نیازمندیهای آنلاین و بانک مشاغل
-و تخفیف یاب شروع کرده است و هدف اصلی آن حذف واسطه و
-تسهیل در امر خرید  و فروش و در ارتباط قراردادن خریدار با فروشنده به صورت مستقیم است.
-در ماهم، خرید و فروش کاربران مستقیما انجام می پذیرد و از معاملات کاربران هیچگونه سودی عاید ماهم نمی گردد. "
+            android:text="@string/About_exp1"
             android:textColor="@android:color/black"
             android:textSize="15dp" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/ex"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="right"
+            android:text="@string/About_exp2"
+            android:textColor="@android:color/black"
+            android:textSize="15dp" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:textSize="15dp"
-            android:text="ماهم، به زبان ترکی به معنی ماه من است. "
+            android:text="@string/About_mean"
             android:layout_marginBottom="90dp"
             android:textColor="@android:color/black"
             android:layout_alignParentBottom="true"

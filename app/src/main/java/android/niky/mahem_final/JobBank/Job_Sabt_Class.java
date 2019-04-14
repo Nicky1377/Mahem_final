@@ -3,7 +3,32 @@ package android.niky.mahem_final.JobBank;
 
 public class Job_Sabt_Class {
 
-    private String modiriat,senf_type,sabt_num,phone_office,mobile,fax,address,telegram,insta,email,tozihat;
+    private String row;
+
+    private String name,modiriat,senf_type,sabt_num,phone_office,mobile,fax,address,telegram,insta,email,tozihat,picUrl
+            ,date;
+
+
+
+
+    ///////getters
+
+
+    public String getDate() {
+        return date;
+    }
+
+    public String getRow() {
+        return row;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getPicUrl() {
+        return picUrl;
+    }
 
     public String getModiriat() {
         return modiriat;
@@ -29,6 +54,13 @@ public class Job_Sabt_Class {
 
     public String getTozihat() { return tozihat; }
 
+    ////////////setters
+
+
+    public void setRow(String row) {
+        this.row = row;
+    }
+
     public void setEmail(String email) { this.email = email; }
 
     public void setFax(String fax) { this.fax = fax; }
@@ -41,12 +73,40 @@ public class Job_Sabt_Class {
 
     public void setTelegram(String telegram) { this.telegram = telegram; }
 
+    public void setDate(String date) {
+        this.date = date;
+    }
+
     public void setTozihat(String tozihat) { this.tozihat = tozihat; }
 
-    public Job_Sabt_Class(String m,String senf,String phone,String ad)
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPicUrl(String picUrl) {
+        this.picUrl = picUrl;
+    }
+
+    public void setModiriat(String modiriat) {
+        this.modiriat = modiriat;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public void setPhone_office(String phone_office) {
+        this.phone_office = phone_office;
+    }
+
+    public void setSenf_type(String senf_type) {
+        this.senf_type = senf_type;
+    }
+
+    public Job_Sabt_Class(String m, String phone, String ad)
     {
         this.modiriat=m;
-        this.senf_type=senf;
+        this.senf_type="";
         this.phone_office=phone;
         this.address=ad;
         this.sabt_num="";
@@ -62,4 +122,11 @@ public class Job_Sabt_Class {
     {
 
     }
+    public Job_Sabt_Class()
+    {
+
+    }
+
+
+
 }

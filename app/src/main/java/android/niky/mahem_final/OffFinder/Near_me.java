@@ -90,10 +90,10 @@ public class Near_me extends AppCompatActivity {
             recyclerView.setHasFixedSize(true);
             recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-            TList.add(new Takhfif(last_c.get(i), new_c.get(i), t_percent.get(i), t_describe.get(i), t_city.get(i), t_imagess.get(i)));
+           // TList.add(new Takhfif(last_c.get(i), new_c.get(i), t_percent.get(i), t_describe.get(i), t_city.get(i), t_imagess.get(i)));
 
-            adapter = new TAdapter(this, TList, t_rate);
-            recyclerView.setAdapter(adapter);
+           // adapter = new TAdapter(this, TList, t_rate);
+            //recyclerView.setAdapter(adapter);
 
 
         }

@@ -48,19 +48,20 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="استخدامی"
+                android:text="@string/Estekhdami_title"
                 android:drawableLeft="@mipmap/ic_launcher_flsh"
                 android:drawableRight="@mipmap/ic_phone"
                 android:gravity="right|center"
                 android:textSize="15dp"
                 android:paddingTop="1dp"
+                android:textAllCaps="false"
                 android:paddingBottom="1dp"
                 android:id="@+id/btn1"
                 />
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="املاک"
+                android:text="@string/Amlak_title"
                 android:drawableLeft="@mipmap/ic_launcher_flsh"
                 android:drawableRight="@mipmap/ic_phone"
                 android:gravity="right|center"
@@ -68,25 +69,27 @@
                 android:paddingTop="4dp"
                 android:paddingBottom="4dp"
                 android:paddingLeft="1dp"
+                android:textAllCaps="false"
                 android:paddingRight="5dp"
                 android:id="@+id/btn2"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="وسایل نقلیه"
+                android:text="@string/Group_car"
                 android:drawableLeft="@mipmap/ic_launcher_flsh"
                 android:drawableRight="@mipmap/ic_phone"
                 android:gravity="right|center"
                 android:textSize="15dp"
                 android:paddingTop="4dp"
                 android:paddingBottom="4dp"
+                android:textAllCaps="false"
                 android:paddingLeft="1dp"
                 android:paddingRight="5dp"
                 android:id="@+id/btn3"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="لوازم الکترونیکی"
+                android:text="@string/Electric_title"
                 android:drawableLeft="@mipmap/ic_launcher_flsh"
                 android:drawableRight="@mipmap/ic_phone"
                 android:gravity="right|center"
@@ -95,11 +98,12 @@
                 android:paddingBottom="4dp"
                 android:paddingLeft="1dp"
                 android:paddingRight="5dp"
+                android:textAllCaps="false"
                 android:id="@+id/btn4"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="لوازم خانگی"
+                android:text="@string/home_title"
                 android:drawableLeft="@mipmap/ic_launcher_flsh"
                 android:drawableRight="@mipmap/ic_phone"
                 android:gravity="right|center"
@@ -108,11 +112,12 @@
                 android:paddingBottom="4dp"
                 android:paddingLeft="1dp"
                 android:paddingRight="5dp"
+                android:textAllCaps="false"
                 android:id="@+id/btn5"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="خدمات"
+                android:text="@string/khadamat_title"
                 android:drawableLeft="@mipmap/ic_launcher_flsh"
                 android:drawableRight="@mipmap/ic_phone"
                 android:gravity="right|center"
@@ -121,11 +126,12 @@
                 android:paddingBottom="4dp"
                 android:paddingLeft="1dp"
                 android:paddingRight="5dp"
+                android:textAllCaps="false"
                 android:id="@+id/btn6"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="تجهیزات و عمده فروشی"
+                android:text="@string/tajhizat_title"
                 android:drawableLeft="@mipmap/ic_launcher_flsh"
                 android:drawableRight="@mipmap/ic_phone"
                 android:gravity="right|center"
@@ -134,11 +140,12 @@
                 android:paddingBottom="4dp"
                 android:paddingLeft="1dp"
                 android:paddingRight="5dp"
+                android:textAllCaps="false"
                 android:id="@+id/btn7"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="سرگرمی و فراغت"
+                android:text="@string/sargarmi_title"
                 android:drawableLeft="@mipmap/ic_launcher_flsh"
                 android:drawableRight="@mipmap/ic_phone"
                 android:gravity="right|center"
@@ -147,11 +154,12 @@
                 android:paddingBottom="4dp"
                 android:paddingLeft="1dp"
                 android:paddingRight="5dp"
+                android:textAllCaps="false"
                 android:id="@+id/btn8"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="وسایل شخصی"
+                android:text="@string/personal_title"
                 android:drawableLeft="@mipmap/ic_launcher_flsh"
                 android:drawableRight="@mipmap/ic_phone"
                 android:gravity="right|center"
@@ -160,6 +168,7 @@
                 android:paddingBottom="4dp"
                 android:paddingLeft="1dp"
                 android:paddingRight="5dp"
+                android:textAllCaps="false"
                 android:id="@+id/btn9"/>
 
         </LinearLayout>

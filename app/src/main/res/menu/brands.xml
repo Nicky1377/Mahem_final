@@ -4,406 +4,406 @@
     <item
         android:id="@+id/brn1"
         android:orderInCategory="1"
-        android:title="آیودی"
+        android:title="@string/brn1"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn2"
         android:orderInCategory="1"
-        android:title="آریسان"
+        android:title="@string/brn2"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn3"
         android:orderInCategory="1"
-        android:title=")زوتی(آریو"
+        android:title="@string/brn3"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn4"
         android:orderInCategory="1"
-        android:title="آلفا رومیو"
+        android:title="@string/brn4"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn5"
         android:orderInCategory="1"
-        android:title="اپل"
+        android:title="@string/brn5"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn6"
         android:orderInCategory="1"
-        android:title="ام جی"
+        android:title="@string/brn6"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn7"
         android:orderInCategory="1"
-        android:title="ام وی ام"
+        android:title="@string/brn7"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn8"
         android:orderInCategory="1"
-        android:title="ایسوزو"
+        android:title="@string/brn8"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn9"
         android:orderInCategory="1"
-        android:title="بایک"
+        android:title="@string/brn9"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn10"
         android:orderInCategory="1"
-        android:title="برلیانس"
+        android:title="@string/brn10"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn11"
         android:orderInCategory="1"
-        android:title="بسترن"
+        android:title="@string/brn11"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn12"
         android:orderInCategory="1"
-        android:title="بنز"
+        android:title="@string/brn12"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn13"
         android:orderInCategory="1"
-        android:title="بی ام و"
+        android:title="@string/brn13"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn14"
         android:orderInCategory="1"
-        android:title="بی وای دی"
+        android:title="@string/brn14"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn15"
         android:orderInCategory="1"
-        android:title="پاژن"
+        android:title="@string/brn15"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn16"
         android:orderInCategory="1"
-        android:title="پراید"
+        android:title="@string/brn16"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn17"
         android:orderInCategory="1"
-        android:title="پرتون"
+        android:title="@string/brn17"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn18"
         android:orderInCategory="1"
-        android:title="پژو"
+        android:title="@string/brn18"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn19"
         android:orderInCategory="1"
-        android:title="پورشه"
+        android:title="@string/brn19"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn20"
         android:orderInCategory="1"
-        android:title="پیکان"
+        android:title="@string/brn20"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn21"
         android:orderInCategory="1"
-        android:title="تویوتا"
+        android:title="@string/brn21"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn22"
         android:orderInCategory="1"
-        android:title="تیبا"
+        android:title="@string/brn22"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn23"
         android:orderInCategory="1"
-        android:title="جک"
+        android:title="@string/brn23"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn24"
         android:orderInCategory="1"
-        android:title="جیپ"
+        android:title="@string/brn24"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn25"
         android:orderInCategory="1"
-        android:title="جیلی"
+        android:title="@string/brn25"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn26"
         android:orderInCategory="1"
-        android:title="چانگان"
+        android:title="@string/brn26"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn27"
         android:orderInCategory="1"
-        android:title="چری"
+        android:title="@string/brn27"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn28"
         android:orderInCategory="1"
-        android:title="H30 Cross( اچ سی کراس ) دانگ فنگ"
+        android:title="@string/brn28"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn29"
         android:orderInCategory="1"
-        android:title="دنا"
+        android:title="@string/brn29"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn30"
         android:orderInCategory="1"
-        android:title="دوو"
+        android:title="@string/brn30"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn31"
         android:orderInCategory="1"
-        android:title="دی اس"
+        android:title="@string/brn31"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn32"
         android:orderInCategory="1"
-        android:title="رانا"
+        android:title="@string/brn32"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn33"
         android:orderInCategory="1"
-        android:title="رنو"
+        android:title="@string/brn33"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn34"
         android:orderInCategory="1"
-        android:title="سانگ یانگ"
+        android:title="@string/brn34"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn35"
         android:orderInCategory="1"
-        android:title="ساینا"
+        android:title="@string/brn35"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn36"
         android:orderInCategory="1"
-        android:title="سمند"
+        android:title="@string/brn36"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn37"
         android:orderInCategory="1"
-        android:title="سوبارو"
+        android:title="@string/brn37"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn38"
         android:orderInCategory="1"
-        android:title="سوزوکی"
+        android:title="@string/brn38"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn39"
         android:orderInCategory="1"
-        android:title="سیتروین"
+        android:title="@string/brn39"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn40"
         android:orderInCategory="1"
-        android:title="فاو"
+        android:title="@string/brn40"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn41"
         android:orderInCategory="1"
-        android:title="فولکس واگن"
+        android:title="@string/brn41"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn42"
         android:orderInCategory="1"
-        android:title="فیات"
+        android:title="@string/brn42"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn43"
         android:orderInCategory="1"
-        android:title="کاپرا"
+        android:title="@string/brn43"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn44"
         android:orderInCategory="1"
-        android:title="کیا"
+        android:title="@string/brn44"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn45"
         android:orderInCategory="1"
-        android:title="گریت وال"
+        android:title="@string/brn45"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn46"
         android:orderInCategory="1"
-        android:title="لکسوس"
+        android:title="@string/brn46"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn47"
         android:orderInCategory="1"
-        android:title="لند مارک"
+        android:title="@string/brn47"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn48"
         android:orderInCategory="1"
-        android:title="لندرور"
+        android:title="@string/brn48"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn49"
         android:orderInCategory="1"
-        android:title="لیفان"
+        android:title="@string/brn49"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn50"
         android:orderInCategory="1"
-        android:title="مازراتی"
+        android:title="@string/brn50"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn51"
         android:orderInCategory="1"
-        android:title="مزدا"
+        android:title="@string/brn51"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn52"
         android:orderInCategory="1"
-        android:title="میتسوبیشی"
+        android:title="@string/brn52"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn53"
         android:orderInCategory="1"
-        android:title="نیسان"
+        android:title="@string/brn53"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn54"
         android:orderInCategory="1"
-        android:title="ولوو"
+        android:title="@string/brn54"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn55"
         android:orderInCategory="1"
-        android:title="هایما"
+        android:title="@string/brn55"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn56"
         android:orderInCategory="1"
-        android:title="هوندا"
+        android:title="@string/brn56"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn57"
         android:orderInCategory="1"
-        android:title="هیوندای"
+        android:title="@string/brn57"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />
     <item
         android:id="@+id/brn58"
         android:orderInCategory="1"
-        android:title="دیگر"
+        android:title="@string/brn58"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
         />

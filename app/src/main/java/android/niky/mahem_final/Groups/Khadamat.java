@@ -1,5 +1,6 @@
 package android.niky.mahem_final.Groups;
 
+import android.niky.mahem_final.Add.SabtAgahi_other;
 import android.niky.mahem_final.R;
 
 import android.content.Intent;
@@ -12,11 +13,20 @@ import android.niky.mahem_final.Search_Filter.Ads;
 
 public class Khadamat extends AppCompatActivity {
 Button pazirayi,beauty,clean,asbab_keshi,nurse,decor,repair,teach,computer,translate,maali,graphic,other;
+    Class intent;
+    Intent ii;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_khadamat);
 
+
+        ii=getIntent();
+        if(ii.getStringExtra("type").equals("sabt"))
+        {
+            intent= SabtAgahi_other.class;
+        }else
+            intent=Ads.class;
 
 
 
@@ -38,6 +48,8 @@ Button pazirayi,beauty,clean,asbab_keshi,nurse,decor,repair,teach,computer,trans
             @Override
             public void onClick(View view) {
                 Intent i=new Intent(Khadamat.this,Khadamat_teach.class);
+                i.putExtra("type",ii.getStringExtra("type"));
+                i.putExtra("group",ii.getStringExtra("group")+"/"+teach.getText().toString());
                 startActivity(i);
             }
         });
@@ -46,21 +58,23 @@ Button pazirayi,beauty,clean,asbab_keshi,nurse,decor,repair,teach,computer,trans
             @Override
             public void onClick(View view) {
                 Intent i=new Intent(Khadamat.this,Khadamat_computer.class);
+                i.putExtra("type",ii.getStringExtra("type"));
+                i.putExtra("group",ii.getStringExtra("group")+"/"+computer.getText().toString());
                 startActivity(i);
             }
         });
 
-        pazirayi.setOnClickListener(new IntentClick("60"));
-        beauty.setOnClickListener(new IntentClick("61"));
-        clean.setOnClickListener(new IntentClick("62"));
-        asbab_keshi.setOnClickListener(new IntentClick("63"));
-        nurse.setOnClickListener(new IntentClick("64"));
-        decor.setOnClickListener(new IntentClick("65"));
-        repair.setOnClickListener(new IntentClick("66"));
-        translate.setOnClickListener(new IntentClick("67"));
-        maali.setOnClickListener(new IntentClick("68"));
-        graphic.setOnClickListener(new IntentClick("69"));
-        other.setOnClickListener(new IntentClick("70"));
+        pazirayi.setOnClickListener(new IntentClick("60",intent));
+        beauty.setOnClickListener(new IntentClick("61",intent));
+        clean.setOnClickListener(new IntentClick("62",intent));
+        asbab_keshi.setOnClickListener(new IntentClick("63",intent));
+        nurse.setOnClickListener(new IntentClick("64",intent));
+        decor.setOnClickListener(new IntentClick("65",intent));
+        repair.setOnClickListener(new IntentClick("66",intent));
+        translate.setOnClickListener(new IntentClick("67",intent));
+        maali.setOnClickListener(new IntentClick("68",intent));
+        graphic.setOnClickListener(new IntentClick("69",intent));
+        other.setOnClickListener(new IntentClick("70",intent));
 
 
 
@@ -71,15 +85,20 @@ Button pazirayi,beauty,clean,asbab_keshi,nurse,decor,repair,teach,computer,trans
 
     class IntentClick implements View.OnClickListener {
         private String Id;
-
-        public IntentClick(String id) {
+        private Class context;
+        public IntentClick(String id,final Class c) {
             Id = id;
+            context=c;
         }
 
         @Override
         public void onClick(View view) {
-            Intent i = new Intent(getBaseContext(), Ads.class);
+            Button b=(Button)view;
+            Intent ii=getIntent();
+            Intent i = new Intent(getBaseContext(), context);
             i.putExtra("id", Id);
+            i.putExtra("type",ii.getStringExtra("type"));
+            i.putExtra("group",ii.getStringExtra("group")+"/"+b.getText().toString());
             startActivity(i);
         }
     }

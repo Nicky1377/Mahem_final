@@ -107,7 +107,7 @@ public class JobBankMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i=new Intent(getBaseContext(),JobList.class);
-                i.putExtra("id","1");
+                i.putExtra("id","1_Job");
                 startActivity(i);
             }
         });
@@ -116,7 +116,7 @@ public class JobBankMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i=new Intent(getBaseContext(),JobList.class);
-                i.putExtra("id","2");
+                i.putExtra("id","2_Job");
                 startActivity(i);
             }
         });
@@ -125,7 +125,7 @@ public class JobBankMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i=new Intent(getBaseContext(),JobList.class);
-                i.putExtra("id","3");
+                i.putExtra("id","3_Job");
                 startActivity(i);
             }
         });
@@ -134,7 +134,7 @@ public class JobBankMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i=new Intent(getBaseContext(),JobList.class);
-                i.putExtra("id","4");
+                i.putExtra("id","4_Job");
                 startActivity(i);
             }
         });
@@ -143,7 +143,7 @@ public class JobBankMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i=new Intent(getBaseContext(),JobList.class);
-                i.putExtra("id","5");
+                i.putExtra("id","5_Job");
                 startActivity(i);
             }
         });
@@ -152,7 +152,7 @@ public class JobBankMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i=new Intent(getBaseContext(),JobList.class);
-                i.putExtra("id","6");
+                i.putExtra("id","6_Job");
                 startActivity(i);
             }
         });
@@ -161,7 +161,7 @@ public class JobBankMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i=new Intent(getBaseContext(),JobList.class);
-                i.putExtra("id","7");
+                i.putExtra("id","7_Job");
                 startActivity(i);
             }
         });
@@ -170,7 +170,7 @@ public class JobBankMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i=new Intent(getBaseContext(),JobList.class);
-                i.putExtra("id","8");
+                i.putExtra("id","8_Job");
                 startActivity(i);
             }
         });
@@ -179,7 +179,7 @@ public class JobBankMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i=new Intent(getBaseContext(),JobList.class);
-                i.putExtra("id","9");
+                i.putExtra("id","9_Job");
                 startActivity(i);
             }
         });
@@ -188,7 +188,7 @@ public class JobBankMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i=new Intent(getBaseContext(),JobList.class);
-                i.putExtra("id","10");
+                i.putExtra("id","10_Job");
                 startActivity(i);
             }
         });
@@ -197,7 +197,7 @@ public class JobBankMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i=new Intent(getBaseContext(),JobList.class);
-                i.putExtra("id","11");
+                i.putExtra("id","11_Job");
                 startActivity(i);
             }
         });
@@ -206,7 +206,7 @@ public class JobBankMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i=new Intent(getBaseContext(),JobList.class);
-                i.putExtra("id","12");
+                i.putExtra("id","12_Job");
                 startActivity(i);
             }
         });
@@ -215,7 +215,7 @@ public class JobBankMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i=new Intent(getBaseContext(),JobList.class);
-                i.putExtra("id","13");
+                i.putExtra("id","13_Job");
                 startActivity(i);
             }
         });
@@ -224,7 +224,7 @@ public class JobBankMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i=new Intent(getBaseContext(),JobList.class);
-                i.putExtra("id","14");
+                i.putExtra("id","14_Job");
                 startActivity(i);
             }
         });
@@ -233,7 +233,7 @@ public class JobBankMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i=new Intent(getBaseContext(),JobList.class);
-                i.putExtra("id","15");
+                i.putExtra("id","15_Job");
                 startActivity(i);
             }
         });
@@ -242,7 +242,7 @@ public class JobBankMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i=new Intent(getBaseContext(),JobList.class);
-                i.putExtra("id","16");
+                i.putExtra("id","16_Job");
                 startActivity(i);
             }
         });
@@ -251,7 +251,7 @@ public class JobBankMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i=new Intent(getBaseContext(),JobList.class);
-                i.putExtra("id","17");
+                i.putExtra("id","17_Job");
                 startActivity(i);
             }
         });
@@ -260,7 +260,7 @@ public class JobBankMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i=new Intent(getBaseContext(),JobList.class);
-                i.putExtra("id","18");
+                i.putExtra("id","18_Job");
                 startActivity(i);
             }
         });
@@ -269,7 +269,7 @@ public class JobBankMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i=new Intent(getBaseContext(),JobList.class);
-                i.putExtra("id","19");
+                i.putExtra("id","19_Job");
                 startActivity(i);
             }
         });
@@ -278,7 +278,7 @@ public class JobBankMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i=new Intent(getBaseContext(),JobList.class);
-                i.putExtra("id","20");
+                i.putExtra("id","20_Job");
                 startActivity(i);
             }
         });

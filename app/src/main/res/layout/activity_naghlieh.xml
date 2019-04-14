@@ -20,7 +20,7 @@
             android:textColor="@android:color/white"
             android:id="@+id/title"
             android:textSize="20dp"
-            android:text="وسایل نقلیه"
+            android:text="@string/Group_car"
             android:gravity="center|bottom"
             android:paddingBottom="8dp"
             android:paddingRight="3dp"/>
@@ -44,7 +44,7 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="خودرو سواری"
+                android:text="@string/savari"
                 android:drawableLeft="@mipmap/ic_launcher_flsh"
                 android:drawableRight="@mipmap/ic_phone"
                 android:gravity="right|center"
@@ -53,12 +53,13 @@
                 android:paddingBottom="4dp"
                 android:paddingLeft="1dp"
                 android:paddingRight="5dp"
+                android:textAllCaps="false"
                 android:id="@+id/btn1"
                 />
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="سنگین و نیمه سنگین"
+                android:text="@string/sangin"
                 android:drawableLeft="@mipmap/ic_launcher_flsh"
                 android:drawableRight="@mipmap/ic_phone"
                 android:gravity="right|center"
@@ -67,11 +68,12 @@
                 android:paddingBottom="4dp"
                 android:paddingLeft="1dp"
                 android:paddingRight="5dp"
+                android:textAllCaps="false"
                 android:id="@+id/btn2"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="موتورسیکلت و لوازم جانبی"
+                android:text="@string/motor"
                 android:drawableLeft="@mipmap/ic_launcher_flsh"
                 android:drawableRight="@mipmap/ic_phone"
                 android:gravity="right|center"
@@ -80,11 +82,12 @@
                 android:paddingBottom="4dp"
                 android:paddingLeft="1dp"
                 android:paddingRight="5dp"
+                android:textAllCaps="false"
                 android:id="@+id/btn3"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="قطعات یدکی و لوازم جانبی خودرو"
+                android:text="@string/yadaki"
                 android:drawableLeft="@mipmap/ic_launcher_flsh"
                 android:drawableRight="@mipmap/ic_phone"
                 android:gravity="right|center"
@@ -93,11 +96,12 @@
                 android:paddingBottom="4dp"
                 android:paddingLeft="1dp"
                 android:paddingRight="5dp"
+                android:textAllCaps="false"
                 android:id="@+id/btn4"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="ماشین آلات کشاورزی و عمرانی"
+                android:text="@string/keshavarzi"
                 android:drawableLeft="@mipmap/ic_launcher_flsh"
                 android:drawableRight="@mipmap/ic_phone"
                 android:gravity="right|center"
@@ -106,11 +110,12 @@
                 android:paddingBottom="4dp"
                 android:paddingLeft="1dp"
                 android:paddingRight="5dp"
+                android:textAllCaps="false"
                 android:id="@+id/btn5"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="سایر"
+                android:text="@string/other_naghlieh"
                 android:drawableLeft="@mipmap/ic_launcher_flsh"
                 android:drawableRight="@mipmap/ic_phone"
                 android:gravity="right|center"
