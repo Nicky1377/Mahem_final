@@ -512,7 +512,7 @@ public class SabtAgahi_Estekhdam extends AppCompatActivity {
 
         final CharSequence[] options = {"دوربین", "گالری"};
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(getBaseContext());
+        AlertDialog.Builder builder = new AlertDialog.Builder(SabtAgahi_Estekhdam.this);
 
         builder.setTitle("Select Photo");
 

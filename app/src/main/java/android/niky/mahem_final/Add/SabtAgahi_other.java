@@ -533,7 +533,7 @@ EditText Group,Title,Type,Gheimat,Tozihat,location,PhoneNum,Email,price,call,Aga
 
         final CharSequence[] options = {"دوربین", "گالری"};
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(getBaseContext());
+        AlertDialog.Builder builder = new AlertDialog.Builder(SabtAgahi_other.this);
 
         builder.setTitle("Select Photo");
 
@@ -636,7 +636,6 @@ EditText Group,Title,Type,Gheimat,Tozihat,location,PhoneNum,Email,price,call,Aga
             }
         }
     }
-
 
     public String readFileAsString() {
         StringBuilder stringBuilder = new StringBuilder();

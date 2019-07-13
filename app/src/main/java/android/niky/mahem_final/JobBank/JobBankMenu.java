@@ -3,6 +3,7 @@ package android.niky.mahem_final.JobBank;
 import android.niky.mahem_final.R;
 
 import android.content.Intent;
+import android.niky.mahem_final.other.Page1;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -63,22 +64,24 @@ public class JobBankMenu extends AppCompatActivity {
         MenuLine = (ImageView) navigationBar.findViewById(R.id.menuLine_f);
         Search =(ImageView)navigationBar.findViewById(R.id.search_f);
 
+
+
         Search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getBaseContext(), android.niky.mahem_final.Search_Filter.Search.class);
-                i.putExtra("title","جستجو");
+                i.putExtra("title",getResources().getString(R.string.title_search));
                 startActivity(i);
-                finish();
+
             }
         });
 
         Menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getBaseContext(), Menu1.class);
+
+                Intent i = new Intent(getBaseContext(), Group.class);
                 startActivity(i);
-                finish();
             }
         });
 
@@ -87,18 +90,29 @@ public class JobBankMenu extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i = new Intent(getBaseContext(), SabtAgahi.class);
                 startActivity(i);
-                finish();
+
             }
         });
 
         MenuLine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getBaseContext(), Group.class);
+                Intent i = new Intent(getBaseContext(), Menu1.class);
                 startActivity(i);
-                finish();
+
             }
         });
+
+        Home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getBaseContext(), Page1.class);
+                startActivity(i);
+
+            }
+        });
+
+
     }
 
     void clicks()

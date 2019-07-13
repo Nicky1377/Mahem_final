@@ -6,6 +6,7 @@ import android.niky.mahem_final.R;
 
 import android.content.Intent;
 import android.niky.mahem_final.other.AppController;
+import android.niky.mahem_final.other.Page1;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -47,10 +48,12 @@ public class Ads extends AppCompatActivity {
     private List<Advertising> AdvList;
     private AdvAdapter adapter;
     private int counter=5;
-    ImageView Filter;
+    ImageView search;
     String url;
     Intent ii;
     private ProgressDialog pDialog;
+
+    String Noe;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,10 +66,21 @@ public class Ads extends AppCompatActivity {
         listView.setAdapter(adapter);
 
         ii=getIntent();
-//        url = "http://appmahem.eu-4.evennode.com/listbadaste/all/"+ii.getStringExtra("id");
-        url="http://appmahem.eu-4.evennode.com/list/all/6";
+       url = "http://appmahem.eu-4.evennode.com/listbadaste/all/"+ii.getStringExtra("id");
 
 
+        find=(EditText)findViewById(R.id.search_word);
+        Search=(ImageView)findViewById(R.id.search_icon);
+        Search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ////////////
+            }
+        });
+
+
+
+        ///////////////////////////////////////////network
         pDialog = new ProgressDialog(this);
         // Showing progress dialog before making http request
         pDialog.setMessage("لطفا صبر کنید ..");
@@ -85,8 +99,8 @@ public class Ads extends AppCompatActivity {
                                 Advertising adv = new Advertising();
                                adv.setId(obj.getString("_id"));
                               adv.setTitle(obj.getString("title"));
-                                adv.setTime(obj.getString("date"));
                               adv.setNoe(obj.getString("noe"));
+                                adv.setTime(obj.getString("date"));
                                  JSONArray pic = obj.getJSONArray("pic");
                               adv.setThumbnailUrl("http://" +pic.getString(0));
 
@@ -118,7 +132,7 @@ public class Ads extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent=new Intent(getBaseContext(), Ads_show.class);
                 Advertising advertising= (Advertising) adapterView.getAdapter().getItem(i);
-
+                //tt(advertising.getDetails());
                 intent.putExtra("id",advertising.getId());
                 intent.putExtra("noe",advertising.getNoe());
                 startActivity(intent);
@@ -127,21 +141,6 @@ public class Ads extends AppCompatActivity {
 
 
 
-
-        Filter=(ImageView)findViewById(R.id.filter);
-
-
-        Filter.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i=new Intent(Ads.this,Filter_other.class);
-                startActivity(i);
-
-            }
-        });
-
-
-        find=(EditText)findViewById(R.id.search_word);
         map();
 
 
@@ -152,11 +151,13 @@ public class Ads extends AppCompatActivity {
     public void map() {
 
         navigationBar=findViewById(R.id.rr);
-        Home =  findViewById(R.id.home);
-        Add =  findViewById(R.id.add);
-        Menu =  findViewById(R.id.menu_f);
-        MenuLine =  findViewById(R.id.menuLine_f);
-        Search =findViewById(R.id.search_f);
+        Home = (ImageView) navigationBar.findViewById(R.id.home);
+        Add = (ImageView) navigationBar.findViewById(R.id.add);
+        Menu = (ImageView) navigationBar.findViewById(R.id.menu_f);
+        MenuLine = (ImageView) navigationBar.findViewById(R.id.menuLine_f);
+        Search =(ImageView)navigationBar.findViewById(R.id.search_f);
+
+
 
         Search.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -164,16 +165,16 @@ public class Ads extends AppCompatActivity {
                 Intent i = new Intent(getBaseContext(), android.niky.mahem_final.Search_Filter.Search.class);
                 i.putExtra("title",getResources().getString(R.string.title_search));
                 startActivity(i);
-                finish();
+
             }
         });
 
         Menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getBaseContext(), Menu1.class);
+
+                Intent i = new Intent(getBaseContext(), Group.class);
                 startActivity(i);
-                finish();
             }
         });
 
@@ -182,27 +183,28 @@ public class Ads extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i = new Intent(getBaseContext(), SabtAgahi.class);
                 startActivity(i);
-                finish();
+
             }
         });
 
         MenuLine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getBaseContext(), Group.class);
+                Intent i = new Intent(getBaseContext(), Menu1.class);
                 startActivity(i);
-                finish();
-            }
-        });
-        Home.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(getBaseContext(), Off.class);
-                startActivity(i);
-                finish();
 
             }
         });
+
+        Home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getBaseContext(), Page1.class);
+                startActivity(i);
+
+            }
+        });
+
 
     }
 
@@ -211,5 +213,8 @@ public class Ads extends AppCompatActivity {
             pDialog.dismiss();
             pDialog = null;
         }
+    }
+    void tt(String msg) {
+        Toast.makeText(this, msg, Toast.LENGTH_LONG).show();
     }
 }

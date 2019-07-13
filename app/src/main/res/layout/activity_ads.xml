@@ -81,6 +81,7 @@
         ></ListView>
 
     <include
+        android:id="@+id/rr"
         layout="@layout/bottom_navigation"
         ></include>
 </RelativeLayout>

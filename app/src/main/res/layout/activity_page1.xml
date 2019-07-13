@@ -97,7 +97,7 @@
 
 
 
-                <ListView
+                <android.support.v7.widget.RecyclerView
                     android:id="@+id/List1"
                     android:layout_below="@id/l1"
                     android:layout_width="match_parent"
@@ -106,7 +106,7 @@
                     tools:ignore="NotSibling"
                     android:orientation="horizontal"
                     android:scrollbars="horizontal"
-                    android:layout_weight="100"></ListView>
+                    android:layout_weight="100"></android.support.v7.widget.RecyclerView>
 
 
                 <RelativeLayout
@@ -133,16 +133,17 @@
                         />
 
                 </RelativeLayout>
-                <ListView
+                <android.support.v7.widget.RecyclerView
                     android:id="@+id/List2"
                     android:layout_below="@id/l2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/background_borders"
                     tools:ignore="NotSibling"
-                    android:orientation="vertical"
+                    android:orientation="horizontal"
+                    android:scrollbars="horizontal"
                     android:layout_weight="100"
-                    ></ListView>
+                    ></android.support.v7.widget.RecyclerView>
             </LinearLayout>
 
     </RelativeLayout>

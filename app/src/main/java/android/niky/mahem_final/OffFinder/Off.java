@@ -1,11 +1,13 @@
 package android.niky.mahem_final.OffFinder;
 
 import android.app.ProgressDialog;
+import android.niky.mahem_final.Add.SabtAgahi;
 import android.niky.mahem_final.MenuItems.Ads_show;
 import android.niky.mahem_final.R;
 
 import android.content.Intent;
 import android.niky.mahem_final.other.AppController;
+import android.niky.mahem_final.other.Page1;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -69,61 +71,11 @@ public class Off extends AppCompatActivity {
 
         ii=getIntent();
 
-//        if(ii.getStringExtra("id").equals(""))
+
             url = "http://appmahem.eu-4.evennode.com/list/all/6";
-//        else
+            send_req(url);
+
 //        url = "http://appmahem.eu-4.evennode.com/listbadaste/all/"+ii.getStringExtra("id");
-        //url="http://madresetavangari.ir/getproduct/";
-
-
-        pDialog = new ProgressDialog(this);
-        // Showing progress dialog before making http request
-        pDialog.setMessage("لطفا صبر کنید ..");
-        pDialog.show();
-
-        // Creating volley request obj
-        JsonArrayRequest productReq = new JsonArrayRequest(url,
-                new Response.Listener<JSONArray>() {
-                    @Override
-                    public void onResponse(JSONArray response) {
-                        // Log.d(TAG, response.toString());
-                        hidePDialog();
-                        for (int i = 0; i < response.length(); i++) {
-                            try {
-                                JSONObject obj = response.getJSONObject(i);
-                                Takhfif T = new Takhfif();
-                                T.setId(obj.getString("_id"));
-                                T.setNoe(obj.getString("noe"));
-                                T.setNew_c(obj.getString("secondprice"));
-                                T.setLast_c(obj.getString("mainprice"));
-                                T.setT_describe(obj.getString("comment"));
-                                T.setT_city(obj.getString("city"));
-                                T.setT_percent(obj.getString("darsad"));
-
-                                JSONArray pic = obj.getJSONArray("pic");
-                                T.setT_image("http://" +pic.getString(0));
-
-
-
-                                TList.add(T);
-
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                        adapter.notifyDataSetChanged();
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                // VolleyLog.d(TAG, "Error: " + error.getMessage());
-                hidePDialog();
-            }
-        });
-
-        // Adding request to request queue
-        AppController.getInstance().addToRequestQueue(productReq);
-
 
 
 
@@ -140,28 +92,6 @@ public class Off extends AppCompatActivity {
             }
         });
 
-
-//
-//                    ///////fill these strings with network information
-//                    last_c.add("vvv");
-//                    new_c.add("PPPPPPP");
-//                    t_city.add("aaaaaaa");
-//                    t_describe.add("ssssss");
-//                    t_percent.add("oooo"+"% تخفیف ");
-//                    t_imagess.add(R.drawable.add);
-//                    ///rate of takhfif... an integer between 0 to 5
-//                    t_rate.add(2);
-//                    ////////////////////////////////////////////
-
-
-
-//                    recyclerView.setHasFixedSize(true);
-//                    recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-                   // TList.add(new Takhfif(last_c.get(i), new_c.get(i), t_percent.get(i), t_describe.get(i), t_city.get(i),t_imagess.get(i)));
-
-                   // adapter = new TAdapter(this, TList, t_rate);
-                    listView.setAdapter(adapter);
 
 
         map();
@@ -221,6 +151,11 @@ public class Off extends AppCompatActivity {
         RelativeLayout.LayoutParams params=new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         params.addRule(RelativeLayout.ALIGN_TOP,R.layout.near_me_bottom_sheet);
         imageView.setLayoutParams(params);
+        if(bottom_sheet.getFlag()==true)
+        {
+            send_req("http://appmahem.eu-4.evennode.com/takhfifibadaste/"+bottom_sheet.getSelect());
+        }
+
     }
 
 
@@ -233,21 +168,23 @@ public class Off extends AppCompatActivity {
         MenuLine = (ImageView) navigationBar.findViewById(R.id.menuLine_f);
         Search =(ImageView)navigationBar.findViewById(R.id.search_f);
 
+
+
         Search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-             //Bottom_click();
                 Intent i = new Intent(getBaseContext(), android.niky.mahem_final.Search_Filter.Search.class);
                 i.putExtra("title",getResources().getString(R.string.title_search));
                 startActivity(i);
+
             }
         });
 
         Menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-             //Bottom_click();
-                Intent i = new Intent(getBaseContext(), Menu1.class);
+
+                Intent i = new Intent(getBaseContext(), Group.class);
                 startActivity(i);
             }
         });
@@ -255,27 +192,82 @@ public class Off extends AppCompatActivity {
         Add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Bottom_click();
+//                Intent i = new Intent(getBaseContext(), SabtAgahi.class);
+//                startActivity(i);
+            Bottom_click();
             }
         });
 
         MenuLine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Bottom_click();
-                Intent i = new Intent(getBaseContext(), Group.class);
+                Intent i = new Intent(getBaseContext(), Menu1.class);
                 startActivity(i);
+
             }
         });
 
         Home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Bottom_click();
-                Intent i = new Intent(getBaseContext(), Off.class);
+                Intent i = new Intent(getBaseContext(), Page1.class);
                 startActivity(i);
+
             }
         });
+
+
     }
 
+    void send_req(String url)
+    {
+        pDialog = new ProgressDialog(this);
+        // Showing progress dialog before making http request
+        pDialog.setMessage("لطفا صبر کنید ..");
+        pDialog.show();
+
+
+        JsonArrayRequest productReq = new JsonArrayRequest(url,
+                new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        // Log.d(TAG, response.toString());
+                        hidePDialog();
+                        for (int i = 0; i < response.length(); i++) {
+                            try {
+                                JSONObject obj = response.getJSONObject(i);
+                                Takhfif T = new Takhfif();
+                                T.setId(obj.getString("_id"));
+                                T.setNoe(obj.getString("noe"));
+                                T.setNew_c(obj.getString("secondprice"));
+                                T.setLast_c(obj.getString("mainprice"));
+                                T.setT_describe(obj.getString("comment"));
+                                T.setT_city(obj.getString("city"));
+                                T.setT_percent(obj.getString("darsad"));
+
+                                JSONArray pic = obj.getJSONArray("pic");
+                                T.setT_image("http://" +pic.getString(0));
+
+
+
+                                TList.add(T);
+
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                        adapter.notifyDataSetChanged();
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                // VolleyLog.d(TAG, "Error: " + error.getMessage());
+                hidePDialog();
+            }
+        });
+
+        // Adding request to request queue
+        AppController.getInstance().addToRequestQueue(productReq);
+
+    }
 }

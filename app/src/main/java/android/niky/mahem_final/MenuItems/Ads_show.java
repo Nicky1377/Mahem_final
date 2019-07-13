@@ -1,6 +1,9 @@
 package android.niky.mahem_final.MenuItems;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.res.Resources;
 import android.niky.mahem_final.OffFinder.Takhfif_Show;
 import android.niky.mahem_final.R;
 
@@ -81,6 +84,8 @@ public class Ads_show extends AppCompatActivity {
     private ImageView[] dots;
     Intent ii;
 
+    Button accept,deny;
+
     String googlePath;
     String url;
     String[] imgs;
@@ -90,7 +95,6 @@ public class Ads_show extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ads_show);
-
         init();
 
         /////////////fill this variables from network data
@@ -100,134 +104,10 @@ public class Ads_show extends AppCompatActivity {
         url="http://appmahem.eu-4.evennode.com/getadsinfo/"+ii.getStringExtra("id")+"/"+ii.getStringExtra("noe");
 
 
+
         imgs=new String[5];
 
-        StringRequest stringRequest=new StringRequest(Request.Method.GET, url,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String s) {
-
-                        Log.d("result",s);
-
-                        try{
-                            JSONArray result=new JSONArray(s);
-                            hidePDialog();
-                            for (int j=0;j<result.length();j++) {
-                                JSONObject obj = result.getJSONObject(j);
-
-
-/////////////variables should fill with network datas
-                                job_name.setText(obj.getString("title"));
-                                agahi_time.setText("دیروز");
-                                description.setText(obj.getString("comment"));
-                                googlePath=obj.getString("googlepath");
-                             //   agahi_title.setText(AgahiName);
-
-                                /////////////////////////////////////////////////////////
-//                               switch (noe)
-//                               {
-//                                   case "1"://Estekhdam
-//                                   {
-
-//                                       option_detail1.setText("شهر:  "+obj.getString("city"));
-//                                       option_detail2.setText("میزان تحصیلات:  ");
-////                                        +obj.getString("tahsil"));
-//                                       option_detail3.setText("نوع قرارداد:  "
-//                                               +obj.getString("garardad"));
-
-//                                       break;
-//                                   }
-//                                   case "2"://home
-//                                   {
-
-                                option_detail1.setText("شهر:  "+obj.getString("city"));
-                                option_detail2.setText("نوع ملک:  "+obj.getString("noemelk"));
-                                option_detail3.setText("متراژ:  "
-                                        +obj.getString("metr"));
-                                option_detail4.setText("نوع آگهی:  "
-                                        +obj.getString("typeads"));
-                                option_detail5.setText("میزان رهن:  "
-                                        +obj.getString("pricerahn"));
-                                option_detail6.setText("میزان اجاره:  "
-                                        +obj.getString("priceegare"));
-//                                       break;
-//                                   }
-//                                   case "3"://car
-//                                   {
-//
-//
-//                                       option_detail1.setText("شهر:  "+obj.getString("city"));
-//                                       option_detail2.setText("برند:  ");
-////                                        +obj.getString("brand"));
-//                                       option_detail3.setText("نوع شاسی:  "
-//                                               +obj.getString("shasi"));
-//                                       option_detail4.setText("سال تولید:  ");
-////                                        +obj.getString("saltolid"));
-//                                       option_detail5.setText("کارکرد:  ");
-////                                        +obj.getString("karkard"));
-//                                       option_detail6.setText("قیمت:  ");
-////                                        +obj.getString("priceegare"));
-//                                       option_detail7.setText("نوع آگهی:  ");
-////                                        +obj.getString("typeads"));
-//
-//                                       if(obj.getBoolean("nagdornat")==true)
-//                                           option_detail8.setText("نقد یا اقساط: نقد");
-//                                       else option_detail8.setText("نقد یا اقساط: اقساط");
-//                                       break;
-//                                   }
-//                                   case "4"://other
-//                                   {
-////                                       OptionDetails=obj.getString("city")+"شهر:"+"\n"
-////                                               +obj.getString("setasdser")+"نوع آگهی دهنده:"+"\n"
-////                                               +obj.getString("price")+"قیمت:"+"\n"
-////                                               +obj.getString("typeads")+"نوع آگهی:"+"\n";
-//
-//                                       break;
-//                                   }
-//                               }
-//
-
-                                ///for find location in google map
-                                // searchingLocation="";
-                                /////////////////////////////////////
-                                JSONArray pic = obj.getJSONArray("pic");
-                                for (int i = 0; i < 5; i++) {
-                                    if (!pic.getString(i).equals("")) {
-                                        imgs[i] = "http://" + pic.getString(i);
-                                    }
-                                }
-
-                                if (obj.getBoolean("activechat")==false) {
-                                    chat.setClickable(false);
-                                } else
-                                    userId = obj.getString("userid");
-
-                                if (obj.getBoolean("activeemail")==false) {
-                                    Email = "";
-                                } else
-                                    Email = obj.getString("tamasemail");
-
-                                phoneNum = obj.getString("tamasphone");
-
-                            }
-                        }catch (Exception e)
-                        {
-
-                        }
-
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError volleyError) {
-
-                    }
-                });
-        RequestQueue requestQueue= Volley.newRequestQueue(this);
-        requestQueue.add(stringRequest);
-
-
-        //////////////////////////
+        fill_data();
 
         viewPager=findViewById(R.id.view_pager);
         adapter=new ViewPagerAdapter(this,imgs);
@@ -325,7 +205,7 @@ public class Ads_show extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //should fill with network data
-
+                show_alert();
 
                 Toast.makeText(getBaseContext(),"NETWORK",Toast.LENGTH_SHORT).show();
             }
@@ -358,10 +238,311 @@ public class Ads_show extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        Toast.makeText(this, getLocalClassName().toString() + "\nMohadese Salem", Toast.LENGTH_LONG).show();
+
+       // Toast.makeText(this, getLocalClassName().toString() + "\nMohadese Salem", Toast.LENGTH_LONG).show();
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////
+
+    public void fill_data()
+    {
+        if(noe.equals("1"))////Estekhdam
+        {
+            StringRequest stringRequest=new StringRequest(Request.Method.GET, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String s) {
+
+                        Log.d("result",s);
+
+                        try{
+                            JSONArray result=new JSONArray(s);
+                            hidePDialog();
+                            for (int j=0;j<result.length();j++) {
+                                JSONObject obj = result.getJSONObject(j);
+
+
+/////////////variables should fill with network datas
+                                job_name.setText(obj.getString("title"));
+                                agahi_time.setText("دیروز");
+                                description.setText(obj.getString("comment"));
+                                googlePath=obj.getString("googlepath");
+                             //   agahi_title.setText(AgahiName);
+                                option_detail1.setText("شهر:  "+obj.getString("city"));
+                                       option_detail2.setText("میزان تحصیلات:  "
+                                        +obj.getString("tahsil"));
+                                       option_detail3.setText("نوع قرارداد:  "
+                                               +obj.getString("garardad"));
+
+                                ///for find location in google map
+                                // searchingLocation="";
+                                /////////////////////////////////////
+                                JSONArray pic = obj.getJSONArray("pic");
+                                for (int i = 0; i < 5; i++) {
+                                    if (!pic.getString(i).equals("")) {
+                                        imgs[i] = "http://" + pic.getString(i);
+                                    }
+                                }
+
+                                if (obj.getBoolean("activechat")==false) {
+                                    chat.setClickable(false);
+                                } else
+                                    userId = obj.getString("userid");
+
+                                if (obj.getBoolean("activeemail")==true) {
+                                    Email = "";
+                                } else
+                                    Email = obj.getString("tamasemail");
+
+                                phoneNum = obj.getString("tamasphone");
+
+                            }
+                        }catch (Exception e)
+                        {
+
+                        }
+
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
+
+                    }
+                });
+        RequestQueue requestQueue= Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
+
+//
+           // tt("1");
+        }else if(noe.equals("2"))//////home
+        {
+
+            StringRequest stringRequest=new StringRequest(Request.Method.GET, url,
+                    new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String s) {
+
+                            Log.d("result",s);
+
+                            try{
+                                JSONArray result=new JSONArray(s);
+                                hidePDialog();
+                                for (int j=0;j<result.length();j++) {
+                                    JSONObject obj = result.getJSONObject(j);
+
+
+/////////////variables should fill with network datas
+                                    job_name.setText(obj.getString("title"));
+                                    agahi_time.setText("دیروز");
+                                    description.setText(obj.getString("comment"));
+                                    googlePath=obj.getString("googlepath");
+                                    //   agahi_title.setText(AgahiName);
+                                    option_detail1.setText("شهر:  "+obj.getString("city"));
+                                option_detail2.setText("نوع ملک:  "+obj.getString("noemelk"));
+                                option_detail3.setText("متراژ:  "
+                                        +obj.getString("metr"));
+                                option_detail4.setText("نوع آگهی:  "
+                                        +obj.getString("typeads"));
+                                option_detail5.setText("میزان رهن:  "
+                                        +obj.getString("pricerahn"));
+                                option_detail6.setText("میزان اجاره:  "
+                                        +obj.getString("priceegare"));
+//
+                                    ///for find location in google map
+                                    // searchingLocation="";
+                                    /////////////////////////////////////
+                                    JSONArray pic = obj.getJSONArray("pic");
+                                    for (int i = 0; i < 5; i++) {
+                                        if (!pic.getString(i).equals("")) {
+                                            imgs[i] = "http://" + pic.getString(i);
+                                        }
+                                    }
+
+                                    if (obj.getBoolean("activechat")==false) {
+                                        chat.setClickable(false);
+                                    } else
+                                        userId = obj.getString("userid");
+
+                                    if (obj.getBoolean("activeemail")==true) {
+                                        Email = "";
+                                    } else
+                                        Email = obj.getString("tamasemail");
+
+                                    phoneNum = obj.getString("tamasphone");
+
+                                }
+                            }catch (Exception e)
+                            {
+
+                            }
+
+                        }
+                    },
+                    new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError volleyError) {
+
+                        }
+                    });
+            RequestQueue requestQueue= Volley.newRequestQueue(this);
+            requestQueue.add(stringRequest);
+
+//
+           // tt("2");
+
+        }else if(noe.equals("3"))///////car
+        {
+            StringRequest stringRequest=new StringRequest(Request.Method.GET, url,
+                    new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String s) {
+
+                            Log.d("result",s);
+
+                            try{
+                                JSONArray result=new JSONArray(s);
+                                hidePDialog();
+                                for (int j=0;j<result.length();j++) {
+                                    JSONObject obj = result.getJSONObject(j);
+
+
+/////////////variables should fill with network datas
+                                    job_name.setText(obj.getString("title"));
+                                    agahi_time.setText("دیروز");
+                                    description.setText(obj.getString("comment"));
+                                    googlePath=obj.getString("googlepath");
+                                    //   agahi_title.setText(AgahiName);
+                                    option_detail1.setText("شهر:  "+obj.getString("city"));
+                                       option_detail2.setText("برند:  "
+                                        +obj.getString("brand"));
+                                       option_detail3.setText("نوع شاسی:  "
+                                               +obj.getString("shasi"));
+                                       option_detail4.setText("سال تولید:  "
+                                        +obj.getString("saltolid"));
+                                       option_detail5.setText("کارکرد:  "
+                                        +obj.getString("karkard"));
+                                       option_detail6.setText("قیمت:  "
+                                        +obj.getString("priceegare"));
+                                       option_detail7.setText("نوع آگهی:  "
+                                        +obj.getString("typeads"));
+
+                                       if(obj.getBoolean("nagdornat")==true)
+                                           option_detail8.setText("نقد یا اقساط: نقد");
+                                       else option_detail8.setText("نقد یا اقساط: اقساط");
+
+                                    ///for find location in google map
+                                    // searchingLocation="";
+                                    /////////////////////////////////////
+                                    JSONArray pic = obj.getJSONArray("pic");
+                                    for (int i = 0; i < 5; i++) {
+                                        if (!pic.getString(i).equals("")) {
+                                            imgs[i] = "http://" + pic.getString(i);
+                                        }
+                                    }
+
+                                    if (obj.getBoolean("activechat")==false) {
+                                        chat.setClickable(false);
+                                    } else
+                                        userId = obj.getString("userid");
+
+                                    if (obj.getBoolean("activeemail")==true) {
+                                        Email = "";
+                                    } else
+                                        Email = obj.getString("tamasemail");
+
+                                    phoneNum = obj.getString("tamasphone");
+
+                                }
+                            }catch (Exception e)
+                            {
+
+                            }
+
+                        }
+                    },
+                    new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError volleyError) {
+
+                        }
+                    });
+            RequestQueue requestQueue= Volley.newRequestQueue(this);
+            requestQueue.add(stringRequest);
+
+            //tt("3");
+        }else if(noe.equals("4"))//////other
+        {
+            StringRequest stringRequest=new StringRequest(Request.Method.GET, url,
+                    new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String s) {
+
+                            Log.d("result",s);
+
+                            try{
+                                JSONArray result=new JSONArray(s);
+                                hidePDialog();
+                                for (int j=0;j<result.length();j++) {
+                                    JSONObject obj = result.getJSONObject(j);
+
+
+/////////////variables should fill with network datas
+                                    job_name.setText(obj.getString("title"));
+                                    agahi_time.setText("دیروز");
+                                    description.setText(obj.getString("comment"));
+                                    googlePath=obj.getString("googlepath");
+                                    //   agahi_title.setText(AgahiName);
+                                    option_detail1.setText("شهر:  "+obj.getString("city"));
+                                    option_detail2.setText("قیمت:" +obj.getString("price"));
+                                    option_detail3.setText("نوع آگهی:"+obj.getString("typeads"));
+                                    option_detail4.setText("نوع آگهی دهنده:" +obj.getString("setasdser"));
+
+                                    ///for find location in google map
+                                    // searchingLocation="";
+                                    /////////////////////////////////////
+                                    JSONArray pic = obj.getJSONArray("pic");
+                                    for (int i = 0; i < 5; i++) {
+                                        if (!pic.getString(i).equals("")) {
+                                            imgs[i] = "http://" + pic.getString(i);
+                                        }
+                                    }
+
+                                    if (obj.getBoolean("activechat")==false) {
+                                        chat.setClickable(false);
+                                    } else
+                                        userId = obj.getString("userid");
+
+                                    if (obj.getBoolean("activeemail")==true) {
+                                        Email = "";
+                                    } else
+                                        Email = obj.getString("tamasemail");
+
+                                    phoneNum = obj.getString("tamasphone");
+
+                                }
+                            }catch (Exception e)
+                            {
+
+                            }
+
+                        }
+                    },
+                    new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError volleyError) {
+
+                        }
+                    });
+            RequestQueue requestQueue= Volley.newRequestQueue(this);
+            requestQueue.add(stringRequest);
+
+            //tt("4");
+        }
     }
 
 
+//////////////////////////////////////////////////////////////
     void Send_favorite(final String URL, final String username, final String adsId) {
         Log.d("req", "___send started");
         pDialog = new ProgressDialog(this);
@@ -387,6 +568,30 @@ public class Ads_show extends AppCompatActivity {
         send.start();
     }
 
+    void Send_Report(final String URL, final String noe, final String adsId) {
+        Log.d("req", "___send started");
+        pDialog = new ProgressDialog(this);
+        pDialog.setMessage("لطفا صبر کنید");
+        pDialog.show();
+
+        final Map<String, String> postParam = new HashMap<String, String>();
+
+        postParam.put("id", adsId);
+        postParam.put("noe", noe);
+
+
+        ////////////////////////////////////////////////////////
+
+        final Thread send = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                JSONObject obj = new JSONObject(postParam);
+                postData(URL, obj, true);
+            }
+        });
+
+        send.start();
+    }
 
     public String readFileAsString() {
         StringBuilder stringBuilder = new StringBuilder();
@@ -535,5 +740,45 @@ public class Ads_show extends AppCompatActivity {
         description=findViewById(R.id.details);
         agahi_title=findViewById(R.id.jobtitle) ;
 
+    }
+
+
+    private void show_alert(){
+
+        int width = Resources.getSystem().getDisplayMetrics().widthPixels;
+        int height = Resources.getSystem().getDisplayMetrics().heightPixels;
+        final int myW = (width * 20) / 21;
+        final int myH = (height)*4 / 5;
+
+
+        AlertDialog.Builder gbuilder = new AlertDialog.Builder(Ads_show.this);
+        View gView = getLayoutInflater().inflate(R.layout.problem_report_layout, null);
+
+        accept=gView.findViewById(R.id.yes);
+        deny=gView.findViewById(R.id.No);
+
+
+
+        gView.setMinimumWidth(myW);
+        gView.setMinimumHeight(myH);
+        gbuilder.setView(gView);
+        final Dialog alertDialog = gbuilder.create();
+        alertDialog.show();
+        alertDialog.getWindow().setLayout(myW, myH);
+        accept.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Send_Report("http://appmahem.eu-4.evennode.com//problemreport/"+ii.getStringExtra("id")+"/"+ii.getStringExtra("noe"),ii.getStringExtra("noe"),ii.getStringExtra("id"));
+                alertDialog.cancel();
+            }
+        });
+        deny.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                alertDialog.cancel();
+                // Toast.makeText(Buy_Coins.this, "denied !", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

@@ -61,14 +61,14 @@ import java.util.Map;
 public class SabtAgahi_Takhfif extends AppCompatActivity {
 
     EditText Group,Title,off_percent,Real_price,Off_price,city,call,attributes,Tozihat,location
-            ,PhoneNum,Email;
-    View CallLayout,CityLayout;
+            ,PhoneNum,Email,off_time,day,hour,min;
+    View CallLayout,CityLayout,TimeLayout;
     TextView city_1,city_2,city_3,city_4,city_5,city_6,city_7,city_8,city_9,city_10,city_11,city_12,city_13,city_14;
     CheckBox rules,chat,email_check;
     ImageView cam1,cam2,cam3,cam4,cam5;
-    Button send,ok_call;
+    Button send,ok_call,time_ok;
     Bitmap yourSelectedImage;
-    PopupWindow City_Layout,Call_Layout;
+    PopupWindow City_Layout,Call_Layout,Time_Layout;
     ArrayList<ImageView> Cameras;
     ImageView map_img;
     private String searchingLocation;
@@ -142,6 +142,17 @@ public class SabtAgahi_Takhfif extends AppCompatActivity {
             }
         });
 
+        off_time.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Time_Layout= new PopupWindow(TimeLayout, LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT,true);
+                Time_Layout.showAsDropDown(view);
+
+                Time_map();
+
+            }
+        });
 
         send.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -171,6 +182,7 @@ public class SabtAgahi_Takhfif extends AppCompatActivity {
         attributes=(EditText)findViewById(R.id.T8);
         Tozihat=(EditText)findViewById(R.id.T9);
         location=(EditText)findViewById(R.id.T10);
+        off_time=(EditText)findViewById(R.id.T11) ;
 
         send=(Button)findViewById(R.id.send);
         cam1=findViewById(R.id.c1);
@@ -192,10 +204,17 @@ public class SabtAgahi_Takhfif extends AppCompatActivity {
 
         LayoutInflater inflater=(LayoutInflater)getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         CallLayout=inflater.inflate(R.layout.call_layout,null);
+
+        LayoutInflater inflater1=(LayoutInflater)getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        TimeLayout=inflater1.inflate(R.layout.off_time_layout,null);
         ///////////popup items
 
         PhoneNum=(EditText)CallLayout.findViewById(R.id.call1);
         Email=(EditText)CallLayout.findViewById(R.id.Call2);
+
+        day=(EditText)TimeLayout.findViewById(R.id.day);
+        hour=(EditText)TimeLayout.findViewById(R.id.hour);
+        min=(EditText)TimeLayout.findViewById(R.id.min);
 
     }
 
@@ -383,13 +402,28 @@ public class SabtAgahi_Takhfif extends AppCompatActivity {
 
     }
 
+    public  void Time_map()
+    {
+        time_ok=(Button)TimeLayout.findViewById(R.id.ok_time);
+        time_ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                off_time.setText(day.getText().toString()+"روز");
+                Time_Layout.dismiss();
+
+            }
+        });
+
+    }
+
 
     //pick picture...
     void pick() {
 
         final CharSequence[] options = {"دوربین", "گالری"};
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(getBaseContext());
+        AlertDialog.Builder builder = new AlertDialog.Builder(SabtAgahi_Takhfif.this);
 
         builder.setTitle("Select Photo");
 

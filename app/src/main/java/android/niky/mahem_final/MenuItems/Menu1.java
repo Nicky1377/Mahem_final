@@ -8,6 +8,7 @@ import android.niky.mahem_final.R;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.drawable.BitmapDrawable;
+import android.niky.mahem_final.other.Page1;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
@@ -241,22 +242,24 @@ public class Menu1 extends AppCompatActivity {
         MenuLine = (ImageView) navigationBar.findViewById(R.id.menuLine_f);
         Search =(ImageView)navigationBar.findViewById(R.id.search_f);
 
+
+
         Search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getBaseContext(), android.niky.mahem_final.Search_Filter.Search.class);
                 i.putExtra("title",getResources().getString(R.string.title_search));
                 startActivity(i);
-                finish();
+
             }
         });
 
         Menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getBaseContext(), Menu1.class);
+
+                Intent i = new Intent(getBaseContext(), Group.class);
                 startActivity(i);
-                finish();
             }
         });
 
@@ -265,27 +268,28 @@ public class Menu1 extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i = new Intent(getBaseContext(), SabtAgahi.class);
                 startActivity(i);
-                finish();
+
             }
         });
 
         MenuLine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getBaseContext(), Group.class);
+                Intent i = new Intent(getBaseContext(), Menu1.class);
                 startActivity(i);
-                finish();
+
             }
         });
 
         Home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getBaseContext(), Off.class);
+                Intent i = new Intent(getBaseContext(), Page1.class);
                 startActivity(i);
-                finish();
+
             }
         });
+
 
     }
 

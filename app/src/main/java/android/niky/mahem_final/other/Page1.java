@@ -1,19 +1,25 @@
 package android.niky.mahem_final.other;
 
+import android.app.ProgressDialog;
+import android.niky.mahem_final.MenuItems.Ads_show;
 import android.niky.mahem_final.R;
 
 
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.niky.mahem_final.Search_Filter.AdvAdapter;
+import android.niky.mahem_final.Search_Filter.Advertising;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -28,6 +34,18 @@ import android.niky.mahem_final.MenuItems.ViewPagerAdapter;
 import android.niky.mahem_final.OffFinder.Off;
 import android.niky.mahem_final.Search_Filter.Ads;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,7 +55,7 @@ public class Page1 extends AppCompatActivity {
 
     private TextView Estekhdami, Agahi;
 
-    ListView image_listView;
+    RecyclerView image_listView1,image_listView2;
     List<ImageItem> ImageList1;
     List<ImageItem> ImageList2;
 
@@ -50,7 +68,7 @@ public class Page1 extends AppCompatActivity {
     private LinearLayout sliderDotspanel;
     private int dotscount=5;
     private ImageView[] dots;
-    private ImageAdapter adapter;
+    private ImageAdapter adapter1,adapter2;
     PopupMenu popup;
     private View navigationBar;
     private ImageView Home, Add, Menu, MenuLine, Search;
@@ -59,7 +77,11 @@ public class Page1 extends AppCompatActivity {
     };
 
     private int counter=10;
-    Intent ii;
+    String[] images;
+    String url1,url2,url3;
+    Intent ii,adapterIntent;
+    private ProgressDialog pDialog;
+
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -67,32 +89,46 @@ public class Page1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page1);
 
-        ii=getIntent();
+        ii = getIntent();
+        adapterIntent=new Intent(getBaseContext(),Ads_show.class);
 
         city_selection = (TextView) findViewById(R.id.title);
-//        Image = (ImageView) findViewById(R.id.image);
 //
-//        Image.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent i = new Intent(getBaseContext(), Splash_Sc.class);
-//                startActivity(i);
-//
-//            }
-//        });
-        viewPager=findViewById(R.id.image);
-        viewPagerAdapter=new ViewPagerAdapter(this,new String[]
-        {ii.getStringExtra("img1"),
-                ii.getStringExtra("img2"),
-                ii.getStringExtra("img3"),
-                ii.getStringExtra("img4"),
-                ii.getStringExtra("img5")});
-        viewPager.setAdapter(viewPagerAdapter);
+        ///////////////////////////ViewPager
+        images = new String[5];
+        viewPager = findViewById(R.id.image);
+        url1 = "http://appmahem.eu-4.evennode.com/mainpage/3";
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url1,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String s) {
 
+                        Log.d("result", s);
 
+                        try {
+                            JSONArray result = new JSONArray(s);
+                            hidePDialog();
+                            for (int j = 0; j < 5; j++) {
+                                JSONObject obj = result.getJSONObject(j);
+                                images[j] = "http://" + obj.getString("pic");
+                            }
 
+                            viewPagerAdapter = new ViewPagerAdapter(Page1.this, images);
+                            viewPager.setAdapter(viewPagerAdapter);
+                        } catch (Exception e) {
 
+                        }
 
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
+
+                    }
+                });
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
 
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -113,72 +149,164 @@ public class Page1 extends AppCompatActivity {
             }
         });
 
+//////////////////////////////////////////////////////////////////list1
 
-        LayoutInflater inflater = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            Thread t1=new Thread(){
+                @Override
+                public void run() {
+                    try{
+                        LinearLayoutManager layoutManager = new LinearLayoutManager(getBaseContext(), LinearLayoutManager.HORIZONTAL, false);
+                        ImageList1 = new ArrayList<>();
+                        image_listView1 = (RecyclerView) findViewById(R.id.List1);
+                        image_listView1.setHasFixedSize(true);
+                        image_listView1.setLayoutManager(layoutManager);
+                        adapter1 = new ImageAdapter(getBaseContext(), ImageList1,adapterIntent);
+                        image_listView1.setAdapter(adapter1);
+                        url2 = "http://appmahem.eu-4.evennode.com/mainpage/1";
 
-        ImageList1=new ArrayList<>();
-        for(int i=0;i<counter;++i) {
+                        pDialog = new ProgressDialog(getBaseContext());
+                        // Showing progress dialog before making http request
+                        pDialog.setMessage("لطفا صبر کنید ..");
+                        pDialog.show();
 
-            ///////fill these strings with network information
-            
-            //image.add(R.drawable.two);
+                        // Creating volley request obj
+                        JsonArrayRequest productReq = new JsonArrayRequest(url2,
+                                new Response.Listener<JSONArray>() {
+                                    @Override
+                                    public void onResponse(JSONArray response) {
+                                         Log.d("response1", response.toString());
+                                        hidePDialog();
+                                        for (int i = 0; i < response.length(); i++) {
+                                            try {
+                                                JSONObject obj = response.getJSONObject(i);
+                                                ImageItem img = new ImageItem();
+                                                img.setId(obj.getString("id"));
+                                                img.setImage("http://"+obj.getString("pic"));
+                                                img.setNoe(obj.getString("noe"));
+                                                tt(img.getImage());
 
-            ////////////////////////////////////////////
+                                                ImageList1.add(img);
 
-            LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+                                            } catch (JSONException e) {
+                                                e.printStackTrace();
+                                            }
+                                        }
+                                        adapter1.notifyDataSetChanged();
+                                    }
+                                }, new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                // VolleyLog.d(TAG, "Error: " + error.getMessage());
+                                hidePDialog();
+                            }
+                        });
+
+                       //  Adding request to request queue
+                            AppController.getInstance().addToRequestQueue(productReq);
+
+                    }catch (Exception e)
+                    {
+
+                    }
+                }
+            };
+            t1.start();
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+       Thread t2=new Thread(){
+           @Override
+           public void run() {
+
+               try
+               {
+                   LinearLayoutManager layoutManager = new LinearLayoutManager(getBaseContext(), LinearLayoutManager.HORIZONTAL, false);
+                   ImageList2 = new ArrayList<>();
+//                   ImageList2.add(new ImageItem("http://appmahem.eu-4.evennode.com/getpictures/1557484699298-6.jpg"));
+//                   ImageList2.add(new ImageItem("http://appmahem.eu-4.evennode.com/getpictures/1557484699298-6.jpg"));
+//                   ImageList2.add(new ImageItem("http://appmahem.eu-4.evennode.com/getpictures/1557484699298-6.jpg"));
+//                   ImageList2.add(new ImageItem("http://appmahem.eu-4.evennode.com/getpictures/1557484699298-6.jpg"));
+                   image_listView2 = (RecyclerView) findViewById(R.id.List2);
+                   image_listView2.setHasFixedSize(true);
+                   image_listView2.setLayoutManager(layoutManager);
+                   adapter2 = new ImageAdapter(getBaseContext(), ImageList2,adapterIntent);
+                   image_listView2.setAdapter(adapter2);
+                   url3 = "http://appmahem.eu-4.evennode.com/mainpage/2";
+
+
+                   pDialog = new ProgressDialog(getBaseContext());
+                   // Showing progress dialog before making http request
+                   pDialog.setMessage("لطفا صبر کنید ..");
+                   pDialog.show();
+
+                   // Creating volley request obj
+                   JsonArrayRequest productReq1 = new JsonArrayRequest(url3,
+                           new Response.Listener<JSONArray>() {
+                               @Override
+                               public void onResponse(JSONArray response) {
+                                   // Log.d(TAG, response.toString());
+                                   hidePDialog();
+                                   for (int i = 0; i < response.length(); i++) {
+                                       try {
+                                           JSONObject obj = response.getJSONObject(i);
+                                           ImageItem img = new ImageItem();
+                                           img.setId(obj.getString("id"));
+                                           img.setImage("http://"+obj.getString("pic"));
+                                           img.setNoe(obj.getString("noe"));
+
+
+                                           ImageList2.add(img);
+
+                                       } catch (JSONException e) {
+                                           e.printStackTrace();
+                                       }
+                                   }
+                                   adapter2.notifyDataSetChanged();
+                               }
+                           }, new Response.ErrorListener() {
+                       @Override
+                       public void onErrorResponse(VolleyError error) {
+                           // VolleyLog.d(TAG, "Error: " + error.getMessage());
+                           hidePDialog();
+                       }
+                   });
+
+                   // Adding request to request queue
+                     AppController.getInstance().addToRequestQueue(productReq1);
+
+               }
+               catch (Exception e)
+               {
+
+               }
+           }
+       };
+       t2.start();
 
 
 
-            image_listView =  findViewById(R.id.List1);
-//            image_listView.setHasFixedSize(true);
-//            image_recyclerView .setLayoutManager(layoutManager);
-            ///this line add search views to the list:
-//            ImageList1.add(new ImageItem( image.get(i)));
-            adapter = new ImageAdapter(this,ImageList1);
-            image_listView.setAdapter(adapter);
+        /////////////////////////////////////////////////////////////////////////
+            Estekhdami = (TextView) findViewById(R.id.es_tv);
+            Estekhdami.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i = new Intent(Page1.this, android.niky.mahem_final.Search_Filter.Search.class);
+                    i.putExtra("title", getResources().getString(R.string.Estekhdami_title));
+                    startActivity(i);
+                }
+            });
+            Agahi = findViewById(R.id.ag_tv);
+            Agahi.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(getBaseContext(), Group.class);
+                    startActivity(intent);
+                }
+            });
+            map();
+            cities();
+          //  Toast.makeText(this, getLocalClassName().toString() + "\nNiky", Toast.LENGTH_LONG).show();
         }
-        ImageList2=new ArrayList<>();
-        for(int i=0;i<counter;++i) {
-
-            ///////fill these strings with network information
-
-//            image.add(R.drawable.two);
-
-            ////////////////////////////////////////////
-
-            LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-
-
-
-            image_listView =  findViewById(R.id.List2);
-//            image_recyclerView .setHasFixedSize(true);
-//            image_recyclerView .setLayoutManager(layoutManager);
-            ///this line add search views to the list:
-//            ImageList2.add(new ImageItem( image.get(i)));
-            adapter = new ImageAdapter(this,ImageList2);
-            image_listView .setAdapter(adapter);
-        }
-        Estekhdami=(TextView)findViewById(R.id.es_tv);
-        Estekhdami.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i=new Intent(Page1.this,android.niky.mahem_final.Search_Filter.Search.class);
-                i.putExtra("title",getResources().getString(R.string.Estekhdami_title));
-                startActivity(i);
-            }
-        });
-        Agahi=findViewById(R.id.ag_tv);
-        Agahi.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent =new Intent(getBaseContext(), Ads.class);
-                startActivity(intent);
-            }
-        });
-        map();
-        cities();
-        Toast.makeText(this, getLocalClassName().toString() + "\nNiky", Toast.LENGTH_LONG).show();
-    }
 
 
     public void map() {
@@ -206,7 +334,7 @@ public class Page1 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent i = new Intent(getBaseContext(), Menu1.class);
+                Intent i = new Intent(getBaseContext(), Group.class);
                startActivity(i);
             }
         });
@@ -223,7 +351,7 @@ public class Page1 extends AppCompatActivity {
         MenuLine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getBaseContext(), Group.class);
+                Intent i = new Intent(getBaseContext(), Menu1.class);
                 startActivity(i);
 
             }
@@ -232,7 +360,7 @@ public class Page1 extends AppCompatActivity {
         Home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getBaseContext(), Off.class);
+                Intent i = new Intent(getBaseContext(), Page1.class);
                 startActivity(i);
 
             }
@@ -275,4 +403,18 @@ public class Page1 extends AppCompatActivity {
         });
 
     }
-}
+    private void hidePDialog() {
+        if (pDialog != null) {
+            pDialog.dismiss();
+            pDialog = null;
+        }
+    }
+
+    void tt(String msg) {
+        Toast.makeText(this, msg, Toast.LENGTH_LONG).show();
+    }
+
+
+    }
+
+

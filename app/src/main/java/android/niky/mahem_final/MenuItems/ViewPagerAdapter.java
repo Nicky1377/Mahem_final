@@ -45,6 +45,7 @@ public class ViewPagerAdapter extends PagerAdapter {
         NetworkImageView imageView=(NetworkImageView) v.findViewById(R.id.image_view);
 
         imageView.setImageUrl((images[position]), imageLoader);
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
 
         container.addView(v);
         return v;

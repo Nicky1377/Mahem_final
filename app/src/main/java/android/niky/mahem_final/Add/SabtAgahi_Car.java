@@ -80,7 +80,6 @@ public class SabtAgahi_Car extends AppCompatActivity {
 
     String[] pics;
     int pic=0;
-    private int IdPic=0;
 
     Intent ii;
     Drawable d;
@@ -219,7 +218,7 @@ public class SabtAgahi_Car extends AppCompatActivity {
 
                 Send("http://appmahem.eu-4.evennode.com/setads/2",Tozihat.getText().toString(),Title.getText().toString(),
                         brand.getText().toString(),shasy_typpe.getText().toString(),naghdOrNot,
-                        year.getText().toString(),K_meter.getText().toString(),price.getText().toString(),AgahiDahande_type.getText().toString()
+                        year.getText().toString(),K_meter.getText().toString(),Gheimat.getText().toString(),AgahiDahande_type.getText().toString()
                 ,Type.getText().toString(),location.getText().toString(),PhoneNum.getText().toString(),Email.getText().toString()
                 ,chat.isChecked(),email_check.isChecked());
                 tt("ارسال شد.");
@@ -321,24 +320,20 @@ public class SabtAgahi_Car extends AppCompatActivity {
 
     public  void Call_map()
     {
-//        PhoneNum=(EditText)CallLayout.findViewById(R.id.call1);
-//        Email=(EditText)CallLayout.findViewById(R.id.Call2);
-
         ok_call=(Button)CallLayout.findViewById(R.id.ok);
         ok_call.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                    call.setText(PhoneNum.getText().toString());
-                    Call_Layout.dismiss();
+
+                call.setText(PhoneNum.getText().toString());
+                Call_Layout.dismiss();
 
             }
         });
 
         chat=(CheckBox)CallLayout.findViewById(R.id.chat);
         email_check=(CheckBox)CallLayout.findViewById(R.id.Email_check);
-
-
 
     }
 
@@ -485,6 +480,7 @@ public class SabtAgahi_Car extends AppCompatActivity {
         ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Gheimat.setText(price.getText());
                 Gheimat_Mored_Nazar_Layout.dismiss();
             }
         });
@@ -713,7 +709,7 @@ public class SabtAgahi_Car extends AppCompatActivity {
 
         final CharSequence[] options = {"دوربین", "گالری"};
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(getBaseContext());
+        AlertDialog.Builder builder = new AlertDialog.Builder(SabtAgahi_Car.this);
 
         builder.setTitle("Select Photo");
 
@@ -816,6 +812,7 @@ public class SabtAgahi_Car extends AppCompatActivity {
             }
         }
     }
+
 
     public String readFileAsString() {
         StringBuilder stringBuilder = new StringBuilder();

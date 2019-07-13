@@ -96,8 +96,8 @@ public class MessageList extends AppCompatActivity {
 
         ii=getIntent();
         ph_number=ii.getStringExtra("phoneNum");
-        formattedNumber = PhoneNumberUtils.formatNumber(ph_number, Locale.getDefault().getCountry());
-
+       // formattedNumber = PhoneNumberUtils.formatNumber(ph_number, Locale.getDefault().getCountry());
+        formattedNumber =ph_number;
         list=(ListView)findViewById(R.id.message_list);
         msg=(EditText)findViewById(R.id.MessageText);
 

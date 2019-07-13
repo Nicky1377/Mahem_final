@@ -689,8 +689,8 @@ public class SabtAgahi_Amlak_Home extends AppCompatActivity {
                 try {
                     thumbnail = BitmapFactory.decodeStream(getContentResolver().openInputStream(selectedImage));
 
-                        Cameras.get(pic).setImageBitmap(thumbnail);
-                        pics[pic] = picturePath;
+                    Cameras.get(pic).setImageBitmap(thumbnail);
+                    pics[pic] = picturePath;
 
                 } catch (Exception e) {
                     //

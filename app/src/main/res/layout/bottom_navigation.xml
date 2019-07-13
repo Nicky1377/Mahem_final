@@ -21,13 +21,15 @@
                 android:layout_height="30dp"
                 android:src="@drawable/menu"
                 android:id="@+id/menu_f"
+                android:paddingVertical="5dp"
                 />
             <ImageView
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:src="@drawable/search"
-                android:id="@+id/search_f"/>
+                android:id="@+id/search_f"
+                android:paddingVertical="5dp"/>
             <ImageView
                 android:layout_weight="1"
                 android:background="@drawable/bottom_nav_circle"
@@ -40,13 +42,15 @@
                 android:layout_height="30dp"
                 android:src="@drawable/icon"
                 android:id="@+id/home"
+                android:paddingVertical="5dp"
                 />
             <ImageView
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:src="@drawable/menuline"
-                android:id="@+id/menuLine_f"/>
+                android:id="@+id/menuLine_f"
+                android:paddingVertical="5dp"/>
         </LinearLayout>
         <ImageView
             android:layout_weight="1"
@@ -55,7 +59,7 @@
             android:layout_height="70dp"
             android:layout_marginBottom="10dp"
             android:layout_centerHorizontal="true"
-            android:padding="15dp"
+            android:padding="23dp"
             android:src="@drawable/add"
            android:id="@+id/add" />
     </RelativeLayout>

@@ -598,7 +598,7 @@ public class SabtAgahi_Amlak_Office extends AppCompatActivity {
 
         final CharSequence[] options = {"دوربین", "گالری"};
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(getBaseContext());
+        AlertDialog.Builder builder = new AlertDialog.Builder(SabtAgahi_Amlak_Office.this);
 
         builder.setTitle("Select Photo");
 
@@ -701,7 +701,6 @@ public class SabtAgahi_Amlak_Office extends AppCompatActivity {
             }
         }
     }
-
 
 
 

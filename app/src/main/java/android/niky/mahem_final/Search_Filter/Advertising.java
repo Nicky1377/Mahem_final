@@ -32,6 +32,7 @@ public class Advertising {
 
     }
 
+
     public String getId() {
         return id;
     }

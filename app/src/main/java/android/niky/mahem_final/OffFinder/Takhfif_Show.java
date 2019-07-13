@@ -461,6 +461,7 @@ Intent ii;
         mapView=(RelativeLayout)findViewById(R.id.map_view);
         chat=(Button)findViewById(R.id.chat_w);
     }
+
     private void hidePDialog() {
         if (pDialog != null) {
             pDialog.dismiss();

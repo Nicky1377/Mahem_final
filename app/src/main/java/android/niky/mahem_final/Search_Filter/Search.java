@@ -7,6 +7,7 @@ import android.niky.mahem_final.R;
 
 import android.content.Intent;
 import android.niky.mahem_final.other.AppController;
+import android.niky.mahem_final.other.Page1;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -40,7 +41,7 @@ import java.util.List;
 public class Search extends AppCompatActivity {
     View navigationBar;
     ImageView Home,Add,Menu,MenuLine,Search;
-    ImageView Filter;
+    ImageView Filter,searching_icon;
 
     ListView listView;
     List<Advertising> AdvList;
@@ -70,7 +71,7 @@ public class Search extends AppCompatActivity {
     private String activity_title;
     private TextView ActivityTitle;
     Intent title_intent;
-
+    String id="0";
 
 
     @Override
@@ -78,14 +79,25 @@ public class Search extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
-        search=(EditText)findViewById(R.id.search_word);
+
         ActivityTitle=findViewById(R.id.activity_title);
 
+        init();
         title_intent=getIntent();
         activity_title=title_intent.getExtras().get("title").toString();
         if(activity_title!=null){
-
             ActivityTitle.setText(activity_title);
+
+            if(activity_title.equals(getResources().getString(R.string.title_search)))
+            {
+                url = "http://mahem.ir/listbadaste/all/"+id;
+            }
+            else{
+                Filter.setVisibility(View.GONE);
+                search.setVisibility(View.GONE);
+                searching_icon.setVisibility(View.GONE);
+                url = "http://appmahem.eu-4.evennode.com/list/all/1";
+            }
         }
 
 
@@ -97,7 +109,7 @@ public class Search extends AppCompatActivity {
         listView.setAdapter(adapter);
 
         ii=getIntent();
-        url = "http://mahem.ir/listbadaste/all/"+ii.getStringExtra("id");
+        url = "http://mahem.ir/listbadaste/all/"+id;
 
 
 
@@ -164,7 +176,6 @@ public class Search extends AppCompatActivity {
         });
 
 
-        Filter=(ImageView)findViewById(R.id.filter);
         Filter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -178,6 +189,12 @@ public class Search extends AppCompatActivity {
         map();
     }
 
+    private void init()
+    {
+        Filter=(ImageView)findViewById(R.id.filter);
+        search=(EditText)findViewById(R.id.search_word);
+        searching_icon=(ImageView)findViewById(R.id.search_icon);
+    }
 
     public void map() {
 
@@ -188,22 +205,24 @@ public class Search extends AppCompatActivity {
         MenuLine = (ImageView) navigationBar.findViewById(R.id.menuLine_f);
         Search =(ImageView)navigationBar.findViewById(R.id.search_f);
 
+
+
         Search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getBaseContext(), Search.class);
+                Intent i = new Intent(getBaseContext(), android.niky.mahem_final.Search_Filter.Search.class);
                 i.putExtra("title",getResources().getString(R.string.title_search));
                 startActivity(i);
-                finish();
+
             }
         });
 
         Menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getBaseContext(), Menu1.class);
+
+                Intent i = new Intent(getBaseContext(), Group.class);
                 startActivity(i);
-                finish();
             }
         });
 
@@ -212,24 +231,25 @@ public class Search extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i = new Intent(getBaseContext(), SabtAgahi.class);
                 startActivity(i);
-                finish();
+
             }
         });
 
         MenuLine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getBaseContext(), Group.class);
+                Intent i = new Intent(getBaseContext(), Menu1.class);
                 startActivity(i);
-                finish();
+
             }
         });
+
         Home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getBaseContext(), Off.class);
+                Intent i = new Intent(getBaseContext(), Page1.class);
                 startActivity(i);
-                finish();
+
             }
         });
 
@@ -243,7 +263,7 @@ public class Search extends AppCompatActivity {
         {
             if(resultCode==RESULT_FIRST_USER)
             {
-                search.setText(data.getStringExtra("id"));
+             id=(data.getStringExtra("id"));
             }
             else
             {
@@ -259,4 +279,6 @@ public class Search extends AppCompatActivity {
             pDialog = null;
         }
     }
+
+
 }

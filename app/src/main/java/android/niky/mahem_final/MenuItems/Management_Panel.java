@@ -68,7 +68,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class Management_Panel extends AppCompatActivity {
 
-    ListView listView;
+    ListView listView1,listView2;
     List<Advertising> AdvList;
     AdvAdapter adapter;
     CircleImageView AccountImage;
@@ -108,9 +108,9 @@ public class Management_Panel extends AppCompatActivity {
 
 
 getInfo("http://appmahem.eu-4.evennode.com/manageads");
-        listView =(ListView)findViewById(R.id.RecyclerView);
+        listView1 =(ListView)findViewById(R.id.list1);
         adapter = new AdvAdapter(this, AdvList);
-        listView.setAdapter(adapter);
+        listView1.setAdapter(adapter);
 
         ii=getIntent();
 
@@ -156,7 +156,7 @@ getInfo("http://appmahem.eu-4.evennode.com/manageads");
 //
 //
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        listView1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent=new Intent(getBaseContext(), Ads_show.class);

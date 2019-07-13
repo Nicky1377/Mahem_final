@@ -30,6 +30,17 @@ public class Bottom_Sheet extends BottomSheetDialogFragment {
     TextView map;
     Context context;
     FragmentManager fragmentManager;
+    private String select="0";
+    private Boolean flag=false;
+
+
+    public String getSelect() {
+        return select;
+    }
+
+    public Boolean getFlag() {
+        return flag;
+    }
 
     @SuppressLint("ValidFragment")
     public Bottom_Sheet(Context c) {
@@ -71,6 +82,8 @@ public class Bottom_Sheet extends BottomSheetDialogFragment {
                 imageView.setImageResource(R.drawable.logo);
                 RelativeLayout.LayoutParams params=new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
                 params.addRule(RelativeLayout.ALIGN_TOP,R.layout.all_takhfif_bottomsheet);
+                flag=bottom_sheet.getFlag();
+                select=bottom_sheet.getSelect();
                 imageView.setLayoutParams(params);
             }
         });

@@ -31,6 +31,7 @@
             android:paddingTop="20dp">
 
             <TextView
+                android:id="@+id/btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/near_me_bottom_sheet_row"
@@ -41,6 +42,7 @@
                 android:textSize="20sp" />
 
             <TextView
+                android:id="@+id/btn1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/near_me_bottom_sheet_row"
@@ -51,6 +53,7 @@
                 android:textSize="20sp" />
 
             <TextView
+                android:id="@+id/btn2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/near_me_bottom_sheet_row"
@@ -61,6 +64,7 @@
                 android:textSize="20sp" />
 
             <TextView
+                android:id="@+id/btn3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/near_me_bottom_sheet_row"
@@ -71,6 +75,7 @@
                 android:textSize="20sp" />
 
             <TextView
+                android:id="@+id/btn4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/near_me_bottom_sheet_row"
@@ -81,6 +86,7 @@
                 android:textSize="20sp" />
 
             <TextView
+                android:id="@+id/btn5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/near_me_bottom_sheet_row"
@@ -91,6 +97,7 @@
                 android:textSize="20sp" />
 
             <TextView
+                android:id="@+id/btn6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/near_me_bottom_sheet_row"
@@ -99,8 +106,18 @@
                 android:text="@string/LavazemJanebi_off"
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
+            <TextView
+                android:id="@+id/btn7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="@string/M_Arayesh"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
 
             <TextView
+                android:id="@+id/btn8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/near_me_bottom_sheet_row"
@@ -111,6 +128,7 @@
                 android:textSize="20sp" />
 
             <TextView
+                android:id="@+id/btn9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/near_me_bottom_sheet_row"
@@ -121,6 +139,7 @@
                 android:textSize="20sp" />
 
             <TextView
+                android:id="@+id/btn10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/near_me_bottom_sheet_row"
@@ -131,6 +150,7 @@
                 android:textSize="20sp" />
 
             <TextView
+                android:id="@+id/btn11"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/near_me_bottom_sheet_row"
@@ -141,6 +161,7 @@
                 android:textSize="20sp" />
 
             <TextView
+                android:id="@+id/btn12"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/near_me_bottom_sheet_row"
@@ -151,6 +172,7 @@
                 android:textSize="20sp" />
 
             <TextView
+                android:id="@+id/btn13"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/near_me_bottom_sheet_row"
@@ -161,6 +183,7 @@
                 android:textSize="20sp" />
 
             <TextView
+                android:id="@+id/btn14"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/near_me_bottom_sheet_row"
@@ -171,6 +194,7 @@
                 android:textSize="20sp" />
 
             <TextView
+                android:id="@+id/btn15"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/near_me_bottom_sheet_row"
@@ -181,6 +205,7 @@
                 android:textSize="20sp" />
 
             <TextView
+                android:id="@+id/btn16"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -188,6 +213,27 @@
                 android:text="@string/pooshak"
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/btn17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="@string/lavazemTahrir"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/btn18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="@string/other_naghlieh"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
         </LinearLayout>
     </ScrollView>
+
 </RelativeLayout>

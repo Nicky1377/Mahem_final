@@ -55,14 +55,14 @@
         android:layout_below="@+id/views"
         android:orientation="vertical">
     <ListView
-        android:id="@+id/RecyclerView"
+        android:id="@+id/list1"
         android:layout_below="@id/views"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:scrollbars="vertical"></ListView>
     <ListView
-        android:id="@+id/RecyclerView1"
+        android:id="@+id/list2"
         android:layout_below="@id/views"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

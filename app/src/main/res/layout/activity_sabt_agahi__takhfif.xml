@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Add.SabtAgahi_Takhfif">
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout
         android:id="@+id/activity_norm"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -182,6 +181,19 @@
                     android:lines="1"/>
 
                 <EditText
+                    android:id="@+id/T7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:backgroundTint="@color/backColor"
+                    android:focusable="false"
+                    android:gravity="right"
+                    android:hint="@string/call_inf"
+                    android:inputType="none"
+                    android:paddingRight="15dp"
+                    android:textSize="15dp" />
+
+                <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/Real_price"
@@ -203,7 +215,21 @@
                     android:textSize="15dp"
                     android:paddingRight="15dp"
                     android:id="@+id/T5"
-                    android:lines="1"/>
+                    android:lines="1"
+                   />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="مدت زمان تخفیف"
+                    android:backgroundTint="@color/backColor"
+                    android:layout_margin="3dp"
+                    android:gravity="right"
+                    android:textSize="15dp"
+                    android:paddingRight="15dp"
+                    android:id="@+id/T11"
+                    android:inputType="none"
+                    android:focusable="false"/>
+
 
                 <EditText
                     android:layout_width="match_parent"
@@ -215,19 +241,6 @@
                     android:textSize="15dp"
                     android:paddingRight="15dp"
                     android:id="@+id/T6"
-                    android:inputType="none"
-                    android:focusable="false"/>
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/call_inf"
-                    android:backgroundTint="@color/backColor"
-                    android:layout_margin="3dp"
-                    android:gravity="right"
-                    android:textSize="15dp"
-                    android:paddingRight="15dp"
-                    android:id="@+id/T7"
                     android:inputType="none"
                     android:focusable="false"/>
 
