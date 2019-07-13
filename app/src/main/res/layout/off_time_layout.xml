@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="160dp"
+    android:orientation="vertical"
+    android:layout_marginHorizontal="15dp"
+    android:background="@drawable/popup_background"
+    android:paddingTop="20dp"
+   >
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+
+        android:layout_alignParentLeft="true"
+
+       >
+        <TextView
+            android:id="@+id/tDay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:text="روز"
+            android:textSize="20dp"
+
+            android:layout_centerHorizontal="true"
+            />
+        <EditText
+            android:id="@+id/day"
+            android:layout_width="45dp"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/tDay"
+            android:textSize="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_centerHorizontal="true"
+            android:textColor="#F70428"
+            android:gravity="center"
+            android:background="@drawable/time_back"
+            android:inputType="number"
+            android:maxLength="3"/>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/Hl"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+       android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="20dp"
+       >
+        <TextView
+            android:id="@+id/tHour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:text="ساعت"
+            android:textSize="20dp"
+            android:layout_centerHorizontal="true"
+            />
+        <EditText
+            android:id="@+id/hour"
+            android:layout_width="45dp"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/tHour"
+            android:textSize="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:layout_marginHorizontal="20dp"
+            android:textColor="#F70428"
+            android:gravity="center"
+            android:background="@drawable/time_back"
+            android:inputType="number"
+            android:maxLength="2"/>
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_alignParentRight="true"
+
+        >
+        <TextView
+            android:id="@+id/tMin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:text="دقیقه"
+            android:textSize="20dp"
+            android:layout_centerHorizontal="true"
+
+            />
+        <EditText
+            android:id="@+id/min"
+            android:layout_width="45dp"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/tMin"
+            android:textSize="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:layout_marginHorizontal="20dp"
+            android:textColor="#F70428"
+            android:gravity="center"
+            android:background="@drawable/time_back"
+            android:inputType="number"
+            android:maxLength="2"/>
+
+    </RelativeLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="تایید"
+        android:textSize="20dp"
+        android:id="@+id/ok_time"
+        android:layout_below="@+id/Hl"/>
+</RelativeLayout>

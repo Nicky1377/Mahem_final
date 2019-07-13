@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+   >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="گزارش"
+        android:textColor="@color/backColor"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:textSize="20dp"/>
+    
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:text="دسته بندی نامناسب"
+        android:foregroundGravity="right|center"
+        android:layoutDirection="rtl"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="5dp"
+        android:paddingHorizontal="10dp"
+
+        />
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:text="محتوای آگهی نامناسب"
+        android:foregroundGravity="right|center"
+        android:layoutDirection="rtl"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="5dp"
+        android:paddingHorizontal="10dp"
+
+        />
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:text="قیمت آگهی نامناسب"
+        android:foregroundGravity="right|center"
+        android:layoutDirection="rtl"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="5dp"
+        android:paddingHorizontal="10dp"
+
+        />
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:text="شماره تلفن نادرست"
+        android:foregroundGravity="right|center"
+        android:layoutDirection="rtl"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="5dp"
+        android:paddingHorizontal="10dp"
+
+        />
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:text="محصول دیگر موجود نیست"
+        android:foregroundGravity="right|center"
+        android:layoutDirection="rtl"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="5dp"
+        android:paddingHorizontal="10dp"
+
+        />
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:text="دیگر"
+        android:foregroundGravity="right|center"
+        android:layoutDirection="rtl"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="5dp"
+        android:paddingHorizontal="10dp"
+
+        />
+    <EditText
+        android:id="@+id/T2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:backgroundTint="@color/backColor"
+        android:gravity="right"
+        android:textSize="15dp"
+        android:hint="@string/mobile_num"
+        android:paddingRight="15dp"
+        android:lines="1"
+        />
+
+
+    <EditText
+        android:id="@+id/T8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:backgroundTint="@color/backColor"
+        android:focusable="false"
+        android:gravity="right"
+        android:textSize="15dp"
+        android:hint="@string/email"
+        android:inputType="none"
+        android:paddingRight="15dp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:backgroundTint="@color/backColor"
+        android:gravity="right"
+        android:hint="@string/tozihat"
+        android:focusable="false"
+        android:inputType="none"
+        android:textSize="15dp"
+        android:paddingRight="15dp"
+        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+        <Button
+            android:id="@+id/No"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#FFF"
+            android:text="انصراف"
+            android:textSize="20dp"
+            android:textColor="@color/backColor"
+            android:layout_alignParentLeft="true"/>
+        <Button
+            android:id="@+id/yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="تایید"
+            android:textSize="20dp"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+
+</LinearLayout>
